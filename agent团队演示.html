@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固废课程 — AI教学助手团队演示</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;
+  display:flex;flex-direction:column;align-items:center;
+  min-height:100vh;padding:30px 20px;
+}
+h1{font-size:30px;color:#fff;text-align:center;margin-bottom:6px}
+h1 span{color:#5b9bd5}
+.sub{color:#667;font-size:14px;text-align:center;margin-bottom:40px}
+
+/* 流程图 */
+.flow{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:50px}
+.flow-box{
+  background:rgba(13,31,53,.9);border:1px solid rgba(91,155,213,.2);
+  border-radius:10px;padding:14px 20px;font-size:14px;color:#aabbcc;
+  transition:all .3s;cursor:default;text-align:center;min-width:90px
+}
+.flow-box:hover{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 20px rgba(91,155,213,.15)}
+.flow-box .icon{font-size:24px;margin-bottom:4px}
+.flow-box .name{font-weight:600;color:#e8e8e8}
+.flow-arrow{color:#5b9bd5;font-size:18px;font-weight:700}
+
+/* Agent 卡片 */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1100px;width:100%}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);
+  border-radius:14px;padding:24px;position:relative;overflow:hidden;
+  transition:all .4s;opacity:0;transform:translateY(20px)
+}
+.card.show{opacity:1;transform:translateY(0)}
+.card:hover{border-color:rgba(91,155,213,.35);transform:translateY(-4px) !important;box-shadow:0 8px 35px rgba(0,0,0,.4)}
+.card::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(180deg,var(--accent),transparent);border-radius:4px 0 0 4px
+}
+.card .tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;margin-bottom:10px}
+.card .name{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+.card .role{font-size:13px;color:#667;margin-bottom:12px}
+.card .desc{font-size:13px;color:#889;line-height:1.7;margin-bottom:14px}
+.card .check{font-size:12px;color:#556;line-height:1.8}
+.card .check::before{content:"✓ ";color:#2ecc71;font-weight:700}
+.t-a0{--accent:#e74c3c}.t-a0 .tag{background:rgba(231,76,60,.15);color:#e74c3c}
+.t-a1{--accent:#3498db}.t-a1 .tag{background:rgba(52,152,219,.15);color:#3498db}
+.t-a2{--accent:#2ecc71}.t-a2 .tag{background:rgba(46,204,113,.15);color:#2ecc71}
+.t-a3{--accent:#e67e22}.t-a3 .tag{background:rgba(230,126,34,.15);color:#e67e22}
+.t-a4{--accent:#9b59b6}.t-a4 .tag{background:rgba(155,89,182,.15);color:#9b59b6}
+.t-a5{--accent:#1abc9c}.t-a5 .tag{background:rgba(26,188,156,.15);color:#1abc9c}
+.t-a6{--accent:#f39c12}.t-a6 .tag{background:rgba(243,156,18,.15);color:#f39c12}
+.t-a7{--accent:#8e44ad}.t-a7 .tag{background:rgba(142,68,173,.15);color:#8e44ad}
+.t-a8{--accent:#16a085}.t-a8 .tag{background:rgba(22,160,133,.15);color:#16a085}
+
+.footer{text-align:center;margin-top:40px;color:#445;font-size:12px}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(91,155,213,.4)}50%{box-shadow:0 0 0 12px transparent}}
+.flow-box.active{animation:pulse 2s infinite;border-color:#5b9bd5}
+</style>
+</head>
+<body>
+
+<h1><span>固体废弃物污染防治技术</span> · AI教学助手团队</h1>
+<p class="sub">9-Agent 协同工作体系 · 叙·框·境·创 四维教学法</p>
+<p style="text-align:center;color:#5b9bd5;font-size:13px;margin-bottom:20px;line-height:1.8">
+📖 纪实小说云驱动：黄正文'普惠教育咨询·读书改变命运秘笈'系列 → QQ阅读/17K已发布(©已登记) → Agent-S提取教学选段 → 故事化案例驱动全课程
+</p>
+
+<!-- 工作流 -->
+<div class="flow">
+  <div class="flow-box" style="--accent:#f39c12"><div class="icon">📖</div><div class="name">纪实小说云<br>普惠教育系列</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#3498db"><div class="icon">📦</div><div class="name">原始资料</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#3498db"><div class="icon">📋</div><div class="name">Agent1<br>资料归档</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#e67e22"><div class="icon">📖</div><div class="name">Agent-S<br>故事案例</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#2ecc71"><div class="icon">📝</div><div class="name">Agent2<br>文档生成</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#9b59b6"><div class="icon">🎭</div><div class="name">Agent-I<br>场景沉浸</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#e67e22"><div class="icon">🎨</div><div class="name">Agent3<br>PPT讲稿</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#9b59b6"><div class="icon">📐</div><div class="name">Agent4<br>作业课设</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#1abc9c"><div class="icon">📊</div><div class="name">Agent5<br>教研教改</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#e74c3c"><div class="icon">🏆</div><div class="name">Agent-B<br>学术品牌</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box" style="--accent:#e74c3c"><div class="icon">✅</div><div class="name">输出</div></div>
+</div>
+
+<!-- Agent 卡片 -->
+<div class="cards">
+  <div class="card t-a0">
+    <span class="tag">审核岗</span>
+    <div class="name">Agent 0 · 教务长</div>
+    <div class="role">Chief Auditor — 质量总控</div>
+    <div class="desc">对 Agent1-8 的全部产出进行 OBE 合规性、内容准确性、格式规范性审核，出具 A/B/C/D 四级评分报告。交叉校验大纲→讲稿→PPT→试卷的一致性。</div>
+    <div class="check">OBE课程目标-毕业要求矩阵校验</div>
+    <div class="check">教学内容科学性与前沿性审查</div>
+    <div class="check">本研层次梯度合理性判断</div>
+    <div class="check">跨文档一致性（大纲↔试卷↔讲稿）</div>
+  </div>
+
+  <div class="card t-a1">
+    <span class="tag">基础岗</span>
+    <div class="name">Agent 1 · 资料归档与标准化</div>
+    <div class="role">Archivist — 资料管理 & 目录维护</div>
+    <div class="desc">统一文件命名规范，维护目录结构，管理版本历史。定期巡检生成「资料缺失清单」，驱动其他 Agent 按需产出。</div>
+    <div class="check">文件重命名 + 版本归档</div>
+    <div class="check">教学资料索引.md 维护</div>
+    <div class="check">每月缺失检测 & 完整性报告</div>
+    <div class="check">重复文件检测 & 合并建议</div>
+  </div>
+
+  <div class="card t-a2">
+    <span class="tag">产出岗</span>
+    <div class="name">Agent 2 · 教学文档生成</div>
+    <div class="role">Document Builder — 大纲·日历·教案</div>
+    <div class="desc">基于 OBE 框架生成标准化教学文档：大纲（含课程目标-毕业要求矩阵）、16周教学日历、详细教案。自动校验目标-内容-考核闭环。</div>
+    <div class="check">OBE 教学大纲（含矩阵）生成</div>
+    <div class="check">16 周教学日历编排</div>
+    <div class="check">教案/讲稿标准化撰写</div>
+    <div class="check">课程思政要素自动嵌入</div>
+  </div>
+
+  <div class="card t-a3">
+    <span class="tag">产出岗</span>
+    <div class="name">Agent 3 · PPT 与讲稿设计</div>
+    <div class="role">Lecture Designer — 课件·演示·HTML</div>
+    <div class="desc">按章节生成详细讲稿（导入→讲授→小结→思考题）和 PPT 内容框架，支持输出课堂演示 HTML 页面（带动效，16:9适配）。</div>
+    <div class="check">讲稿撰写（含板书设计）</div>
+    <div class="check">PPT 内容框架生成</div>
+    <div class="check">HTML 演示页面（fade/slide 动效）</div>
+    <div class="check">课程思政融入点设计</div>
+  </div>
+
+  <div class="card t-a4">
+    <span class="tag">产出岗</span>
+    <div class="name">Agent 4 · 作业与课程设计</div>
+    <div class="role">Assignment Designer — 题库·试卷·课设</div>
+    <div class="desc">设计分层作业（基础/应用/拓展）、A/B 双卷（含参考答案+评分标准 Rubric）、工程课程设计任务书（填埋场/焚烧厂/堆肥厂）。</div>
+    <div class="check">章节作业题库（分层难度）</div>
+    <div class="check">A/B 卷 + 参考答案 + 评分标准</div>
+    <div class="check">课程设计任务书（填埋场/焚烧/堆肥）</div>
+    <div class="check">Rubric 评分量表自动生成</div>
+  </div>
+
+  <div class="card t-a5">
+    <span class="tag">分析岗</span>
+    <div class="name">Agent 5 · 教研教改与质量监控</div>
+    <div class="role">QA & Reform — 达成度·反思·教改</div>
+    <div class="desc">基于成绩数据计算课程目标达成度，撰写教学反思与持续改进报告，辅助教改项目申报。形成「评价→反馈→改进」闭环。</div>
+    <div class="check">课程目标达成度计算与分析</div>
+    <div class="check">教学反思 + 持续改进建议</div>
+    <div class="check">教改项目申报书撰写</div>
+    <div class="check">工程教育认证对齐检查</div>
+  </div>
+
+  <div class="card t-a6" style="--accent:#f39c12">
+    <span class="tag" style="background:rgba(243,156,18,.15);color:#f39c12">特色岗</span>
+    <div class="name">Agent-S · 故事化案例拆解</div>
+    <div class="role">Case Analyst — 工程→叙事</div>
+    <div class="desc">从云端已发布的纪实小说（《龙栖湾》QQ阅读、《青龙湖》《杨柳坝与刘家湾》《三多里巷》等17K'普惠教育咨询·读书改变命运秘笈'系列）中提取教学选段，转化为五段式教学叙事（背景→冲突→决策→结局→启示），每案附方法论语块与研究空白。</div>
+    <div class="check">云端素材提取 (QQ阅读/17K→教学选段)</div>
+    <div class="check">错配-修复框架匹配</div>
+    <div class="check">分层讨论题配套(5题)</div>
+    <div class="check">方法论语块+研究空白标注</div>
+  </div>
+
+  <div class="card t-a7" style="--accent:#8e44ad">
+    <span class="tag" style="background:rgba(142,68,173,.15);color:#8e44ad">特色岗</span>
+    <div class="name">Agent-I · 场景沉浸设计</div>
+    <div class="role">Immersion Designer — 角色扮演脚本</div>
+    <div class="desc">设计课堂沉浸式场景脚本（听证会/论证会/模拟法庭/尽调模拟/碳交易谈判），含角色卡片、突发事件卡、教师引导手册、转化出口环节。</div>
+    <div class="check">角色设计(5-8人)+秘密信息</div>
+    <div class="check">突发事件卡逐步投放</div>
+    <div class="check">教师引导手册(知识+思政)</div>
+    <div class="check">转化出口环节(创维度)</div>
+  </div>
+
+  <div class="card t-a8" style="--accent:#16a085">
+    <span class="tag" style="background:rgba(22,160,133,.15);color:#16a085">特色岗</span>
+    <div class="name">Agent-B · 学术品牌建设</div>
+    <div class="role">Brand Builder — 理念·论文·奖项</div>
+    <div class="desc">凝练黄正文教授"叙·框·境·创"教育理念体系，撰写教改论文框架、教学成果奖申报书、个人学术简介，"三阶叙事教学法"理论输出。</div>
+    <div class="check">教育理念阐述(叙·框·境·创)</div>
+    <div class="check">教改论文框架撰写</div>
+    <div class="check">教学成果奖申报书</div>
+    <div class="check">学术品牌话语体系维护</div>
+  </div>
+</div>
+
+<p class="footer">← → 键切换Agent焦点 &nbsp;|&nbsp; 叙·框·境·创：叙事启蒙→框架赋能→场景淬炼→创造致用</p>
+
+<script>
+// 卡片渐入动画
+var cards = document.querySelectorAll('.card');
+var flowBoxes = document.querySelectorAll('.flow-box');
+var focusIdx = -1;
+
+function showCard(i) {
+  if (i >= 0 && i < cards.length) {
+    cards[i].classList.add('show');
+  }
+}
+function focusAgent(i) {
+  flowBoxes.forEach(function(b){ b.classList.remove('active'); });
+  cards.forEach(function(c){ c.style.borderColor='rgba(91,155,213,.1)'; });
+  if (i >= 2 && i < flowBoxes.length - 1) {
+    flowBoxes[i].classList.add('active');
+    if (cards[i-2]) cards[i-2].style.borderColor='var(--accent)';
+  }
+  focusIdx = i;
+}
+
+// 首次加载：从素材开始逐个动画展示
+var steps = [
+  function(){focusAgent(0);showCard(0);},
+  function(){focusAgent(2);showCard(1);},
+  function(){focusAgent(3);showCard(2);},
+  function(){focusAgent(4);showCard(3);},
+  function(){focusAgent(5);showCard(4);},
+  function(){focusAgent(6);showCard(5);},
+  function(){focusAgent(7);showCard(6);},
+  function(){focusAgent(8);showCard(7);},
+  function(){focusAgent(9);showCard(8);},
+  function(){focusAgent(10);},
+];
+var step = 0;
+function nextStep() {
+  if (step < steps.length) { steps[step](); step++; }
+}
+// 每 600ms 展示一个
+steps.forEach(function(s, i){ setTimeout(nextStep, 400 + i * 500); });
+
+// 键盘控制
+document.addEventListener('keydown', function(e){
+  if (e.key === 'ArrowRight') {
+    var idx = Math.min((focusIdx < 2 ? 0 : focusIdx - 2) + 1, 8);
+    focusAgent(idx + 2); showCard(idx);
+  } else if (e.key === 'ArrowLeft') {
+    var idx = Math.max((focusIdx < 2 ? 0 : focusIdx - 2) - 1, 0);
+    focusAgent(idx + 2); showCard(idx);
+  }
+});
+
+// 点击 flow box 聚焦
+flowBoxes.forEach(function(b, i){ b.addEventListener('click', function(){ focusAgent(i); }); });
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固体废弃物污染防治技术 — 章节导航</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: #0a1628; color: #c8d6e5; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; padding: 40px 20px;
+}
+.header { text-align: center; margin-bottom: 40px; }
+.header h1 { font-size: 32px; color: #fff; margin-bottom: 8px; }
+.header p { color: #667788; font-size: 14px; }
+
+.container { max-width: 1000px; width: 100%; }
+
+/* 水平滚动 Tab */
+.tabs {
+  display: flex; gap: 4px; margin-bottom: 30px; overflow-x: auto;
+  padding-bottom: 10px; border-bottom: 1px solid rgba(91,155,213,.15);
+}
+.tab {
+  flex-shrink: 0; padding: 12px 20px; border-radius: 10px; cursor: pointer;
+  background: rgba(13,31,53,.6); border: 1px solid transparent;
+  transition: all .3s; font-size: 14px; color: #8899aa; white-space: nowrap;
+}
+.tab:hover { border-color: rgba(91,155,213,.3); color: #aabbcc; }
+.tab.active { background: rgba(91,155,213,.15); border-color: #5b9bd5; color: #fff; }
+.tab .num { font-weight: 700; font-size: 18px; color: #5b9bd5; display: block; }
+
+/* 卡片网格 */
+.cards { display: grid; gap: 20px; }
+.card {
+  background: rgba(13,31,53,.8); border: 1px solid rgba(91,155,213,.1);
+  border-radius: 14px; padding: 28px; transition: all .4s;
+}
+.card:hover { border-color: rgba(91,155,213,.3); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+.card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.card-header .icon {
+  width: 44px; height: 44px; border-radius: 12px; display: flex;
+  align-items: center; justify-content: center; font-size: 20px; font-weight: 700;
+}
+.icon-c1 { background: rgba(91,155,213,.2); color: #5b9bd5; }
+.icon-c2 { background: rgba(46,204,113,.2); color: #2ecc71; }
+.icon-c3 { background: rgba(230,126,34,.2); color: #e67e22; }
+.icon-c4 { background: rgba(231,76,60,.2); color: #e74c3c; }
+.icon-c5 { background: rgba(155,89,182,.2); color: #9b59b6; }
+.icon-c6 { background: rgba(52,152,219,.2); color: #3498db; }
+
+.card-header h3 { font-size: 20px; color: #e8e8e8; }
+.card-header .badge { font-size: 12px; padding: 3px 10px; border-radius: 10px; margin-left: auto; }
+.badge-theory { background: rgba(91,155,213,.15); color: #5b9bd5; }
+.badge-practice { background: rgba(230,126,34,.15); color: #e67e22; }
+
+.card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card-body .info-block { font-size: 13px; line-height: 1.8; }
+.card-body .info-block .key { color: #667788; }
+.card-body .info-block .val { color: #aabbcc; }
+.card-body .info-block .highlight { color: #5b9bd5; }
+
+.mini-list { list-style: none; padding: 0; }
+.mini-list li { padding: 4px 0; font-size: 13px; color: #8899aa; }
+.mini-list li::before { content: "▸"; color: #5b9bd5; margin-right: 8px; font-size: 10px; }
+
+.card-footer { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(91,155,213,.08); display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* 翻页动效 */
+@keyframes slideIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+.slide-in { animation: slideIn .4s ease-out both; }
+.s0{animation-delay:0s}.s1{animation-delay:.08s}.s2{animation-delay:.16s}.s3{animation-delay:.24s}.s4{animation-delay:.32s}.s5{animation-delay:.4s}
+
+.intro { text-align: center; padding: 50px 20px; }
+.intro h2 { font-size: 24px; color: #5b9bd5; margin-bottom: 12px; }
+.intro p { color: #8899aa; font-size: 15px; max-width: 600px; margin: 0 auto; line-height: 2; }
+
+.footer-hint { margin-top: 40px; text-align: center; color: #445566; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>八周思维重塑 · 教学章节总览</h1>
+  <p>研究生 · 叙·框·境·创 四维教学法 | 32学时 | 8周 | 四重错配→四重修复</p>
+  <p style="color:#5b9bd5;font-size:14px;margin-top:4px">主讲：黄正文 教授</p>
+  <p style="color:#5b9bd5;font-size:13px;margin-top:2px">📖 故事来源：黄正文'普惠教育咨询·读书改变命运秘笈'系列纪实小说（QQ阅读/17K·云发布·©已登记）</p>
+</div>
+
+<div class="container">
+  <div class="tabs" id="tabs">
+    <div class="tab active" onclick="filter('all')">
+      <span class="num">全部</span>8周
+    </div>
+    <div class="tab" onclick="filter('theory')">
+      <span class="num">理论</span>24学时
+    </div>
+    <div class="tab" onclick="filter('immersion')">
+      <span class="num">场景沉浸</span>6场
+    </div>
+  </div>
+
+  <div class="cards" id="cards"></div>
+</div>
+
+<div class="footer-hint">键盘 1-8 快速跳转周次 | 点击 Tab 筛选 | 课堂演示专用</div>
+
+<script>
+var data = [
+  {
+    ch: '第1周', name: '空间错配Ⅰ', nameEn: '从"废弃物"到"资产"',
+    mismatch: '空间错配 → 资产化',
+    hours: '3理论+1沉浸', type: 'theory', icon: 'icon-c1', iconT: '1',
+    desc: '📖《龙栖湾》选段 → 纪实小说《龙栖湾》选段+零收购资产重组案例+填埋场选址公众听证会场景沉浸。核心追问：为什么有些"废"东西换个地方就成了"宝"？',
+    goals: '目标1, 3, 4',
+    topics: ['龙栖湾:被固废包围的渔村如何价值重估','零收购:停产固废处置企业的资产重组','填埋场选址:A/B址地质vs社会博弈','公众听证会:5角色多利益主体决策模拟'],
+    tags: ['空间错配','资产化','叙事阅读+场景沉浸'],
+    novel: '<a href="https://book.qq.com/book-detail/54859488" target="_blank" style="color:#5b9bd5;font-size:11px;display:inline-block;margin-top:6px">📖 QQ阅读 →</a> <span style="color:#2ecc71;font-size:11px;margin-left:6px">©已登记</span>'
+  },
+  {
+    ch: '第2周', name: '空间错配Ⅱ', nameEn: '固废管理的系统框架',
+    mismatch: '空间错配 → 资产化(续)',
+    hours: '4理论', type: 'theory', icon: 'icon-c2', iconT: '2',
+    desc: '📖《青龙湖》选段 → 《青龙湖》片段+垃圾分类体系对比+转运站空间布局优化。小组辩论:"撤桶并点"是好政策还是懒政？',
+    goals: '目标1, 2',
+    topics: ['青龙湖:城市垃圾"漂流记"全链条追踪','成都/上海/东京垃圾分类对比','转运站选址的社会空间博弈','课堂辩论:撤桶并点的政策辩论'],
+    tags: ['空间错配','系统扫描','案例分析+辩论'],
+    novel: '<a href="https://www.17k.com/book/3616238.html" target="_blank" style="color:#5b9bd5;font-size:11px;display:inline-block;margin-top:6px">📖 17K →</a> <span style="color:#2ecc71;font-size:11px;margin-left:6px">©已登记</span>'
+  },
+  {
+    ch: '第3周', name: '技术错配Ⅰ', nameEn: '当"好技术"遇上"坏市场"',
+    mismatch: '技术错配 → 产品化',
+    hours: '3理论+1沉浸', type: 'theory', icon: 'icon-c3', iconT: '3',
+    desc: '📖《杨柳坝与刘家湾》选段 → 《杨柳坝与刘家湾》片段+脱硫石膏建材化案例+焚烧炉产品化案例。技术路线论证会场景沉浸。核心追问:为什么技术上漂亮的方案在市场上失败了？',
+    goals: '目标1, 2, 3',
+    topics: ['脱硫石膏:三条技术路线之争的十年波折','焚烧炉:从技术方案到市场产品的"最后一公里"','三重转化模型:技术→产品→商品→业务','技术论证会:5角色多维比选决策'],
+    tags: ['技术错配','产品化','方法论导入'],
+    novel: '<a href="https://www.17k.com/book/3608077.html" target="_blank" style="color:#5b9bd5;font-size:11px;display:inline-block;margin-top:6px">📖 17K →</a> <span style="color:#2ecc71;font-size:11px;margin-left:6px">©已登记</span>'
+  },
+  {
+    ch: '第4周', name: '技术错配Ⅱ', nameEn: '生物处理与热处理技术',
+    mismatch: '技术错配 → 产品化(续)',
+    hours: '4理论', type: 'theory', icon: 'icon-c4', iconT: '4',
+    desc: '餐厨垃圾处理工艺比选(好氧堆肥vs厌氧消化vs饲料化)+焚烧炉型之争(炉排炉vs流化床)。小组PK:为200万人口城市推荐餐厨方案。',
+    goals: '目标1, 2',
+    topics: ['餐厨工艺比选:好氧堆肥/厌氧消化/饲料化LCA','焚烧炉型之争:二十年技术路线的市场验证','二噁英控制与邻避效应','小组PK:多方案对比论证'],
+    tags: ['技术错配','方法论应用','对比分析+PK'],
+    novel: '<span style="color:#667;font-size:11px;display:inline-block;margin-top:6px">📖 普惠教育咨询系列</span>'
+  },
+  {
+    ch: '第5周', name: '行为/时间错配Ⅰ', nameEn: '流程优化中的精益思维',
+    mismatch: '行为错配 → 流程优化',
+    hours: '3理论+1沉浸', type: 'theory', icon: 'icon-c5', iconT: '5',
+    desc: '📖《三多里巷》选段 → 《三多里巷》片段+TQM废水处理降本案例+填埋场运营优化。渗滤液处理运营危机应对场景沉浸。核心追问:同样的设备为什么A厂比B厂成本低30%？',
+    goals: '目标1, 2, 3',
+    topics: ['TQM精益管理在固废处理中的应用','根因分析法/精益思维工具箱','渗滤液处理危机:4小时应急决策','3张突发事件卡逐步加压'],
+    tags: ['行为错配','流程优化','深度推演+危机模拟'],
+    novel: '<a href="https://www.17k.com/book/3608078.html" target="_blank" style="color:#5b9bd5;font-size:11px;display:inline-block;margin-top:6px">📖 17K →</a> <span style="color:#2ecc71;font-size:11px;margin-left:6px">©已登记</span>'
+  },
+  {
+    ch: '第6周', name: '行为/时间错配Ⅱ', nameEn: '填埋与处置技术',
+    mismatch: '行为错配 → 流程优化(续)',
+    hours: '3理论+1沉浸', type: 'theory', icon: 'icon-c6', iconT: '6',
+    desc: '填埋场防渗设计(30年vs100年标准之争)+填埋气碳交易CCER项目估值。碳交易谈判场景沉浸:买方/卖方/审定机构三方博弈。',
+    goals: '目标1, 2, 3',
+    topics: ['填埋场选址/防渗/渗滤液/填埋气/封场全生命周期','时间工程学:贴现率/全生命周期成本/代际公平','CCER碳交易谈判模拟','"双碳"战略下固废行业的机遇'],
+    tags: ['行为错配','方案设计','碳交易模拟'],
+    novel: '<span style="color:#667;font-size:11px;display:inline-block;margin-top:6px">📖 普惠教育咨询系列</span>'
+  },
+  {
+    ch: '第7周', name: '信息/人文错配', nameEn: '当工程遇上法律、资本与人性',
+    mismatch: '人文错配 → 工程修复+哲学修复',
+    hours: '2理论+2沉浸', type: 'theory', icon: 'icon-c2', iconT: '7',
+    desc: '📖《艾沙巴赢白云村》《破界者》选段 → 脱硫石膏制砖诉讼案+环保项目投资尽调。两场场景沉浸连打:模拟法庭(45分钟)+投资尽调模拟(45分钟)。核心追问:一个好工程师为什么不能只懂技术？',
+    goals: '目标1, 2, 3, 4',
+    topics: ['脱硫石膏制砖诉讼:技术问题如何变成法律问题','交叉学科分析框架:工程×法律×资本','模拟法庭:6角色庭审辩论','投资尽调:技术/财务/法律/市场四维尽调'],
+    tags: ['人文错配','交叉实战','模拟法庭+尽调'],
+    novel: '<a href="https://www.17k.com/book/3608076.html" target="_blank" style="color:#5b9bd5;font-size:11px;display:inline-block;margin-top:6px">📖 17K →</a> <span style="color:#2ecc71;font-size:11px;margin-left:6px">©已登记</span>'
+  },
+  {
+    ch: '第8周', name: '思维整合', nameEn: '从技术思维到系统思维',
+    mismatch: '综合整合 → 系统思维',
+    hours: '2理论+2考核', type: 'theory', icon: 'icon-c1', iconT: '8',
+    desc: '回顾八周全部案例，绘制"从技术思维到系统思维"的转变地图。开卷考核+个人思维重塑报告(≥2000字)。核心追问:八周之后，你的思维方式发生了什么改变？',
+    goals: '目标1, 4',
+    topics: ['八周回顾:绘制思维转变地图','小组汇报:我最大的思维转变','开卷考核:新叙事文本独立分析','思维重塑报告:质性反思八周认知变化'],
+    tags: ['创造输出','准研究者','考核+反思'],
+    novel: '<span style="color:#667;font-size:11px;display:inline-block;margin-top:6px">📖 普惠教育咨询系列</span>'
+  }
+];
+
+var practices = [
+  { name: '公众听证会模拟', id:'s1', hours: '1沉浸', week: 1, desc: '填埋场选址:5角色×多利益主体博弈', tags: ['听证会','空间错配'] },
+  { name: '技术路线论证会', id:'s2', hours: '1沉浸', week: 3, desc: '脱硫石膏资源化:4角色×技术经济多维比选', tags: ['论证会','技术错配'] },
+  { name: '运营危机应对', id:'s3', hours: '1沉浸', week: 5, desc: '渗滤液超标:5角色×3张突发事件卡逐级加压', tags: ['危机模拟','行为错配'] },
+  { name: '模拟法庭+尽调', id:'s4', hours: '2沉浸', week: 7, desc: '制砖诉讼庭审+焚烧项目尽调连打', tags: ['法庭','尽调','人文错配'] },
+  { name: '碳交易谈判', id:'s5', hours: '1沉浸', week: 6, desc: '填埋气CCER:买方/卖方/审定方三方博弈', tags: ['谈判','行为错配'] },
+  { name: '开卷考核', id:'s6', hours: '2考核', week: 8, desc: '新叙事文本独立分析+思维重塑报告', tags: ['考核','创造输出'] }
+];
+
+function buildCards(filterType) {
+  var items = [];
+  if (filterType === 'all' || filterType === 'theory') { items = items.concat(data); }
+  if (filterType === 'all' || filterType === 'immersion') {
+    practices.forEach(function(p, i) {
+      items.push({
+        ch: '实践'+(i+1), name: p.name, nameEn: 'Practice '+(i+1),
+        hours: p.hours, type: 'practice', icon: 'icon-c'+(i+1), iconT: 'P'+(i+1),
+        desc: p.desc, goals: '目标2,3,4', topics: [], tags: p.tags
+      });
+    });
+  }
+
+  var h = '';
+  items.forEach(function(it, idx) {
+    var delay = Math.min(idx, 8);
+    h += '<div class="card slide-in s' + delay + '">';
+    h += '<div class="card-header">';
+    h += '<div class="icon ' + it.icon + '">' + it.iconT + '</div>';
+    h += '<h3>' + it.ch + ' ' + it.name + '</h3>';
+    h += '<span class="badge ' + (it.type==='theory'?'badge-theory':'badge-practice') + '">' + it.hours + '</span>';
+    h += '</div>';
+
+    h += '<div class="card-body">';
+    h += '<div class="info-block">';
+    h += '<div><span class="key">英文名称：</span><span class="val">' + it.nameEn + '</span></div>';
+    h += '<div><span class="key">支撑目标：</span><span class="highlight">' + it.goals + '</span></div>';
+    h += '<div><span class="key">教学方式：</span><span class="val">' + (it.type==='theory'?'课堂讲授+案例分析+课堂讨论':'实验操作/现场参观') + '</span></div>';
+    h += '</div>';
+    h += '<div class="info-block"><span class="key">内容概要：</span><br><span class="val">' + it.desc + '</span></div>';
+    h += '</div>';
+
+    if (it.topics.length > 0) {
+      h += '<div class="card-footer">';
+      h += '<ul class="mini-list" style="column-count:2; column-gap:20px;">';
+      it.topics.forEach(function(t){ h += '<li>' + t + '</li>'; });
+      h += '</ul>';
+      h += '</div>';
+    }
+    if (it.tags.length > 0) {
+      h += '<div class="card-footer">';
+      it.tags.forEach(function(t) {
+        h += '<span class="badge badge-theory" style="margin-left:0;margin-right:6px;">' + t + '</span>';
+      });
+      h += '</div>';
+    }
+    if (it.novel) {
+      h += '<div class="card-footer">';
+      h += it.novel;
+      h += '</div>';
+    }
+    h += '</div>';
+  });
+  document.getElementById('cards').innerHTML = h;
+}
+
+function filter(type) {
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function(t){ t.classList.remove('active'); });
+  if (type === 'all') tabs[0].classList.add('active');
+  else if (type === 'theory') tabs[1].classList.add('active');
+  else tabs[2].classList.add('active');
+  buildCards(type);
+}
+
+buildCards('all');
+
+document.addEventListener('keydown', function(e) {
+  if (e.key >= '1' && e.key <= '8') { filter('theory'); }
+});
+</script>
+</body>
+</html>

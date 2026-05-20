@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固废课程演示 — 点暇斋</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
+  color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:50px}
+.header h1{font-size:36px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#5b9bd5}
+.header .sub{color:#667;font-size:15px;margin-top:8px}
+.header .author{color:#7fb8e0;font-size:13px;margin-top:12px}
+.header .pen{color:#f39c12;font-size:14px;font-style:italic}
+
+.nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:800px;width:100%}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.15);
+  border-radius:12px;padding:28px 20px;text-align:center;cursor:pointer;
+  text-decoration:none;transition:all .35s;color:#c8d6e5;
+}
+.card:hover{border-color:#5b9bd5;transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.card .icon{font-size:32px;margin-bottom:10px}
+.card .name{font-size:17px;font-weight:600;color:#e8e8e8;margin-bottom:4px}
+.card .desc{font-size:12px;color:#667}
+
+.footer{margin-top:60px;text-align:center;color:#445;font-size:12px;line-height:2}
+.footer a{color:#5b9bd5;text-decoration:none}
+
+.redirect{color:#667;font-size:13px;margin-top:16px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span>固体废弃物污染防治技术</span></h1>
+  <div class="sub">研究生教学演示 · 叙·框·境·创 四维教学法</div>
+  <div class="author">黄正文 教授 · 成都大学环境工程系</div>
+  <div class="pen">笔名：点暇斋</div>
+</div>
+
+<div class="nav">
+  <a class="card" href="课程概览.html">
+    <div class="icon">📋</div>
+    <div class="name">课程概览</div>
+    <div class="desc">八周思维重塑 · OBE 4目标</div>
+  </a>
+  <a class="card" href="章节导航.html">
+    <div class="icon">🗂️</div>
+    <div class="name">章节导航</div>
+    <div class="desc">8周完整教学方案</div>
+  </a>
+  <a class="card" href="知识导图.html">
+    <div class="icon">🌳</div>
+    <div class="name">知识导图</div>
+    <div class="desc">故事云驱动知识树</div>
+  </a>
+  <a class="card" href="agent团队演示.html">
+    <div class="icon">🤖</div>
+    <div class="name">教学团队</div>
+    <div class="desc">9-Agent 协同体系</div>
+  </a>
+</div>
+
+<div class="redirect">3 秒后自动跳转课程概览...</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 普惠教育咨询系列纪实小说</p>
+  <p>
+    <a href="https://book.qq.com/book-detail/54859488" target="_blank">QQ阅读</a> ·
+    <a href="https://www.17k.com/book/3613430.html" target="_blank">17K文学</a>
+  </p>
+  <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
+</div>
+
+<script>
+setTimeout(function(){
+  window.location.href = '课程概览.html';
+}, 3000);
+</script>
+</body>
+</html>

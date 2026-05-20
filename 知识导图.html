@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>固体废弃物污染防治技术 — 知识导图</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: #0a1628; color: #c8d6e5; display: flex; min-height: 100vh;
+}
+.sidebar {
+  width: 220px; background: #0d1f35; padding: 30px 0; flex-shrink: 0;
+  border-right: 1px solid rgba(91,155,213,.15); display: flex; flex-direction: column;
+}
+.sidebar h3 { color: #5b9bd5; padding: 0 25px; margin-bottom: 20px; font-size: 18px; }
+.sidebar .ch-btn {
+  display: block; width: 100%; padding: 14px 25px; text-align: left;
+  background: none; border: none; color: #8899aa; cursor: pointer;
+  font-size: 15px; transition: all .3s; border-left: 3px solid transparent;
+}
+.sidebar .ch-btn:hover { background: rgba(91,155,213,.08); color: #aabbcc; }
+.sidebar .ch-btn.active { background: rgba(91,155,213,.12); color: #fff; border-left-color: #5b9bd5; }
+.sidebar .hint { margin-top: auto; padding: 25px; color: #445566; font-size: 12px; line-height: 1.8; }
+.main {
+  flex: 1; padding: 40px; overflow-y: auto; position: relative;
+}
+.main h2 { font-size: 30px; color: #5b9bd5; margin-bottom: 8px; }
+.main .sub { color: #667788; font-size: 14px; margin-bottom: 30px; }
+
+/* 树形结构 */
+.tree { position: relative; padding-left: 0; }
+.tree-node { position: relative; }
+.tree-children { padding-left: 36px; overflow: hidden; transition: max-height .4s ease; }
+.tree-children.collapsed { max-height: 0 !important; }
+
+.node-header {
+  display: flex; align-items: center; padding: 10px 14px; cursor: pointer;
+  border-radius: 8px; transition: background .25s; margin: 2px 0;
+  user-select: none;
+}
+.node-header:hover { background: rgba(91,155,213,.08); }
+.node-header .toggle {
+  width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center;
+  margin-right: 8px; color: #5b9bd5; font-size: 14px; transition: transform .3s; flex-shrink: 0;
+}
+.node-header .toggle.open { transform: rotate(90deg); }
+.node-header .label { font-size: 16px; }
+.node-header .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 10px; flex-shrink: 0; }
+.dot-chapter { background: #5b9bd5; }
+.dot-section { background: #2ecc71; }
+.dot-topic { background: #e67e22; }
+.dot-detail { background: #8899aa; }
+.tag-sm { font-size: 11px; padding: 1px 7px; border-radius: 8px; margin-left: 10px; }
+.tag-sm.l1 { background: rgba(91,155,213,.15); color: #5b9bd5; }
+.tag-sm.l2 { background: rgba(46,204,113,.15); color: #2ecc71; }
+
+/* 连接线 */
+.tree-children { position: relative; }
+.tree-children::before {
+  content: ''; position: absolute; top: 0; left: 18px; width: 1px; height: 100%;
+  background: rgba(91,155,213,.12);
+}
+
+/* 动画 */
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeSlide .35s ease-out both; }
+.d0{animation-delay:0s}.d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}.d4{animation-delay:.2s}.d5{animation-delay:.25s}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; overflow-x: auto; padding: 10px; }
+  .sidebar h3 { display: none; }
+  .sidebar .ch-btn { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; flex-shrink: 0; }
+  .sidebar .ch-btn.active { border-bottom-color: #5b9bd5; }
+  .main { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h3>八周思维重塑 · 知识导图</h3>
+  <p style="padding:0 25px;color:#5b9bd5;font-size:11px;margin-bottom:8px">📖 故事云驱动 @QQ阅读/17K</p>
+  <button class="ch-btn active" onclick="showChapter(0)">第1周 空间错配Ⅰ</button>
+  <button class="ch-btn" onclick="showChapter(1)">第2周 空间错配Ⅱ</button>
+  <button class="ch-btn" onclick="showChapter(2)">第3周 技术错配Ⅰ</button>
+  <button class="ch-btn" onclick="showChapter(3)">第4周 技术错配Ⅱ</button>
+  <button class="ch-btn" onclick="showChapter(4)">第5周 行为错配Ⅰ</button>
+  <button class="ch-btn" onclick="showChapter(5)">第6周 行为错配Ⅱ</button>
+  <button class="ch-btn" onclick="showChapter(6)">第7周 人文错配</button>
+  <button class="ch-btn" onclick="showChapter(7)">第8周 思维整合</button>
+  <div class="hint">键盘 ← → 切换章节<br>点击节点展开/折叠</div>
+</div>
+
+<div class="main" id="main"></div>
+
+<script>
+var chapters = [
+  {
+    title: '第1周 空间错配Ⅰ → 资产化', en: 'Spatial Mismatch → Assetization', hours: '3T+1I',
+    mismatch: '空间错配 → 资产化',
+      tree: [
+        { l: '📖 驱动小说：《龙栖湾》', t:'section', c:[
+          {l:'云平台：QQ阅读 book.qq.com/book-detail/54859488',t:'detail'},
+          {l:'选段：渔村被固废围困→环境整治→价值重估',t:'detail'},
+          {l:'设计意图：以真实叙事触发空间错配的认知觉醒',t:'detail'},
+          {l:'© 已登记',t:'detail'},
+        ]},
+        { l: '叙事阅读', t:'section', c:[
+          {l:'《龙栖湾》:被固废包围的渔村',t:'topic',c:[{l:'空间错配原型:垃圾围村vs生态景区',t:'detail'},{l:'价值重估:谁在定义"废物"？',t:'detail'}]},
+        ]},
+      { l: '案例01·零收购资产重组', t:'section', c:[
+        {l:'停产固废处置企业的并购案',t:'topic',c:[{l:'空间资产属性:土地+资质+设备',t:'detail'},{l:'债权人博弈/团队不甘/投资人远见',t:'detail'}]},
+        {l:'方法论语块:四重错配·空间维度',t:'topic'},
+        {l:'研究空白:固废企业无形资质价值量化',t:'topic'},
+      ]},
+      { l: '案例02·填埋场选址与邻避', t:'section', c:[
+        {l:'A址(龙脊坡):地质优但近居民区',t:'topic',c:[{l:'K≈5×10⁻⁸cm/s 天然防渗',t:'detail'},{l:'2400户准业主强烈反对',t:'detail'}]},
+        {l:'B址(石板滩):远离居民但岩溶发育',t:'topic',c:[{l:'二叠系灰岩/溶蚀裂隙/溶洞',t:'detail'},{l:'与柳河镇饮用水源井群水力联系',t:'detail'}]},
+        {l:'邻避效应:技术安全 vs 公众感知',t:'topic'},
+      ]},
+      { l: '场景·公众听证会模拟', t:'section', c:[
+        {l:'5角色:政府/专家/开发商/村民/媒体',t:'topic'},
+        {l:'2张突发事件卡',t:'topic'},
+        {l:'转化出口:邻避→邻利的转化路径',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第2周 空间错配Ⅱ → 资产化(续)', en: 'System Framework', hours: '4T',
+    mismatch: '空间错配 → 资产化(续)',
+      tree: [
+        { l: '📖 驱动小说：《青龙湖》', t:'section', c:[
+          {l:'云平台：17K 17k.com/book/3616238.html',t:'detail'},
+          {l:'选段：城市垃圾从厨房到填埋场的全链条追踪',t:'detail'},
+          {l:'设计意图：建立固废管理的系统框架认知',t:'detail'},
+          {l:'© 已登记',t:'detail'},
+        ]},
+        { l: '叙事阅读', t:'section', c:[
+          {l:'《青龙湖》:城市垃圾"漂流记"',t:'topic',c:[{l:'从居民家中到填埋场的全链条追踪',t:'detail'}]},
+        ]},
+      { l: '收集转运系统', t:'section', c:[
+        {l:'分类收集制度:成都/上海/东京对比',t:'topic'},
+        {l:'转运站选址:空间布局优化的社会博弈',t:'topic'},
+        {l:'课堂辩论:"撤桶并点"政策辩论',t:'topic'},
+      ]},
+      { l: '课程思政', t:'section', c:[
+        {l:'垃圾分类中的公民责任与公共精神',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第3周 技术错配Ⅰ → 产品化', en: 'Tech Mismatch → Productization', hours: '3T+1I',
+    mismatch: '技术错配 → 产品化',
+      tree: [
+        { l: '📖 驱动小说：《杨柳坝与刘家湾》', t:'section', c:[
+          {l:'云平台：17K 17k.com/book/3608077.html',t:'detail'},
+          {l:'选段：脱硫石膏资源化项目的十年波折三幕剧',t:'detail'},
+          {l:'设计意图：以真实叙事触发技术错配→产品化的觉醒',t:'detail'},
+          {l:'© 已登记',t:'detail'},
+        ]},
+        { l: '叙事阅读', t:'section', c:[
+          {l:'《杨柳坝与刘家湾》:脱硫石膏十年波折',t:'topic'},
+        ]},
+      { l: '案例03·脱硫石膏建材化', t:'section', c:[
+        {l:'三条技术路线:A建筑石膏/B水泥缓凝剂/C自流平',t:'topic',c:[{l:'CaSO₄·2H₂O成分/技术标准/市场信任',t:'detail'}]},
+        {l:'方法论语块:三重转化模型',t:'topic',c:[{l:'技术→产品→商品→业务:任一断裂则全链条失败',t:'detail'}]},
+        {l:'研究空白:固废建材市场接受度提升机制',t:'topic'},
+      ]},
+      { l: '案例04·焚烧炉产品化', t:'section', c:[
+        {l:'3T+E原则/炉型选择/GB 18485',t:'topic'},
+        {l:'产品化的非技术壁垒:渠道/服务/品牌',t:'topic'},
+      ]},
+      { l: '场景·技术路线论证会', t:'section', c:[
+        {l:'5角色:技术总监/研发经理/财务/市场/生产',t:'topic'},
+        {l:'转化出口:技术→产品的第一步',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第4周 技术错配Ⅱ → 产品化(续)', en: 'Bio & Thermal Treatment', hours: '4T',
+    mismatch: '技术错配 → 产品化(续)',
+      tree: [
+        { l: '📖 普惠教育咨询系列', t:'section', c:[
+          {l:'本周围绕前面小说驱动的案例进行方法论深化与PK',t:'detail'},
+        ]},
+        { l: '餐厨垃圾工艺比选', t:'section', c:[
+        {l:'好氧堆肥vs厌氧消化vs饲料化LCA',t:'topic',c:[{l:'多维比选矩阵:技术×经济×环境×社会',t:'detail'}]},
+      ]},
+      { l: '焚烧炉型之争', t:'section', c:[
+        {l:'炉排炉vs流化床:二十年技术路线的市场验证',t:'topic'},
+        {l:'二噁英控制与邻避效应的技术根源',t:'topic'},
+      ]},
+      { l: '小组PK', t:'section', c:[
+        {l:'为200万人口城市推荐餐厨方案',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第5周 行为/时间错配Ⅰ → 流程优化', en: 'Behavioral Mismatch → Process Optimization', hours: '3T+1I',
+    mismatch: '行为错配 → 流程优化',
+      tree: [
+        { l: '📖 驱动小说：《三多里巷》', t:'section', c:[
+          {l:'云平台：17K 17k.com/book/3608078.html',t:'detail'},
+          {l:'选段：固废处理厂的精益管理"抠门"故事',t:'detail'},
+          {l:'设计意图：以真实叙事触发行为错配→流程优化的觉醒',t:'detail'},
+          {l:'© 已登记',t:'detail'},
+        ]},
+        { l: '叙事阅读', t:'section', c:[
+          {l:'《三多里巷》:固废处理厂的"抠门"故事',t:'topic'},
+        ]},
+      { l: '案例05·TQM废水降本', t:'section', c:[
+        {l:'硫酸药剂降本/含氟污泥处置/硫酸铵降本',t:'topic'},
+        {l:'方法论语块:根因分析法+精益思维',t:'topic'},
+        {l:'研究空白:固废处理运营的行业SOP标准化',t:'topic'},
+      ]},
+      { l: '场景·渗滤液危机应对', t:'section', c:[
+        {l:'3张突发事件卡逐级加压',t:'topic',c:[{l:'卡1:COD不明原因上升/卡2:关键泵停机/卡3:环保局突检',t:'detail'}]},
+        {l:'转化出口:从经验操作到数据驱动',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第6周 行为/时间错配Ⅱ → 流程优化(续)', en: 'Landfill & Carbon Trading', hours: '3T+1I',
+    mismatch: '行为错配 → 流程优化(续)',
+      tree: [
+        { l: '📖 普惠教育咨询系列', t:'section', c:[
+          {l:'本周围绕前面小说驱动的案例进行方法论深化与PK',t:'detail'},
+        ]},
+        { l: '填埋场全生命周期', t:'section', c:[
+        {l:'选址/防渗(HDPE≥1.5mm/GCL)/渗滤液',t:'topic'},
+        {l:'30年vs100年设计标准之争',t:'topic'},
+        {l:'封场覆盖系统与30年监控',t:'topic'},
+      ]},
+      { l: '填埋气碳交易', t:'section', c:[
+        {l:'Scholl Canyon/LandGEM产气量模型',t:'topic'},
+        {l:'CCER定价:买方/卖方/审定机构博弈',t:'topic'},
+      ]},
+      { l: '场景·碳交易谈判', t:'section', c:[
+        {l:'3角色:项目业主/碳中介/买方',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第7周 信息/人文错配 → 修复', en: 'Humanistic Mismatch → Repair', hours: '2T+2I',
+    mismatch: '人文错配 → 工程修复+哲学修复',
+      tree: [
+        { l: '📖 驱动小说：《艾沙巴赢白云村》《破界者》', t:'section', c:[
+          {l:'艾沙巴赢白云村：17K 17k.com/book/3608076.html ©已登记',t:'detail'},
+          {l:'破界者：龙潭寺的商海沉浮：17K 17k.com/book/3625872.html ©已登记',t:'detail'},
+          {l:'选段：技术问题→法律问题→商业博弈的交叉叙事',t:'detail'},
+          {l:'设计意图：以真实叙事触发人文错配→工程/哲学修复的觉醒',t:'detail'},
+        ]},
+        { l: '案例07·脱硫石膏制砖诉讼', t:'section', c:[
+        {l:'技术问题→法律问题:固废鉴别/质量标准/责任',t:'topic'},
+        {l:'方法论语块:交叉学科分析框架',t:'topic'},
+        {l:'研究空白:技术尽调咨询的商业模式',t:'topic'},
+      ]},
+      { l: '场景A·模拟法庭(45分钟)', t:'section', c:[
+        {l:'6角色:原告/被告/双方律师/鉴定专家/法官',t:'topic'},
+        {l:'转化出口:工程师→技术尽调顾问',t:'topic'},
+      ]},
+      { l: '场景B·投资尽调(45分钟)', t:'section', c:[
+        {l:'4角色:技术/财务/法律/市场尽调团队',t:'topic'},
+      ]},
+    ]
+  },
+  {
+    title: '第8周 思维整合 → 系统思维', en: 'Systemic Thinking', hours: '2T+2考核',
+    mismatch: '综合整合 → 系统思维',
+      tree: [
+        { l: '📖 普惠教育咨询系列', t:'section', c:[
+          {l:'本周围绕前面小说驱动的案例进行方法论深化与PK',t:'detail'},
+        ]},
+        { l: '回顾与总结', t:'section', c:[
+        {l:'八周全部案例回顾:绘制思维转变地图',t:'topic'},
+        {l:'小组汇报:我最大的思维转变',t:'topic'},
+      ]},
+      { l: '开卷考核', t:'section', c:[
+        {l:'新纪实叙事文本独立分析',t:'topic',c:[{l:'识别错配类型→提出修复方案→多维论证',t:'detail'}]},
+      ]},
+      { l: '思维重塑报告', t:'section', c:[
+        {l:'≥2000字:八周认知变化的质性反思',t:'topic'},
+        {l:'四种错配识别+分析框架应用+转化方案设计',t:'topic'},
+      ]},
+      { l: '课程思政·升华', t:'section', c:[
+        {l:'从技术员到系统决策者:工程师的终身进阶',t:'topic'},
+      ]},
+    ]
+  }
+];
+
+var cur = 0;
+function showChapter(i) {
+  cur = i;
+  var btns = document.querySelectorAll('.ch-btn');
+  btns.forEach(function(b, j){ b.classList.toggle('active', j===i); });
+  render();
+}
+
+function render() {
+  var ch = chapters[cur];
+  var h = '<h2>' + ch.title + '</h2>';
+  h += '<div class="sub">' + ch.en + ' &nbsp;|&nbsp; ' + ch.hours + ' 学时 &nbsp;|&nbsp; 支撑课程目标 1,2,3</div>';
+  h += '<div class="tree">';
+  h += buildTree(ch.tree, 0);
+  h += '</div>';
+  document.getElementById('main').innerHTML = h;
+
+  // 初始化折叠
+  var headers = document.querySelectorAll('.node-header');
+  headers.forEach(function(hdr) {
+    hdr.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var children = this.nextElementSibling;
+      if (children && children.classList.contains('tree-children')) {
+        children.classList.toggle('collapsed');
+        var toggle = this.querySelector('.toggle');
+        if (toggle) toggle.classList.toggle('open');
+      }
+    });
+  });
+}
+
+function buildTree(nodes, depth) {
+  var h = '';
+  nodes.forEach(function(n, idx) {
+    var hasKids = n.c && n.c.length > 0;
+    var dotClass = n.t === 'chapter' ? 'dot-chapter' : n.t === 'section' ? 'dot-section' : n.t === 'topic' ? 'dot-topic' : 'dot-detail';
+    var tagClass = n.t === 'section' ? 'tag-sm l1' : n.t === 'topic' ? 'tag-sm l2' : '';
+    var tagText = n.t === 'section' ? '节' : n.t === 'topic' ? '知识点' : '';
+    h += '<div class="tree-node fade-in d' + (Math.min(idx,5)) + '">';
+    h += '<div class="node-header"><span class="toggle">' + (hasKids ? '▶' : '·') + '</span><span class="dot ' + dotClass + '"></span><span class="label">' + n.l + '</span>';
+    if (tagText) h += '<span class="' + tagClass + '">' + tagText + '</span>';
+    h += '</div>';
+    if (hasKids) {
+      h += '<div class="tree-children">' + buildTree(n.c, depth+1) + '</div>';
+    }
+    h += '</div>';
+  });
+  return h;
+}
+
+showChapter(0);
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); showChapter(Math.min(cur+1, chapters.length-1)); }
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); showChapter(Math.max(cur-1, 0)); }
+});
+</script>
+</body>
+</html>
