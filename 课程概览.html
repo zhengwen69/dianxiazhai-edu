@@ -87,6 +87,29 @@ td { color: #aabbcc; }
 .d1 { animation-delay: .1s; } .d2 { animation-delay: .2s; } .d3 { animation-delay: .3s; } .d4 { animation-delay: .4s; }
 .d5 { animation-delay: .5s; } .d6 { animation-delay: .6s; }
 .d7 { animation-delay: .7s; } .d8 { animation-delay: .8s; } .d9 { animation-delay: .9s; } .d10 { animation-delay: 1s; }
+
+/* 手机适配 */
+@media (max-width: 768px) {
+  .slide{padding:40px 20px;overflow-y:auto}
+  .slide-cover .uni{font-size:16px;margin-bottom:16px;letter-spacing:2px}
+  .slide-cover .title{font-size:26px;letter-spacing:1px}
+  .slide-cover .subtitle{font-size:16px;margin-top:10px}
+  .slide-cover .info{font-size:13px;margin-top:25px;line-height:1.7}
+  .slide-cover .decor{bottom:40px;width:120px}
+  .slide-content{padding-top:20px}
+  .slide-content h2{font-size:22px;margin-bottom:20px;padding-bottom:10px}
+  .grid-2,.grid-3{grid-template-columns:1fr;gap:14px}
+  .card{padding:18px 16px}
+  .card h3{font-size:16px;margin-bottom:8px}
+  .card p,.card li{font-size:13px;line-height:1.6}
+  th,td{padding:8px 10px;font-size:12px}
+  .nav{bottom:15px;gap:8px}
+  .nav .dot{width:14px;height:14px}
+  .page-indicator{top:10px;right:12px;font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .tag{font-size:10px;padding:1px 7px}
+}
+
 </style>
 </head>
 <body>

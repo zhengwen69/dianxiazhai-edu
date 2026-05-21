@@ -32,6 +32,33 @@ body{
 
 .footer{margin-top:60px;text-align:center;color:#445;font-size:12px;line-height:2}
 .footer a{color:#5b9bd5;text-decoration:none}
+
+@media (max-width: 768px) {
+  body{padding:30px 12px;justify-content:flex-start}
+  .header{margin-bottom:30px}
+  .header h1{font-size:24px}
+  .header .sub{font-size:13px}
+  .header .author{font-size:11px}
+  .header .pen{font-size:12px}
+  .nav{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+  .card{padding:20px 14px}
+  .card .icon{font-size:24px}
+  .card .name{font-size:15px}
+  .card .desc{font-size:11px}
+  .footer{margin-top:40px;font-size:10px}
+}
+
+.back-btn {
+  position: fixed; top: 20px; left: 20px; z-index: 1000;
+  padding: 8px 16px; border-radius: 8px;
+  background: rgba(13,31,53,.85); border: 1px solid rgba(91,155,213,.2);
+  color: #7fb8e0; text-decoration: none; font-size: 14px;
+  transition: all .3s; user-select: none;
+}
+.back-btn:hover {
+  border-color: #5b9bd5; color: #fff;
+  transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,.4);
+}
 </style>
 </head>
 <body>
