@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1周：空间错配Ⅰ — 从废弃物到资产</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:30px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#e67e22}
+.header .sub{color:#667;font-size:14px;margin-top:4px}
+.header .meta{color:#5b9bd5;font-size:13px;margin-top:8px}
+
+.container{max-width:900px;width:100%}
+
+.section{margin-bottom:28px}
+.section h2{font-size:22px;color:#5b9bd5;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(91,155,213,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#e67e22}
+
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);
+  border-radius:12px;padding:22px 24px;margin-bottom:16px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(91,155,213,.3);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:18px;color:#7fb8e0;margin-bottom:10px}
+.card p{font-size:14px;color:#aabbcc;line-height:1.8}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(91,155,213,.3);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .src{font-size:10px;color:#556;margin-top:8px}
+
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0}
+.flow-step{
+  background:rgba(91,155,213,.1);border:1px solid rgba(91,155,213,.2);
+  border-radius:8px;padding:8px 16px;font-size:13px;color:#7fb8e0;
+}
+.flow-arrow{color:#5b9bd5;font-weight:700;font-size:14px}
+
+.knowledge-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.knowledge-item{
+  background:rgba(26,58,92,.3);border-radius:8px;padding:12px 16px;
+  font-size:13px;color:#aabbcc;line-height:1.6;
+}
+.knowledge-item strong{color:#7fb8e0}
+
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:10px 14px;text-align:left;border:1px solid rgba(91,155,213,.1);font-size:13px}
+th{background:rgba(91,155,213,.1);color:#7fb8e0;font-weight:normal}
+td{color:#aabbcc}
+
+.scene-card{border-left:4px solid #e67e22}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5}
+.tag-orange{background:rgba(230,126,34,.15);color:#e67e22}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:22px}
+  .card{padding:16px 14px}
+  .card h3{font-size:15px}
+  .card p,.card .excerpt{font-size:12px}
+  .knowledge-grid{grid-template-columns:1fr}
+  th,td{font-size:11px;padding:6px 8px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+
+<div class="header">
+  <h1><span>第1周</span> 空间错配Ⅰ</h1>
+  <div class="sub">从"废弃物"到"资产"的认知翻转</div>
+  <div class="meta">Spatial Mismatch → Assetization &nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,3,4</div>
+</div>
+
+<div class="container">
+
+<!-- 核心追问 -->
+<div class="section">
+  <h2>核心追问</h2>
+  <div class="card">
+    <h3>为什么有些"废"东西换个地方就成了"宝"？</h3>
+    <p>同样是垃圾围村——有人看到污染，有人看到资产。区别在哪里？</p>
+  </div>
+</div>
+
+<!-- 叙：叙事阅读 -->
+<div class="section">
+  <h2>叙 — 叙事阅读</h2>
+  <div class="card">
+    <h3>📖 《龙栖湾》选段</h3>
+    <div class="excerpt">
+      龙栖湾微雨之日，余闲坐无事，偶启电脑中一旧档，署曰"雍葭"。点入，便是彼昔年发来之第一条微信："呼昂老师，我想来您的公司实习，可以吗？"倏忽十二载矣。余凝望屏幕，当日天气如何已不复记忆，唯后来彼告余，发出此条消息之时，手在颤抖。
+    </div>
+    <div class="src">来源：S001 | 《龙栖湾》第一卷·第1章 | ©已登记 | QQ阅读</div>
+  </div>
+  <div class="card">
+    <h3>📖 老呼昂的垃圾哲学</h3>
+    <div class="excerpt">
+      这老呼昂无论是给本科生还是研究生主讲的课程都是固废，年轻的时候创业给自己贴的标签也是焚烧炉专家，这垃圾处理与处置就两个字，要么"烧"要么"埋"……老领导是要给老呼昂补上这一课，挖掘研究院壳资源的残值。
+    </div>
+    <div class="src">来源：S003 | 《龙栖湾》 | ©已登记</div>
+  </div>
+</div>
+
+<!-- 框：分析框架 -->
+<div class="section">
+  <h2>框 — 四重错配分析框架</h2>
+
+  <div class="flow">
+    <div class="flow-step">空间错配</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">资产化修复</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">价值重估</div>
+  </div>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-item"><strong>固体废物定义</strong>（固废法）：丧失原有利用价值或被抛弃的固态/半固态物质。关键词："被抛弃"——主观性。</div>
+    <div class="knowledge-item"><strong>三化原则</strong>：减量化 → 资源化 → 无害化（优先级递减，无害化兜底）</div>
+    <div class="knowledge-item"><strong>空间错配</strong>：资产在一个没有市场的地方——不是东西没用，是位置不对</div>
+    <div class="knowledge-item"><strong>全生命周期视角</strong>：从"摇篮到坟墓"到"摇篮到摇篮"</div>
+  </div>
+</div>
+
+<!-- 案例拆解 -->
+<div class="section">
+  <h2>案例拆解</h2>
+  <div class="card">
+    <h3>案例1：零收购资产重组 <span class="tag tag-green">[S002]</span></h3>
+    <p>2018年秋，西南某地级市。瑞江环保（化名）——一家工业固废填埋处置企业，连续亏损18个月。占地120亩，拥有省级危废填埋许可证，资产账面净值1.2亿元，负债1.5亿元。</p>
+    <p>绿能控股投资团队发现了被低估的价值：<br>
+    • 危废填埋许可证——全省仅4张同类牌照<br>
+    • 120亩工业用地——位于规划中循环经济园区边缘<br>
+    • 技术团队——10年以上填埋场运营know-how</p>
+    <p><strong>"零收购"方案</strong>：绿能以承担全部1.5亿元债务为代价，零对价取得100%股权。3年后，该资产包在IPO中贡献约4.2亿元市值。</p>
+  </div>
+  <div class="card">
+    <h3>案例2：填埋场选址与邻避 <span class="tag tag-orange">[S003]</span></h3>
+    <p>填埋场选址A址（龙脊坡）vs B址（石板滩）的博弈：<br>
+    • A址：地质优（K≈5×10⁻⁸cm/s天然防渗），但近居民区（2400户准业主强烈反对）<br>
+    • B址：远离居民，但岩溶发育（二叠系灰岩/溶蚀裂隙），与水源井群存在水力联系</p>
+    <p>邻避效应：技术安全 vs 公众感知——如何从"邻避"走向"邻利"？</p>
+  </div>
+</div>
+
+<!-- 境：场景沉浸 -->
+<div class="section">
+  <h2>境 — 场景沉浸（第4学时）</h2>
+  <div class="card scene-card">
+    <h3>🎭 公众听证会模拟 <span class="tag tag-orange">[S003]</span></h3>
+    <p><strong>场景</strong>：填埋场选址公众听证会</p>
+    <p><strong>5个角色</strong>：政府规划官员 | 环保专家 | 投资方代表 | 周边居民代表 | 媒体记者</p>
+    <p><strong>决策点</strong>：该填埋场应建在A址还是B址？如何回应居民的"邻避"诉求？</p>
+    <p><strong>突发事件卡</strong>：① 第三方检测报告显示B址岩溶存在隐患 → ② 居民代表拿出联名请愿书 → ② 媒体曝光"选址黑幕"</p>
+    <p style="margin-top:8px;color:#7fb8e0">转化出口：邻避→邻利的资产化路径设计</p>
+  </div>
+</div>
+
+<!-- 知识体系 -->
+<div class="section">
+  <h2>本周知识点体系</h2>
+  <table>
+    <tr><th>知识点</th><th>类型</th><th>对应环节</th></tr>
+    <tr><td>固废法律定义与"被抛弃"的主观性</td><td>概念</td><td>叙事导入</td></tr>
+    <tr><td>三化原则（减量化/资源化/无害化）</td><td>核心框架</td><td>框</td></tr>
+    <tr><td>空间错配概念与资产化修复路径</td><td>分析框架</td><td>框+案例</td></tr>
+    <tr><td>全生命周期视角</td><td>思维工具</td><td>框</td></tr>
+    <tr><td>固废管理法规体系（固废法2020修订）</td><td>法规</td><td>框</td></tr>
+    <tr><td>填埋场选址原则与防渗标准</td><td>技术</td><td>境</td></tr>
+    <tr><td>邻避效应与公众参与</td><td>社会维度</td><td>境</td></tr>
+  </table>
+</div>
+
+<!-- 课程思政 -->
+<div class="section">
+  <h2>课程思政融入</h2>
+  <div class="card">
+    <h3>"两山"理论的空间经济学解读</h3>
+    <p>生态文明建设中"绿水青山就是金山银山"——不只是环保口号，更是空间经济学的真理：同一块土地，生态修复后价值可以完全翻转。从"邻避"到"邻利"，就是空间资产化的过程。</p>
+    <p style="color:#7fb8e0;font-size:13px;margin-top:4px">废物不废，仅是时间与空间的错配；学渣不渣，仅是方法与信心的错配。</p>
+  </div>
+</div>
+
+<!-- 素材引用 -->
+<div class="section">
+  <h2>本讲素材来源</h2>
+  <table>
+    <tr><th>编号</th><th>素材</th><th>出处</th><th>可溯源</th></tr>
+    <tr><td>S001</td><td>龙栖湾开篇·雍葭初叩师门</td><td>《龙栖湾》第1章</td><td>QQ阅读</td></tr>
+    <tr><td>S002</td><td>零收购资产重组案例</td><td>案例库·案例-01</td><td>母库登记</td></tr>
+    <tr><td>S003</td><td>填埋场选址/老呼昂垃圾哲学</td><td>《龙栖湾》</td><td>QQ阅读</td></tr>
+  </table>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>📖 素材来源：故事素材母库（S001-S003） | 可溯源至原著</p>
+  <p>© 黄正文（点暇斋）· 全部作品版权登记 | 成都大学 · 环境工程系</p>
+</div>
+
+</body>
+</html>
