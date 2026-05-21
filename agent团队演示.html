@@ -60,9 +60,23 @@ h1 span{color:#5b9bd5}
 .footer{text-align:center;margin-top:40px;color:#445;font-size:12px}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(91,155,213,.4)}50%{box-shadow:0 0 0 12px transparent}}
 .flow-box.active{animation:pulse 2s infinite;border-color:#5b9bd5}
+
+.back-btn {
+  position: fixed; top: 20px; left: 20px; z-index: 1000;
+  padding: 8px 16px; border-radius: 8px;
+  background: rgba(13,31,53,.85); border: 1px solid rgba(91,155,213,.2);
+  color: #7fb8e0; text-decoration: none; font-size: 14px;
+  transition: all .3s; user-select: none;
+}
+.back-btn:hover {
+  border-color: #5b9bd5; color: #fff;
+  transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,.4);
+}
 </style>
 </head>
 <body>
+
+<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
 
 <h1><span>固体废弃物污染防治技术</span> · AI教学助手团队</h1>
 <p class="sub">9-Agent 协同工作体系 · 叙·框·境·创 四维教学法</p>

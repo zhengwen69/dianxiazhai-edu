@@ -66,6 +66,19 @@ body {
 /* 动画 */
 @keyframes fadeSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in { animation: fadeSlide .35s ease-out both; }
+
+.back-btn {
+  position: fixed; top: 20px; left: 236px; z-index: 1000;
+  padding: 8px 16px; border-radius: 8px;
+  background: rgba(13,31,53,.85); border: 1px solid rgba(91,155,213,.2);
+  color: #7fb8e0; text-decoration: none; font-size: 14px;
+  transition: all .3s; user-select: none;
+}
+.back-btn:hover {
+  border-color: #5b9bd5; color: #fff;
+  transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,.4);
+}
+@media (max-width: 768px) { .back-btn { left: 20px; } }
 .d0{animation-delay:0s}.d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}.d4{animation-delay:.2s}.d5{animation-delay:.25s}
 
 /* 响应式 */
@@ -80,6 +93,8 @@ body {
 </style>
 </head>
 <body>
+
+<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
 
 <div class="sidebar">
   <h3>八周思维重塑 · 知识导图</h3>
