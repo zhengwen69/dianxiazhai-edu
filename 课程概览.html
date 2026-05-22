@@ -108,9 +108,9 @@ td { color: #aabbcc; }
   .card img{max-width:100px!important}
   th,td{padding:6px 8px;font-size:11px}
   table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
-  .nav{bottom:12px;gap:6px}
+  .nav,.page-indicator{display:none}
   .nav .dot{width:12px;height:12px}
-  .page-indicator{top:8px;right:10px;font-size:11px}
+  .page-indicator{display:none}
   .back-btn{top:8px;left:6px;padding:5px 8px;font-size:12px}
   .tag{font-size:9px;padding:1px 6px}
   .motto-highlight{display:block;font-size:14px;padding:10px;margin:8px 0;text-align:center;background:rgba(91,155,213,.12);border-radius:8px;color:#7fb8e0}
@@ -281,7 +281,7 @@ td { color: #aabbcc; }
   <p style="color:#667788;font-size:12px;text-align:center;margin-bottom:10px">两条主线覆盖全部8周教学，替代传统每周独立思政点</p>
   <table class="animate-in d1" style="font-size:12px">
     <tr><th style="width:8%">周次</th><th style="width:46%">主线一：好好学习 天天向上</th><th style="width:46%">主线二：绿水青山 = 金山银山</th></tr>
-    <tr><td>1</td><td>雍葭初叩师门（S001）：资质平平但持续学习——"只要好好学习就能天天向上"</td><td>龙栖湾 点暇斋普惠教育作品远景探索轻资产知识付费商业盈利模式探索</td></tr>
+    <tr><td>1</td><td>雍葭初叩师门（S001）：资质平平但持续学习——"只要好好学习就能天天向上"</td><td>龙栖湾 点暇斋普惠教育作品远景探索轻资产知识付费商业盈利模式</td></tr>
     <tr><td>2</td><td>雍葭行业笔记积累：从看论文到跑现场的梯度进阶</td><td>垃圾分类中的公民责任——守护绿水青山需要公共精神</td></tr>
     <tr><td>3</td><td>脱硫石膏十年波折：技术攻关没有捷径，靠的是十年磨一剑</td><td>固废资源化=金山银山：火电厂"废渣"如何变成建材产业的原料</td></tr>
     <tr><td>4</td><td>焚烧炉五年垃圾时间：自学、试错、画图纸——学习≠上课</td><td>医疗废物安全处置=专业的社会价值：非典期间的工程师担当</td></tr>
@@ -367,13 +367,12 @@ td { color: #aabbcc; }
 
 <!-- Slide 8: 结尾 -->
 <div class="slide slide-cover">
-  <div class="title animate-in d1" style="font-size:30px;color:#7fb8e0">联系邮箱：huangzhengwen@cdu.edu.cn</div>
+  <div class="title animate-in d1" style="font-size:20px;color:#7fb8e0">联系邮箱：huangzhengwen@cdu.edu.cn</div>
   <div class="subtitle animate-in d2" style="color:#7fb8e0">固体废弃物污染防治技术研究生课程教学团队</div>
   <div class="info animate-in d3">
     黄正文 教授 主讲<br>
      <br><span style="color:#667788;font-size:13px">📖 普惠教育咨询系列纪实小说 · QQ阅读/17K已发布 · 全部©已登记</span><br>
-    成都大学 · 环境工程系<br>
-    联系邮箱：huangzhengwen@cdu.edu.cn
+    成都大学 · 环境工程系
   </div>
 </div>
 
@@ -384,6 +383,8 @@ td { color: #aabbcc; }
 
 <script>
 (function() {
+  if (window.innerWidth <= 768) return;
+
   var slides = document.querySelectorAll('.slide');
   var total = slides.length;
   var cur = 0;
