@@ -90,24 +90,30 @@ td { color: #aabbcc; }
 
 /* 手机适配 */
 @media (max-width: 768px) {
-  .slide{padding:40px 20px;overflow-y:auto}
-  .slide-cover .uni{font-size:16px;margin-bottom:16px;letter-spacing:2px}
-  .slide-cover .title{font-size:26px;letter-spacing:1px}
-  .slide-cover .subtitle{font-size:16px;margin-top:10px}
-  .slide-cover .info{font-size:13px;margin-top:25px;line-height:1.7}
-  .slide-cover .decor{bottom:40px;width:120px}
-  .slide-content{padding-top:20px}
-  .slide-content h2{font-size:22px;margin-bottom:20px;padding-bottom:10px}
-  .grid-2,.grid-3{grid-template-columns:1fr;gap:14px}
-  .card{padding:18px 16px}
-  .card h3{font-size:16px;margin-bottom:8px}
-  .card p,.card li{font-size:13px;line-height:1.6}
-  th,td{padding:8px 10px;font-size:12px}
-  .nav{bottom:15px;gap:8px}
-  .nav .dot{width:14px;height:14px}
-  .page-indicator{top:10px;right:12px;font-size:12px}
-  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
-  .tag{font-size:10px;padding:1px 7px}
+  body{overflow-y:auto}
+  .slide-container{height:auto;position:static}
+  .slide{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:100vh;padding:30px 16px;opacity:1!important;transform:none!important;justify-content:flex-start;overflow-y:visible}
+  .slide-cover .uni{font-size:14px;margin-bottom:12px;letter-spacing:1px}
+  .slide-cover .title{font-size:22px;letter-spacing:0}
+  .slide-cover .subtitle{font-size:14px;margin-top:6px}
+  .slide-cover .info{font-size:12px;margin-top:20px;line-height:1.6}
+  .slide-cover .decor{bottom:30px;width:100px}
+  .slide-content{padding-top:16px}
+  .slide-content h2{font-size:20px;margin-bottom:16px;padding-bottom:8px;border-bottom-width:1px}
+  .slide-content h2::before{font-size:16px}
+  .grid-2,.grid-3{grid-template-columns:1fr;gap:12px}
+  .card{padding:14px 12px}
+  .card h3{font-size:14px;margin-bottom:6px}
+  .card p,.card li{font-size:12px;line-height:1.6}
+  .card img{max-width:100px!important}
+  th,td{padding:6px 8px;font-size:11px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+  .nav{bottom:12px;gap:6px}
+  .nav .dot{width:12px;height:12px}
+  .page-indicator{top:8px;right:10px;font-size:11px}
+  .back-btn{top:8px;left:6px;padding:5px 8px;font-size:12px}
+  .tag{font-size:9px;padding:1px 6px}
+  .motto-highlight{display:block;font-size:14px;padding:10px;margin:8px 0;text-align:center;background:rgba(91,155,213,.12);border-radius:8px;color:#7fb8e0}
 }
 
 </style>
@@ -291,7 +297,13 @@ td { color: #aabbcc; }
     <p style="color:#8899aa;font-size:13px;margin:6px 0">给出一段未在课堂讨论过的纪实叙事文本，信息不充分条件下综合判断</p>
     <div class="progress"><span>个人思维重塑报告</span><span>50%</span></div><div class="bar"><span class="b5" style="width:50%"></span></div>
     <p style="color:#8899aa;font-size:13px;margin:6px 0">≥2000字，质性反思八周认知变化，不是标准答案</p>
-    <p style="margin-top:15px;color:#7fb8e0">考核即教学 &nbsp;|&nbsp; 产出即成果 &nbsp;|&nbsp; 反思即成长</p>
+    <p style="margin-top:15px;font-size:16px;letter-spacing:2px;text-align:center;padding:12px 20px;background:linear-gradient(135deg,rgba(91,155,213,.15),rgba(46,204,113,.1));border-radius:8px;border:1px solid rgba(91,155,213,.2)">
+      <span style="color:#5b9bd5;font-weight:700">考核即教学</span>
+      <span style="color:#667;margin:0 12px">|</span>
+      <span style="color:#2ecc71;font-weight:700">产出即成果</span>
+      <span style="color:#667;margin:0 12px">|</span>
+      <span style="color:#e67e22;font-weight:700">反思即成长</span>
+    </p>
   </div>
 </div>
 
