@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2周：空间错配Ⅱ — 固废管理系统框架</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:30px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#5b9bd5}
+.header .sub{color:#667;font-size:14px;margin-top:4px}
+.header .meta{color:#5b9bd5;font-size:13px;margin-top:8px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:22px;color:#5b9bd5;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(91,155,213,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#e67e22}
+.card{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:12px;padding:22px 24px;margin-bottom:16px}
+.card h3{font-size:18px;color:#7fb8e0;margin-bottom:10px}
+.card p{font-size:14px;color:#aabbcc;line-height:1.8}
+.knowledge-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.knowledge-item{background:rgba(26,58,92,.3);border-radius:8px;padding:12px 16px;font-size:13px;color:#aabbcc;line-height:1.6}
+.knowledge-item strong{color:#7fb8e0}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:10px 14px;text-align:left;border:1px solid rgba(91,155,213,.1);font-size:13px}
+th{background:rgba(91,155,213,.1);color:#7fb8e0;font-weight:normal}
+td{color:#aabbcc}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5}
+.tag-orange{background:rgba(230,126,34,.15);color:#e67e22}
+.back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:22px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">◀ 返回首页</a>
+
+<div class="header">
+  <h1><span>第2周</span> 空间错配Ⅱ</h1>
+  <div class="sub">固废管理的系统框架</div>
+  <div class="meta">Spatial Mismatch → Assetization（续）&nbsp;|&nbsp; 4学时&nbsp;|&nbsp; 支撑目标1,2,3</div>
+</div>
+
+<div class="container">
+
+<!-- 核心追问 -->
+<div class="section">
+  <h2>核心追问</h2>
+  <div class="card">
+    <h3>一袋垃圾从厨房到填埋场，经历了什么？</h3>
+    <p>你扔了它，它没有消失——它从你的空间搬到了别人的空间。60公里、5次转运、3次形态变化。垃圾的每一个节点都在"换一种身份"。</p>
+  </div>
+</div>
+
+<!-- 知识框架 -->
+<div class="section">
+  <h2>框 — 系统框架</h2>
+  <div class="knowledge-grid">
+    <div class="knowledge-item"><strong>四分类标准</strong>：可回收物/有害垃圾/厨余垃圾/其他垃圾——分类不是帮政府做事，是在源头决定每袋垃圾的最终命运</div>
+    <div class="knowledge-item"><strong>收集系统</strong>：定点收集/上门收集/管道收集/智能回收机——V=Q×T×K₁×K₂/(ρ×N)</div>
+    <div class="knowledge-item"><strong>三城对比</strong>：成都（2021）vs 上海（2019）vs 东京（2000）——东京用了25年让分类内化于习惯</div>
+    <div class="knowledge-item"><strong>转运站空间博弈</strong>：固废设施总建在地价低、居民少、权力弱的地方——不是歧视，是空间经济学的必然</div>
+  </div>
+</div>
+
+<!-- 案例 -->
+<div class="section">
+  <h2>案例拆解</h2>
+  <div class="card">
+    <h3>《青龙湖》——垃圾"漂流记" <span class="tag tag-blue">[S004]</span></h3>
+    <p>雍葭追踪一袋垃圾的全过程：从居民厨房→小区投放点→收集车→转运站→填埋场。她发现垃圾每到一个节点就换一种身份——"私人物品"→"公共负担"→"压缩货物"→"待处置废物"。</p>
+    <p><strong>核心洞察</strong>：同一袋垃圾，在空间旅程中不断变换身份——废≠废，取决于它在空间网络中的哪一站。系统思维不是看来的，是一步一步跟出来的。</p>
+  </div>
+  <div class="card">
+    <h3>课堂辩论：撤桶并点 <span class="tag tag-orange">[S005]</span></h3>
+    <p>正方：集中投放=提高效率、降低成本、便于监督。反方：多走200米、老人不便、错过时间只能放门口。</p>
+    <p><strong>不判输赢，只追问</strong>：每一个公共利益背后，都有某个群体的个人便利被牺牲。工程师的工作是让平衡的成本最低。</p>
+  </div>
+</div>
+
+<!-- 课程思政 -->
+<div class="section">
+  <h2>思政双主线</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="card">
+      <h3>好好学习 天天向上</h3>
+      <p style="font-size:13px">雍葭的行业笔记逐页积累——系统思维不是看书看来的，是一步一步跟出来的。学习需要梯度进阶：从课堂→从论文→从现场。</p>
+    </div>
+    <div class="card">
+      <h3>绿水青山 = 金山银山</h3>
+      <p style="font-size:13px">垃圾分类中的公民责任——守护绿水青山不是政府一个人的事。每个居民多走100米，就是为城市环境支付的"空间代价"。</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>📖 素材来源：故事素材母库（S004, S005）| 可溯源至原著小说</p>
+  <p>© 黄正文（点暇斋）· 成都大学环境工程系</p>
+</div>
+
+</body>
+</html>
