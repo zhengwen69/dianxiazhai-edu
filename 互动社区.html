@@ -180,7 +180,7 @@ form{
       <textarea name="问题" rows="3" placeholder="1.&#10;2.&#10;3."></textarea>
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 工作投入度</label>
+      <label><span class="req">*</span> 学习投入度自评</label>
       <div class="rating-group">
         <input type="radio" name="投入度" value="1" id="w1-1"><label for="w1-1" class="rating-star">1</label>
         <input type="radio" name="投入度" value="2" id="w1-2"><label for="w1-2" class="rating-star">2</label>
@@ -210,14 +210,6 @@ form{
       <input type="email" name="评价人邮箱" required placeholder="your@email.com">
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 被评价同学姓名</label>
-      <input type="text" name="被评人姓名" required>
-    </div>
-    <div class="form-group">
-      <label>TA的设计/论文题目</label>
-      <input type="text" name="题目">
-    </div>
-    <div class="form-group">
       <label>您的意见与建议</label>
       <textarea name="意见建议" rows="4" placeholder="请从课题价值、方法合理性、改进空间等方面给出综合评价"></textarea>
     </div>
@@ -231,7 +223,7 @@ form{
         <input type="radio" name="选题意义" value="5" id="p1-5" checked><label for="p1-5" class="rating-star">5</label>
       </div>
     </div>
-    <button type="submit" class="submit-btn" id="btn-peer">✓ 提交评价</button>
+    <button type="submit" class="submit-btn" id="btn-peer">✓ 提交反馈</button>
   </form>
 </div>
 
@@ -239,7 +231,7 @@ form{
 <div class="success-msg" id="success">
   <span class="emoji">✅</span>
   <span>提交成功！</span>
-  <p style="font-size:14px;color:#889;margin-top:8px">数据已记录，老师可查阅。</p>
+  <p style="font-size:14px;color:#7fb8e0;margin-top:8px;line-height:1.8">感谢您抽出宝贵时间，您的反馈将帮助我们持续改进课程质量，谢谢您！</p>
   <button onclick="resetForms()" style="margin-top:16px;padding:8px 24px;border-radius:6px;background:rgba(91,155,213,.15);border:1px solid #5b9bd5;color:#5b9bd5;cursor:pointer">再填一份</button>
 </div>
 
