@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教师仪表盘 — 固废课程</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
+  color:#c8d6e5;min-height:100vh;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:40px}
+.header h1{font-size:28px;color:#fff;margin-bottom:4px}
+.header h1 span{color:#f39c12}
+.header .sub{color:#667;font-size:13px}
+
+.dash-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;max-width:1000px;margin:0 auto 40px;
+}
+.dash-card{
+  background:rgba(13,31,53,.65);border:1px solid rgba(91,155,213,.15);
+  border-radius:12px;padding:28px 24px;text-align:center;
+  transition:all .35s;text-decoration:none;color:#c8d6e5;display:block;
+}
+.dash-card:hover{border-color:#5b9bd5;transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.dash-card .icon{font-size:40px;margin-bottom:12px;display:block}
+.dash-card .name{font-size:18px;font-weight:600;color:#e8e8e8;margin-bottom:6px}
+.dash-card .desc{font-size:12px;color:#667;line-height:1.6}
+.dash-card .badge{
+  display:inline-block;margin-top:10px;padding:4px 12px;border-radius:12px;
+  font-size:11px;font-weight:600;
+}
+.badge-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.badge-blue{background:rgba(91,155,213,.15);color:#5b9bd5}
+.badge-orange{background:rgba(230,126,34,.15);color:#e67e22}
+
+.section-label{
+  text-align:center;color:#556;font-size:12px;
+  letter-spacing:2px;margin:0 auto 20px;max-width:1000px;
+}
+
+.setup-box{
+  max-width:800px;margin:0 auto 40px;
+  background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.2);
+  border-radius:12px;padding:24px;
+}
+.setup-box h3{color:#e74c3c;margin-bottom:12px;font-size:16px}
+.setup-box ol{color:#c8d6e5;font-size:13px;line-height:2.2;padding-left:20px}
+.setup-box code{background:rgba(0,0,0,.3);padding:2px 6px;border-radius:4px;font-size:12px}
+.setup-box a{color:#5b9bd5}
+
+.back-btn{
+  display:inline-block;margin-bottom:24px;padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;text-align:center;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}
+
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px}
+
+.pin-note{
+  max-width:800px;margin:0 auto 30px;
+  background:rgba(241,196,15,.06);border:1px solid rgba(241,196,15,.15);
+  border-radius:8px;padding:12px 18px;
+  font-size:12px;color:#f1c40f;text-align:center;
+}
+.pin-note code{background:rgba(0,0,0,.3);padding:2px 6px;border-radius:4px}
+
+@media (max-width:600px){
+  body{padding:20px 10px}
+  .dash-grid{grid-template-columns:1fr}
+  .dash-card{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <a class="back-btn" href="index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <h1><span>🔐</span> 教师仪表盘</h1>
+  <div class="sub">学生签到 · 周报数据 · 同行评价 · 互动留言</div>
+</div>
+
+<!-- 配置提示 -->
+<div class="pin-note">
+  ⚠️ 首次使用需先配置 Formspree。详情见页面底部「首次配置指引」。
+  <br>配置完成后请将下方三个 Formspree URL 替换为本页 HTML 中的实际地址。
+</div>
+
+<div class="section-label">▾ 数据查阅 ▾</div>
+<div class="dash-grid">
+  <!-- 签到数据 -->
+  <a class="dash-card" href="YOUR_FORMSPREE_DASHBOARD_URL" target="_blank">
+    <span class="icon">📝</span>
+    <span class="name">学生签到记录</span>
+    <span class="desc">查看每日/每周学生签到打卡情况</span>
+    <span class="badge badge-blue">Formspree 后台</span>
+  </a>
+  <!-- 周报数据 -->
+  <a class="dash-card" href="YOUR_FORMSPREE_DASHBOARD_URL" target="_blank">
+    <span class="icon">📋</span>
+    <span class="name">周进度问卷</span>
+    <span class="desc">查看每位学生每周的进度汇报、困难与自评</span>
+    <span class="badge badge-green">Formspree 后台</span>
+  </a>
+  <!-- 同行评价 -->
+  <a class="dash-card" href="YOUR_FORMSPREE_DASHBOARD_URL" target="_blank">
+    <span class="icon">🤝</span>
+    <span class="name">同行评价</span>
+    <span class="desc">查看学生互评结果、评分统计与改进建议</span>
+    <span class="badge badge-orange">Formspree 后台</span>
+  </a>
+</div>
+
+<div class="section-label">▾ 师生互动 ▾</div>
+<div class="dash-grid">
+  <a class="dash-card" href="https://github.com/zhengwen69/cdu-gufei-web-demo/issues" target="_blank">
+    <span class="icon">💬</span>
+    <span class="name">GitHub Issues 讨论区</span>
+    <span class="desc">师生技术讨论、问题答疑、课程反馈<br>用 GitHub 账号登录即可发帖回复</span>
+    <span class="badge badge-green">公开讨论</span>
+  </a>
+  <a class="dash-card" href="学生互动.html">
+    <span class="icon">🧪</span>
+    <span class="name">学生端界面</span>
+    <span class="desc">预览学生端看到的表单界面<br>确认表单字段和按钮是否正常</span>
+    <span class="badge badge-blue">预览</span>
+  </a>
+</div>
+
+<!-- 首次配置 -->
+<div class="setup-box">
+  <h3>🔧 首次配置指引（只需做一次）</h3>
+  <ol>
+    <li>打开 <a href="https://formspree.io" target="_blank">formspree.io</a>，点击右上角 <code>Sign In</code>，用 <b>GitHub 账号</b>登录。</li>
+    <li>点击 <code>+ New Form</code>，创建 3 个表单：
+      <br> ① 「学生签到」— 命名随意
+      <br> ② 「周进度问卷」— 命名随意
+      <br> ③ 「同行评价」— 命名随意
+    </li>
+    <li>每个表单创建后，复制其 <b>Endpoint URL</b>（格式为 <code>https://formspree.io/f/xxxxx</code>）。</li>
+    <li>打开 <code>学生互动.html</code>，找到 3 处 <code>YOUR_FORMSPREE_XXX_URL</code>，替换为实际的 Endpoint URL。</li>
+    <li>打开本文件 <code>教师仪表盘.html</code>，将 3 个卡片链接 <code>YOUR_FORMSPREE_DASHBOARD_URL</code> 替换为你的 Formspree 后台地址（<code>https://formspree.io/forms</code>）。</li>
+    <li>将修改后的 HTML 文件上传到 GitHub Pages 仓库，刷新网站即可使用。</li>
+  </ol>
+  <p style="color:#667;font-size:12px;margin-top:12px">
+    💡 Formspree 免费版每月 50 条提交，对于小班教学足够。如需更多可升级付费版。
+  </p>
+</div>
+
+<div class="footer">
+  <p>© 黄正文（点暇斋）· 评审专家助手系统</p>
+</div>
+
+</body>
+</html>

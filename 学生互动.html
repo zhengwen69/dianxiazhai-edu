@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生互动 — 固废课程</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
+  color:#c8d6e5;min-height:100vh;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px}
+.header h1{font-size:28px;color:#fff;margin-bottom:4px}
+.header h1 span{color:#5b9bd5}
+.header .sub{color:#667;font-size:13px}
+.tabs{display:flex;gap:8px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.tab{
+  padding:10px 24px;border-radius:8px;cursor:pointer;
+  background:rgba(13,31,53,.65);border:1px solid rgba(91,155,213,.15);
+  color:#889;font-size:14px;transition:all .3s;
+}
+.tab:hover{border-color:#5b9bd5;color:#aab}
+.tab.active{background:rgba(91,155,213,.15);border-color:#5b9bd5;color:#5b9bd5}
+
+.form-wrap{max-width:700px;margin:0 auto}
+.form-section{display:none}
+.form-section.active{display:block}
+
+form{
+  background:rgba(13,31,53,.55);border:1px solid rgba(91,155,213,.12);
+  border-radius:12px;padding:30px;
+}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;color:#7fb8e0;font-size:13px;margin-bottom:6px;font-weight:600}
+.form-group label .req{color:#e74c3c}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:10px 14px;border-radius:6px;
+  background:rgba(0,0,0,.25);border:1px solid rgba(91,155,213,.15);
+  color:#c8d6e5;font-size:14px;font-family:inherit;
+  transition:border-color .3s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  outline:none;border-color:#5b9bd5;
+}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-group .hint{color:#556;font-size:11px;margin-top:4px}
+
+.rating-group{display:flex;gap:12px;align-items:center}
+.rating-group input[type="radio"]{display:none}
+.rating-group label.rating-star{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,.3);border:1px solid rgba(91,155,213,.1);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:14px;color:#667;transition:all .25s;
+}
+.rating-group input:checked+label.rating-star{
+  background:rgba(91,155,213,.2);border-color:#5b9bd5;color:#5b9bd5;
+}
+
+.submit-btn{
+  display:block;width:100%;padding:14px;border:none;border-radius:8px;
+  background:linear-gradient(135deg,#5b9bd5,#2e86c1);
+  color:#fff;font-size:16px;font-weight:600;cursor:pointer;
+  transition:all .3s;margin-top:10px;
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(91,155,213,.3)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+
+.success-msg{
+  display:none;text-align:center;padding:40px 20px;
+  color:#2ecc71;font-size:18px;font-weight:600;
+}
+.success-msg .emoji{font-size:48px;display:block;margin-bottom:12px}
+
+.info-banner{
+  background:rgba(91,155,213,.08);border:1px solid rgba(91,155,213,.2);
+  border-radius:8px;padding:16px 20px;margin-bottom:24px;
+  font-size:13px;color:#7fb8e0;line-height:1.8;
+  text-align:center;max-width:700px;margin-left:auto;margin-right:auto;
+}
+.info-banner code{background:rgba(0,0,0,.3);padding:2px 6px;border-radius:4px;font-size:12px}
+
+.back-btn{
+  display:inline-block;margin-bottom:24px;padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;text-align:center;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}
+
+.issue-link{text-align:center;margin-top:20px}
+.issue-link a{color:#5b9bd5;font-size:13px}
+
+@media (max-width:600px){
+  body{padding:20px 10px}
+  form{padding:18px 14px}
+  .tab{padding:8px 14px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <a class="back-btn" href="index.html">← 返回首页</a>
+</div>
+
+<div class="header">
+  <h1><span>学生互动</span>平台</h1>
+  <div class="sub">签到打卡 · 周进度反馈 · 同行评价</div>
+</div>
+
+<div class="info-banner">
+  📌 提交即记录 · 无需登录 · 每周更新<br>
+  如需与老师深度交流，请前往 
+  <a href="https://github.com/zhengwen69/cdu-gufei-web-demo/issues" target="_blank" style="color:#5b9bd5">GitHub Issues</a> 讨论区
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('checkin')">📝 签到打卡</div>
+  <div class="tab" onclick="switchTab('weekly')">📋 周进度问卷</div>
+  <div class="tab" onclick="switchTab('peer')">🤝 同行评价</div>
+</div>
+
+<div class="form-wrap">
+
+<!-- ===== 签到打卡 ===== -->
+<div class="form-section active" id="checkin">
+  <form id="form-checkin" action="YOUR_FORMSPREE_CHECKIN_URL" method="POST">
+    <div class="form-group">
+      <label><span class="req">*</span> 姓名</label>
+      <input type="text" name="姓名" required placeholder="请输入你的姓名">
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 学号</label>
+      <input type="text" name="学号" required pattern="[0-9]{12}" placeholder="12位学号">
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 第几周</label>
+      <select name="周数" required>
+        <option value="">请选择</option>
+        <option>第1周</option><option>第2周</option><option>第3周</option><option>第4周</option>
+        <option>第5周</option><option>第6周</option><option>第7周</option><option>第8周</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>今日学习状态</label>
+      <select name="状态">
+        <option value="">请选择（选填）</option>
+        <option>精力充沛</option><option>状态一般</option><option>疲惫但坚持</option><option>需要帮助</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>想对老师说的话（选填）</label>
+      <textarea name="留言" rows="3" placeholder="任何想跟老师说的话..."></textarea>
+    </div>
+    <button type="submit" class="submit-btn" id="btn-checkin">✓ 签到打卡</button>
+  </form>
+</div>
+
+<!-- ===== 周进度问卷 ===== -->
+<div class="form-section" id="weekly">
+  <form id="form-weekly" action="YOUR_FORMSPREE_WEEKLY_URL" method="POST">
+    <div class="form-group">
+      <label><span class="req">*</span> 姓名</label>
+      <input type="text" name="姓名" required>
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 学号</label>
+      <input type="text" name="学号" required pattern="[0-9]{12}">
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 第几周</label>
+      <select name="周数" required>
+        <option value="">请选择</option>
+        <option>第1周</option><option>第2周</option><option>第3周</option><option>第4周</option>
+        <option>第5周</option><option>第6周</option><option>第7周</option><option>第8周</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 本周完成内容</label>
+      <textarea name="完成内容" required rows="4" placeholder="具体描述本周完成的工作（写论文某章、做实验、读文献等）"></textarea>
+    </div>
+    <div class="form-group">
+      <label>遇到的主要困难</label>
+      <textarea name="困难" rows="3" placeholder="如实填写：资料找不到、数据异常、软件不会用等"></textarea>
+    </div>
+    <div class="form-group">
+      <label>需要老师答疑的问题（按优先级）</label>
+      <textarea name="问题" rows="3" placeholder="1.&#10;2.&#10;3."></textarea>
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 工作投入度</label>
+      <div class="rating-group">
+        <input type="radio" name="投入度" value="1" id="w1-1"><label for="w1-1" class="rating-star">1</label>
+        <input type="radio" name="投入度" value="2" id="w1-2"><label for="w1-2" class="rating-star">2</label>
+        <input type="radio" name="投入度" value="3" id="w1-3"><label for="w1-3" class="rating-star">3</label>
+        <input type="radio" name="投入度" value="4" id="w1-4"><label for="w1-4" class="rating-star">4</label>
+        <input type="radio" name="投入度" value="5" id="w1-5" checked><label for="w1-5" class="rating-star">5</label>
+      </div>
+      <div class="hint">1=几乎没做 · 5=全力以赴</div>
+    </div>
+    <div class="form-group">
+      <label>对教学的建议（选填）</label>
+      <textarea name="建议" rows="2" placeholder="任何对课程或教学的建议"></textarea>
+    </div>
+    <button type="submit" class="submit-btn" id="btn-weekly">✓ 提交周报</button>
+  </form>
+</div>
+
+<!-- ===== 同行评价 ===== -->
+<div class="form-section" id="peer">
+  <form id="form-peer" action="YOUR_FORMSPREE_PEER_URL" method="POST">
+    <div class="form-group">
+      <label><span class="req">*</span> 你的姓名</label>
+      <input type="text" name="评价人姓名" required>
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 你的学号</label>
+      <input type="text" name="评价人学号" required pattern="[0-9]{12}">
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 被评价同学姓名</label>
+      <input type="text" name="被评人姓名" required>
+    </div>
+    <div class="form-group">
+      <label>TA的设计/论文题目</label>
+      <input type="text" name="题目">
+    </div>
+    <div class="form-group">
+      <label>你认为TA的最大优点是什么</label>
+      <textarea name="优点" rows="2"></textarea>
+    </div>
+    <div class="form-group">
+      <label>最需要改进的地方</label>
+      <textarea name="改进" rows="2"></textarea>
+    </div>
+    <div class="form-group">
+      <label>如果让你来做，会有什么不同</label>
+      <textarea name="如果我来做" rows="2"></textarea>
+    </div>
+    <div class="form-group">
+      <label>从TA的工作中学到了什么</label>
+      <textarea name="学到了" rows="2"></textarea>
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 选题意义</label>
+      <div class="rating-group">
+        <input type="radio" name="选题意义" value="1" id="p1-1"><label for="p1-1" class="rating-star">1</label>
+        <input type="radio" name="选题意义" value="2" id="p1-2"><label for="p1-2" class="rating-star">2</label>
+        <input type="radio" name="选题意义" value="3" id="p1-3"><label for="p1-3" class="rating-star">3</label>
+        <input type="radio" name="选题意义" value="4" id="p1-4"><label for="p1-4" class="rating-star">4</label>
+        <input type="radio" name="选题意义" value="5" id="p1-5" checked><label for="p1-5" class="rating-star">5</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label><span class="req">*</span> 方案/方法合理性</label>
+      <div class="rating-group">
+        <input type="radio" name="方法合理性" value="1" id="p2-1"><label for="p2-1" class="rating-star">1</label>
+        <input type="radio" name="方法合理性" value="2" id="p2-2"><label for="p2-2" class="rating-star">2</label>
+        <input type="radio" name="方法合理性" value="3" id="p2-3"><label for="p2-3" class="rating-star">3</label>
+        <input type="radio" name="方法合理性" value="4" id="p2-4"><label for="p2-4" class="rating-star">4</label>
+        <input type="radio" name="方法合理性" value="5" id="p2-5" checked><label for="p2-5" class="rating-star">5</label>
+      </div>
+    </div>
+    <button type="submit" class="submit-btn" id="btn-peer">✓ 提交评价</button>
+  </form>
+</div>
+
+<!-- 提交成功 -->
+<div class="success-msg" id="success">
+  <span class="emoji">✅</span>
+  <span>提交成功！</span>
+  <p style="font-size:14px;color:#889;margin-top:8px">数据已记录，老师可查阅。</p>
+  <button onclick="resetForms()" style="margin-top:16px;padding:8px 24px;border-radius:6px;background:rgba(91,155,213,.15);border:1px solid #5b9bd5;color:#5b9bd5;cursor:pointer">再填一份</button>
+</div>
+
+<div class="issue-link">
+  <p style="color:#556;font-size:12px;margin-top:8px">💬 深度讨论请前往
+  <a href="https://github.com/zhengwen69/cdu-gufei-web-demo/issues" target="_blank">GitHub Issues →</a></p>
+</div>
+
+</div>
+
+<script>
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.form-section').forEach(f=>f.classList.remove('active'));
+  document.getElementById('success').style.display='none';
+  const map={checkin:0,weekly:1,peer:2};
+  document.querySelectorAll('.tab')[map[name]].classList.add('active');
+  document.getElementById(name).classList.add('active');
+}
+
+// Handle form submissions via AJAX to prevent page redirect
+document.querySelectorAll('form').forEach(form=>{
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const btn=form.querySelector('.submit-btn');
+    btn.disabled=true;btn.textContent='提交中...';
+    try{
+      const data=new FormData(form);
+      const resp=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+      if(resp.ok){
+        document.querySelectorAll('.form-section').forEach(f=>f.classList.remove('active'));
+        document.getElementById('success').style.display='block';
+        form.reset();
+      }else{
+        alert('提交失败，请稍后重试。');
+      }
+    }catch(err){
+      // Formspree may redirect; fallback to normal submit
+      form.submit();
+    }
+    btn.disabled=false;btn.textContent='✓ 提交';
+  });
+});
+
+function resetForms(){
+  document.getElementById('success').style.display='none';
+  document.querySelectorAll('.tab')[0].click();
+}
+</script>
+
+</body>
+</html>

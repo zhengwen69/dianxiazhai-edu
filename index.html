@@ -66,6 +66,7 @@ body{
   .header .motto-line::after{margin-top:4px}
   .header .pen-zhai{font-size:10px}
   .nav{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+  .nav-row2{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
   .card{padding:20px 14px}
   .card .icon{font-size:24px}
   .card .name{font-size:15px}
@@ -88,6 +89,7 @@ body{
   border-color: #5b9bd5; color: #fff;
   transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,.4);
 }
+.nav-row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:800px;width:100%;margin-top:16px}
 </style>
 </head>
 <body>
@@ -123,6 +125,19 @@ body{
     <div class="icon">🤖</div>
     <div class="name">教学团队</div>
     <div class="desc">9-Agent 协同体系</div>
+  </a>
+</div>
+
+<div class="nav-row2">
+  <a class="card" href="学生互动.html" style="border-color:rgba(46,204,113,.25)">
+    <div class="icon">📝</div>
+    <div class="name" style="color:#2ecc71">学生互动</div>
+    <div class="desc">签到打卡 · 周报 · 同行评价</div>
+  </a>
+  <a class="card" href="教师仪表盘.html" style="border-color:rgba(241,196,15,.25)">
+    <div class="icon">📊</div>
+    <div class="name" style="color:#f1c40f">教师仪表盘</div>
+    <div class="desc">数据查阅 · 答疑 · 管理</div>
   </a>
 </div>
 
