@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#9b59b6}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(155,89,182,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,8 +46,12 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
 .back-btn{
@@ -67,10 +76,8 @@ body{
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -81,67 +88,83 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第3周</span>：技术错配Ⅰ — 学习指南</h1>
+  <h1><span>第3周</span>：技术错配Ⅰ — 焚烧不是万能解</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第3周-技术错配Ⅰ.html" style="color:#5b9bd5">第3周-技术错配Ⅰ</a> | 纪实小说素材：S004-S006</div>
+  <div class="meta">
+    对应教师端：<a href="第3周-技术错配Ⅰ.html">第3周-技术错配Ⅰ</a> &nbsp;|&nbsp;
+    纪实小说素材：S004-S005 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §3 技术适用性的边界条件
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>预习焚烧/热解/气化的基本原理与反应机理</li>
-        <li>了解不同热处理技术的适用场景与边界条件</li>
-        <li>思考"技术错配"的含义：何时焚烧不是最优解？</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①焚烧/热解/气化的基本原理与反应条件 ②"3T+E"焚烧控制原则 ③烟气净化"五步法"（脱酸/除尘/脱硝/除二噁英/除重金属）。如有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《青龙湖》教学选段（素材编号 S004-S006）</li>
-        <li>相关标准：《生活垃圾焚烧污染控制标准》（GB 18485）</li>
-        <li>推荐文献：固废焚烧生命周期分析 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §3.1-§3.3：《技术适用性的边界条件》——核心论点：一个"好技术"用在了"错场景"上，就是技术错配。全球焚烧厂失败案例中，80%不是设备问题，而是技术-场景不匹配：输入端的垃圾组分与设计假设差异巨大。技术选择的第一问不是"这个技术好不好"，而是"这个技术在这个城市、这个垃圾结构、这个财政条件下，对不对？"。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S004-S005《青龙湖》：环评报告中技术数据完美——德国先进焚烧线，排放低于欧盟标准。投运一年后排放屡次超标。不是设备不好，是垃圾组分变了。当初设计时假设垃圾热值 6000 kJ/kg，实际来料热值忽高忽低（雨季 3500，旱季 5500）。这就是"技术错配"的活教材。</p>
+      <div class="excerpt">《青龙湖》教学选段 S004：「德国专家来看了一圈，皱着眉头说：'这些垃圾和我们设计模型里的不一样。'厂长急了：'垃圾就是垃圾，能有多不一样？'专家打开电脑，调出两张组分分析表：一张是设计假设，一张是采样实测。两张表放在一起，厂长沉默了。」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>焚烧、热解、气化的本质区别是什么？（温度/氧量/产物）</li>
-        <li>什么条件下焚烧是"正确技术选择"？什么条件下是"技术错配"？</li>
-        <li>《青龙湖》中所述的焚烧厂争议的技术根源是什么？</li>
+        <li>"好技术"和"对技术"的区别在哪里？能否用你自己的语言给"技术错配"下定义？</li>
+        <li>如果你来为一个城市选择焚烧技术方案，你会先问哪三个问题？</li>
+        <li>《青龙湖》中德国专家的"设计模型里的垃圾"与厂长眼中的"实际垃圾"之间的差距，说明了什么？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-purple">境</span></h3>
+      <p>🏷 叙·框·境·创 → 本周主导维度为 <strong style="color:#9b59b6">境</strong>：课堂模拟一场"环评答辩会"——学生分为技术方、环保审查方、居民代表方，在场景对抗中理解：当技术可行性遭遇现实约束，决策者的困境是什么。"境是炼真金——在场景中检验你从叙和框中获得的知识。"</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：技术错配三型</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 错配-修复框架 · 技术错配子维度</p>
       <ul>
-        <li><span class="tag tag-purple">核心概念</span> 焚烧工艺（炉排炉/流化床/回转窑）</li>
-        <li><span class="tag tag-teal">方法</span> 热平衡计算与燃烧效率分析</li>
-        <li><span class="tag tag-purple">核心概念</span> 烟气净化系统（脱酸/除尘/脱硝/二噁英控制）</li>
-        <li><span class="tag tag-green">产出</span> 绘制典型焚烧厂工艺流程图</li>
+        <li><span class="tag tag-purple">过度设计</span> 给一个小城市配了德国全自动焚烧线——技术先进但对不上本土条件。判别准则：设备复杂度 vs 本地运维能力；设备成本 vs 地方政府承受力</li>
+        <li><span class="tag tag-purple">低配高用</span> 用简易焚烧装备处理高危废物——技术等级低于需求。判别准则：排放标准匹配度；废物特性 vs 技术适用范围</li>
+        <li><span class="tag tag-purple">方向性错误</span> 选了焚烧而生物处理更合适的场景——技术路线本身错了。判别准则：垃圾有机质含量、含水率是否更适合生物处理</li>
+      </ul>
+      <p style="color:#556;font-size:12px;margin-top:8px">【黄正文教授核心判断】技术错配 ≠ 技术失败。技术本身可能是成功的、可靠的、在别处运行良好的。错配发生在"技术-场景"的接口上。</p>
+    </div>
+
+    <div class="card">
+      <h3>案例深潜：S004-S005 五段叙事拆解</h3>
+      <ul>
+        <li><strong style="color:#9b59b6">背景</strong>：青龙湖引进德国先进焚烧技术，设计假设基于欧洲垃圾组分</li>
+        <li><strong style="color:#9b59b6">冲突</strong>：运营一年后排放屡次超标——设备没问题，来料与设计假设不匹配</li>
+        <li><strong style="color:#9b59b6">决策</strong>：追加投资改造 vs 关停重建 vs 增加前处理分选线</li>
+        <li><strong style="color:#9b59b6">结局</strong>：增加前处理+调整燃烧参数+更严格的来料管控，排放达标但成本上升30%</li>
+        <li><strong style="color:#9b59b6">启示</strong>：技术引进不是"买一台设备"，而是"移植一个系统"。系统的输入端——垃圾组分、收运习惯、分类水平——决定了系统能否正常运行</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
-      <ul>
-        <li>参与讨论：你的城市适合建焚烧厂吗？基于什么判断？</li>
-        <li>小组活动：给定一个城市固废数据，推荐合适的热处理方案</li>
-        <li>注意记录"技术适用性分析"的判别框架</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S004-S006）：《青龙湖》焚烧厂环评争议中的技术路线之辩...</div>
-      <ul>
-        <li>分析维度：技术经济性 · 环境风险 · 社会可接受度</li>
-        <li>方法论语块：技术适用性矩阵、多目标决策</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>技术适用性矩阵 —— 构建多维评估表（指标：垃圾组分/热值/含水率/规模/成本承受力/排放标准 → 匹配最佳技术路线），可辅助技术比选决策。<br>
+        <strong>● 研究空白：</strong>中小城市固废热处理技术路径的边际条件研究 —— 现有文献多为大城市案例（>100万人口），中小城市（<50万人口）的固废量/组分/财政约束完全不同，什么规模配什么技术？缺乏系统性的实证研究。
+      </div>
     </div>
   </div>
 
@@ -150,19 +173,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第3章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>工艺比选报告：为指定城市推荐固废热处理技术方案（含理由）</li>
-        <li>绘制"垃圾技术"认知框架图</li>
+        <li>选择一个小型或中型城市（真实或假设），用黄正文教授<strong>"技术错配三型"框架</strong>分析其当前的固废热处理方案</li>
+        <li><strong>强制要求：</strong>①如果存在错配，指出属于哪一型（可能兼有）并给出替代方案 ②如果匹配，论证为什么恰好匹配（必须有证据：垃圾组分数据/热值/处理规模/财政条件）③用"技术适用性矩阵"呈现你的判断过程</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>技术分析深度（40%）| 比选逻辑严谨性（30%）| 数据支撑（30%）</li>
+        <li>错配诊断准确性（40%）| 证据充分性（30%）| 替代方案的工程可行性（30%）</li>
       </ul>
     </div>
   </div>
@@ -170,27 +192,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请用表格对比焚烧、热解和气化三种固废热处理技术的原理、温度范围、产物和适用场景。</div>
-      <div class="prompt">请帮我计算：某垃圾热值为 5000 kJ/kg，含水率 40%，焚烧处理时需添加多少辅助燃料？（假设条件自设）</div>
-      <div class="prompt">请从技术、经济、环境、社会四个维度，构建固废热处理技术选择的评价指标体系。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"技术错配三型"分类（过度设计/低配高用/方向性错误），对以下固废焚烧项目信息[待粘贴]进行诊断。要求：①判断属于哪种错配类型（可能兼有）②在分析中考虑垃圾组分、含水率、热值、处理规模、城市财政条件五个变量 ③如果存在错配，推荐替代技术路线并论证其适用性。注意：不要只说"这个技术不好"——要用黄正文教授的框架说明"这个技术在这个场景下不对"。</div>
+      <div class="prompt">请构建一个"技术适用性矩阵"Excel模型框架（给出逻辑即可，无需真正写代码），包含5个评估指标和3个备选技术方案，各指标赋权后输出评分。请用《青龙湖》案例的数据作为示例输入。</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 AI 对比国内外焚烧排放标准差异</li>
-        <li>探索 Aspen Plus 或类似工具在焚烧模拟中的应用</li>
-        <li>利用 AI 生成"技术适用性判断"决策树</li>
+        <li>用 AI 构建技术适用性矩阵的权重灵敏度分析</li>
+        <li>用 AI 对比不同国家焚烧技术引进的地方化调适策略</li>
+        <li>可对接 Agent-S（案例解读员）进行《青龙湖》选段 S004-S005 拆解</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: 固废焚烧三大工艺类型及各自特点？</li>
-        <li>Q2: 什么是"3T+E"焚烧控制原则？</li>
-        <li>Q3: 二噁英的生成条件与控制措施？</li>
-        <li>Q4: 如何判断一个城市是否适合建设焚烧厂？</li>
-        <li>Q5: 烟气净化"五步法"是什么？</li>
+        <li>Q1: 黄正文教授"技术错配三型"各是什么？每型给出一个判别准则</li>
+        <li>Q2: "过度设计"与"低配高用"的区分关键是什么？</li>
+        <li>Q3: 为什么说技术错配 ≠ 技术失败？</li>
+        <li>Q4: 技术适用性矩阵必须包含哪五个核心变量？</li>
+        <li>Q5: 《青龙湖》案例中最关键的技术错配点是什么？</li>
       </ul>
     </div>
   </div>
@@ -204,7 +225,7 @@ body{
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>

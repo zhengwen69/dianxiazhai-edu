@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#2ecc71}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(46,204,113,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,9 +46,15 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
 .tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -66,10 +77,8 @@ body{
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -80,67 +89,83 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第4周</span>：技术错配Ⅱ — 学习指南</h1>
+  <h1><span>第4周</span>：技术错配Ⅱ — 生物处理的"垃圾时间"</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第4周-技术错配Ⅱ.html" style="color:#5b9bd5">第4周-技术错配Ⅱ</a> | 纪实小说素材：S004-S006</div>
+  <div class="meta">
+    对应教师端：<a href="第4周-技术错配Ⅱ.html">第4周-技术错配Ⅱ</a> &nbsp;|&nbsp;
+    纪实小说素材：S006 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §4 时间维度下的技术选择
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>预习好氧堆肥与厌氧消化的基本原理及关键参数</li>
-        <li>了解生物处理技术的"垃圾时间"维度：时间尺度与效率</li>
-        <li>比较不同生物处理技术的碳足迹与能量产出</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①好氧堆肥的四个阶段及温度曲线 ②厌氧消化的四大微生物阶段 ③C:N比对堆肥过程的影响机制。如有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《青龙湖》续章（素材编号 S004-S006）</li>
-        <li>相关规范：《城镇垃圾农用控制标准》（GB 8172）</li>
-        <li>推荐文献：餐厨垃圾厌氧消化工艺优化 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §4：《时间维度下的技术选择》——核心论点：不是所有技术的时间尺度都一样。焚烧=小时级，堆肥=周级，厌氧=月级。技术选择不仅是"选什么"，更是"选多快"。但"快"一定更好吗？焚烧立竿见影但高碳排放；堆肥慢但碳汇正向。黄正文教授提出"垃圾时间"概念——工艺时间、环境效益兑现时间、投资回收时间三者在不同的技术路线中有不同的组合，而政策偏好"快"的倾向正在系统性地淘汰"慢但好"的技术。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S006《青龙湖》续：堆肥厂运行三年，账面上未盈利，面临关停。但环境效益——碳减排、土壤改良——的"价值兑现"还需要更长的时间。谁来为"慢价值"买单？</p>
+      <div class="excerpt">《青龙湖》教学选段 S006：「三年了，堆肥厂没赚过一分钱。财政局长在预算会上拍了桌子：'三年投了400万，连个水花都没有！'环保局长小声说：'可是土壤的有机质含量提高了。'财政局长冷笑：'有机质能发工资吗？'环保局长沉默了。他算过，如果把这三年碳减排量拿到碳市场上去卖……但他没说出来，因为碳交易平台还没建好。」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>好氧堆肥与厌氧消化的核心区别是什么？（氧气条件/产物/时间）</li>
-        <li>为什么说生物处理是"时间换空间"的策略？</li>
-        <li>"垃圾时间"维度如何影响技术选择？</li>
+        <li>为什么"快"的技术方案在政策决策中天然占优？这是合理的偏好吗？</li>
+        <li>"慢价值"为什么在经济核算中容易被忽略？如何让它被"看见"？</li>
+        <li>如果你来做碳交易与固废处理的接口设计，你会怎么让堆肥厂的碳减排价值可交易？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-green">境→创</span></h3>
+      <p>🏷 叙·框·境·创 → 本周属 <strong style="color:#2ecc71">境→创</strong> 交界：前半场景分析——以《青龙湖》堆肥厂困境为情境（境）；后半创造性方案设计——"如果你是决策者，如何设计一种让'慢价值'被看见的制度？"（创）</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：垃圾时间三维框架</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 独创概念 · 垃圾时间</p>
       <ul>
-        <li><span class="tag tag-green">核心概念</span> 好氧堆肥工艺（条垛/静态/反应器）</li>
-        <li><span class="tag tag-teal">方法</span> 厌氧消化工艺（湿式/干式）及沼气利用</li>
-        <li><span class="tag tag-green">核心概念</span> 生物干化与机械生物处理（MBT）</li>
-        <li><span class="tag tag-teal">方法</span> 有机固废处理的碳减排核算</li>
+        <li><span class="tag tag-green">工艺时间</span> 技术本身完成处理所需的时间跨度——焚烧2小时，堆肥30天，厌氧45天</li>
+        <li><span class="tag tag-green">环境效益兑现时间</span> 从处理完成到环境效益"可测量/可确认"的时间延迟——碳减排效益的"兑现"往往滞后数月到数年</li>
+        <li><span class="tag tag-green">投资回收时间</span> 经济成本回收的周期——设备投资/运营成本/政府补贴退出后的盈亏平衡点</li>
+      </ul>
+      <p style="color:#556;font-size:12px;margin-top:8px">【黄正文教授核心判断】三维共同决定技术选择的"可行时间域"。当前政策评价体系只看"工艺时间"，而忽略另外两维——这是"慢技术"被系统性淘汰的制度根源。</p>
+    </div>
+
+    <div class="card">
+      <h3>案例深潜：S006 五段叙事拆解</h3>
+      <ul>
+        <li><strong style="color:#2ecc71">背景</strong>：青龙湖堆肥厂为解决厨余垃圾而建，年处理2万吨</li>
+        <li><strong style="color:#2ecc71">冲突</strong>：三年账面亏损，产物销路不畅，政府补贴到期——"慢技术"遭遇"快考核"</li>
+        <li><strong style="color:#2ecc71">决策</strong>：关停 vs 转型 vs 补贴延续 vs 引入碳交易机制</li>
+        <li><strong style="color:#2ecc71">结局</strong>：引入碳交易试点，让堆肥的碳减排价值可交易——"慢价值"终于被制度捕捉</li>
+        <li><strong style="color:#2ecc71">启示</strong>：不是堆肥"不好"——是制度没有给它"被发现"的窗口。"慢技术"需要"快制度"来支撑——如碳交易、绿色认证、生态补偿</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
-      <ul>
-        <li>参与讨论：厨余垃圾应该堆肥还是厌氧？依据是什么？</li>
-        <li>小组活动：设计一个小型社区厨余堆肥方案</li>
-        <li>注意记录"垃圾时间"分析框架</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S004-S006续）：《青龙湖》生物处理厂的运行困境与时间维度...</div>
-      <ul>
-        <li>分析维度：工艺时间 · 环境效益时间 · 投资回收期</li>
-        <li>方法论语块：生命周期评价（LCA）、能量平衡分析</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>LCA（生命周期评价）中时间维度的敏感性分析——分析工艺时间、碳减排兑现时间、投资回收期三个变量如何影响总效益评估。<br>
+        <strong>● 研究空白：</strong>不同固废处理技术的"碳中和时间表"比较研究——焚烧可以立刻减容但产生碳债务，堆肥/厌氧消化的碳汇效益需要时间积累。如何在政策评价中给"时间偏好"一个公平的定价？
+      </div>
     </div>
   </div>
 
@@ -149,19 +174,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第4章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>工艺设计：为某餐厨垃圾处理厂设计堆肥/厌氧工艺参数</li>
-        <li>绘制"垃圾时间"分析图（技术×时间矩阵）</li>
+        <li>选择一个城市（真实数据或合理假设），用黄正文教授<strong>"垃圾时间三维"框架</strong>为它的厨余垃圾处理提供技术推荐</li>
+        <li><strong>强制要求：</strong>①必须给出三维的时间估算（工艺时间/环境效益兑现时间/投资回收时间）②比较至少两种技术路线的时间维度差异 ③讨论：为什么不能用"最短工艺时间=最优"的逻辑做决策？在什么条件下"慢技术"反而是更好的选择？</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>工艺参数合理性（40%）| 碳减排分析（30%）| 方案创新性（30%）</li>
+        <li>三维时间估算的合理性（40%）| "慢价值"制度设计创新性（30%）| 碳减排分析（30%）</li>
       </ul>
     </div>
   </div>
@@ -169,27 +193,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请用表格对比好氧堆肥与厌氧消化的工艺条件（温度/时间/含水率/C:N比/产物），并注明各自的适用场景。</div>
-      <div class="prompt">假设某城市日产餐厨垃圾 100 吨（含水率 75%，有机质 85%），请估算厌氧消化产沼量和堆肥成品量。</div>
-      <div class="prompt">请从"垃圾时间"的视角，分析为什么生物处理比焚烧更慢，但在碳中和背景下更有战略意义。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"垃圾时间三维"框架（工艺时间 / 环境效益兑现时间 / 投资回收时间），构建一个简单的比较模型，用于评估[某城市]选择焚烧 vs 厌氧消化 vs 好氧堆肥三种厨余处理方案的时间效益差异。假设条件可自行设定但必须清晰标注。最终请给出推荐方案并解释。要求：不能仅以"工艺时间最短"为决策标准——必须同时纳入三维。</div>
+      <div class="prompt">请从制度设计角度分析：为什么当前的固废管理评价体系倾向于淘汰"慢技术"？如果要让堆肥/厌氧的"慢价值"（碳汇、土壤改良）被市场看见和定价，需要哪些制度创新？（可从碳交易、绿色认证、生态补偿等方向展开）</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 AI 生成有机固废生物处理的 LCA 评价框架</li>
-        <li>探索 BioWin 或类似厌氧消化模拟工具</li>
-        <li>利用 AI 对比不同城市餐厨处理技术路线的减排效益</li>
+        <li>用 AI 构建 LCA 中时间维度敏感性分析模型框架</li>
+        <li>用 AI 梳理全球碳交易与固废处理对接的典型案例</li>
+        <li>可对接 Agent-4（作业辅导员）进行工艺参数计算辅导</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: 好氧堆肥的四个阶段及其温度特征？</li>
-        <li>Q2: 厌氧消化的四大微生物阶段？</li>
-        <li>Q3: C:N 比对堆肥过程的影响机制？</li>
-        <li>Q4: 什么是"垃圾时间"维度？</li>
-        <li>Q5: MBT 工艺的完整流程是什么？</li>
+        <li>Q1: "垃圾时间三维"分别是哪三维？</li>
+        <li>Q2: 为什么"工艺时间"最短的技术不一定是"最优"技术？</li>
+        <li>Q3: 环境效益兑现时间的"延迟"带来什么制度挑战？</li>
+        <li>Q4: 黄正文教授认为"慢技术"被系统性淘汰的制度根源是什么？</li>
+        <li>Q5: 碳交易机制如何解决"垃圾时间"中的价值兑现困境？</li>
       </ul>
     </div>
   </div>
@@ -203,7 +226,7 @@ body{
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>

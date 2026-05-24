@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#e67e22}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(230,126,34,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,10 +46,16 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-orange{background:rgba(230,126,34,.15);color:#e67e22}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
+.tag-yellow{background:rgba(241,196,15,.15);color:#f1c40f}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -67,10 +78,8 @@ body{
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -81,67 +90,83 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第6周</span>：行为错配Ⅱ — 学习指南</h1>
+  <h1><span>第6周</span>：行为错配Ⅱ — 生产者为什么不负责</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第6周-行为错配Ⅱ.html" style="color:#5b9bd5">第6周-行为错配Ⅱ</a> | 纪实小说素材：S007-S009</div>
+  <div class="meta">
+    对应教师端：<a href="第6周-行为错配Ⅱ.html">第6周-行为错配Ⅱ</a> &nbsp;|&nbsp;
+    纪实小说素材：S009 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §6 制度设计的"激励相融"困境
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>预习生产者责任延伸制度（EPR）的理论基础与国际实践</li>
-        <li>了解固废管理的经济学工具：押金制/回收补贴/填埋税/排污权交易</li>
-        <li>思考"行为错配"的制度层面：如何让生产者改变行为？</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①生产者责任延伸制度（EPR）的基本概念与国际模式 ②中国EPR相关法规体系 ③循环经济"3R"原则。如有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《杨柳坝与刘家湾》续章（素材编号 S007-S009）</li>
-        <li>相关政策：《关于推行生产者责任延伸制度的意见》</li>
-        <li>推荐文献：EPR 制度在电子废物管理中的应用 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §6.1-§6.3：《制度设计的"激励相融"困境》——核心论点：好的制度让生产者的自利行为恰好等于社会期望的行为；坏的制度让生产者在"合规"与"逃避"之间反复计算。黄正文教授用"激励相容"（incentive compatibility）理论分析了中国EPR制度的"落地变形"——政策文本很完美，但到了基层，企业一算账发现"合规成本 > 罚款 × 被查概率"，于是理直气壮地选择逃避。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S009《杨柳坝与刘家湾》续：一家村办塑料厂被要求回收自己产品的包装废物。厂长算了一笔账——"我卖一个赚3毛，回收一个要花5毛"。于是他把责任推给废品回收站。制度设计出了什么问题？</p>
+      <div class="excerpt">《杨柳坝与刘家湾》教学选段 S009：「老赵把账本往桌上一摊：'一个塑料袋卖5毛，成本2毛，净赚3毛。现在让我回收，收运加处理，一个袋子至少5毛——每卖一个我倒赔2毛。你说我做这生意干啥？'县环保局的人说：'不回收要罚款。'老赵笑了：'去年罚款交了800块。我要是老老实实回收，一年得多花3万。你是厂长你怎么选？'」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>EPR 制度如何从源头改变固废产生量？</li>
-        <li>为什么"污染者付费"原则在实践中常常失效？</li>
-        <li>《杨柳坝与刘家湾》中企业行为变化的制度驱动力是什么？</li>
+        <li>老赵的"我卖一个赚3毛，回收一个花5毛"——这是一个行为错配还是制度错配？</li>
+        <li>"合规成本 > 罚款 × 被查概率"——这个不等式在什么条件下才能翻转？</li>
+        <li>如果你来设计制度，你会如何让老赵主动回收而不是被动逃避？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-yellow">框→境</span></h3>
+      <p>🏷 叙·框·境·创 → 本周属 <strong style="color:#f1c40f">框→境</strong>：前半用EPR错配框架分析制度的激励结构（框），后半设计"让厂长主动回收"的制度方案（境→创）。</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：EPR错配三源</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 错配-修复框架 · 制度行为错配子维度</p>
       <ul>
-        <li><span class="tag tag-orange">核心概念</span> 生产者责任延伸（EPR）的国际模式比较</li>
-        <li><span class="tag tag-teal">方法</span> 固废管理的经济政策工具矩阵</li>
-        <li><span class="tag tag-orange">核心概念</span> 循环经济与固废管理的制度设计</li>
-        <li><span class="tag tag-green">产出</span> 绘制"固废管理政策工具"分类图</li>
+        <li><span class="tag tag-orange">责任界定模糊</span> 谁回收？回收多少？标准是什么？钱谁出？——四个问题不清晰，责任就是一张空文</li>
+        <li><span class="tag tag-orange">执行成本转嫁</span> 名义上生产者付费→实际上消费者买单（涨价）或政府买单（补贴）或无人买单（非法倾倒）</li>
+        <li><span class="tag tag-orange">监督失灵</span> 监管者与被监管者之间存在严重信息不对称——企业比政府更清楚自己产生了多少、回收了多少</li>
+      </ul>
+      <p style="color:#556;font-size:12px;margin-top:8px">【黄正文教授核心判断】EPR制度的核心矛盾不在"要不要负责"，而在"谁付钱"和"谁监督"。"激励相容"是检验制度是否可运行的唯一标准。</p>
+    </div>
+
+    <div class="card">
+      <h3>案例深潜：S009 五段叙事拆解</h3>
+      <ul>
+        <li><strong style="color:#e67e22">背景</strong>：村办塑料厂年利润50万，工人20名，主产农用薄膜和包装袋</li>
+        <li><strong style="color:#e67e22">冲突</strong>：被要求承担包装回收责任，年增成本30万——合规意味着利润蒸发60%</li>
+        <li><strong style="color:#e67e22">决策</strong>：外包给废品站（责任转嫁但效果不可控）vs 自建回收线（投入大但可控）vs 联合多家厂共建回收体系（规模效应）</li>
+        <li><strong style="color:#e67e22">结局</strong>：选择了"三家联合共建回收体系+政府第一年补贴30%启动成本"——试点成功，证明了"联合共建"的规模效应</li>
+        <li><strong style="color:#e67e22">启示</strong>：制度设计需要给生产者"划算的出路"——不只是惩罚，而是让合规成为企业的理性选择。联合共建把固定成本摊薄，是解决小企业EPR困境的有效路径</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
-      <ul>
-        <li>参与辩论：EPR 制度 vs 终端处理，哪个更有长期效益？</li>
-        <li>小组活动：为某种特定废物（如包装废弃物）设计 EPR 方案</li>
-        <li>注意记录"垃圾模式"的制度维度</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S007-S009续）：《杨柳坝与刘家湾》中产业转型的固废减量之路...</div>
-      <ul>
-        <li>分析维度：制度设计 · 企业行为 · 市场机制</li>
-        <li>方法论语块：政策工具分类学、制度经济学</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>制度经济学的"激励相容"在固废政策设计中的应用——画出EPR制度的委托-代理模型：政府（委托人）vs 企业（代理人），分析信息不对称如何导致监管失灵。<br>
+        <strong>● 研究空白：</strong>EPR制度在中国实施中的"落地变形"——政策文本很完善，但在县/镇/村层面的执行率极低。为什么？可选取同一政策在不同层级/地区的执行差异进行田野调查。
+      </div>
     </div>
   </div>
 
@@ -150,19 +175,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第6章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>政策分析报告：评估电子废物EPR政策在某一地区的实施效果</li>
-        <li>设计一个理想的"垃圾模式"政策组合方案</li>
+        <li>选取一种产品（快递包装/外卖餐盒/电子废物/农用薄膜），用黄正文教授<strong>"EPR错配三源"框架</strong>分析：当前中国的EPR制度在这个产品上是否存在"激励不相容"？</li>
+        <li><strong>强制要求：</strong>①画出该制度的"委托-代理"模型简图（政府→企业→消费者的责任/信息/资金流向）②诊断三源中哪一个最严重 ③设计一个改进方案，让制度满足"激励相容"——让合规成为企业的理性选择（不是道德选择）</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>政策分析深度（40%）| 方案设计合理性（30%）| 国际视角（30%）</li>
+        <li>委托-代理模型的正确性（40%）| 激励相容方案合理性（30%）| 制度创新性（30%）</li>
       </ul>
     </div>
   </div>
@@ -170,27 +194,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请对比欧盟、日本、中国的EPR制度在电子废物管理中的异同，用表格呈现并分析各自的优缺点。</div>
-      <div class="prompt">请从制度经济学的角度，分析为什么"填埋税"可以改变固废处理的行为模式。</div>
-      <div class="prompt">请帮我设计一套针对快递包装废弃物的EPR政策框架，包含责任主体、费用机制和监督体系。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"EPR错配三源"框架（责任界定模糊/执行成本转嫁/监督失灵），对比分析中国与[德国/日本/韩国]在[某类产品废物]的EPR制度设计差异。要求：①以表格形式呈现三源对比 ②诊断中国方案在"激励相容"上的不足 ③考虑企业规模差异（大型 vs 中小型）对激励效果的不同影响。结论要求：指出中国制度最需要从哪个维度进行修正。</div>
+      <div class="prompt">请以《杨柳坝与刘家湾》S009老赵的塑料厂为背景，设计一套满足"激励相容"的包装废物回收制度。要求：①量化老赵的成本-收益结构 ②画出改进后的委托-代理关系图 ③论证为什么新制度下老赵会"自愿"回收——而不是因为害怕罚款。</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 AI 梳理全球EPR制度的发展趋势</li>
-        <li>探索 Material Flow Analysis（MFA）在政策评估中的应用</li>
-        <li>利用 AI 生成"政策组合"效果模拟分析</li>
+        <li>用 AI 构建EPR制度的"激励相容"分析框架</li>
+        <li>用 AI 梳理全球EPR制度的最佳实践与失败案例</li>
+        <li>可对接 Agent-4（作业辅导员）进行制度经济学模型分析</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: EPR 制度的三大核心要素是什么？</li>
-        <li>Q2: 列举五种固废管理的经济政策工具。</li>
-        <li>Q3: "污染者付费"原则在固废管理中的局限性是什么？</li>
-        <li>Q4: 循环经济的"3R"与固废管理的关系？</li>
-        <li>Q5: 中国EPR制度当前面临的主要挑战是什么？</li>
+        <li>Q1: 黄正文教授"EPR错配三源"是什么？</li>
+        <li>Q2: 什么是"激励相容"？用老赵的案例说明。</li>
+        <li>Q3: "合规成本 > 罚款 × 被查概率"——翻转这个不等式需要改变哪些变量？</li>
+        <li>Q4: 为什么小企业在EPR制度下面临更大的合规困难？</li>
+        <li>Q5: "联合共建"为什么能解决小企业的EPR困境？</li>
       </ul>
     </div>
   </div>
@@ -204,7 +227,7 @@ body{
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>

@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#00b894}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,6 +31,10 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
   padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
@@ -41,8 +46,20 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
+.track-label{
+  display:inline-block;padding:4px 12px;border-radius:10px;font-size:11px;font-weight:600;margin-bottom:8px
+}
+.track-a{background:rgba(91,155,213,.15);color:#5b9bd5}
+.track-b{background:rgba(46,204,113,.15);color:#2ecc71}
+.track-c{background:rgba(155,89,182,.15);color:#9b59b6}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -62,13 +79,12 @@ body{
   background:rgba(13,31,53,.65);transition:all .3s;
 }
 .week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .disabled{color:#445;pointer-events:none;opacity:.4}
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -79,88 +95,145 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第8周</span>：思维整合 — 学习指南</h1>
-  <div class="sub">以学为中心 · 八周思维重塑 · 课程总结</div>
-  <div class="meta">对应教师端：<a href="第8周-思维整合.html" style="color:#5b9bd5">第8周-思维整合</a> | 纪实小说素材：全21条教学选段</div>
+  <h1><span>第8周</span>：思维整合 — 从四重错配到五维统一</h1>
+  <div class="sub">以学为中心 · 八周思维重塑 · 综合研讨 · 模拟决策 · 输出产出</div>
+  <div class="meta">
+    对应教师端：<a href="第8周-思维整合.html">第8周-思维整合</a> &nbsp;|&nbsp;
+    纪实小说素材：S001-S021 全回顾 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §8 工程师的整全视野
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>回顾第1-7周全部知识要点，整理个人知识体系</li>
-        <li>梳理"空间→技术→行为→人文"四重错配的递进逻辑</li>
-        <li>准备综合研讨发言：你如何理解"从废弃物到资产"的完整路径？</li>
-      </ul>
+      <h3>前置自检（全部学习完成确认）</h3>
+      <div class="precheck">⚠ 请确认：①是否已完成第1-7周所有学习任务？②是否已将"空间-技术-行为-人文-时间"五维内化为自己的认知框架？③是否已初步确定结课产出方向？（论文/设计/教改 三选一）</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说全7部教学选段（素材编号 S001-S021）回顾</li>
-        <li>课程核心文献综述</li>
-        <li>推荐阅读：固废管理的系统性思维 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §8：《工程师的整全视野》——核心论点：不是把五个维度"加起来"，而是理解它们之间的共生与对抗。空间错配会加剧行为错配（没地方处理→没人愿意分），行为错配会固化技术路径依赖（大家不分→只能烧），技术路径依赖会放大人文不公（焚烧厂总建在弱势社区）。打破这个循环需要"系统性再设计"。黄正文教授称之为"五维统一"——从单点优化转向系统重构。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说全回顾</h3>
+      <p>S001-S021 七部小说全景：《龙栖湾》→《青龙湖》→《杨柳坝与刘家湾》→《三多里巷》——四重错配的叙事闭环。从空间到技术到行为到人文，每一部小说对应一种错配的"叙事原型"。思考：叙事如何变成了分析框架？分析框架如何引导行动？</p>
+      <div class="excerpt">全回顾视角：当我们将S001、S004、S007、S010四个起点连在一起——龙栖湾的土地贬值、青龙湖的技术与来料错配、杨柳坝的分类习惯难改、三多里巷的尊严被忽略——四部小说构成了中国固废治理的四重面孔。每一张面孔后面都是"错配"，而修复之路从来不是技术单向突进，而是空间·技术·行为·人文四维的同步调适。</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>八周学习后，你对"固体废弃物"的认知发生了哪些变化？</li>
-        <li>"叙·框·境·创"四维教学法对你的思维有何重塑？</li>
-        <li>如果可以重来，你会在哪一周投入更多时间？为什么？</li>
+        <li>八周学习后，你对"固体废弃物"的认知发生了哪些变化？用一句话概括。</li>
+        <li>"叙·框·境·创"如何塑造了你的工程思维？</li>
+        <li>如果回到第1周重来，你会在哪一周投入更多时间？为什么？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-teal">创</span></h3>
+      <p>🏷 叙·框·境·创 → 本周主导维度为 <strong style="color:#00b894">创</strong>：这是八周的顶点，"创造致用"——你不再是知识的接收者，而是知识的生产者和应用者。这一周你要做三件事：①用五维统一矩阵做一次完整的系统诊断 ②在模拟决策中当一次"城市管理者" ③选一条轨道，产出属于你自己的成果。"创是开新篇——学习的终点不是考试，是你用这门课的方法做出了什么。"</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：五维统一诊断矩阵</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 八周方法论结晶</p>
+      <table style="width:100%;font-size:12px;color:#aabbcc;border-collapse:collapse;text-align:center">
+        <tr style="border-bottom:1px solid rgba(0,184,148,.15)">
+          <th style="padding:8px;color:#7fb8e0">维度</th><th style="padding:8px;color:#e67e22">空间</th><th style="padding:8px;color:#9b59b6">技术</th><th style="padding:8px;color:#f1c40f">行为</th><th style="padding:8px;color:#e74c3c">人文</th><th style="padding:8px;color:#2ecc71">时间</th>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,184,148,.08)">
+          <td style="padding:8px;color:#7fb8e0">诊断方法</td><td style="padding:8px">选址正义评价</td><td style="padding:8px">技术适用性矩阵</td><td style="padding:8px">行为错配四因</td><td style="padding:8px">人文错配三维</td><td style="padding:8px">垃圾时间分析</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(0,184,148,.08)">
+          <td style="padding:8px;color:#7fb8e0">修复路径</td><td style="padding:8px">空间重新规划</td><td style="padding:8px">技术重新匹配</td><td style="padding:8px">Nudge干预设计</td><td style="padding:8px">对话机制重建</td><td style="padding:8px">制度时间偏好调整</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;color:#7fb8e0">小说对应</td><td style="padding:8px">《龙栖湾》</td><td style="padding:8px">《青龙湖》</td><td style="padding:8px">《杨柳坝与刘家湾》</td><td style="padding:8px">《三多里巷》</td><td style="padding:8px">全系列</td>
+        </tr>
+      </table>
+      <p style="color:#556;font-size:12px;margin-top:12px">【关键：交互效应】五维不是独立存在的。一个维度的错配会通过交互效应传导到其他维度。在诊断时，必须画出维度间的因果链。</p>
+    </div>
+
+    <div class="card">
+      <h3>综合研讨（课堂活动）</h3>
       <ul>
-        <li><span class="tag tag-teal">核心概念</span> 固废管理的系统性思维：五维统一框架</li>
-        <li><span class="tag tag-teal">方法</span> 综合案例分析：从识别到解决的完整路径</li>
-        <li><span class="tag tag-teal">核心概念</span> 模拟决策：给定场景下的固废管理方案制定</li>
-        <li><span class="tag tag-teal">产出</span> 绘制个人"固废思维重塑"全景图</li>
+        <li>每人3分钟分享：①我的认知发生了什么变化？②我在哪一周经历了"思维转折"？③"叙·框·境·创"如何应用于我的研究？</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
+      <h3>模拟决策（课堂活动）</h3>
       <ul>
-        <li>综合研讨：每人3分钟分享八周学习的最深刻体会</li>
-        <li>模拟决策：作为城市管理者，制定一套完整的固废治理方案</li>
-        <li>圆桌讨论："叙·框·境·创"如何应用于你自己的研究课题？</li>
+        <li>给定一个虚拟城市（含真实数据维度：人口/垃圾量/财政/现有设施/社区分布），你作为"城市管理者"制定一套固废综合治理五维方案。必须同时回答空间/技术/行为/人文/时间五个维度的决策，并论证维度间的协同效果</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">综合回顾：从《龙栖湾》到《三多里巷》——四重错配的完整叙事图谱...</div>
-      <ul>
-        <li>分析维度：空间×技术×行为×人文 综合诊断</li>
-        <li>方法论语块：系统动力学、综合决策框架</li>
-      </ul>
+      <h3>方法论语块 + 研究空白（论文选题池）</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>"五维统一"方法论——从单点优化到系统再设计的完整流程。<br>
+        <strong>● 研究空白（论文选题池）：</strong>①固废设施"双许可证"制度研究 ②中小城市固废技术路径边际条件研究 ③城乡分类"态度-行为缺口"实证研究 ④EPR制度"落地变形"基层案例研究 ⑤固废管理"五维统一"评价指标体系设计。
+      </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>✍️ 课后作业</h2>
+    <h2>✍️ 结课产出：三轨并行（选其一）</h2>
+
     <div class="card">
-      <h3>作业要求</h3>
+      <span class="track-label track-a">轨道A</span>
+      <h3>课程论文</h3>
       <ul>
-        <li><strong>课程论文（期末考核）：</strong>自选主题，运用"五维认知框架"分析一个固废问题，8000字以内 [待教师发布具体要求]</li>
-        <li>提交八周学习总结（含个人知识导图）</li>
-        <li>课程反馈：对"叙·框·境·创"教学法的匿名评价</li>
+        <li><strong>选题要求：</strong>自选固废问题，运用黄正文教授"五维统一诊断矩阵"（至少覆盖三维）</li>
+        <li><strong>字数：</strong>8000字以内</li>
+        <li><strong>强制要求：</strong>①标注使用的框架来源 ②标注引用的方法论语块 ③讨论你使用的框架中有什么不足——你发现了但框架尚未覆盖的"第六维"是什么？</li>
+        <li><strong>评分侧重：</strong>分析深度（40%）| 框架运用（30%）| 创新性（30%）</li>
       </ul>
     </div>
+
+    <div class="card">
+      <span class="track-label track-b">轨道B</span>
+      <h3>课程设计</h3>
+      <ul>
+        <li><strong>设计方向（三选一）：</strong>①卫生填埋场工艺设计 ②垃圾焚烧厂工艺方案 ③餐厨垃圾堆肥/厌氧消化厂设计</li>
+        <li><strong>强制要求：</strong>运用五维矩阵中的至少三维（空间+技术必选，行为/人文/时间任选一），论证设计方案的"五维合理性"</li>
+        <li><strong>产出物：</strong>①设计说明书（3000-5000字）②核心工艺流程图 ③关键参数计算书 ④选址/技术/环境影响三维论证</li>
+        <li><strong>评分侧重：</strong>工程合理性（40%）| 五维框架运用（30%）| 创新性（30%）</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="track-label track-c">轨道C</span>
+      <h3>教改论文</h3>
+      <ul>
+        <li><strong>选题方向（三选一）：</strong>①"叙·框·境·创"四维教学法在工程类研究生课程中的效果分析 ②纪实小说云驱动教学模式的接受度与学习效果研究 ③"以学为中心"学习子门户的可用性与有效性评估</li>
+        <li><strong>数据来源：</strong>①自身八周学习日志 ②学习园地进度记录 ③同学互动社区数据 ④对"叙·框·境·创"各环节的体验评估</li>
+        <li><strong>强制要求：</strong>①必须有实证数据或系统反思（非纯感想）②必须引用、体现、联系黄正文教授有关《固体废弃物污染防治技术》课程有且不仅限于叙框境创教育教学教研教改的理念文本 ③必须提出可操作的教学改进建议</li>
+        <li><strong>字数：</strong>5000-8000字</li>
+        <li><strong>评分侧重：</strong>分析深度（40%）| 数据支撑（30%）| 改进建议可操作性（30%）</li>
+        <li style="color:#00b894;font-size:12px;margin-top:8px">💡 特殊价值：此轨道直接为教师端教改论文提供素材池——优秀学生论文可成为教改论文的合作基础或引用来源。</li>
+      </ul>
+    </div>
+
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交课程论文与总结（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交结课产出（建设中）</p>
     </div>
+
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>额外提交：八周学习总结</h3>
       <ul>
-        <li>问题分析深度与框架运用（40%）| 文献综述与数据支撑（30%）| 创新性与个人见解（30%）</li>
+        <li>绘制个人"固废思维重塑全景图"——标注八周前后你对固体废弃物的认知差异点。标注"叙·框·境·创"在哪个阶段对你的影响最大。</li>
       </ul>
     </div>
   </div>
@@ -168,27 +241,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请帮我梳理"固体废弃物污染防治技术"八周课程的核心知识框架，用一张系统思维导图呈现"空间-技术-行为-人文"四重错配及其关联。</div>
-      <div class="prompt">请从"从废弃物到资产"的完整路径出发，帮我校准课程论文的选题方向，推荐3个有研究价值的切入点。</div>
-      <div class="prompt">假设你是固废管理专家，请为一座200万人口的中西部城市设计一套完整的固废治理方案，涵盖空间布局、技术路线、行为引导、人文关怀四个维度。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"五维统一诊断矩阵"（空间×技术×行为×人文×时间），为以下[城市数据]制定一套完整的固废综合治理方案。要求：①逐维分析——每维先用对应框架诊断，再给修复路径 ②标注维度间的交互效应——画出至少两条因果传导链（如：空间错配→行为错配→人文错配）③针对每个维度给出至少一个可操作的修复措施 ④讨论方案中最大的不确定性是什么——即哪一步假设最可能被现实推翻？</div>
+      <div class="prompt">请帮我梳理八周课程的核心知识框架。要求：以表格式呈现"五维统一诊断矩阵"，每行包含：①该维度的典型错配类型 ②黄正文教授的独有诊断方法 ③对应的修复路径 ④对应的纪实小说选段编号 ⑤该维度在"叙·框·境·创"中的主要教学法定位。</div>
     </div>
     <div class="card">
-      <h3>AI辅助分析方向</h3>
+      <h3>AI辅助方向</h3>
       <ul>
-        <li>使用 AI 生成"四重错配"的综合诊断框架</li>
-        <li>利用 AI 辅助课程论文的文献检索与提纲生成</li>
-        <li>探索固废领域的未来研究方向</li>
+        <li>用 AI 生成"五维统一"评价指标体系框架</li>
+        <li>可对接 Agent-B（研创向导）进行论文/设计/教改框架打磨</li>
+        <li>可对接 Agent-S（案例解读员）进行选段引用整理</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: "空间-技术-行为-人文"四重错配的递进逻辑是什么？</li>
-        <li>Q2: 什么是"从废弃物到资产"的完整转换路径？</li>
-        <li>Q3: "叙·框·境·创"四维教学法如何塑造工程思维？</li>
-        <li>Q4: 固废管理的"系统性思维"包含哪些维度？</li>
-        <li>Q5: 你最大的学习收获是什么？（自由作答）</li>
+        <li>Q1: "五维统一诊断矩阵"中每个维度的诊断方法是什么？</li>
+        <li>Q2: 五维之间的"交互效应"是什么？画出一条因果传导链。</li>
+        <li>Q3: 从"叙"到"创"的八周递进逻辑是什么？</li>
+        <li>Q4: 七部纪实小说分别对应哪类错配？</li>
+        <li>Q5: 你八周最大的学习收获是什么？（自由作答）</li>
       </ul>
     </div>
   </div>
@@ -198,7 +270,7 @@ body{
 <div class="week-nav">
   <a href="学习-第7周.html">◀ 上一周：人文错配</a>
   <a href="学习园地.html" class="center">📖 学习园地</a>
-  <span class="disabled">下一周 ▶</span>
+  <span class="disabled">课程圆满 ▶</span>
 </div>
 
 <div class="footer">

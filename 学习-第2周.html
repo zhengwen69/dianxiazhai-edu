@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#5b9bd5}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(91,155,213,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,10 +46,15 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -67,10 +77,8 @@ body{
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -81,67 +89,84 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第2周</span>：空间错配Ⅱ — 学习指南</h1>
+  <h1><span>第2周</span>：空间错配Ⅱ — 填埋场的空间正义</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第2周-空间错配Ⅱ.html" style="color:#5b9bd5">第2周-空间错配Ⅱ</a> | 纪实小说素材：S001-S003</div>
+  <div class="meta">
+    对应教师端：<a href="第2周-空间错配Ⅱ.html">第2周-空间错配Ⅱ</a> &nbsp;|&nbsp;
+    纪实小说素材：S002-S003 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §2 填埋场选址的"不可见之手"
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>复习第1周"空间错配"基本概念，回顾固废定义与分类</li>
-        <li>预习填埋场选址的影响因素（地质/水文/气象/社会/经济）</li>
-        <li>了解固废处理的"空间决策"方法论基础</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①填埋场基本构造（防渗层/渗滤液收集/气体收集系统）②选址的地质与水文约束条件③含水率/压实度等基本参数。如有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《龙栖湾》续章（素材编号 S001-S003）</li>
-        <li>相关规范：《生活垃圾卫生填埋场选址技术指南》</li>
-        <li>推荐文献：GIS 在固废设施选址中的应用 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §2.1-§2.3：《填埋场选址的"不可见之手"》——核心论点：填埋场选址表面上是技术决策，事实上被三只"不可见之手"操纵：市场之手（地价低廉的地方往往是弱势群体的聚居地），政策之手（考核指标驱动下的"最快方案"偏好），社会偏见之手（"反正那里的人没什么话语权"）。理解"空间正义"的关键是：看清这三只手如何共同扭曲了"最优选址"。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S002-S003《龙栖湾》续：选址听证会上三方用不同的"语言"对话——地质专家说"技术上完全可行"，居民代表问"为什么偏偏是我们"，政府官员说"这是经过论证的最优方案"。可为什么最优的技术方案，居民却最反对？</p>
+      <div class="excerpt">《龙栖湾》教学选段 S002：「听证会开了三个小时。专家用 PPT 展示了地质构造图、水文数据、环评报告。居民代表站起来说：'你说的这些我听不懂，我只问你一句——你敢不敢让你自己的娃喝这口井里的水？'会议室里安静了十秒钟。专家张了张嘴，没有回答。」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>一个合理的填埋场选址应满足哪些约束条件？</li>
-        <li>为什么许多城市固废设施选址面临"邻避困境"？</li>
-        <li>《龙栖湾》中选址争议的关键矛盾是什么？</li>
+        <li>"技术上最优"与"社会上最可接受"的选址为什么常常分离？</li>
+        <li>三只"不可见之手"中，你认为哪一只是最主导性的？为什么？</li>
+        <li>《龙栖湾》听证会上，专家的沉默说明了什么？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-blue">框</span></h3>
+      <p>🏷 叙·框·境·创 → 本周主导维度为 <strong style="color:#5b9bd5">框</strong>：将第1周的感性叙事升华为可操作的四维分析工具。"框是授人以渔——给你一个工具，你可以分析任何选址案例。"</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：选址正义性四维框架</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 错配-修复框架 · 空间正义子维度</p>
       <ul>
-        <li><span class="tag tag-blue">核心概念</span> 填埋场选址的多维约束体系</li>
-        <li><span class="tag tag-teal">方法</span> 空间叠加分析与适宜性评价</li>
-        <li><span class="tag tag-green">产出</span> 绘制典型垃圾填埋场空间布局图</li>
-        <li><span class="tag tag-teal">方法</span> 全生命周期空间管理概念</li>
+        <li><span class="tag tag-blue">地质承载</span> 场地是否满足工程安全要求？——技术基础，必要但不充分</li>
+        <li><span class="tag tag-blue">环境容量</span> 周边环境是否能承载污染风险？——以科学数据回答"安全吗"</li>
+        <li><span class="tag tag-blue">社会可接受</span> 受影响社区是否接受？——以民主过程回答"公平吗"</li>
+        <li><span class="tag tag-blue">代际公平</span> 未来世代是否会为此承受代价？——以时间纵深回答"可持续吗"</li>
+      </ul>
+      <p style="color:#556;font-size:12px;margin-top:8px">【关键论点】传统选址只问前两维（技术上可行、环境上达标），后两维被视为"软约束"。黄正文教授论证：后两维不是软约束——它们是硬条件，忽视它们就是埋下未来的社会风险。</p>
+    </div>
+
+    <div class="card">
+      <h3>案例深潜：S002-S003 五段叙事拆解</h3>
+      <ul>
+        <li><strong style="color:#5b9bd5">背景</strong>：龙栖湾填埋场二期选址启动，已有多个备选场址</li>
+        <li><strong style="color:#5b9bd5">冲突</strong>：听证会上三种"语言"的隔离——技术语言 vs 生活语言 vs 政治语言</li>
+        <li><strong style="color:#5b9bd5">决策</strong>：环评通过，但社会许可（social license）未通过——两证只拿到了运行许可证</li>
+        <li><strong style="color:#5b9bd5">结局</strong>：项目搁置三年，重新启动实质性公众参与后再次论证</li>
+        <li><strong style="color:#5b9bd5">启示</strong>："社会可接受"不是软约束，是硬条件。忽视它可能让一个"技术上完美"的项目无法落地。工程师的职责不仅是算承载力，更是建信任</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
-      <ul>
-        <li>小组讨论：为某城市推荐3个候选填埋场址并说明理由</li>
-        <li>角色扮演准备：选址听证会中的不同利益相关方立场</li>
-        <li>注意记录"垃圾空间"五维分析框架</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S001-S003续）：《龙栖湾》填埋场选址引发的多方博弈...</div>
-      <ul>
-        <li>分析维度：地质适宜性 · 环境容量 · 社会可接受度</li>
-        <li>方法论语块：GIS 空间分析、多准则决策</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>GIS空间叠加分析与MCDM（多准则决策）在选址中的应用——可在ArcGIS/QGIS中叠加地质图/水文图/人口分布/交通网络，构建多准则选址适宜性模型。<br>
+        <strong>● 研究空白：</strong>中国固废设施选址中公众参与的有效性评价——现有参与制度（公示/听证会）是否实质性影响了决策？还是"走过场"？需要设计参与度评价量表进行实证检验。
+      </div>
     </div>
   </div>
 
@@ -150,19 +175,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第2章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>案例分析：选取一个中国城市，分析其固废设施的"空间公正性"</li>
-        <li>绘制第1-2周知识关联图</li>
+        <li>选择一个中国城市的垃圾填埋/焚烧设施选址案例，运用黄正文教授<strong>"选址正义性四维框架"</strong>完整评价</li>
+        <li><strong>强制要求：</strong>①必须覆盖四维全部维度 ②对"社会可接受"维度给出可操作的评价指标（如投诉率/听证会参与率/媒体报道倾向等）③为"代际公平"维度提出至少一个可量化的评价思路</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>选址分析严谨性（40%）| 因素覆盖完整度（30%）| GIS应用尝试（30%）</li>
+        <li>四维覆盖完整度（40%）| 评价指标可操作性（30%）| 对框架本身的批评与修正（30%）</li>
       </ul>
     </div>
   </div>
@@ -170,27 +194,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请帮助我系统梳理固体废弃物填埋场选址的五大核心约束因素（地质、水文、气象、社会、经济），每类列出3个具体指标。</div>
-      <div class="prompt">请用通俗语言解释"空间叠加分析"在固废设施选址中的应用原理，并举一个简化的例子。</div>
-      <div class="prompt">请从"环境正义"角度分析固废设施选址中的邻避现象（NIMBY），给出3个缓解策略。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"选址正义性四维框架"（地质承载/环境容量/社会可接受/代际公平），对[城市A]与[城市B]的垃圾填埋场选址决策过程进行对比分析。要求：逐维比较，用表格呈现差异，判断哪个案例更符合"空间正义"，并分析差距的制度根源。</div>
+      <div class="prompt">请以《龙栖湾》S002-S003听证会场景为背景，从环境工程研究生的视角，分别模拟"技术专家""居民代表""政府官员"三方在听证会上的发言稿。要求每篇体现各方的核心关切、专业语言特点和诉求。使用黄正文教授"选址正义性四维"作为分析工具。</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 AI 生成填埋场选址的多准则评价矩阵</li>
-        <li>探索 GIS 开源工具（QGIS）在固废选址中的入门应用</li>
-        <li>利用 AI 对比不同国家的填埋场选址标准</li>
+        <li>用 AI 构建一个选址 MCDM 多准则评价矩阵（含权重灵敏度分析）</li>
+        <li>用 AI 生成"公众参与有效性"评价量表的设计框架</li>
+        <li>可对接 Agent-I（角色扮演教练）进行听证会发言准备</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: 填埋场选址的五大约束维度是什么？</li>
-        <li>Q2: 什么是"空间叠加分析"？</li>
-        <li>Q3: NIMBY 现象的学术解释是什么？</li>
-        <li>Q4: 固废设施的"空间公正"包含哪些维度？</li>
-        <li>Q5: 列举填埋场设计中需要控制的主要环境指标。</li>
+        <li>Q1: 黄正文教授"选址正义性四维框架"各维度是什么？</li>
+        <li>Q2: 为什么"社会可接受"不是软约束而是硬条件？</li>
+        <li>Q3: "代际公平"在实际选址中如何量化评估？</li>
+        <li>Q4: S002-S003中技术专家的沉默揭示了什么深层次问题？</li>
+        <li>Q5: 三只"不可见之手"如何交互影响选址结果？</li>
       </ul>
     </div>
   </div>
@@ -198,13 +221,13 @@ body{
 </div>
 
 <div class="week-nav">
-  <a href="学习-第1周.html">◀ 上一周：空间错配</a>
+  <a href="学习-第1周.html">◀ 上一周：空间错配Ⅰ</a>
   <a href="学习园地.html" class="center">📖 学习园地</a>
   <a href="学习-第3周.html">下一周：技术错配Ⅰ ▶</a>
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>

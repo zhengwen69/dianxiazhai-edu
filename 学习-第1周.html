@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第1周：空间错配 — 学习指南</title>
+<title>第1周：空间错配Ⅰ — 学习指南</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#e67e22}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(230,126,34,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,10 +46,15 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-orange{background:rgba(230,126,34,.15);color:#e67e22}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -67,13 +77,17 @@ body{
 .week-nav .disabled{color:#445;pointer-events:none;opacity:.4}
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+.id-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.id-item{background:rgba(0,184,148,.05);border-radius:6px;padding:8px 12px;font-size:11px;color:#889;line-height:1.6}
+.id-item strong{color:#00b894;font-size:10px}
 @media (max-width:768px){
   body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}
+  .card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
+  .id-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -82,67 +96,84 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第1周</span>：空间错配 — 学习指南</h1>
+  <h1><span>第1周</span>：空间错配Ⅰ — 从废弃物到资产</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第1周-空间错配.html" style="color:#5b9bd5">第1周-空间错配</a> | 纪实小说素材：S001-S003</div>
+  <div class="meta">
+    对应教师端：<a href="第1周-空间错配.html">第1周-空间错配</a> &nbsp;|&nbsp;
+    纪实小说素材：S001-S003 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §1 废弃物资产化：一个再发现的过程
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>阅读教材：固体废物的定义、分类体系与基本特性（物理/化学/生物特性）</li>
-        <li>了解固废环境污染的途径与危害（大气/水体/土壤/生态/人类健康）</li>
-        <li>预习"空间错配"概念：废弃物为什么是放错了地方的资源？</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①固废的定义/分类/来源 ②固废的八大危害途径 ③固废的物理/化学/生物特性。以上为本科阶段《固体废物处理与处置》基础内容，如尚有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《龙栖湾》教学选段（素材编号 S001-S003）</li>
-        <li>相关政策法规：《中华人民共和国固体废物污染环境防治法》</li>
-        <li>推荐文献：固废管理的"资产化"视角研究 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §1.1-§1.3：《废弃物资产化：一个再发现的过程》——核心论点：从"处理废弃物"到"发现资产"，是一次视角革命。三重资产化路径：回收→能源化→材料再生。每个废弃物中都嵌入了未被兑现的资源价值。"空间错配"正是这种价值流失的空间表达。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授 · 叙·框·境·创 四维教学法配套教材</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S001 《龙栖湾》：垃圾填埋场周边居民的"资产被剥夺"——土地贬值、健康受损、社区分化。从"资产被剥夺"的视角理解：什么被放错了位置？谁失去了什么？</p>
+      <div class="excerpt">《龙栖湾》教学选段 S001：「填埋场来了以后，路边的杏树不结果了，井里的水有股怪味。王老汉说这地以前一亩值三万，现在白送都没人要。可镇上的干部说，这是县里最好的方案，要顾全大局。老汉不懂什么是大局，只知道自己的一亩三分地没了。」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>如何从经济学"资源错配"概念理解固体废弃物的本质？</li>
-        <li>你的家乡或学校周边是否存在固废"空间错配"现象？举例说明。</li>
-        <li>《龙栖湾》选段中体现的固废问题属于哪种错配类型？</li>
+        <li>用黄正文教授"空间错配五维框架"初步诊断你所在城市的固废设施布局——只需给出第一印象，无需精准数据</li>
+        <li>《龙栖湾》选段中，王老汉失去了哪些"资产"？技术专家为什么没有预见到这些损失？</li>
+        <li>"资产化"视角与"无害化"视角的根本区别是什么？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-orange">叙</span></h3>
+      <p>🏷 叙·框·境·创 → 本周主导维度为 <strong style="color:#e67e22">叙</strong>：以《龙栖湾》纪实小说叙事触发情感共鸣，从感性认知过渡到学术概念。"叙是入门——让故事打动你，让故事引出问题。"</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：空间错配五维框架</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 错配-修复框架 · 空间子维度</p>
       <ul>
-        <li><span class="tag tag-orange">核心概念</span> 固体废弃物定义与分类体系（来源/特性/危害）</li>
-        <li><span class="tag tag-orange">核心概念</span> 空间错配理论框架：从废弃物到资产</li>
-        <li><span class="tag tag-teal">方法</span> 固废特性分析（物理组成/含水率/热值/元素分析）</li>
-        <li><span class="tag tag-green">产出</span> 绘制"固废空间错配"概念图</li>
+        <li><span class="tag tag-orange">选址谬误</span> 不该建的地方建了——如地下水补给区建填埋场</li>
+        <li><span class="tag tag-orange">规划滞后</span> 应该建的地方没建——如新城区缺乏收集转运设施</li>
+        <li><span class="tag tag-orange">容量失衡</span> 建了的设施容量不匹配——如超大焚烧厂处理量不足</li>
+        <li><span class="tag tag-orange">运输悖论</span> 远了成本高，近了被反对——最优运距的双重约束</li>
+        <li><span class="tag tag-orange">边界模糊</span> 城市/农村/区域间责任归属不清——谁为谁处理？</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
+      <h3>案例深潜：S001 五段叙事拆解</h3>
       <ul>
-        <li>参与讨论：你身边的固废空间错配现象</li>
-        <li>小组活动：选取一个城市固废案例，分析其产生-收集-处置的空间链条</li>
-        <li>注意记录教师讲解的"垃圾资产"框架要点</li>
+        <li><strong style="color:#e67e22">背景</strong>：龙栖湾填埋场建场之初对村民的各项承诺</li>
+        <li><strong style="color:#e67e22">冲突</strong>：村民发现地下水污染、土地贬值、健康受损</li>
+        <li><strong style="color:#e67e22">决策</strong>：政府/技术专家/居民三方博弈——三种"语言"互不理解</li>
+        <li><strong style="color:#e67e22">结局</strong>：搬迁还是改造？两难中的空间正义拷问</li>
+        <li><strong style="color:#e67e22">启示</strong>：空间错配不仅是技术问题——它是资产的系统性贬值，而贬值最严重的总是最弱势的群体</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S001）：《龙栖湾》中垃圾填埋场选址引发的社区争议...</div>
-      <ul>
-        <li>分析维度：空间正义 · 环境风险分配 · 利益相关方</li>
-        <li>方法论语块：空间分析、风险暴露评价</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>空间错配量化指数设计方法 —— 定义 SMI = f (选址适宜度, 容量匹配度, 运输效率)。可操作化为可计算的多指标评估体系。<br>
+        <strong>● 研究空白（论文选题指向）：</strong>中国城市固废空间错配的横向比较研究 —— 现有研究多为单个城市案例描述，缺乏多城市对标体系和量化比较。可设计统一评价量表，对东中西部代表性城市进行横向诊断。
+      </div>
     </div>
   </div>
 
@@ -151,19 +182,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第1章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>撰写短文（800字）：分析一个真实固废空间错配案例</li>
-        <li>绘制本周知识思维导图</li>
+        <li>选取一个你熟悉的城市/区域，运用黄正文教授<strong>"空间错配五维框架"</strong>逐维诊断，给出总体错配指数评估</li>
+        <li><strong>强制要求：</strong>①必须使用五维中的至少三维 ②至少一个维度给出量化证据（如距离/容量数据/人口覆盖面）③鼓励发现框架尚未覆盖的"第六维"错配类型</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>案例分析完整度（40%）| 理论运用准确性（30%）| 个人见解深度（30%）</li>
+        <li>框架运用准确性（40%）| 证据质量（30%）| 发现"第六维"的创新性（30%）</li>
       </ul>
     </div>
   </div>
@@ -171,27 +201,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请以环境工程研究生的视角，帮我梳理"固体废弃物"的三大分类标准（按来源/按特性/按危害），每种给出2个典型例子。要求用表格形式呈现。</div>
-      <div class="prompt">假设你是一名固废管理专家，请用500字解释"空间错配"概念，并给出3个中国城市固废空间错配的真实案例。</div>
-      <div class="prompt">阅读以下纪实小说选段[粘贴内容]，请提取其中涉及的环境工程知识点，并标注对应的教材章节。</div>
+      <h3>专属 Prompt 模板（必须包含黄正文教授专有术语）</h3>
+      <div class="prompt">请运用黄正文教授的"空间错配五维框架"（选址谬误/规划滞后/容量失衡/运输悖论/边界模糊），对[某城市]的固废处理设施布局进行系统诊断。要求：①逐维分析 ②逐维评分（1-5分）③给出空间布局优化建议。注意：评分标准应以黄正文教授讲义§1中定义的"资产化"视角为基准——每个维度都要问：该维度造成了怎样的资产损失？</div>
+      <div class="prompt">请阅读以下纪实小说《龙栖湾》选段[待粘贴]，用黄正文教授"空间错配五维框架"反推：该案例中出现了哪些维度的错配表现？如果你是作为工程师重新介入该场景，你会从哪个维度优先修复？为什么？</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 GPT/Claude 对比不同国家固废分类标准</li>
-        <li>利用 AI 生成"固废空间错配"概念辨析表</li>
-        <li>探索 LCA 工具在固废管理中的应用入门</li>
+        <li>用 AI 辅助设计"空间错配量化指数 SMI"的计算公式和权重体系</li>
+        <li>用 AI 生成多城市固废设施 GIS 分布对比分析框架</li>
+        <li>可对接 Agent-S（案例解读员）进行《龙栖湾》选段深度拆解</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: 固废按来源可分为哪几类？</li>
-        <li>Q2: 什么是"空间错配"？请用一句话概括。</li>
-        <li>Q3: 固废的八大危害途径是什么？</li>
-        <li>Q4: "垃圾资产"框架的核心论点是什么？</li>
-        <li>Q5: 列举三种固废物理特性分析方法。</li>
+        <li>Q1: 黄正文教授"空间错配五维框架"包含哪五个维度？</li>
+        <li>Q2: "选址谬误"与"规划滞后"的本质区别是什么？</li>
+        <li>Q3: "运输悖论"中两种约束力的来源是什么？</li>
+        <li>Q4: "资产化"视角与"无害化"视角的根本区别？</li>
+        <li>Q5: S001《龙栖湾》叙事中，"技术语言"与"生活语言"的冲突体现在哪里？</li>
       </ul>
     </div>
   </div>
@@ -205,7 +234,7 @@ body{
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>

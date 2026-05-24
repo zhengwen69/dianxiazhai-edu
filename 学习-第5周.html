@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#f1c40f}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(241,196,15,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,10 +46,15 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-yellow{background:rgba(241,196,15,.15);color:#f1c40f}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -67,10 +77,8 @@ body{
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -81,67 +89,84 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第5周</span>：行为错配Ⅰ — 学习指南</h1>
+  <h1><span>第5周</span>：行为错配Ⅰ — 为什么人知道却做不到</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第5周-行为错配Ⅰ.html" style="color:#5b9bd5">第5周-行为错配Ⅰ</a> | 纪实小说素材：S007-S009</div>
+  <div class="meta">
+    对应教师端：<a href="第5周-行为错配Ⅰ.html">第5周-行为错配Ⅰ</a> &nbsp;|&nbsp;
+    纪实小说素材：S007-S008 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §5 固废管理的"最后一米困境"
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>预习垃圾分类制度的理论基础：行为经济学与环境心理学</li>
-        <li>了解国内外垃圾分类模式（源头分类/集中分选/混合收集）</li>
-        <li>思考"行为错配"概念：为什么技术可行，行为却不可行？</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①垃圾分类的四分法及后端处理对应关系 ②中国垃圾分类政策演进历程 ③行为经济学基本概念（如损失厌恶、现状偏见、社会规范）。如有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《杨柳坝与刘家湾》教学选段（素材编号 S007-S009）</li>
-        <li>相关政策：垃圾分类试点城市方案比较</li>
-        <li>推荐文献：居民垃圾分类行为影响因素研究 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §5.1-§5.4：《固废管理的"最后一米困境"》——核心论点：从垃圾桶到居民家门口的距离，是固废管理系统中最不可控的"最后一米"。"人"不是系统中的一个零件——他是一个有偏好、有惰性、有习惯、有反抗的能动者。黄正文教授用行为错配框架揭示：技术上完全可行的分类方案，在"最后一米"常常崩溃——不是因为技术差，是因为行为设计的"激励结构"与人的真实行为模式不匹配。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S007-S008《杨柳坝与刘家湾》：村里推行垃圾分类——硬件齐全、四色桶到位、宣传标语满墙、志愿督导员上岗。三个月后分类准确率不到30%。村干部说"村民素质低"，村民说"麻烦，看不出分了有什么用"。究竟谁错了？</p>
+      <div class="excerpt">《杨柳坝与刘家湾》教学选段 S007：「杨老四把一袋混在一起的垃圾往桶里一扔，头也不回地走了。旁边的督导员刘阿姨喊住他：'老四，你分错啦，塑料袋是可回收的，剩菜剩饭是厨余！'杨老四摆摆手：'太麻烦。再说了，反正垃圾车一来还不是倒在一起？'刘阿姨愣了一下——她其实也不知道垃圾车是不是分开运的。」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>你的城市实行垃圾分类了吗？实际效果如何？</li>
-        <li>"行为错配"在固废管理中的典型表现有哪些？</li>
-        <li>《杨柳坝与刘家湾》中村民分类行为的转变是如何发生的？</li>
+        <li>杨老四的"反正垃圾车一来还不是倒在一起"——你听过类似的说法吗？如果这是事实，分类行为还有激励吗？</li>
+        <li>用黄正文教授"行为错配四因"框架初步诊断：杨柳坝分类失败的最主导因素是什么？</li>
+        <li>"最后一米"的控制为什么比前段所有技术环节都困难？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-yellow">境</span></h3>
+      <p>🏷 叙·框·境·创 → 本周主导维度为 <strong style="color:#f1c40f">境</strong>：以《杨柳坝与刘家湾》的乡村分类失败场景为课堂情境，学生分组诊断"为什么失败"并设计Nudge干预方案。"境是炼真金——用真实行为数据检验你的分析。"</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：行为错配四因框架</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 错配-修复框架 · 行为错配子维度</p>
       <ul>
-        <li><span class="tag tag-yellow">核心概念</span> 垃圾分类的"行为经济学"分析框架</li>
-        <li><span class="tag tag-teal">方法</span> 制度设计：强制vs激励vs助推（Nudge）</li>
-        <li><span class="tag tag-yellow">核心概念</span> 居民分类行为的"态度-行为缺口"</li>
-        <li><span class="tag tag-green">产出</span> 绘制"分类行为影响因素"模型图</li>
+        <li><span class="tag tag-yellow">认知阻隔</span> 不知道分 / 分不清楚 / 误以为"反正后端混运"。核心机制：信息不对称 + 知识门槛</li>
+        <li><span class="tag tag-yellow">便利性陷阱</span> 知道分但太麻烦——多走几步路、多洗一只桶、多记一套规则。核心机制：行为成本 > 感知收益</li>
+        <li><span class="tag tag-yellow">社会规范缺位</span> 周围人都不分，我为什么要分？"别人不管，我也不管"。核心机制：从众效应 + 搭便车</li>
+        <li><span class="tag tag-yellow">反馈延迟</span> 分了也看不出效果——没有即时的、可视的正面反馈。核心机制：延迟奖励折扣</li>
+      </ul>
+      <p style="color:#556;font-size:12px;margin-top:8px">【黄正文教授核心判断】人是理性有限的——不是"素质"问题，是制度设计没有匹配人的行为模式。破解之道不是"教育"，是改变"选择架构"（choice architecture）。</p>
+    </div>
+
+    <div class="card">
+      <h3>案例深潜：S007-S008 五段叙事拆解</h3>
+      <ul>
+        <li><strong style="color:#f1c40f">背景</strong>：杨柳坝推行垃圾分类"示范村"，政府投入硬件+宣传+人员</li>
+        <li><strong style="color:#f1c40f">冲突</strong>：三个月后准确率不足30%——"素质论"与"制度论"的拉锯</li>
+        <li><strong style="color:#f1c40f">决策</strong>：强制罚款（惩罚驱动）vs 积分激励（奖励驱动）vs 顺应自然</li>
+        <li><strong style="color:#f1c40f">结局</strong>：退休教师带头分类+社区竞赛机制+红黑榜公示，半年后准确率升至75%——关键转变因素：社会规范的形成</li>
+        <li><strong style="color:#f1c40f">启示</strong>：不是"素质"问题——是便利性、规范、反馈三维未启动。当人们看到邻居在分、觉得分不麻烦、分完有反馈，行为就变了</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
-      <ul>
-        <li>参与讨论：经济激励 vs 社会规范，哪个更能驱动分类行为？</li>
-        <li>小组活动：设计一个有效的社区垃圾分类助推方案（Nudge设计）</li>
-        <li>注意记录"垃圾模式"的行为分析框架</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S007-S009）：《杨柳坝与刘家湾》中的垃圾分类推行之路...</div>
-      <ul>
-        <li>分析维度：个体行为 · 社会规范 · 制度设计</li>
-        <li>方法论语块：助推理论（Nudge Theory）、计划行为理论</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>计划行为理论（TPB）+ 助推理论（Nudge）在固废行为分析中的应用——设计行为干预实验：改变便利条件/增加反馈/塑造规范，测量行为变化。<br>
+        <strong>● 研究空白：</strong>中国城乡居民垃圾分类的"态度-行为缺口"的实证比较——城市居民态度好但行为差？还是态度差行为更差？现有研究缺乏大样本城乡对比。可设计统一行为测评量表，在东中西部各选城乡社区进行田野实验。
+      </div>
     </div>
   </div>
 
@@ -150,19 +175,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第5章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>调查设计：编制一份居民垃圾分类行为调查问卷</li>
-        <li>撰写短文：分析"垃圾模式"中行为因素如何影响技术效果</li>
+        <li>调查你所在的宿舍/小区/社区。用黄正文教授<strong>"行为错配四因"框架</strong>诊断：哪些因素导致了分类行为不佳？</li>
+        <li><strong>强制要求：</strong>①用框架逐因诊断，给出哪个因素是主导 ②针对主导因素设计至少一个基于Nudge理论的干预方案（不是"加强宣传"——必须是行为设计）③说明干预的预期机制（为什么这个Nudge会起作用？）④如条件允许，进行小范围试验并记录结果（加分项）</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>行为分析深度（40%）| 方案可行性（30%）| 理论运用（30%）</li>
+        <li>诊断逻辑与框架运用（40%）| Nudge设计创新性（30%）| 机制说明清晰度（30%）</li>
       </ul>
     </div>
   </div>
@@ -170,27 +194,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请从行为经济学的角度，分析为什么居民垃圾分类存在"态度积极、行为消极"的缺口，并给出3个政策建议。</div>
-      <div class="prompt">请对比分析日本、德国、中国的垃圾分类制度设计差异，用表格呈现。</div>
-      <div class="prompt">请帮我设计一个社区垃圾分类的Nudge干预方案，包含干预点、干预方式和效果评估指标。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"行为错配四因"框架（认知阻隔/便利性陷阱/社会规范缺位/反馈延迟），分析以下[某社区]的分类行为现状[待粘贴]。要求：①逐因诊断，给出每个因素的严重程度评分（1-5分）②指出哪个是主导因素并解释原因 ③针对主导因素设计3个基于Nudge理论（助推理论）的干预方案，每个方案必须包含：干预点、干预方法、预期行为机制、实施成本评估。</div>
+      <div class="prompt">《杨柳坝与刘家湾》中，退休教师的"带头分类+社区竞赛"最终提升了分类准确率。请从行为经济学的"社会规范"和"同侪效应"角度分析这个成功的机制，并讨论：这个方案是否可以推广到城市社区？为什么？</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 AI 辅助设计分类行为调查问卷</li>
-        <li>探索社会实验方法在固废管理中的应用</li>
-        <li>利用 AI 分析不同城市的分类政策文本</li>
+        <li>用 AI 设计一个分类行为干预的A/B实验方案</li>
+        <li>用 AI 生成"分类行为调查问卷"初稿（基于TPB理论框架）</li>
+        <li>可对接 Agent-S（案例解读员）进行 S007-S008 深度拆解</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: 什么是"态度-行为缺口"？</li>
-        <li>Q2: 助推理论（Nudge）的核心原则是什么？</li>
-        <li>Q3: 强制、激励、助推三种政策工具各有什么优缺点？</li>
-        <li>Q4: 列举影响居民分类行为的五个关键因素。</li>
-        <li>Q5: 什么是"垃圾模式"的完整分析框架？</li>
+        <li>Q1: 黄正文教授"行为错配四因"分别是哪四因？</li>
+        <li>Q2: "最后一米困境"的本质是什么？</li>
+        <li>Q3: 为什么"反馈延迟"会消解分类行为？</li>
+        <li>Q4: "态度-行为缺口"是什么意思？</li>
+        <li>Q5: Nudge干预与"加强宣传"的区别是什么？</li>
       </ul>
     </div>
   </div>
@@ -204,7 +227,7 @@ body{
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>

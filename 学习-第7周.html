@@ -15,7 +15,8 @@ body{
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#e74c3c}
 .header .sub{color:#00b894;font-size:14px;margin-top:4px}
-.header .meta{color:#556;font-size:12px;margin-top:6px}
+.header .meta{color:#556;font-size:12px;margin-top:6px;line-height:1.8}
+.header .meta a{color:#5b9bd5;text-decoration:none}
 .container{max-width:900px;width:100%}
 .section{margin-bottom:28px}
 .section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
@@ -30,9 +31,13 @@ body{
 .card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
 .card ul{padding-left:18px}
 .card ul li::marker{color:#00b894}
+.card .precheck{
+  background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#e74c3c;line-height:1.8;margin-bottom:10px
+}
 .card .excerpt{
   font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
-  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  padding:12px 16px;border-left:3px solid rgba(231,76,60,.25);
   margin:10px 0;background:rgba(26,58,92,.2);
 }
 .card .prompt{
@@ -41,10 +46,15 @@ body{
   font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
   white-space:pre-wrap;word-break:break-all;
 }
+.card .method{
+  background:rgba(155,89,182,.06);border:1px solid rgba(155,89,182,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#aabbcc;line-height:1.8;margin:8px 0
+}
+.card .method strong{color:#9b59b6}
 .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
 .tag-red{background:rgba(231,76,60,.15);color:#e74c3c}
 .tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
 .back-btn{
   position:fixed;top:20px;left:20px;z-index:1000;
   padding:8px 16px;border-radius:8px;
@@ -67,10 +77,8 @@ body{
 .week-nav .center{color:#00b894;font-weight:600}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
 @media (max-width:768px){
-  body{padding:20px 12px}
-  .header h1{font-size:20px}
-  .header .sub{font-size:12px}.card{padding:16px 14px}
-  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}
+  .card{padding:16px 14px}.card h3{font-size:14px}.card p,.card li{font-size:12px}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
@@ -81,67 +89,83 @@ body{
 <a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
 
 <div class="header">
-  <h1><span>第7周</span>：人文错配 — 学习指南</h1>
+  <h1><span>第7周</span>：人文错配 — 邻避不是自私</h1>
   <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="meta">对应教师端：<a href="第7周-人文错配.html" style="color:#5b9bd5">第7周-人文错配</a> | 纪实小说素材：S010-S012</div>
+  <div class="meta">
+    对应教师端：<a href="第7周-人文错配.html">第7周-人文错配</a> &nbsp;|&nbsp;
+    纪实小说素材：S010-S012 &nbsp;|&nbsp;
+    参考讲义：黄正文教授自编讲义 §7 固废工程的"社会许可证"
+  </div>
 </div>
 
 <div class="container">
 
   <div class="section">
     <h2>🔍 课前预习</h2>
+
     <div class="card">
-      <h3>预习任务单</h3>
-      <ul>
-        <li>预习环境正义理论：环境风险的公平分配与弱势群体保护</li>
-        <li>了解"邻避效应"（NIMBY）的社会心理机制与治理对策</li>
-        <li>思考"人文错配"：技术与工程之外的价值观维度</li>
-      </ul>
+      <h3>前置自检（本科已修，此处不重复讲授）</h3>
+      <div class="precheck">⚠ 请确认你已掌握：①环境影响评价基本制度 ②公众参与的基本形式（公示/听证会/问卷调查）③NIMBY（邻避）的基本概念。如有模糊请自行复习。</div>
     </div>
+
     <div class="card">
-      <h3>推荐阅读素材</h3>
-      <ul>
-        <li>纪实小说《三多里巷》教学选段（素材编号 S010-S012）</li>
-        <li>相关研究：中国固废设施的邻避冲突案例集</li>
-        <li>推荐文献：环境正义与环境社会学 [待指定]</li>
-      </ul>
+      <h3>黄正文教授自编讲义预习</h3>
+      <p>讲义 §7.1-§7.3：《固废工程的"社会许可证"》——核心论点：一个固废设施只有"运行许可证"（行政部门颁发）是不够的，还需要"社会许可证"——来自受影响社区的默许或支持。后者比前者更难获得，也更脆弱。黄正文教授论证：大多数邻避冲突的根源不是居民"自私短视"，而是决策过程的一个系统性缺陷——受影响的社区在整个决策中"没有真正的位置"。他们的反对不是反对技术，而是反对自己在技术决策中的缺席。</p>
+      <p style="color:#556;font-size:12px;margin-top:6px">📖 自编讲义 · 黄正文教授</p>
     </div>
+
+    <div class="card">
+      <h3>纪实小说预读</h3>
+      <p>S010-S012《三多里巷》：城市规划要在百年老巷旁建垃圾中转站。公示期满，村民无人反对——因为根本没看到公示。开工后村民堵路抗议。政府说"程序合法"（公示过），村民说"我们不认"。"合法"是否等于"正当"？</p>
+      <div class="excerpt">《三多里巷》教学选段 S010：「施工队的卡车开进巷口那天，张婆婆才知道家门口要建垃圾站。她跑到社区办公室问，工作人员拿出一张六个月前的报纸——公示在报纸的中缝里，字小得像蚂蚁。'公示过了的，法定期满没人反对。'工作人员说。张婆婆不认识字，她只是觉得——在他们决定之前，没有人问过她的意见。」</div>
+    </div>
+
     <div class="card">
       <h3>预习思考题</h3>
       <ul>
-        <li>为什么固废设施常选址在弱势群体聚集区？这是技术问题还是社会问题？</li>
-        <li>"邻避效应"是自利的还是正当的？工程师应如何面对？</li>
-        <li>《三多里巷》中的社区冲突本质是什么？</li>
+        <li>"程序合法"与"实质正当"的差距在哪里？</li>
+        <li>张婆婆的"没有人问过我"——揭示的是哪种正义的缺失？</li>
+        <li>工程师在"社会许可证"的获取中，可以扮演什么角色？</li>
       </ul>
     </div>
   </div>
 
   <div class="section">
     <h2>📚 课中学习</h2>
+
     <div class="card">
-      <h3>本周知识要点</h3>
+      <h3>教法定位 <span class="tag tag-red">境</span></h3>
+      <p>🏷 叙·框·境·创 → 本周主导维度为 <strong style="color:#e74c3c">境</strong>：课堂变成一场"模拟法庭"——原告（三多里巷居民）、被告（政府规划部门）、证人（技术专家/NGO/媒体），学生扮演不同角色。"境是炼真金——在角色中理解：同一个技术问题，不同位置的人看到的是完全不同的世界。"</p>
+    </div>
+
+    <div class="card">
+      <h3>核心教学内容：人文错配三维框架</h3>
+      <p style="color:#7fb8e0;font-size:13px;margin-bottom:10px">黄正文教授 · 错配-修复框架 · 人文错配子维度</p>
       <ul>
-        <li><span class="tag tag-red">核心概念</span> 环境正义的三维框架（分配/程序/承认）</li>
-        <li><span class="tag tag-teal">方法</span> 公众参与机制与冲突化解方法</li>
-        <li><span class="tag tag-red">核心概念</span> 工程师的伦理责任与专业判断</li>
-        <li><span class="tag tag-green">产出</span> 绘制"固废人文分析"多维框架图</li>
+        <li><span class="tag tag-red">分配正义缺陷</span> 固废风险不成比例地落在弱势群体上——低收入社区、老城区、农村。核心问题：风险分配是不公平的，"别人不要的垃圾往我这里倒"</li>
+        <li><span class="tag tag-red">程序正义缺失</span> 决策过程未实质性地纳入受影响者——公示在中缝、听证会走过场、通知用"他们看不懂的语言"。核心问题："合法"的流程不产生"正当"的结果</li>
+        <li><span class="tag tag-red">承认正义忽视</span> 受影响群体的价值观/尊严/生活世界被工程逻辑漠视——他们的"家园"在决策者的Excel里只是一行"拆迁成本"。核心问题：把"人"简化成了"变量"</li>
+      </ul>
+      <p style="color:#556;font-size:12px;margin-top:8px">【黄正文教授核心判断】三维相互嵌套，只解一维无法化解冲突。不能说"我们补偿到位了"就解决了分配正义，而不承认程序正义的缺失导致了信任崩塌。工程师必须理解：居民反对的不是技术，是技术决策中"自己的缺席"。</p>
+    </div>
+
+    <div class="card">
+      <h3>案例深潜：S010-S012 五段叙事拆解</h3>
+      <ul>
+        <li><strong style="color:#e74c3c">背景</strong>：三多里巷百年老巷，低收入租户聚居，周边已有多座环卫设施</li>
+        <li><strong style="color:#e74c3c">冲突</strong>：垃圾中转站选址公示期满无人反对，开工后被堵路——"合法"≠"正当"的思想碰撞</li>
+        <li><strong style="color:#e74c3c">决策</strong>：政府面临：强制施工（可能引发更大冲突）vs 重新选址（成本高）vs 协商补偿（居民要的不是钱）</li>
+        <li><strong style="color:#e74c3c">结局</strong>：启动实质性对话后，发现核心诉求不是"补偿费"而是"受尊重"与"信息透明"——同意在社区设立监督委员会，换来了项目的重启</li>
+        <li><strong style="color:#e74c3c">启示</strong>：邻避冲突的钥匙不在技术方案里，在"承认"里——承认对方的尊严、知识、诉求是值得被认真对待的。工程师的角色不是"说服居民"，而是让居民成为决策的一部分</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>课堂互动指引</h3>
-      <ul>
-        <li>角色扮演：固废设施选址听证会（居民/政府/企业/专家/NGO）</li>
-        <li>小组讨论：工程师在"邻避困境"中的角色抉择</li>
-        <li>注意记录"人文错配"的三大分析维度</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>案例讨论提示</h3>
-      <div class="excerpt">纪实小说选段（S010-S012）：《三多里巷》中的社区抗争与环境正义之辩...</div>
-      <ul>
-        <li>分析维度：分配正义 · 程序正义 · 承认正义</li>
-        <li>方法论语块：利益相关方分析、社会影响评价</li>
-      </ul>
+      <h3>方法论语块 + 研究空白</h3>
+      <div class="method">
+        <strong>● 方法论语块：</strong>利益相关方分析（Stakeholder Analysis）+ 环境冲突化解六步法：识别→倾听→尊重→共议→承诺→监督。<br>
+        <strong>● 研究空白：</strong>中国固废设施"运行许可证"与"社会许可证"的双轨评估——有多少设施是两证齐全？有多少只有前者没有后者？可设计双证评估量表，对全国已运行固废设施进行抽样调查。
+      </div>
     </div>
   </div>
 
@@ -150,19 +174,18 @@ body{
     <div class="card">
       <h3>作业要求</h3>
       <ul>
-        <li>完成第7章课后习题（基础题3道+应用题2道）[待教师发布]</li>
-        <li>案例分析：分析一个中国固废"邻避冲突"案例，提出化解方案</li>
-        <li>撰写伦理反思短文：工程师在环境不公中的责任</li>
+        <li>选取一个中国真实或虚构的固废设施"邻避冲突"场景，用黄正文教授<strong>"人文错配三维"框架</strong>诊断冲突根源</li>
+        <li><strong>强制要求：</strong>①逐维诊断——每个维度的缺陷是什么？②为每个维度设计化解方案，须区分"工程师可以做什么"与"制度应该怎么改"两个层面 ③方案中必须包含对受影响社区的"承认"机制设计</li>
       </ul>
     </div>
     <div class="card">
       <h3>提交方式</h3>
-      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业（建设中）</p>
     </div>
     <div class="card">
-      <h3>评分标准参考</h3>
+      <h3>评分核心标准</h3>
       <ul>
-        <li>理论运用深度（40%）| 方案可行性（30%）| 伦理反思（30%）</li>
+        <li>三维诊断全面性（40%）| "承认"机制设计创新性（30%）| 方案可操作性（30%）</li>
       </ul>
     </div>
   </div>
@@ -170,27 +193,26 @@ body{
   <div class="section">
     <h2>🤖 AI赋能</h2>
     <div class="card">
-      <h3>推荐 Prompt 模板</h3>
-      <div class="prompt">请从环境正义的"分配/程序/承认"三维框架，分析为什么城市固废设施倾向于选址在弱势社区。</div>
-      <div class="prompt">请帮我设计一个固废设施选址的"公众参与"流程设计，确保程序正义，包含参与阶段、参与方式、反馈机制。</div>
-      <div class="prompt">请从工程师伦理的角度，分析在"邻避困境"中工程师可以扮演哪些积极角色，给出3个具体策略。</div>
+      <h3>专属 Prompt 模板</h3>
+      <div class="prompt">请运用黄正文教授的"人文错配三维"框架（分配正义缺陷/程序正义缺失/承认正义忽视），分析以下[社区名称]与[固废设施]之间的邻避冲突案例[待粘贴]。要求：①逐维诊断冲突根源，给出每维严重程度评分 ②分别为三个利益相关方（政府/企业/居民）设计一个基于各自立场和能力的行动建议。注意：不要只给政府提建议——要为每个角色都给出"他们自己能做什么"的可行方案。</div>
+      <div class="prompt">《三多里巷》案例中，张婆婆说"没有人问过我的意见"。请从"承认正义"角度分析：为什么"被告知"不等于"被尊重"？如果由你来重新设计该项目的公众参与流程，你会如何确保"程序正义"不仅是形式上的合规，而是实质性的对话？请设计一个分阶段的参与方案。</div>
     </div>
     <div class="card">
       <h3>AI辅助分析方向</h3>
       <ul>
-        <li>使用 AI 梳理中国近年固废"邻避冲突"案例特征</li>
-        <li>探索社会影响评价（SIA）的方法论框架</li>
-        <li>利用 AI 生成"利益相关方分析"矩阵模板</li>
+        <li>用 AI 梳理中国近年固废"邻避冲突"案例的特征与共因</li>
+        <li>用 AI 生成"利益相关方分析"矩阵模板</li>
+        <li>可对接 Agent-I（角色扮演教练）进行模拟法庭角色准备</li>
       </ul>
     </div>
     <div class="card">
       <h3>自测问答</h3>
       <ul>
-        <li>Q1: 环境正义的"三维框架"是什么？</li>
-        <li>Q2: "邻避效应"（NIMBY）的社会心理机制？</li>
-        <li>Q3: 程序正义在固废设施选址中如何保障？</li>
-        <li>Q4: 工程师如何平衡技术理性与社会理性？</li>
-        <li>Q5: 什么是"人文错配"的核心论点？</li>
+        <li>Q1: 黄正文教授"人文错配三维"是什么？</li>
+        <li>Q2: "运行许可证"与"社会许可证"有什么区别？</li>
+        <li>Q3: 为什么"程序合法"不一定"实质正当"？</li>
+        <li>Q4: "承认正义忽视"的工程表现是什么？</li>
+        <li>Q5: 工程师在弥合人文错配中可以扮演哪些积极角色？</li>
       </ul>
     </div>
   </div>
@@ -204,7 +226,7 @@ body{
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法 · 点暇叙事 匠心教学</p>
 </div>
 
 </body>
