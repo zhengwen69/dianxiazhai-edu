@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习园地 — 固体废弃物污染防治技术</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
+  color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+  padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:40px}
+.header h1{font-size:28px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#00b894}
+.header .sub{color:#667;font-size:14px;margin-top:6px}
+.header .motto{font-size:13px;color:#556;margin-top:8px}
+
+.section-label{
+  text-align:center;color:#556677;font-size:12px;
+  letter-spacing:2px;margin:24px 0 12px;max-width:800px;width:100%
+}
+
+/* 折叠导览 */
+.guide-wrap{max-width:800px;width:100%}
+.acc-item{
+  background:rgba(13,31,53,.65);border:1px solid rgba(0,184,148,.12);
+  border-radius:12px;margin-bottom:12px;overflow:hidden;
+  transition:border-color .3s;
+}
+.acc-item:hover{border-color:rgba(0,184,148,.25)}
+.acc-header{
+  display:flex;align-items:center;padding:18px 22px;cursor:pointer;
+  user-select:none;transition:background .25s;
+}
+.acc-header:hover{background:rgba(0,184,148,.06)}
+.acc-header .icon{font-size:22px;margin-right:14px;flex-shrink:0}
+.acc-header .title{font-size:16px;font-weight:600;color:#e8e8e8;flex:1}
+.acc-header .arrow{
+  font-size:12px;color:#556;transition:transform .35s;
+}
+.acc-header .arrow.open{transform:rotate(90deg)}
+.acc-content{
+  max-height:0;overflow:hidden;transition:max-height .4s ease;
+}
+.acc-content.open{max-height:600px}
+.acc-body{
+  padding:0 22px 20px;color:#aabbcc;font-size:13px;line-height:2;
+}
+.acc-body li{list-style:none;padding:2px 0}
+.acc-body li::before{content:"▸ ";color:#00b894;margin-right:4px}
+
+/* 五维认知卡片行 */
+.dim-row{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  max-width:800px;width:100%
+}
+.dim-card{
+  background:rgba(13,31,53,.65);border:1px solid rgba(0,184,148,.12);
+  border-radius:10px;padding:14px 22px;text-align:center;cursor:pointer;
+  text-decoration:none;transition:all .3s;color:#c8d6e5;
+  min-width:120px;
+}
+.dim-card:hover{border-color:rgba(0,184,148,.35);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.dim-card .dim-icon{font-size:24px;margin-bottom:6px;display:block}
+.dim-card .dim-name{font-size:14px;font-weight:600;color:#e8e8e8}
+.dim-card .dim-sub{font-size:11px;color:#556;margin-top:4px}
+
+/* 八周网格 */
+.week-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  max-width:800px;width:100%
+}
+.week-item{
+  position:relative;
+  background:rgba(13,31,53,.65);border:1px solid rgba(0,184,148,.08);
+  border-radius:10px;padding:16px 14px 14px;text-align:center;
+  text-decoration:none;transition:all .3s;color:#c8d6e5;display:block;
+}
+.week-item:hover{border-color:rgba(0,184,148,.3);transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.3)}
+.week-item .wn{font-size:14px;font-weight:600;color:#00b894;margin-bottom:4px}
+.week-item .wt{font-size:11px;color:#667}
+.week-item .check-mark{
+  position:absolute;top:8px;right:10px;width:20px;height:20px;
+  border-radius:50%;border:2px solid rgba(0,184,148,.3);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .25s;font-size:12px;color:transparent;
+}
+.week-item .check-mark.checked{
+  background:#00b894;border-color:#00b894;color:#fff;
+}
+.week-item.checked{border-color:rgba(0,184,148,.25);background:rgba(0,184,148,.06)}
+
+/* 助学团队卡片 */
+.link-card{
+  display:block;max-width:800px;width:100%;text-decoration:none;
+  background:rgba(13,31,53,.65);border:1px solid rgba(52,152,219,.15);
+  border-radius:12px;padding:18px 22px;margin-top:12px;
+  transition:all .3s;color:#c8d6e5;
+}
+.link-card:hover{border-color:rgba(52,152,219,.35);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.link-card .lc-row{display:flex;align-items:center;gap:14px}
+.link-card .lc-icon{font-size:28px}
+.link-card .lc-name{font-size:17px;font-weight:600;color:#3498db}
+.link-card .lc-desc{font-size:12px;color:#667;margin-top:2px}
+.link-card .lc-arrow{font-size:14px;color:#556;margin-left:auto}
+
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+.footer a{color:#00b894;text-decoration:none}
+
+.progress-bar-wrap{
+  max-width:800px;width:100%;margin:8px 0 18px;
+  display:flex;align-items:center;gap:10px;
+}
+.progress-bar-wrap .label{font-size:11px;color:#556;flex-shrink:0}
+.progress-bar{
+  flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.05);
+  overflow:hidden;
+}
+.progress-bar .fill{
+  height:100%;border-radius:3px;background:linear-gradient(90deg,#00b894,#2ecc71);
+  transition:width .4s ease;width:0%
+}
+.progress-bar-wrap .pct{font-size:11px;color:#00b894;flex-shrink:0;min-width:30px}
+
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:22px}
+  .header .sub{font-size:12px}
+  .acc-header{padding:14px 16px}
+  .acc-header .title{font-size:14px}
+  .acc-body{padding:0 16px 16px;font-size:12px}
+  .week-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .week-item{padding:12px 10px}
+  .week-item .wn{font-size:12px}
+  .week-item .wt{font-size:10px}
+  .dim-card{padding:10px 14px;min-width:80px}
+  .dim-card .dim-name{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .progress-bar-wrap{margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+
+<div class="header">
+  <h1><span>学习园地</span></h1>
+  <div class="sub">研究生学习子门户 — 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="motto">「好好学习 天天向上」 — 以学为中心·八周思维重塑</div>
+</div>
+
+<!-- 学习导览 -->
+<div class="section-label">▾ 学习导览 ▾</div>
+<div class="guide-wrap">
+
+  <div class="acc-item">
+    <div class="acc-header">
+      <span class="icon">📋</span>
+      <span class="title">课程概览（学生版）</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="acc-content">
+      <div class="acc-body">
+        <ul>
+          <li><strong>课程名称：</strong>固体废弃物污染防治技术</li>
+          <li><strong>课程类型：</strong>专业学位研究生课程（环境工程/资源与环境）</li>
+          <li><strong>总学时：</strong>32学时（理论）+ 16学时（实践/研讨）</li>
+          <li><strong>教学法：</strong>叙·框·境·创 四维教学法</li>
+          <li><strong>核心产出（OBE）：</strong>①能分析固废问题的多维错配 ②能提出工程修复方案 ③能融入工程伦理与社会维度 ④形成系统性思维</li>
+          <li><strong>考核方式：</strong>过程评价（案例讨论30% + 场景参与30%）+ 期末课程论文（40%）</li>
+          <li><strong>先修要求：</strong>环境工程原理、固体废物处理与处置（本科基础）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-header">
+      <span class="icon">🗂️</span>
+      <span class="title">章节导航（学习路径）</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="acc-content">
+      <div class="acc-body">
+        <ul>
+          <li><strong>第1周：空间错配</strong> — 从废弃物到资产 · 固废定义/分类/危害</li>
+          <li><strong>第2周：空间错配Ⅱ</strong> — 填埋场选址与空间决策</li>
+          <li><strong>第3周：技术错配Ⅰ</strong> — 焚烧/热解技术适用性分析</li>
+          <li><strong>第4周：技术错配Ⅱ</strong> — 生物处理（堆肥/厌氧）技术选择</li>
+          <li><strong>第5周：行为错配Ⅰ</strong> — 垃圾分类与居民行为经济学</li>
+          <li><strong>第6周：行为错配Ⅱ</strong> — 生产者责任延伸（EPR）与政策工具</li>
+          <li><strong>第7周：人文错配</strong> — 邻避效应/环境正义/公众参与</li>
+          <li><strong>第8周：思维整合</strong> — 综合研讨·模拟决策·课程总结</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-item">
+    <div class="acc-header">
+      <span class="icon">🌳</span>
+      <span class="title">知识导图（自测版）</span>
+      <span class="arrow">▶</span>
+    </div>
+    <div class="acc-content">
+      <div class="acc-body">
+        <ul>
+          <li><strong>固废基础知识：</strong>□ 定义与分类 □ 物理/化学/生物特性 □ 危害与控制原则</li>
+          <li><strong>处理技术体系：</strong>□ 收运系统 □ 预处理 □ 资源化 □ 最终处置</li>
+          <li><strong>工程管理：</strong>□ 全生命周期分析 □ 环境风险评价 □ 经济性分析</li>
+          <li><strong>政策与法规：</strong>□ 固废法体系 □ 标准规范 □ 国际公约</li>
+          <li><strong>研究方法：</strong>□ 文献调研 □ 案例比较 □ 情景模拟 □ 综合分析</li>
+          <li><strong>前沿议题：</strong>□ 碳中和 □ 循环经济 □ 智慧固废 □ 生态设计</li>
+          <li><em style="color:#556">（每周学习后对照自查，标记已掌握项）</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <a href="助学团队-学生版.html" class="link-card">
+    <div class="lc-row">
+      <span class="lc-icon">🤖</span>
+      <div>
+        <div class="lc-name">助学团队（AI Agent 学生版）</div>
+        <div class="lc-desc">9-Agent 学伴协同体系 — 从预习到论文全程护航</div>
+      </div>
+      <span class="lc-arrow">→</span>
+    </div>
+  </a>
+
+</div>
+
+<!-- 五维认知框架 -->
+<div class="section-label">▾ 五维认知框架 · 案例直达 ▾</div>
+<div class="dim-row">
+  <a class="dim-card" href="学习-第1周.html" style="border-color:rgba(230,126,34,.2)">
+    <span class="dim-icon">💰</span>
+    <div class="dim-name" style="color:#e67e22">垃圾资产</div>
+    <div class="dim-sub">→ 第1周：空间错配</div>
+  </a>
+  <a class="dim-card" href="学习-第1周.html" style="border-color:rgba(91,155,213,.2)">
+    <span class="dim-icon">🗺️</span>
+    <div class="dim-name" style="color:#5b9bd5">垃圾空间</div>
+    <div class="dim-sub">→ 第1-2周</div>
+  </a>
+  <a class="dim-card" href="学习-第4周.html" style="border-color:rgba(46,204,113,.2)">
+    <span class="dim-icon">⏱️</span>
+    <div class="dim-name" style="color:#2ecc71">垃圾时间</div>
+    <div class="dim-sub">→ 第3-4周</div>
+  </a>
+  <a class="dim-card" href="学习-第3周.html" style="border-color:rgba(155,89,182,.2)">
+    <span class="dim-icon">⚙️</span>
+    <div class="dim-name" style="color:#9b59b6">垃圾技术</div>
+    <div class="dim-sub">→ 第3周</div>
+  </a>
+  <a class="dim-card" href="学习-第5周.html" style="border-color:rgba(241,196,15,.2)">
+    <span class="dim-icon">🔄</span>
+    <div class="dim-name" style="color:#f1c40f">垃圾模式</div>
+    <div class="dim-sub">→ 第5-6周</div>
+  </a>
+</div>
+
+<!-- 八周学习计划 -->
+<div class="section-label">▾ 八周学习计划 ▾</div>
+<div class="progress-bar-wrap">
+  <span class="label">学习进度</span>
+  <div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+  <span class="pct" id="progressPct">0/8</span>
+</div>
+
+<div class="week-grid">
+  <a class="week-item" href="学习-第1周.html" data-week="1">
+    <span class="check-mark">✓</span>
+    <div class="wn">第1周</div>
+    <div class="wt">空间错配</div>
+  </a>
+  <a class="week-item" href="学习-第2周.html" data-week="2">
+    <span class="check-mark">✓</span>
+    <div class="wn">第2周</div>
+    <div class="wt">空间错配Ⅱ</div>
+  </a>
+  <a class="week-item" href="学习-第3周.html" data-week="3">
+    <span class="check-mark">✓</span>
+    <div class="wn">第3周</div>
+    <div class="wt">技术错配Ⅰ</div>
+  </a>
+  <a class="week-item" href="学习-第4周.html" data-week="4">
+    <span class="check-mark">✓</span>
+    <div class="wn">第4周</div>
+    <div class="wt">技术错配Ⅱ</div>
+  </a>
+  <a class="week-item" href="学习-第5周.html" data-week="5">
+    <span class="check-mark">✓</span>
+    <div class="wn">第5周</div>
+    <div class="wt">行为错配Ⅰ</div>
+  </a>
+  <a class="week-item" href="学习-第6周.html" data-week="6">
+    <span class="check-mark">✓</span>
+    <div class="wn">第6周</div>
+    <div class="wt">行为错配Ⅱ</div>
+  </a>
+  <a class="week-item" href="学习-第7周.html" data-week="7">
+    <span class="check-mark">✓</span>
+    <div class="wn">第7周</div>
+    <div class="wt">人文错配</div>
+  </a>
+  <a class="week-item" href="学习-第8周.html" data-week="8">
+    <span class="check-mark">✓</span>
+    <div class="wn">第8周</div>
+    <div class="wt">思维整合</div>
+  </a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
+</div>
+
+<script>
+(function(){
+  var KEY='gufei_learning_progress';
+  var progress=JSON.parse(localStorage.getItem(KEY)||'{}');
+
+  function updateUI(){
+    var items=document.querySelectorAll('.week-item');
+    var count=0;
+    items.forEach(function(el){
+      var w=el.getAttribute('data-week');
+      var mk=el.querySelector('.check-mark');
+      if(progress[w]){
+        mk.classList.add('checked');
+        el.classList.add('checked');
+        count++;
+      }else{
+        mk.classList.remove('checked');
+        el.classList.remove('checked');
+      }
+    });
+    document.getElementById('progressFill').style.width=(count/8*100)+'%';
+    document.getElementById('progressPct').textContent=count+'/8';
+  }
+
+  document.querySelectorAll('.week-item').forEach(function(el){
+    el.addEventListener('click',function(e){
+      if(e.target.classList.contains('check-mark')||e.target.closest('.check-mark')){
+        e.preventDefault();
+        var w=el.getAttribute('data-week');
+        progress[w]=!progress[w];
+        localStorage.setItem(KEY,JSON.stringify(progress));
+        updateUI();
+      }
+    });
+  });
+
+  updateUI();
+
+  // accordion
+  document.querySelectorAll('.acc-header').forEach(function(h){
+    h.addEventListener('click',function(){
+      var content=h.nextElementSibling;
+      var arrow=h.querySelector('.arrow');
+      content.classList.toggle('open');
+      arrow.classList.toggle('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

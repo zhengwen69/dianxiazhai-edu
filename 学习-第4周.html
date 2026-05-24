@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4周：技术错配Ⅱ — 学习指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#2ecc71}
+.header .sub{color:#00b894;font-size:14px;margin-top:4px}
+.header .meta{color:#556;font-size:12px;margin-top:6px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#2ecc71}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.08);
+  border-radius:12px;padding:22px 24px;margin-bottom:14px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(0,184,148,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:16px;color:#7fb8e0;margin-bottom:10px}
+.card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
+.card ul{padding-left:18px}
+.card ul li::marker{color:#00b894}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .prompt{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,184,148,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#889;
+  font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
+  white-space:pre-wrap;word-break:break-all;
+}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.week-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:900px;width:100%;margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(0,184,148,.08);
+}
+.week-nav a{
+  color:#7fb8e0;text-decoration:none;font-size:14px;padding:8px 18px;
+  border-radius:8px;border:1px solid rgba(0,184,148,.15);
+  background:rgba(13,31,53,.65);transition:all .3s;
+}
+.week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .center{color:#00b894;font-weight:600}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:20px}
+  .header .sub{font-size:12px}.card{padding:16px 14px}
+  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .week-nav a{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<div class="header">
+  <h1><span>第4周</span>：技术错配Ⅱ — 学习指南</h1>
+  <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="meta">对应教师端：<a href="第4周-技术错配Ⅱ.html" style="color:#5b9bd5">第4周-技术错配Ⅱ</a> | 纪实小说素材：S004-S006</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🔍 课前预习</h2>
+    <div class="card">
+      <h3>预习任务单</h3>
+      <ul>
+        <li>预习好氧堆肥与厌氧消化的基本原理及关键参数</li>
+        <li>了解生物处理技术的"垃圾时间"维度：时间尺度与效率</li>
+        <li>比较不同生物处理技术的碳足迹与能量产出</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>推荐阅读素材</h3>
+      <ul>
+        <li>纪实小说《青龙湖》续章（素材编号 S004-S006）</li>
+        <li>相关规范：《城镇垃圾农用控制标准》（GB 8172）</li>
+        <li>推荐文献：餐厨垃圾厌氧消化工艺优化 [待指定]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>预习思考题</h3>
+      <ul>
+        <li>好氧堆肥与厌氧消化的核心区别是什么？（氧气条件/产物/时间）</li>
+        <li>为什么说生物处理是"时间换空间"的策略？</li>
+        <li>"垃圾时间"维度如何影响技术选择？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 课中学习</h2>
+    <div class="card">
+      <h3>本周知识要点</h3>
+      <ul>
+        <li><span class="tag tag-green">核心概念</span> 好氧堆肥工艺（条垛/静态/反应器）</li>
+        <li><span class="tag tag-teal">方法</span> 厌氧消化工艺（湿式/干式）及沼气利用</li>
+        <li><span class="tag tag-green">核心概念</span> 生物干化与机械生物处理（MBT）</li>
+        <li><span class="tag tag-teal">方法</span> 有机固废处理的碳减排核算</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>课堂互动指引</h3>
+      <ul>
+        <li>参与讨论：厨余垃圾应该堆肥还是厌氧？依据是什么？</li>
+        <li>小组活动：设计一个小型社区厨余堆肥方案</li>
+        <li>注意记录"垃圾时间"分析框架</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>案例讨论提示</h3>
+      <div class="excerpt">纪实小说选段（S004-S006续）：《青龙湖》生物处理厂的运行困境与时间维度...</div>
+      <ul>
+        <li>分析维度：工艺时间 · 环境效益时间 · 投资回收期</li>
+        <li>方法论语块：生命周期评价（LCA）、能量平衡分析</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ 课后作业</h2>
+    <div class="card">
+      <h3>作业要求</h3>
+      <ul>
+        <li>完成第4章课后习题（基础题3道+应用题2道）[待教师发布]</li>
+        <li>工艺设计：为某餐厨垃圾处理厂设计堆肥/厌氧工艺参数</li>
+        <li>绘制"垃圾时间"分析图（技术×时间矩阵）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>提交方式</h3>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+    </div>
+    <div class="card">
+      <h3>评分标准参考</h3>
+      <ul>
+        <li>工艺参数合理性（40%）| 碳减排分析（30%）| 方案创新性（30%）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤖 AI赋能</h2>
+    <div class="card">
+      <h3>推荐 Prompt 模板</h3>
+      <div class="prompt">请用表格对比好氧堆肥与厌氧消化的工艺条件（温度/时间/含水率/C:N比/产物），并注明各自的适用场景。</div>
+      <div class="prompt">假设某城市日产餐厨垃圾 100 吨（含水率 75%，有机质 85%），请估算厌氧消化产沼量和堆肥成品量。</div>
+      <div class="prompt">请从"垃圾时间"的视角，分析为什么生物处理比焚烧更慢，但在碳中和背景下更有战略意义。</div>
+    </div>
+    <div class="card">
+      <h3>AI辅助分析方向</h3>
+      <ul>
+        <li>使用 AI 生成有机固废生物处理的 LCA 评价框架</li>
+        <li>探索 BioWin 或类似厌氧消化模拟工具</li>
+        <li>利用 AI 对比不同城市餐厨处理技术路线的减排效益</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>自测问答</h3>
+      <ul>
+        <li>Q1: 好氧堆肥的四个阶段及其温度特征？</li>
+        <li>Q2: 厌氧消化的四大微生物阶段？</li>
+        <li>Q3: C:N 比对堆肥过程的影响机制？</li>
+        <li>Q4: 什么是"垃圾时间"维度？</li>
+        <li>Q5: MBT 工艺的完整流程是什么？</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="week-nav">
+  <a href="学习-第3周.html">◀ 上一周：技术错配Ⅰ</a>
+  <a href="学习园地.html" class="center">📖 学习园地</a>
+  <a href="学习-第5周.html">下一周：行为错配Ⅰ ▶</a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+</div>
+
+</body>
+</html>

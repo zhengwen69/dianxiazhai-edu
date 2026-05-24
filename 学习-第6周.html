@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6周：行为错配Ⅱ — 学习指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#e67e22}
+.header .sub{color:#00b894;font-size:14px;margin-top:4px}
+.header .meta{color:#556;font-size:12px;margin-top:6px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#e67e22}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.08);
+  border-radius:12px;padding:22px 24px;margin-bottom:14px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(0,184,148,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:16px;color:#7fb8e0;margin-bottom:10px}
+.card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
+.card ul{padding-left:18px}
+.card ul li::marker{color:#00b894}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .prompt{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,184,148,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#889;
+  font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
+  white-space:pre-wrap;word-break:break-all;
+}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.tag-orange{background:rgba(230,126,34,.15);color:#e67e22}
+.tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.week-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:900px;width:100%;margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(0,184,148,.08);
+}
+.week-nav a{
+  color:#7fb8e0;text-decoration:none;font-size:14px;padding:8px 18px;
+  border-radius:8px;border:1px solid rgba(0,184,148,.15);
+  background:rgba(13,31,53,.65);transition:all .3s;
+}
+.week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .center{color:#00b894;font-weight:600}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:20px}
+  .header .sub{font-size:12px}.card{padding:16px 14px}
+  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .week-nav a{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<div class="header">
+  <h1><span>第6周</span>：行为错配Ⅱ — 学习指南</h1>
+  <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="meta">对应教师端：<a href="第6周-行为错配Ⅱ.html" style="color:#5b9bd5">第6周-行为错配Ⅱ</a> | 纪实小说素材：S007-S009</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🔍 课前预习</h2>
+    <div class="card">
+      <h3>预习任务单</h3>
+      <ul>
+        <li>预习生产者责任延伸制度（EPR）的理论基础与国际实践</li>
+        <li>了解固废管理的经济学工具：押金制/回收补贴/填埋税/排污权交易</li>
+        <li>思考"行为错配"的制度层面：如何让生产者改变行为？</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>推荐阅读素材</h3>
+      <ul>
+        <li>纪实小说《杨柳坝与刘家湾》续章（素材编号 S007-S009）</li>
+        <li>相关政策：《关于推行生产者责任延伸制度的意见》</li>
+        <li>推荐文献：EPR 制度在电子废物管理中的应用 [待指定]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>预习思考题</h3>
+      <ul>
+        <li>EPR 制度如何从源头改变固废产生量？</li>
+        <li>为什么"污染者付费"原则在实践中常常失效？</li>
+        <li>《杨柳坝与刘家湾》中企业行为变化的制度驱动力是什么？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 课中学习</h2>
+    <div class="card">
+      <h3>本周知识要点</h3>
+      <ul>
+        <li><span class="tag tag-orange">核心概念</span> 生产者责任延伸（EPR）的国际模式比较</li>
+        <li><span class="tag tag-teal">方法</span> 固废管理的经济政策工具矩阵</li>
+        <li><span class="tag tag-orange">核心概念</span> 循环经济与固废管理的制度设计</li>
+        <li><span class="tag tag-green">产出</span> 绘制"固废管理政策工具"分类图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>课堂互动指引</h3>
+      <ul>
+        <li>参与辩论：EPR 制度 vs 终端处理，哪个更有长期效益？</li>
+        <li>小组活动：为某种特定废物（如包装废弃物）设计 EPR 方案</li>
+        <li>注意记录"垃圾模式"的制度维度</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>案例讨论提示</h3>
+      <div class="excerpt">纪实小说选段（S007-S009续）：《杨柳坝与刘家湾》中产业转型的固废减量之路...</div>
+      <ul>
+        <li>分析维度：制度设计 · 企业行为 · 市场机制</li>
+        <li>方法论语块：政策工具分类学、制度经济学</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ 课后作业</h2>
+    <div class="card">
+      <h3>作业要求</h3>
+      <ul>
+        <li>完成第6章课后习题（基础题3道+应用题2道）[待教师发布]</li>
+        <li>政策分析报告：评估电子废物EPR政策在某一地区的实施效果</li>
+        <li>设计一个理想的"垃圾模式"政策组合方案</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>提交方式</h3>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+    </div>
+    <div class="card">
+      <h3>评分标准参考</h3>
+      <ul>
+        <li>政策分析深度（40%）| 方案设计合理性（30%）| 国际视角（30%）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤖 AI赋能</h2>
+    <div class="card">
+      <h3>推荐 Prompt 模板</h3>
+      <div class="prompt">请对比欧盟、日本、中国的EPR制度在电子废物管理中的异同，用表格呈现并分析各自的优缺点。</div>
+      <div class="prompt">请从制度经济学的角度，分析为什么"填埋税"可以改变固废处理的行为模式。</div>
+      <div class="prompt">请帮我设计一套针对快递包装废弃物的EPR政策框架，包含责任主体、费用机制和监督体系。</div>
+    </div>
+    <div class="card">
+      <h3>AI辅助分析方向</h3>
+      <ul>
+        <li>使用 AI 梳理全球EPR制度的发展趋势</li>
+        <li>探索 Material Flow Analysis（MFA）在政策评估中的应用</li>
+        <li>利用 AI 生成"政策组合"效果模拟分析</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>自测问答</h3>
+      <ul>
+        <li>Q1: EPR 制度的三大核心要素是什么？</li>
+        <li>Q2: 列举五种固废管理的经济政策工具。</li>
+        <li>Q3: "污染者付费"原则在固废管理中的局限性是什么？</li>
+        <li>Q4: 循环经济的"3R"与固废管理的关系？</li>
+        <li>Q5: 中国EPR制度当前面临的主要挑战是什么？</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="week-nav">
+  <a href="学习-第5周.html">◀ 上一周：行为错配Ⅰ</a>
+  <a href="学习园地.html" class="center">📖 学习园地</a>
+  <a href="学习-第7周.html">下一周：人文错配 ▶</a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+</div>
+
+</body>
+</html>

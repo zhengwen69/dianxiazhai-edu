@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1周：空间错配 — 学习指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#e67e22}
+.header .sub{color:#00b894;font-size:14px;margin-top:4px}
+.header .meta{color:#556;font-size:12px;margin-top:6px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#e67e22}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.08);
+  border-radius:12px;padding:22px 24px;margin-bottom:14px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(0,184,148,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:16px;color:#7fb8e0;margin-bottom:10px}
+.card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
+.card ul{padding-left:18px}
+.card ul li::marker{color:#00b894}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .prompt{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,184,148,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#889;
+  font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
+  white-space:pre-wrap;word-break:break-all;
+}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.tag-orange{background:rgba(230,126,34,.15);color:#e67e22}
+.tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.week-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:900px;width:100%;margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(0,184,148,.08);
+}
+.week-nav a{
+  color:#7fb8e0;text-decoration:none;font-size:14px;padding:8px 18px;
+  border-radius:8px;border:1px solid rgba(0,184,148,.15);
+  background:rgba(13,31,53,.65);transition:all .3s;
+}
+.week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .disabled{color:#445;pointer-events:none;opacity:.4}
+.week-nav .center{color:#00b894;font-weight:600}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:20px}
+  .header .sub{font-size:12px}.card{padding:16px 14px}
+  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .week-nav a{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<div class="header">
+  <h1><span>第1周</span>：空间错配 — 学习指南</h1>
+  <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="meta">对应教师端：<a href="第1周-空间错配.html" style="color:#5b9bd5">第1周-空间错配</a> | 纪实小说素材：S001-S003</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🔍 课前预习</h2>
+    <div class="card">
+      <h3>预习任务单</h3>
+      <ul>
+        <li>阅读教材：固体废物的定义、分类体系与基本特性（物理/化学/生物特性）</li>
+        <li>了解固废环境污染的途径与危害（大气/水体/土壤/生态/人类健康）</li>
+        <li>预习"空间错配"概念：废弃物为什么是放错了地方的资源？</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>推荐阅读素材</h3>
+      <ul>
+        <li>纪实小说《龙栖湾》教学选段（素材编号 S001-S003）</li>
+        <li>相关政策法规：《中华人民共和国固体废物污染环境防治法》</li>
+        <li>推荐文献：固废管理的"资产化"视角研究 [待指定]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>预习思考题</h3>
+      <ul>
+        <li>如何从经济学"资源错配"概念理解固体废弃物的本质？</li>
+        <li>你的家乡或学校周边是否存在固废"空间错配"现象？举例说明。</li>
+        <li>《龙栖湾》选段中体现的固废问题属于哪种错配类型？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 课中学习</h2>
+    <div class="card">
+      <h3>本周知识要点</h3>
+      <ul>
+        <li><span class="tag tag-orange">核心概念</span> 固体废弃物定义与分类体系（来源/特性/危害）</li>
+        <li><span class="tag tag-orange">核心概念</span> 空间错配理论框架：从废弃物到资产</li>
+        <li><span class="tag tag-teal">方法</span> 固废特性分析（物理组成/含水率/热值/元素分析）</li>
+        <li><span class="tag tag-green">产出</span> 绘制"固废空间错配"概念图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>课堂互动指引</h3>
+      <ul>
+        <li>参与讨论：你身边的固废空间错配现象</li>
+        <li>小组活动：选取一个城市固废案例，分析其产生-收集-处置的空间链条</li>
+        <li>注意记录教师讲解的"垃圾资产"框架要点</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>案例讨论提示</h3>
+      <div class="excerpt">纪实小说选段（S001）：《龙栖湾》中垃圾填埋场选址引发的社区争议...</div>
+      <ul>
+        <li>分析维度：空间正义 · 环境风险分配 · 利益相关方</li>
+        <li>方法论语块：空间分析、风险暴露评价</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ 课后作业</h2>
+    <div class="card">
+      <h3>作业要求</h3>
+      <ul>
+        <li>完成第1章课后习题（基础题3道+应用题2道）[待教师发布]</li>
+        <li>撰写短文（800字）：分析一个真实固废空间错配案例</li>
+        <li>绘制本周知识思维导图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>提交方式</h3>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+    </div>
+    <div class="card">
+      <h3>评分标准参考</h3>
+      <ul>
+        <li>案例分析完整度（40%）| 理论运用准确性（30%）| 个人见解深度（30%）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤖 AI赋能</h2>
+    <div class="card">
+      <h3>推荐 Prompt 模板</h3>
+      <div class="prompt">请以环境工程研究生的视角，帮我梳理"固体废弃物"的三大分类标准（按来源/按特性/按危害），每种给出2个典型例子。要求用表格形式呈现。</div>
+      <div class="prompt">假设你是一名固废管理专家，请用500字解释"空间错配"概念，并给出3个中国城市固废空间错配的真实案例。</div>
+      <div class="prompt">阅读以下纪实小说选段[粘贴内容]，请提取其中涉及的环境工程知识点，并标注对应的教材章节。</div>
+    </div>
+    <div class="card">
+      <h3>AI辅助分析方向</h3>
+      <ul>
+        <li>使用 GPT/Claude 对比不同国家固废分类标准</li>
+        <li>利用 AI 生成"固废空间错配"概念辨析表</li>
+        <li>探索 LCA 工具在固废管理中的应用入门</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>自测问答</h3>
+      <ul>
+        <li>Q1: 固废按来源可分为哪几类？</li>
+        <li>Q2: 什么是"空间错配"？请用一句话概括。</li>
+        <li>Q3: 固废的八大危害途径是什么？</li>
+        <li>Q4: "垃圾资产"框架的核心论点是什么？</li>
+        <li>Q5: 列举三种固废物理特性分析方法。</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="week-nav">
+  <span class="disabled">◀ 上一周</span>
+  <a href="学习园地.html" class="center">📖 学习园地</a>
+  <a href="学习-第2周.html">下一周：空间错配Ⅱ ▶</a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+</div>
+
+</body>
+</html>

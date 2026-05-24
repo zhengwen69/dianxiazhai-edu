@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5周：行为错配Ⅰ — 学习指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#f1c40f}
+.header .sub{color:#00b894;font-size:14px;margin-top:4px}
+.header .meta{color:#556;font-size:12px;margin-top:6px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#f1c40f}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.08);
+  border-radius:12px;padding:22px 24px;margin-bottom:14px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(0,184,148,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:16px;color:#7fb8e0;margin-bottom:10px}
+.card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
+.card ul{padding-left:18px}
+.card ul li::marker{color:#00b894}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .prompt{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,184,148,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#889;
+  font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
+  white-space:pre-wrap;word-break:break-all;
+}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.tag-yellow{background:rgba(241,196,15,.15);color:#f1c40f}
+.tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.week-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:900px;width:100%;margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(0,184,148,.08);
+}
+.week-nav a{
+  color:#7fb8e0;text-decoration:none;font-size:14px;padding:8px 18px;
+  border-radius:8px;border:1px solid rgba(0,184,148,.15);
+  background:rgba(13,31,53,.65);transition:all .3s;
+}
+.week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .center{color:#00b894;font-weight:600}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:20px}
+  .header .sub{font-size:12px}.card{padding:16px 14px}
+  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .week-nav a{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<div class="header">
+  <h1><span>第5周</span>：行为错配Ⅰ — 学习指南</h1>
+  <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="meta">对应教师端：<a href="第5周-行为错配Ⅰ.html" style="color:#5b9bd5">第5周-行为错配Ⅰ</a> | 纪实小说素材：S007-S009</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🔍 课前预习</h2>
+    <div class="card">
+      <h3>预习任务单</h3>
+      <ul>
+        <li>预习垃圾分类制度的理论基础：行为经济学与环境心理学</li>
+        <li>了解国内外垃圾分类模式（源头分类/集中分选/混合收集）</li>
+        <li>思考"行为错配"概念：为什么技术可行，行为却不可行？</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>推荐阅读素材</h3>
+      <ul>
+        <li>纪实小说《杨柳坝与刘家湾》教学选段（素材编号 S007-S009）</li>
+        <li>相关政策：垃圾分类试点城市方案比较</li>
+        <li>推荐文献：居民垃圾分类行为影响因素研究 [待指定]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>预习思考题</h3>
+      <ul>
+        <li>你的城市实行垃圾分类了吗？实际效果如何？</li>
+        <li>"行为错配"在固废管理中的典型表现有哪些？</li>
+        <li>《杨柳坝与刘家湾》中村民分类行为的转变是如何发生的？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 课中学习</h2>
+    <div class="card">
+      <h3>本周知识要点</h3>
+      <ul>
+        <li><span class="tag tag-yellow">核心概念</span> 垃圾分类的"行为经济学"分析框架</li>
+        <li><span class="tag tag-teal">方法</span> 制度设计：强制vs激励vs助推（Nudge）</li>
+        <li><span class="tag tag-yellow">核心概念</span> 居民分类行为的"态度-行为缺口"</li>
+        <li><span class="tag tag-green">产出</span> 绘制"分类行为影响因素"模型图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>课堂互动指引</h3>
+      <ul>
+        <li>参与讨论：经济激励 vs 社会规范，哪个更能驱动分类行为？</li>
+        <li>小组活动：设计一个有效的社区垃圾分类助推方案（Nudge设计）</li>
+        <li>注意记录"垃圾模式"的行为分析框架</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>案例讨论提示</h3>
+      <div class="excerpt">纪实小说选段（S007-S009）：《杨柳坝与刘家湾》中的垃圾分类推行之路...</div>
+      <ul>
+        <li>分析维度：个体行为 · 社会规范 · 制度设计</li>
+        <li>方法论语块：助推理论（Nudge Theory）、计划行为理论</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ 课后作业</h2>
+    <div class="card">
+      <h3>作业要求</h3>
+      <ul>
+        <li>完成第5章课后习题（基础题3道+应用题2道）[待教师发布]</li>
+        <li>调查设计：编制一份居民垃圾分类行为调查问卷</li>
+        <li>撰写短文：分析"垃圾模式"中行为因素如何影响技术效果</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>提交方式</h3>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+    </div>
+    <div class="card">
+      <h3>评分标准参考</h3>
+      <ul>
+        <li>行为分析深度（40%）| 方案可行性（30%）| 理论运用（30%）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤖 AI赋能</h2>
+    <div class="card">
+      <h3>推荐 Prompt 模板</h3>
+      <div class="prompt">请从行为经济学的角度，分析为什么居民垃圾分类存在"态度积极、行为消极"的缺口，并给出3个政策建议。</div>
+      <div class="prompt">请对比分析日本、德国、中国的垃圾分类制度设计差异，用表格呈现。</div>
+      <div class="prompt">请帮我设计一个社区垃圾分类的Nudge干预方案，包含干预点、干预方式和效果评估指标。</div>
+    </div>
+    <div class="card">
+      <h3>AI辅助分析方向</h3>
+      <ul>
+        <li>使用 AI 辅助设计分类行为调查问卷</li>
+        <li>探索社会实验方法在固废管理中的应用</li>
+        <li>利用 AI 分析不同城市的分类政策文本</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>自测问答</h3>
+      <ul>
+        <li>Q1: 什么是"态度-行为缺口"？</li>
+        <li>Q2: 助推理论（Nudge）的核心原则是什么？</li>
+        <li>Q3: 强制、激励、助推三种政策工具各有什么优缺点？</li>
+        <li>Q4: 列举影响居民分类行为的五个关键因素。</li>
+        <li>Q5: 什么是"垃圾模式"的完整分析框架？</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="week-nav">
+  <a href="学习-第4周.html">◀ 上一周：技术错配Ⅱ</a>
+  <a href="学习园地.html" class="center">📖 学习园地</a>
+  <a href="学习-第6周.html">下一周：行为错配Ⅱ ▶</a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2周：空间错配Ⅱ — 学习指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#5b9bd5}
+.header .sub{color:#00b894;font-size:14px;margin-top:4px}
+.header .meta{color:#556;font-size:12px;margin-top:6px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#5b9bd5}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.08);
+  border-radius:12px;padding:22px 24px;margin-bottom:14px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(0,184,148,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:16px;color:#7fb8e0;margin-bottom:10px}
+.card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
+.card ul{padding-left:18px}
+.card ul li::marker{color:#00b894}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .prompt{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,184,148,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#889;
+  font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
+  white-space:pre-wrap;word-break:break-all;
+}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5}
+.tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.week-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:900px;width:100%;margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(0,184,148,.08);
+}
+.week-nav a{
+  color:#7fb8e0;text-decoration:none;font-size:14px;padding:8px 18px;
+  border-radius:8px;border:1px solid rgba(0,184,148,.15);
+  background:rgba(13,31,53,.65);transition:all .3s;
+}
+.week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .center{color:#00b894;font-weight:600}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:20px}
+  .header .sub{font-size:12px}.card{padding:16px 14px}
+  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .week-nav a{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<div class="header">
+  <h1><span>第2周</span>：空间错配Ⅱ — 学习指南</h1>
+  <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="meta">对应教师端：<a href="第2周-空间错配Ⅱ.html" style="color:#5b9bd5">第2周-空间错配Ⅱ</a> | 纪实小说素材：S001-S003</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🔍 课前预习</h2>
+    <div class="card">
+      <h3>预习任务单</h3>
+      <ul>
+        <li>复习第1周"空间错配"基本概念，回顾固废定义与分类</li>
+        <li>预习填埋场选址的影响因素（地质/水文/气象/社会/经济）</li>
+        <li>了解固废处理的"空间决策"方法论基础</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>推荐阅读素材</h3>
+      <ul>
+        <li>纪实小说《龙栖湾》续章（素材编号 S001-S003）</li>
+        <li>相关规范：《生活垃圾卫生填埋场选址技术指南》</li>
+        <li>推荐文献：GIS 在固废设施选址中的应用 [待指定]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>预习思考题</h3>
+      <ul>
+        <li>一个合理的填埋场选址应满足哪些约束条件？</li>
+        <li>为什么许多城市固废设施选址面临"邻避困境"？</li>
+        <li>《龙栖湾》中选址争议的关键矛盾是什么？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 课中学习</h2>
+    <div class="card">
+      <h3>本周知识要点</h3>
+      <ul>
+        <li><span class="tag tag-blue">核心概念</span> 填埋场选址的多维约束体系</li>
+        <li><span class="tag tag-teal">方法</span> 空间叠加分析与适宜性评价</li>
+        <li><span class="tag tag-green">产出</span> 绘制典型垃圾填埋场空间布局图</li>
+        <li><span class="tag tag-teal">方法</span> 全生命周期空间管理概念</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>课堂互动指引</h3>
+      <ul>
+        <li>小组讨论：为某城市推荐3个候选填埋场址并说明理由</li>
+        <li>角色扮演准备：选址听证会中的不同利益相关方立场</li>
+        <li>注意记录"垃圾空间"五维分析框架</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>案例讨论提示</h3>
+      <div class="excerpt">纪实小说选段（S001-S003续）：《龙栖湾》填埋场选址引发的多方博弈...</div>
+      <ul>
+        <li>分析维度：地质适宜性 · 环境容量 · 社会可接受度</li>
+        <li>方法论语块：GIS 空间分析、多准则决策</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ 课后作业</h2>
+    <div class="card">
+      <h3>作业要求</h3>
+      <ul>
+        <li>完成第2章课后习题（基础题3道+应用题2道）[待教师发布]</li>
+        <li>案例分析：选取一个中国城市，分析其固废设施的"空间公正性"</li>
+        <li>绘制第1-2周知识关联图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>提交方式</h3>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+    </div>
+    <div class="card">
+      <h3>评分标准参考</h3>
+      <ul>
+        <li>选址分析严谨性（40%）| 因素覆盖完整度（30%）| GIS应用尝试（30%）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤖 AI赋能</h2>
+    <div class="card">
+      <h3>推荐 Prompt 模板</h3>
+      <div class="prompt">请帮助我系统梳理固体废弃物填埋场选址的五大核心约束因素（地质、水文、气象、社会、经济），每类列出3个具体指标。</div>
+      <div class="prompt">请用通俗语言解释"空间叠加分析"在固废设施选址中的应用原理，并举一个简化的例子。</div>
+      <div class="prompt">请从"环境正义"角度分析固废设施选址中的邻避现象（NIMBY），给出3个缓解策略。</div>
+    </div>
+    <div class="card">
+      <h3>AI辅助分析方向</h3>
+      <ul>
+        <li>使用 AI 生成填埋场选址的多准则评价矩阵</li>
+        <li>探索 GIS 开源工具（QGIS）在固废选址中的入门应用</li>
+        <li>利用 AI 对比不同国家的填埋场选址标准</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>自测问答</h3>
+      <ul>
+        <li>Q1: 填埋场选址的五大约束维度是什么？</li>
+        <li>Q2: 什么是"空间叠加分析"？</li>
+        <li>Q3: NIMBY 现象的学术解释是什么？</li>
+        <li>Q4: 固废设施的"空间公正"包含哪些维度？</li>
+        <li>Q5: 列举填埋场设计中需要控制的主要环境指标。</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="week-nav">
+  <a href="学习-第1周.html">◀ 上一周：空间错配</a>
+  <a href="学习园地.html" class="center">📖 学习园地</a>
+  <a href="学习-第3周.html">下一周：技术错配Ⅰ ▶</a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+</div>
+
+</body>
+</html>

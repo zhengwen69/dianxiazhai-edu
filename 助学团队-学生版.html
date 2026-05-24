@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>助学团队 — AI Agent 学生版</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;
+  display:flex;flex-direction:column;align-items:center;
+  min-height:100vh;padding:30px 20px;
+}
+h1{font-size:28px;color:#fff;text-align:center;margin-bottom:6px}
+h1 span{color:#00b894}
+.sub{color:#667;font-size:14px;text-align:center;margin-bottom:8px}
+.note{text-align:center;color:#556;font-size:12px;margin-bottom:30px;line-height:1.8}
+.note em{color:#00b894;font-style:normal}
+
+/* 流程 */
+.flow{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:40px}
+.flow-box{
+  background:rgba(13,31,53,.9);border:1px solid rgba(0,184,148,.2);
+  border-radius:10px;padding:10px 16px;font-size:12px;color:#aabbcc;
+  transition:all .3s;text-align:center;min-width:70px
+}
+.flow-box:hover{border-color:#00b894;transform:translateY(-2px)}
+.flow-box .icon{font-size:20px;margin-bottom:3px}
+.flow-box .name{font-weight:600;color:#e8e8e8;font-size:13px}
+.flow-arrow{color:#00b894;font-size:18px;font-weight:700}
+
+/* Agent卡片 */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:1100px;width:100%}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.1);
+  border-radius:14px;padding:22px;position:relative;overflow:hidden;
+  transition:all .35s;
+}
+.card:hover{border-color:rgba(0,184,148,.35);transform:translateY(-3px);box-shadow:0 6px 25px rgba(0,0,0,.35)}
+.card::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(180deg,var(--accent),transparent);border-radius:4px 0 0 4px
+}
+.card .tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;margin-bottom:10px}
+.card .name{font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
+.card .map{font-size:11px;color:#556;margin-bottom:12px}
+.card .desc{font-size:13px;color:#889;line-height:1.7;margin-bottom:12px}
+.card .check{font-size:12px;color:#556;line-height:1.8}
+.card .check::before{content:"✓ ";color:#00b894;font-weight:700}
+
+/* accent colors */
+.c0{--accent:#e74c3c}.c0 .tag{background:rgba(231,76,60,.15);color:#e74c3c}
+.c1{--accent:#3498db}.c1 .tag{background:rgba(52,152,219,.15);color:#3498db}
+.c2{--accent:#2ecc71}.c2 .tag{background:rgba(46,204,113,.15);color:#2ecc71}
+.c3{--accent:#e67e22}.c3 .tag{background:rgba(230,126,34,.15);color:#e67e22}
+.c4{--accent:#9b59b6}.c4 .tag{background:rgba(155,89,182,.15);color:#9b59b6}
+.c5{--accent:#1abc9c}.c5 .tag{background:rgba(26,188,156,.15);color:#1abc9c}
+.cs{--accent:#f39c12}.cs .tag{background:rgba(243,156,18,.15);color:#f39c12}
+.ci{--accent:#8e44ad}.ci .tag{background:rgba(142,68,173,.15);color:#8e44ad}
+.cb{--accent:#16a085}.cb .tag{background:rgba(22,160,133,.15);color:#16a085}
+
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+
+.footer{text-align:center;margin-top:40px;color:#445;font-size:12px;line-height:1.8}
+
+@media (max-width:768px){
+  body{padding:20px 12px}
+  h1{font-size:20px}
+  .sub{font-size:12px}.note{font-size:11px}
+  .flow{gap:4px;margin-bottom:24px}
+  .flow-box{padding:6px 8px;font-size:10px;min-width:50px;border-radius:6px}
+  .flow-box .icon{font-size:16px}
+  .flow-box .name{font-size:10px}
+  .flow-arrow{font-size:12px}
+  .cards{grid-template-columns:1fr;gap:12px}
+  .card{padding:16px 14px}
+  .card .name{font-size:15px}.card .desc{font-size:11px;line-height:1.6}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<h1><span>固体废弃物污染防治技术</span><br>AI 助学团队</h1>
+<p class="sub">9-Agent 学伴协同体系 · 以学为中心</p>
+<p class="note">
+  📖 从预习到论文全程AI护航 —— 每个Agent对应教师端协同岗位，从<em>学生视角</em>重新定义角色<br>
+  <span style="color:#445;font-size:10px">教师端请参阅 → <a href="agent团队演示.html" style="color:#5b9bd5">AI教学助手团队</a></span>
+</p>
+
+<!-- 学生学习流 -->
+<div class="flow">
+  <div class="flow-box"><div class="icon">🔍</div><div class="name">课前预习</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box"><div class="icon">📚</div><div class="name">课中学习</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box"><div class="icon">✍️</div><div class="name">课后作业</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box"><div class="icon">📊</div><div class="name">自测评估</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box"><div class="icon">🎓</div><div class="name">学术产出</div></div>
+</div>
+
+<!-- Agent 学伴卡片 -->
+<div class="cards">
+
+  <div class="card c0">
+    <span class="tag">监理岗</span>
+    <div class="name">Agent 0 · 学程监理</div>
+    <div class="map">↔ 教师端：教务长 · 质量总控</div>
+    <div class="desc">追踪你的八周学习进度，评估知识掌握度，诊断薄弱环节。对标 OBE 课程目标，生成个人学习成绩报告与改进建议。</div>
+    <div class="check">学习进度可视化追踪</div>
+    <div class="check">知识点掌握度自评诊断</div>
+    <div class="check">薄弱环节定位与强化建议</div>
+    <div class="check">OBE课程目标达成度个人报告</div>
+  </div>
+
+  <div class="card c1">
+    <span class="tag">导航岗</span>
+    <div class="name">Agent 1 · 资料导航员</div>
+    <div class="map">↔ 教师端：资料归档与标准化</div>
+    <div class="desc">帮你快速定位课程资源：教学大纲、讲稿、PPT、论文、纪实小说选段。提供文献检索策略与资料索引。</div>
+    <div class="check">课程资料索引与快速检索</div>
+    <div class="check">文献数据库检索策略建议</div>
+    <div class="check">纪实小说素材库导航（S001-S021）</div>
+    <div class="check">学习资源版本管理</div>
+  </div>
+
+  <div class="card c2">
+    <span class="tag">解读岗</span>
+    <div class="name">Agent 2 · 知识梳理员</div>
+    <div class="map">↔ 教师端：教学文档生成</div>
+    <div class="desc">解读教学大纲中的课程目标-毕业要求矩阵，提炼每周知识要点，生成结构化笔记框架。辅助理解 OBE 产出要求。</div>
+    <div class="check">OBE 大纲解读与知识拆解</div>
+    <div class="check">每周重点知识梳理与归纳</div>
+    <div class="check">结构化笔记模板生成</div>
+    <div class="check">课程思政要点提示</div>
+  </div>
+
+  <div class="card c3">
+    <span class="tag">伴读岗</span>
+    <div class="name">Agent 3 · 课件伴读</div>
+    <div class="map">↔ 教师端：PPT 与讲稿设计</div>
+    <div class="desc">跟随课堂节奏，同步解析PPT重点、讲稿逻辑、板书框架。课堂没听懂的，课后让伴读帮你再次梳理。</div>
+    <div class="check">PPT 要点逐页解析</div>
+    <div class="check">讲稿逻辑结构梳理</div>
+    <div class="check">板书框架与重点标注</div>
+    <div class="check">课堂疑问即时记录与回顾</div>
+  </div>
+
+  <div class="card c4">
+    <span class="tag">辅导岗</span>
+    <div class="name">Agent 4 · 作业辅导员</div>
+    <div class="map">↔ 教师端：作业与课程设计</div>
+    <div class="desc">引导解题思路（不直接给答案），解读评分标准 Rubric，提供课程设计方法框架。帮你理清从需求到方案的全过程。</div>
+    <div class="check">作业解题思路引导</div>
+    <div class="check">评分标准 Rubric 解读</div>
+    <div class="check">课程设计方法框架（填埋场/焚烧/堆肥）</div>
+    <div class="check">分层难度练习推荐</div>
+  </div>
+
+  <div class="card c5">
+    <span class="tag">诊断岗</span>
+    <div class="name">Agent 5 · 学情分析师</div>
+    <div class="map">↔ 教师端：教研教改与质量监控</div>
+    <div class="desc">基于你的作业、测验、课堂参与数据，分析学习效果，识别知识缺口，推荐针对性的补习方向和拓展阅读。</div>
+    <div class="check">学习效果多维分析</div>
+    <div class="check">知识缺口识别与定位</div>
+    <div class="check">针对性补习建议</div>
+    <div class="check">拓展阅读方向推荐</div>
+  </div>
+
+  <div class="card cs">
+    <span class="tag">解读岗</span>
+    <div class="name">Agent-S · 案例解读员</div>
+    <div class="map">↔ 教师端：故事化案例拆解</div>
+    <div class="desc">导读黄正文纪实小说教学选段（《龙栖湾》《青龙湖》《杨柳坝与刘家湾》《三多里巷》），拆解五段式叙事结构，引导案例思辨。</div>
+    <div class="check">纪实小说选段导读（S001-S021）</div>
+    <div class="check">五段叙事结构拆解（背景→冲突→决策→结局→启示）</div>
+    <div class="check">分层讨论题思路引导</div>
+    <div class="check">方法论语块+研究空白标注解读</div>
+  </div>
+
+  <div class="card ci">
+    <span class="tag">教练岗</span>
+    <div class="name">Agent-I · 角色扮演教练</div>
+    <div class="map">↔ 教师端：场景沉浸设计</div>
+    <div class="desc">协助你准备课堂场景角色（听证会/论证会/模拟法庭/尽调/碳交易谈判），提供角色背景理解、辩论要点、立场分析。</div>
+    <div class="check">角色背景与立场分析</div>
+    <div class="check">辩论要点与策略建议</div>
+    <div class="check">突发事件应对思路</div>
+    <div class="check">转化出口环节引导</div>
+  </div>
+
+  <div class="card cb">
+    <span class="tag">入门岗</span>
+    <div class="name">Agent-B · 学术入门向导</div>
+    <div class="map">↔ 教师端：学术品牌建设</div>
+    <div class="desc">引导研究生学术写作入门：课程论文框架建议、文献综述方法、研究方向推荐。理解"叙·框·境·创"教育理念体系。</div>
+    <div class="check">课程论文框架建议</div>
+    <div class="check">文献综述方法与工具</div>
+    <div class="check">研究方向与选题建议</div>
+    <div class="check">"叙·框·境·创"理念学习</div>
+  </div>
+
+</div>
+
+<p class="footer">9-Agent 学伴体系 &nbsp;|&nbsp; 教师端请参阅 <a href="agent团队演示.html" style="color:#5b9bd5">AI教学助手团队</a> &nbsp;|&nbsp; 叙·框·境·创 四维教学法</p>
+
+</body>
+</html>

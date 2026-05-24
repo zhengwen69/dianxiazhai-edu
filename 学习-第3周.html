@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3周：技术错配Ⅰ — 学习指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;padding:40px 20px;
+}
+.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#9b59b6}
+.header .sub{color:#00b894;font-size:14px;margin-top:4px}
+.header .meta{color:#556;font-size:12px;margin-top:6px}
+.container{max-width:900px;width:100%}
+.section{margin-bottom:28px}
+.section h2{font-size:18px;color:#00b894;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(0,184,148,.15)}
+.section h2::before{content:"▎";margin-right:8px;color:#9b59b6}
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(0,184,148,.08);
+  border-radius:12px;padding:22px 24px;margin-bottom:14px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(0,184,148,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card h3{font-size:16px;color:#7fb8e0;margin-bottom:10px}
+.card p,.card li{font-size:14px;color:#aabbcc;line-height:1.8}
+.card ul{padding-left:18px}
+.card ul li::marker{color:#00b894}
+.card .excerpt{
+  font-style:italic;color:#8899aa;font-size:13px;line-height:1.8;
+  padding:12px 16px;border-left:3px solid rgba(0,184,148,.25);
+  margin:10px 0;background:rgba(26,58,92,.2);
+}
+.card .prompt{
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,184,148,.15);
+  border-radius:6px;padding:10px 14px;font-size:12px;color:#889;
+  font-family:Consolas,"Courier New",monospace;line-height:1.6;margin:8px 0;
+  white-space:pre-wrap;word-break:break-all;
+}
+.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}
+.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}
+.tag-purple{background:rgba(155,89,182,.15);color:#9b59b6}
+.tag-teal{background:rgba(0,184,148,.15);color:#00b894}
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.week-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:900px;width:100%;margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(0,184,148,.08);
+}
+.week-nav a{
+  color:#7fb8e0;text-decoration:none;font-size:14px;padding:8px 18px;
+  border-radius:8px;border:1px solid rgba(0,184,148,.15);
+  background:rgba(13,31,53,.65);transition:all .3s;
+}
+.week-nav a:hover{border-color:#00b894;color:#fff;transform:translateY(-2px)}
+.week-nav .center{color:#00b894;font-weight:600}
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
+@media (max-width:768px){
+  body{padding:20px 12px}
+  .header h1{font-size:20px}
+  .header .sub{font-size:12px}.card{padding:16px 14px}
+  .card h3{font-size:14px}.card p,.card li{font-size:12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .week-nav a{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<a href="学习园地.html" class="back-btn" title="返回学习园地">◀ 返回学习园地</a>
+
+<div class="header">
+  <h1><span>第3周</span>：技术错配Ⅰ — 学习指南</h1>
+  <div class="sub">以学为中心 · 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="meta">对应教师端：<a href="第3周-技术错配Ⅰ.html" style="color:#5b9bd5">第3周-技术错配Ⅰ</a> | 纪实小说素材：S004-S006</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🔍 课前预习</h2>
+    <div class="card">
+      <h3>预习任务单</h3>
+      <ul>
+        <li>预习焚烧/热解/气化的基本原理与反应机理</li>
+        <li>了解不同热处理技术的适用场景与边界条件</li>
+        <li>思考"技术错配"的含义：何时焚烧不是最优解？</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>推荐阅读素材</h3>
+      <ul>
+        <li>纪实小说《青龙湖》教学选段（素材编号 S004-S006）</li>
+        <li>相关标准：《生活垃圾焚烧污染控制标准》（GB 18485）</li>
+        <li>推荐文献：固废焚烧生命周期分析 [待指定]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>预习思考题</h3>
+      <ul>
+        <li>焚烧、热解、气化的本质区别是什么？（温度/氧量/产物）</li>
+        <li>什么条件下焚烧是"正确技术选择"？什么条件下是"技术错配"？</li>
+        <li>《青龙湖》中所述的焚烧厂争议的技术根源是什么？</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📚 课中学习</h2>
+    <div class="card">
+      <h3>本周知识要点</h3>
+      <ul>
+        <li><span class="tag tag-purple">核心概念</span> 焚烧工艺（炉排炉/流化床/回转窑）</li>
+        <li><span class="tag tag-teal">方法</span> 热平衡计算与燃烧效率分析</li>
+        <li><span class="tag tag-purple">核心概念</span> 烟气净化系统（脱酸/除尘/脱硝/二噁英控制）</li>
+        <li><span class="tag tag-green">产出</span> 绘制典型焚烧厂工艺流程图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>课堂互动指引</h3>
+      <ul>
+        <li>参与讨论：你的城市适合建焚烧厂吗？基于什么判断？</li>
+        <li>小组活动：给定一个城市固废数据，推荐合适的热处理方案</li>
+        <li>注意记录"技术适用性分析"的判别框架</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>案例讨论提示</h3>
+      <div class="excerpt">纪实小说选段（S004-S006）：《青龙湖》焚烧厂环评争议中的技术路线之辩...</div>
+      <ul>
+        <li>分析维度：技术经济性 · 环境风险 · 社会可接受度</li>
+        <li>方法论语块：技术适用性矩阵、多目标决策</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✍️ 课后作业</h2>
+    <div class="card">
+      <h3>作业要求</h3>
+      <ul>
+        <li>完成第3章课后习题（基础题3道+应用题2道）[待教师发布]</li>
+        <li>工艺比选报告：为指定城市推荐固废热处理技术方案（含理由）</li>
+        <li>绘制"垃圾技术"认知框架图</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>提交方式</h3>
+      <p style="color:#aabbcc">→ 前往 <a href="互动社区.html" style="color:#5b9bd5">互动社区</a> 提交作业，参与同行评价（建设中）</p>
+    </div>
+    <div class="card">
+      <h3>评分标准参考</h3>
+      <ul>
+        <li>技术分析深度（40%）| 比选逻辑严谨性（30%）| 数据支撑（30%）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🤖 AI赋能</h2>
+    <div class="card">
+      <h3>推荐 Prompt 模板</h3>
+      <div class="prompt">请用表格对比焚烧、热解和气化三种固废热处理技术的原理、温度范围、产物和适用场景。</div>
+      <div class="prompt">请帮我计算：某垃圾热值为 5000 kJ/kg，含水率 40%，焚烧处理时需添加多少辅助燃料？（假设条件自设）</div>
+      <div class="prompt">请从技术、经济、环境、社会四个维度，构建固废热处理技术选择的评价指标体系。</div>
+    </div>
+    <div class="card">
+      <h3>AI辅助分析方向</h3>
+      <ul>
+        <li>使用 AI 对比国内外焚烧排放标准差异</li>
+        <li>探索 Aspen Plus 或类似工具在焚烧模拟中的应用</li>
+        <li>利用 AI 生成"技术适用性判断"决策树</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>自测问答</h3>
+      <ul>
+        <li>Q1: 固废焚烧三大工艺类型及各自特点？</li>
+        <li>Q2: 什么是"3T+E"焚烧控制原则？</li>
+        <li>Q3: 二噁英的生成条件与控制措施？</li>
+        <li>Q4: 如何判断一个城市是否适合建设焚烧厂？</li>
+        <li>Q5: 烟气净化"五步法"是什么？</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="week-nav">
+  <a href="学习-第2周.html">◀ 上一周：空间错配Ⅱ</a>
+  <a href="学习园地.html" class="center">📖 学习园地</a>
+  <a href="学习-第4周.html">下一周：技术错配Ⅱ ▶</a>
+</div>
+
+<div class="footer">
+  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+</div>
+
+</body>
+</html>
