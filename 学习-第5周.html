@@ -82,6 +82,34 @@ body{
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
+
+.review-btn {
+  float: right;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 4px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 6px;
+  transition: background .2s;
+}
+.review-btn:hover { background: #e74c3c; }
+.review-list {
+  clear: both;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.08);
+  border-radius: 6px;
+  border: 1px solid rgba(192,57,43,.2);
+}
+.review-list ol { margin: 0; padding-left: 18px; }
+.review-list li { color: #c8d6e5; font-size: 12px; line-height: 1.8; }
+.review-list a { color: #5b9bd5; text-decoration: none; }
+.review-list a:hover { color: #7fb8e0; text-decoration: underline; }
+.precheck-msg { margin: 4px 0; }
+
 </style>
 </head>
 <body>
@@ -105,13 +133,15 @@ body{
 
     <div class="card">
       <h3>前置自检（本科已修，此处不重复讲授）</h3>
-      <div class="precheck">⚠ 请确认你已掌握（本科已修，此处不重复讲授）：<br>
-①垃圾分类四分法及后端处理对应关系 — <a href="../本科-固废/_清理后归档/02-收集运输预处理-知识要点.md#21" target="_blank">第2章 §2.1</a>（固废课件2.ppt）<br>
-②固废收集路线设计原则与优化 — §2.2（固废课件2.ppt）<br>
-③压实/破碎/分选预处理工艺 — §2.3-2.4（固废课件2.ppt）<br>
-④中国垃圾分类政策演进（2000-2025）— §2.5（固废课件2.ppt）<br>
-⑤行为经济学基础概念：损失厌恶/现状偏见/社会规范 — §2.5（固废课件2.ppt）<br>
-如有模糊请自行复习。</div>
+      <div class="precheck">⚠ 请确认你已掌握（本科已修，此处不重复讲授）：
+        <div class="precheck-msg">如有模糊请自行复习。</div>
+        <button class="review-btn" onclick="var d=document.getElementById('w5-review');d.style.display=d.style.display==='none'?'block':'none'">温故而知新</button>
+        <div id="w5-review" class="review-list" style="display:none">
+          <ol>
+            <li><a href="../_清理后归档/02-收集运输预处理-知识要点.html#s2-1" target="_blank">①垃圾分类四分法及后端处理对应关系 — §2.1（固废课件2.ppt）</a></li><li><a href="../_清理后归档/02-收集运输预处理-知识要点.html#s2-2" target="_blank">②固废收集路线设计原则与优化 — §2.2（固废课件2.ppt）</a></li><li><a href="../_清理后归档/02-收集运输预处理-知识要点.html#s2-3" target="_blank">③压实/破碎/分选预处理工艺 — §2.3-2.4（固废课件2.ppt）</a></li><li><a href="../_清理后归档/02-收集运输预处理-知识要点.html#s2-4" target="_blank">④中国垃圾分类政策演进（2000-2025）— §2.5（固废课件2.ppt）</a></li><li><a href="../_清理后归档/02-收集运输预处理-知识要点.html#s2-5" target="_blank">⑤行为经济学基础概念：损失厌恶/现状偏见/社会规范 — §2.5（固废课件2.ppt）</a></li>
+          </ol>
+        </div>
+      </div>
     </div>
 
     <div class="card">

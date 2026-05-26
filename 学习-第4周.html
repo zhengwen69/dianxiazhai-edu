@@ -82,6 +82,34 @@ body{
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .week-nav a{font-size:12px;padding:6px 12px}
 }
+
+.review-btn {
+  float: right;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 4px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 6px;
+  transition: background .2s;
+}
+.review-btn:hover { background: #e74c3c; }
+.review-list {
+  clear: both;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.08);
+  border-radius: 6px;
+  border: 1px solid rgba(192,57,43,.2);
+}
+.review-list ol { margin: 0; padding-left: 18px; }
+.review-list li { color: #c8d6e5; font-size: 12px; line-height: 1.8; }
+.review-list a { color: #5b9bd5; text-decoration: none; }
+.review-list a:hover { color: #7fb8e0; text-decoration: underline; }
+.precheck-msg { margin: 4px 0; }
+
 </style>
 </head>
 <body>
@@ -105,13 +133,15 @@ body{
 
     <div class="card">
       <h3>前置自检（本科已修，此处不重复讲授）</h3>
-      <div class="precheck">⚠ 请确认你已掌握（本科已修，此处不重复讲授）：<br>
-①好氧堆肥四阶段（中温/高温/降温/腐熟）及温度曲线 — <a href="../本科-固废/_清理后归档/03-生物处理-知识要点.md#31" target="_blank">第3章 §3.1</a>（固废课件3.ppt）<br>
-②厌氧消化四大微生物阶段：水解/酸化/产乙酸/产甲烷 — §3.2（固废课件3.ppt）<br>
-③C:N比（25:1）、含水率、通风量调控 — §3.3（固废课件3.ppt）<br>
-④餐厨垃圾好氧/厌氧处理工艺 — §3.4（固废课件3.ppt）<br>
-⑤沼渣沼液后续处理利用 — §3.5（固废课件3.ppt）<br>
-如有模糊请自行复习。</div>
+      <div class="precheck">⚠ 请确认你已掌握（本科已修，此处不重复讲授）：
+        <div class="precheck-msg">如有模糊请自行复习。</div>
+        <button class="review-btn" onclick="var d=document.getElementById('w4-review');d.style.display=d.style.display==='none'?'block':'none'">温故而知新</button>
+        <div id="w4-review" class="review-list" style="display:none">
+          <ol>
+            <li><a href="../_清理后归档/03-生物处理-知识要点.html#s3-1" target="_blank">①好氧堆肥四阶段（中温/高温/降温/腐熟）及温度曲线 — §3.1（固废课件3.ppt）</a></li><li><a href="../_清理后归档/03-生物处理-知识要点.html#s3-2" target="_blank">②厌氧消化四大微生物阶段：水解/酸化/产乙酸/产甲烷 — §3.2（固废课件3.ppt）</a></li><li><a href="../_清理后归档/03-生物处理-知识要点.html#s3-3" target="_blank">③C:N比（25:1）、含水率、通风量调控 — §3.3（固废课件3.ppt）</a></li><li><a href="../_清理后归档/03-生物处理-知识要点.html#s3-4" target="_blank">④餐厨垃圾好氧/厌氧处理工艺 — §3.4（固废课件3.ppt）</a></li><li><a href="../_清理后归档/03-生物处理-知识要点.html#s3-5" target="_blank">⑤沼渣沼液后续处理利用 — §3.5（固废课件3.ppt）</a></li>
+          </ol>
+        </div>
+      </div>
     </div>
 
     <div class="card">
