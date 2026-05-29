@@ -26,7 +26,14 @@ $shots = @(
     @{Id='SC17'; File='学习-第7周.html'; Desc='第7周：截取 ''核心教学内容：人文错配三维框架'' 卡片（含三维列表）'},
     @{Id='SC18'; File='学习-第8周.html'; Desc='第8周：截取 ''教法定位 · 创'' 标签卡片 + ''五维统一诊断矩阵'' 表格（两张一起截）'},
     @{Id='SC19'; File='学习-第8周.html'; Desc='第8周三轨制：向下滚动到 ''结课产出：三轨并行（选其一）'' 的 A/B/C 三张轨道卡片，全部截图'},
-    @{Id='SC20'; File='学习-第3周.html'; Desc='小说引用块示例：截取任意一个 .excerpt 小说引用块（斜体灰字+左边框），如 S004《青龙湖》'}
+    @{Id='SC20'; File='学习-第3周.html'; Desc='小说引用块示例：截取任意一个 .excerpt 小说引用块（斜体灰字+左边框），如 S004《青龙湖》'},
+    @{Id='SC21'; File='manual'; Desc='[§5.4.3 场景一·步骤①②] 用文本编辑器打开 学习-第8周.html → 另存为 学习-第9周.html → 修改 <title> 和顶部周次标题 → 截取编辑器窗口（可见文件标签/另存为/标题行改动）'},
+    @{Id='SC22'; File='manual'; Desc='[§5.4.3 场景一·步骤③④] 同一编辑器窗口 → 滚动到四段式内容区（预习/学习/作业/AI赋能）→ 展示其中一段的修改内容 + 底部"上一周/下一周"导航链接 → 截图'},
+    @{Id='SC23'; File='manual'; Desc='[§5.4.3 场景一·步骤⑤] 浏览器打开 学习园地.html → 滚动到八周学习计划网格 → 展示新增的"第9周"卡片（含周次编号/主题/链接）→ 截图'},
+    @{Id='SC24'; File='manual'; Desc='[§5.4.3 场景二·步骤①②] 文本编辑器打开 学习-第1周.html → Ctrl+F 搜索 S001 → 展示 .excerpt 区块内的小说引用文字（新旧对比或标注修改区域）→ 截图'},
+    @{Id='SC25'; File='manual'; Desc='[§5.4.3 场景二·步骤③] 浏览器打开 学习-第1周.html → 滚动到"案例深潜"卡片 → 展示五段叙事拆解（背景/冲突/决策/结局/启示）更新后效果 → 截图'},
+    @{Id='SC26'; File='manual'; Desc='[§5.4.3 场景三·步骤①②] 文本编辑器打开 学习-第1周.html → 搜索 .prompt 或 "AI赋能" → 展示 Prompt 模板文字修改 → 截图'},
+    @{Id='SC27'; File='manual'; Desc='[§5.4.3 通用·Git推送] 打开 PowerShell/终端 → 进入演示展示目录 → 执行 git add -A; git commit -m "更新XXX"; git push → 截图终端命令与成功反馈'}
 )
 
 $total = $shots.Count
@@ -41,25 +48,27 @@ Write-Host ''
 
 foreach ($s in $shots) {
     $current++
-    $htmlPath = Join-Path $srcDir $s.File
+    $isManual = ($s.File -eq 'manual')
     
-    if (-not (Test-Path -LiteralPath $htmlPath)) {
-        Write-Host "[$current/$total] SKIP: 文件不存在：$($s.File)" -ForegroundColor Red
-        continue
+    if (-not $isManual) {
+        $htmlPath = Join-Path $srcDir $s.File
+        if (-not (Test-Path -LiteralPath $htmlPath)) {
+            Write-Host "[$current/$total] SKIP: 文件不存在：$($s.File)" -ForegroundColor Red
+            continue
+        }
+        # 打开HTML文件
+        Start-Process -FilePath $htmlPath
     }
-    
-    # 打开HTML文件
-    Start-Process -FilePath $htmlPath
     
     # 弹出提示
     [System.Windows.Forms.MessageBox]::Show(
-        "[$current / $total]  $($s.Id)`n`n$($s.Desc)`n`n请用 Win+Shift+S 截图选区。`n截图完成后请保存到：截图素材-SCREENSHOTS\`n`n然后切换回 PowerShell 窗口按 Enter 继续下一张。",
+        "[$current / $total]  $($s.Id)`n`n$($s.Desc)`n`n若为手动操作截图，请自行打开对应应用程序。`n`n请用 Win+Shift+S 截图选区。`n截图完成后请保存到：截图素材-SCREENSHOTS\`n`n然后切换回 PowerShell 窗口按 Enter 继续下一张。",
         "截图采集 - $($s.Id)",
         [System.Windows.Forms.MessageBoxButtons]::OK,
         [System.Windows.Forms.MessageBoxIcon]::Information
     )
     
-    Write-Host "[$current/$total] $($s.Id) : $($s.File)" -ForegroundColor Green
+    Write-Host "[$current/$total] $($s.Id) : $(if ($isManual) { '(手动操作)' } else { $s.File })" -ForegroundColor Green
     Write-Host "  -> $($s.Desc)" -ForegroundColor Cyan
     Write-Host '  截图完成后按 Enter 继续...' -ForegroundColor Yellow
     Read-Host
@@ -67,8 +76,8 @@ foreach ($s in $shots) {
 }
 
 Write-Host '============================================'
-Write-Host '  全部 20 张截图采集完成！' -ForegroundColor Green
-Write-Host '  请将截图重命名为 SC01-xxx.png ~ SC20-xxx.png'
+Write-Host '  全部 27 张截图采集完成！' -ForegroundColor Green
+Write-Host '  请将截图重命名为 SC01-xxx.png ~ SC27-xxx.png'
 Write-Host '  存放于：截图素材-SCREENSHOTS\'
 Write-Host '============================================'
 Read-Host '按 Enter 退出'
