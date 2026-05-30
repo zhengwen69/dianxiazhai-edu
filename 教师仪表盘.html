@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>教师仪表盘 — 固废课程</title>
+<title data-i18n="dashboard.page_title">教师仪表盘 — 固废课程</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -79,82 +79,95 @@ body{
   .dash-card .name{font-size:16px}
   .dash-card .icon{font-size:32px}
 }
+
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
 <div style="text-align:center">
-  <a class="back-btn" href="index.html">← 返回首页</a>
+  <a class="back-btn" href="index.html" data-i18n="common.back_to_home_alt">← 返回首页</a>
 </div>
 
 <div class="header">
-  <h1><span>🔐</span> 教师仪表盘</h1>
-  <div class="sub">学生签到 · 周报数据 · 同行评价 · 互动留言</div>
+  <h1 data-i18n="dashboard.header_title"><span>🔐</span> 教师仪表盘</h1>
+  <div class="sub" data-i18n="dashboard.header_sub">学生签到 · 周报数据 · 同行评价 · 互动留言</div>
 </div>
 
 <!-- 配置提示 -->
-<div class="pin-note">
+<div class="pin-note" data-i18n="dashboard.pin_note">
   ⚠️ 首次使用需先配置 Formspree。详情见页面底部「首次配置指引」。
   <br>配置完成后请将下方三个 Formspree URL 替换为本页 HTML 中的实际地址。
 </div>
 
-<div class="section-label">▾ 数据查阅 ▾</div>
+<div class="section-label" data-i18n="dashboard.section_data">▾ 数据查阅 ▾</div>
 <div class="dash-grid">
   <!-- 签到数据 -->
   <a class="dash-card" href="YOUR_FORMSPREE_DASHBOARD_URL" target="_blank">
     <span class="icon">📝</span>
-    <span class="name">学生签到记录</span>
-    <span class="desc">查看每日/每周学生签到打卡情况</span>
-    <span class="badge badge-blue">Formspree 后台</span>
+    <span class="name" data-i18n="dashboard.card_checkin">学生签到记录</span>
+    <span class="desc" data-i18n="dashboard.card_checkin_desc">查看每日/每周学生签到打卡情况</span>
+    <span class="badge badge-blue" data-i18n="dashboard.card_checkin_badge">Formspree 后台</span>
   </a>
   <!-- 周报数据 -->
   <a class="dash-card" href="YOUR_FORMSPREE_DASHBOARD_URL" target="_blank">
     <span class="icon">📋</span>
-    <span class="name">周进度问卷</span>
-    <span class="desc">查看每位学生每周的进度汇报、困难与自评</span>
-    <span class="badge badge-green">Formspree 后台</span>
+    <span class="name" data-i18n="dashboard.card_weekly">周进度问卷</span>
+    <span class="desc" data-i18n="dashboard.card_weekly_desc">查看每位学生每周的进度汇报、困难与自评</span>
+    <span class="badge badge-green" data-i18n="dashboard.card_weekly_badge">Formspree 后台</span>
   </a>
   <!-- 同行评价 -->
   <a class="dash-card" href="YOUR_FORMSPREE_DASHBOARD_URL" target="_blank">
     <span class="icon">🤝</span>
-    <span class="name">同行评价</span>
-    <span class="desc">查看同行专家建议与意见、评分统计与改进建议</span>
-    <span class="badge badge-orange">Formspree 后台</span>
+    <span class="name" data-i18n="dashboard.card_peer">同行评价</span>
+    <span class="desc" data-i18n="dashboard.card_peer_desc">查看同行专家建议与意见、评分统计与改进建议</span>
+    <span class="badge badge-orange" data-i18n="dashboard.card_peer_badge">Formspree 后台</span>
   </a>
 </div>
 
-<div class="section-label">▾ 师生互动 ▾</div>
+<div class="section-label" data-i18n="dashboard.section_interact">▾ 师生互动 ▾</div>
 <div class="dash-grid">
   <a class="dash-card" href="https://github.com/zhengwen69/cdu-gufei-web-demo/issues" target="_blank">
     <span class="icon">💬</span>
-    <span class="name">GitHub Issues 讨论区</span>
-    <span class="desc">师生技术讨论、问题答疑、课程反馈<br>用 GitHub 账号登录即可发帖回复</span>
-    <span class="badge badge-green">公开讨论</span>
+    <span class="name" data-i18n="dashboard.card_github">GitHub Issues 讨论区</span>
+    <span class="desc" data-i18n="dashboard.card_github_desc">师生技术讨论、问题答疑、课程反馈<br>用 GitHub 账号登录即可发帖回复</span>
+    <span class="badge badge-green" data-i18n="dashboard.card_github_badge">公开讨论</span>
   </a>
   <a class="dash-card" href="互动社区.html">
     <span class="icon">🧪</span>
-    <span class="name">学生端界面</span>
-    <span class="desc">预览学生端看到的表单界面<br>确认表单字段和按钮是否正常</span>
-    <span class="badge badge-blue">预览</span>
+    <span class="name" data-i18n="dashboard.card_student_preview">学生端界面</span>
+    <span class="desc" data-i18n="dashboard.card_student_preview_desc">预览学生端看到的表单界面<br>确认表单字段和按钮是否正常</span>
+    <span class="badge badge-blue" data-i18n="dashboard.card_student_preview_badge">预览</span>
   </a>
 </div>
 
 <!-- 首次配置 -->
 <div class="setup-box">
-  <h3>🔧 首次配置指引（只需做一次）</h3>
+  <h3 data-i18n="dashboard.setup_title">🔧 首次配置指引（只需做一次）</h3>
   <ol>
-    <li>打开 <a href="https://formspree.io" target="_blank">formspree.io</a>，点击右上角 <code>Sign In</code>，用 <b>GitHub 账号</b>登录。</li>
-    <li>点击 <code>+ New Form</code>，创建 3 个表单：
+    <li data-i18n="dashboard.setup_step1">打开 <a href="https://formspree.io" target="_blank">formspree.io</a>，点击右上角 <code>Sign In</code>，用 <b>GitHub 账号</b>登录。</li>
+    <li data-i18n="dashboard.setup_step2">点击 <code>+ New Form</code>，创建 3 个表单：
       <br> ① 「学生签到」— 命名随意
       <br> ② 「周进度问卷」— 命名随意
       <br> ③ 「同行评价」— 命名随意
     </li>
-    <li>每个表单创建后，复制其 <b>Endpoint URL</b>（格式为 <code>https://formspree.io/f/xxxxx</code>）。</li>
-    <li>打开 <code>互动社区.html</code>，找到 3 处 <code>YOUR_FORMSPREE_XXX_URL</code>，替换为实际的 Endpoint URL。</li>
-    <li>打开本文件 <code>教师仪表盘.html</code>，将 3 个卡片链接 <code>YOUR_FORMSPREE_DASHBOARD_URL</code> 替换为你的 Formspree 后台地址（<code>https://formspree.io/forms</code>）。</li>
-    <li>将修改后的 HTML 文件上传到 GitHub Pages 仓库，刷新网站即可使用。</li>
+    <li data-i18n="dashboard.setup_step3">每个表单创建后，复制其 <b>Endpoint URL</b>（格式为 <code>https://formspree.io/f/xxxxx</code>）。</li>
+    <li data-i18n="dashboard.setup_step4">打开 <code>互动社区.html</code>，找到 3 处 <code>YOUR_FORMSPREE_XXX_URL</code>，替换为实际的 Endpoint URL。</li>
+    <li data-i18n="dashboard.setup_step5">打开本文件 <code>教师仪表盘.html</code>，将 3 个卡片链接 <code>YOUR_FORMSPREE_DASHBOARD_URL</code> 替换为你的 Formspree 后台地址（<code>https://formspree.io/forms</code>）。</li>
+    <li data-i18n="dashboard.setup_step6">将修改后的 HTML 文件上传到 GitHub Pages 仓库，刷新网站即可使用。</li>
   </ol>
-  <p style="color:#667;font-size:12px;margin-top:12px">
+  <p style="color:#667;font-size:12px;margin-top:12px" data-i18n="dashboard.setup_tip">
     💡 Formspree 免费版每月 50 条提交，对于小班教学足够。如需更多可升级付费版。
   </p>
 </div>

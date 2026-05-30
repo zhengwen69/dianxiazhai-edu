@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="overview.page_title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,246 +118,259 @@ td { color: #aabbcc; }
   .hl-banner{font-size:14px;padding:10px 14px}
 }
 
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
+
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+<a href="index.html" class="back-btn" title="返回首页" data-i18n-title="common.back_to_home" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="slide-container" id="container">
 
 <!-- Slide 0: 封面 -->
 <div class="slide slide-cover active">
-  <div class="uni animate-in d1">成都大学 · 环境工程系</div>
-  <div class="title animate-in d2">固体废弃物污染防治技术</div>
+  <div class="uni animate-in d1" data-i18n="overview.slide0_uni">成都大学 · 环境工程系</div>
+  <div class="title animate-in d2" data-i18n="overview.slide0_title">固体废弃物污染防治技术</div>
   <div class="subtitle animate-in d3">Solid Waste Treatment, Disposal & Resource Recovery</div>
   <div class="info animate-in d4">
-    本科 / 硕士研究生 &nbsp;|&nbsp; 2学分 &nbsp;|&nbsp; 32学时（理论24+实践8）<br>
-    点暇叙事，匠心教学 · 研究 &nbsp;|&nbsp; 叙·框·境·创 四维教学法<br>
-    主讲：黄正文 教授<br>
+    <span data-i18n="overview.slide0_info_line1">本科 / 硕士研究生 &nbsp;|&nbsp; 2学分 &nbsp;|&nbsp; 32学时（理论24+实践8）</span><br>
+    <span data-i18n="overview.slide0_info_line2">点暇叙事，匠心教学 · 研究 &nbsp;|&nbsp; 叙·框·境·创 四维教学法</span><br>
+    <span data-i18n="overview.slide0_info_instructor">主讲：黄正文 教授</span><br>
     <div class="animate-in d3" style="margin:12px 0"><img src="assets/img/上岸封面.jpg" style="max-height:100px;border-radius:6px;border:2px solid rgba(91,155,213,.3)" alt="上岸封面"></div>
-    <div class="info animate-in d4" style="color:#7fb8e0;font-size:14px;margin-top:8px">📖 故事云驱动：QQ阅读 / 17K文学 · 普惠教育咨询系列纪实小说</div>
-    2025-2026学年
+    <div class="info animate-in d4" style="color:#7fb8e0;font-size:14px;margin-top:8px" data-i18n="overview.slide0_info_novel">📖 故事云驱动：QQ阅读 / 17K文学 · 普惠教育咨询系列纪实小说</div>
+    <span data-i18n="overview.slide0_info_year">2025-2026学年</span>
   </div>
   <div class="decor" style="animation: drawLine 1.5s ease-out .8s both;"></div>
 </div>
 
 <!-- Slide 1: 课程信息 -->
 <div class="slide slide-content">
-  <h2>课程基本信息</h2>
+  <h2 data-i18n="overview.slide1_heading">课程基本信息</h2>
   <div class="card">
-    <h3>研究生课程</h3>
-    <p><strong>名称</strong>：固体废弃物污染防治技术</p>
-    <p><strong>教材</strong>：自编讲义（纪实小说+案例+场景）</p>
-    <p><strong>学时/学分</strong>：32学时 / 2学分</p>
-    <p><strong>结构</strong>：八周思维重塑（理论24+场景沉浸8）</p>
-    <p><strong>适用专业</strong>：资源与环境（专业硕士）</p>
-    <p><strong>特色</strong>：成都大学精品课程 &nbsp;|&nbsp; 省级教改重点项目（申报中）</p>
+    <h3 data-i18n="overview.slide1_label_grad_course">研究生课程</h3>
+    <p data-i18n="overview.slide1_name"><strong>名称</strong>：固体废弃物污染防治技术</p>
+    <p data-i18n="overview.slide1_textbook"><strong>教材</strong>：自编讲义（纪实小说+案例+场景）</p>
+    <p data-i18n="overview.slide1_hours_credits"><strong>学时/学分</strong>：32学时 / 2学分</p>
+    <p data-i18n="overview.slide1_structure"><strong>结构</strong>：八周思维重塑（理论24+场景沉浸8）</p>
+    <p data-i18n="overview.slide1_major"><strong>适用专业</strong>：资源与环境（专业硕士）</p>
+    <p data-i18n="overview.slide1_feature"><strong>特色</strong>：成都大学精品课程 &nbsp;|&nbsp; 省级教改重点项目（申报中）</p>
     </div>
   </div>
 </div>
 
 <!-- Slide 2.6: 版权登记 -->
 <div class="slide slide-content">
-  <h2>普惠教育咨询系列 · 版权登记</h2>
-  <p style="color:#667788;font-size:12px;text-align:center;margin-bottom:12px">↓ 纪实小说层（7部）+ 专题报告层（2部） — 教学素材的唯一来源</p>
+  <h2 data-i18n="overview.slide2_6_heading">普惠教育咨询系列 · 版权登记</h2>
+  <p style="color:#667788;font-size:12px;text-align:center;margin-bottom:12px" data-i18n="overview.slide2_6_subhead">↓ 纪实小说层（7部）+ 专题报告层（2部） — 教学素材的唯一来源</p>
   <div class="grid-3" style="width:100%">
     <div class="card animate-in d1" style="text-align:center">
       <img src="assets/img/certs/龙栖湾.png" alt="龙栖湾" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《龙栖湾》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_1">《龙栖湾》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d2" style="text-align:center">
       <img src="assets/img/certs/青龙湖.png" alt="青龙湖" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《青龙湖》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_2">《青龙湖》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d3" style="text-align:center">
       <img src="assets/img/certs/杨柳坝与刘家湾中间隔着一张大塘.png" alt="杨柳坝与刘家湾" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《杨柳坝与刘家湾》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_3">《杨柳坝与刘家湾》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d4" style="text-align:center">
       <img src="assets/img/certs/三多里巷.png" alt="三多里巷" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《三多里巷》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_4">《三多里巷》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d5" style="text-align:center">
       <img src="assets/img/certs/艾沙巴赢白云村.png" alt="艾沙巴赢白云村" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《艾沙巴赢白云村》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_5">《艾沙巴赢白云村》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d6" style="text-align:center">
       <img src="assets/img/certs/长城公社脚下的白云上村.png" alt="破界者" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《破界者》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_6">《破界者》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d7" style="text-align:center">
       <img src="assets/img/certs/上岸.png" alt="读书改变命运秘笈" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:13px">《读书改命秘笈三部曲》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记</p>
+      <h3 style="font-size:13px" data-i18n="overview.slide2_6_novel_7">《读书改命秘笈三部曲》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="common.copyright_registered">© 已登记</p>
     </div>
     <div class="card animate-in d8" style="text-align:center;border-color:rgba(230,126,34,.3);grid-column:span 1">
       <img src="assets/img/certs/report-edu.png" alt="教育黄金时代" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:10px;line-height:1.4">《教育黄金时代的坍塌与重生：三重压力耦合模型下高校教师职业危机动态推演与突围路径》</h3>
-      <p style="color:#2ecc71;font-size:10px">© 已登记 专题报告</p>
+      <h3 style="font-size:10px;line-height:1.4" data-i18n="overview.slide2_6_novel_8_title">《教育黄金时代的坍塌与重生：三重压力耦合模型下高校教师职业危机动态推演与突围路径》</h3>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="overview.slide2_6_novel_8_badge">© 已登记 专题报告</p>
     </div>
     <div class="card animate-in d9" style="text-align:center;border-color:rgba(230,126,34,.3);grid-column:span 1">
       <img src="assets/img/certs/report-jishi.png" alt="故事化教学资源体系" style="width:100%;max-width:140px;border-radius:4px;margin-bottom:6px" loading="lazy">
-      <h3 style="font-size:10px;line-height:1.4">《基于纪实小说驱动的故事化教学资源体系构建与矩阵云传播研究的高等教育咨询报告》</h3>
-      <p style="color:#8899aa;font-size:10px">《读书改变命运秘笈三部曲》</p>
-      <p style="color:#2ecc71;font-size:10px">© 已登记 高教咨询报告</p>
+      <h3 style="font-size:10px;line-height:1.4" data-i18n="overview.slide2_6_novel_9_title">《基于纪实小说驱动的故事化教学资源体系构建与矩阵云传播研究的高等教育咨询报告》</h3>
+      <p style="color:#8899aa;font-size:10px" data-i18n="overview.slide2_6_novel_9_subtitle">《读书改变命运秘笈三部曲》</p>
+      <p style="color:#2ecc71;font-size:10px" data-i18n="overview.slide2_6_novel_9_badge">© 已登记 高教咨询报告</p>
     </div>
   </div>
-  <p style="margin:12px 0;color:#7fb8e0;font-size:12px;text-align:center">↓ 教学实践层 — 本课程</p>
+  <p style="margin:12px 0;color:#7fb8e0;font-size:12px;text-align:center" data-i18n="overview.slide2_6_practice_label">↓ 教学实践层 — 本课程</p>
   <div class="card animate-in d10" style="text-align:center;max-width:500px;margin:0 auto">
-    <h3 style="font-size:14px">《固体废弃物污染防治技术》八周思维重塑</h3>
-    <p style="color:#aabbcc;font-size:11px">五垃圾标签 · 7案例库 · 6场景沉浸</p>
-    <p style="color:#2ecc71;font-size:10px">© 成都大学课程思政示范课程</p>
+    <h3 style="font-size:14px" data-i18n="overview.slide2_6_practice_title">《固体废弃物污染防治技术》八周思维重塑</h3>
+    <p style="color:#aabbcc;font-size:11px" data-i18n="overview.slide2_6_practice_desc">五垃圾标签 · 7案例库 · 6场景沉浸</p>
+    <p style="color:#2ecc71;font-size:10px" data-i18n="overview.slide2_6_practice_badge">© 成都大学课程思政示范课程</p>
   </div>
-  <p style="margin-top:15px;color:#667788;font-size:12px;text-align:center">全部作品已获国家版权登记 · 教学素材知识产权清晰 · 可溯源 · 可信赖</p>
+  <p style="margin-top:15px;color:#667788;font-size:12px;text-align:center" data-i18n="overview.slide2_6_footer_copyright">全部作品已获国家版权登记 · 教学素材知识产权清晰 · 可溯源 · 可信赖</p>
 </div>
 </div>
 
 <!-- Slide 2: 八周思维重塑 -->
 <div class="slide slide-content">
-  <h2>八周思维重塑：四重错配→四重修复</h2>
+  <h2 data-i18n="overview.slide2_heading">八周思维重塑：四重错配→四重修复</h2>
   <div class="grid-2" style="width:100%">
     <div class="card animate-in d1">
-      <h3>第1-2周 空间错配 → 资产化</h3>
+      <h3 data-i18n="overview.slide2_card1_title">第1-2周 空间错配 → 资产化</h3>
        <p>龙栖湾叙事/砂轮厂零收购<br>填埋场选址/邻避效应<br>垃圾分类体系<br><span class="tag tag-blue">📖《龙栖湾》《青龙湖》[S001,S004]</span></p>
-      <span class="tag tag-blue">认知重启</span>
+      <span class="tag tag-blue" data-i18n="overview.slide2_card1_tag">认知重启</span>
     </div>
     <div class="card animate-in d2">
-      <h3>第3-4周 技术错配 → 产品化</h3>
+      <h3 data-i18n="overview.slide2_card2_title">第3-4周 技术错配 → 产品化</h3>
        <p>脱硫石膏建材化<br>焚烧炉创业全链条<br>餐厨工艺比选<br><span class="tag tag-blue">📖《杨柳坝与刘家湾》[S006]</span></p>
-      <span class="tag tag-orange">方法论锻造</span>
+      <span class="tag tag-orange" data-i18n="overview.slide2_card2_tag">方法论锻造</span>
     </div>
     <div class="card animate-in d3">
-      <h3>第5-6周 行为错配 → 流程优化</h3>
+      <h3 data-i18n="overview.slide2_card3_title">第5-6周 行为错配 → 流程优化</h3>
       <p>TQM降本案例/运营优化<br>填埋场设计/碳交易模拟<br>渗滤液危机应对<br><span class="tag tag-blue">📖《三多里巷》[S009]</span></p>
-      <span class="tag tag-green">深度推演</span>
+      <span class="tag tag-green" data-i18n="overview.slide2_card3_tag">深度推演</span>
     </div>
     <div class="card animate-in d4">
-      <h3>第7-8周 人文错配 → 修复整合</h3>
+      <h3 data-i18n="overview.slide2_card4_title">第7-8周 人文错配 → 修复整合</h3>
       <p>制砖诉讼/项目尽调<br>模拟法庭/思维重塑报告<br>从技术到系统思维<br><span class="tag tag-blue">📖《艾沙巴赢白云村》《破界者》[S012,S014]</span></p>
-      <span class="tag tag-red">创造输出</span>
+      <span class="tag tag-red" data-i18n="overview.slide2_card4_tag">创造输出</span>
     </div>
   </div>
 </div>
 
 <!-- Slide 3: OBE矩阵 -->
 <div class="slide slide-content">
-  <h2>OBE 课程目标体系</h2>
+  <h2 data-i18n="overview.slide3_heading">OBE 课程目标体系</h2>
   <table class="animate-in d1">
-    <tr><th style="width:22%">课程目标</th><th style="width:28%">描述</th><th style="width:18%">认知层次</th><th style="width:32%">对应周次</th></tr>
-    <tr><td>目标1</td><td style="text-align:left">运用"四重错配"框架系统识别固废工程多维约束</td><td>分析+评价</td><td>第1-8周</td></tr>
-    <tr><td>目标2</td><td style="text-align:left">从产品化/资产化/流程优化视角评价技术方案</td><td>评价+创造</td><td>第1-6周</td></tr>
-    <tr><td>目标3</td><td style="text-align:left">场景沉浸中展现信息不完全下的综合决策能力</td><td>综合决策</td><td>第1,3,5,7周</td></tr>
-    <tr><td>目标4</td><td style="text-align:left">完成从技术思维到系统决策思维的认知转变</td><td>内化+创造</td><td>全8周+期末</td></tr>
+    <tr><th style="width:22%" data-i18n="overview.slide3_th_goal">课程目标</th><th style="width:28%" data-i18n="overview.slide3_th_desc">描述</th><th style="width:18%" data-i18n="overview.slide3_th_level">认知层次</th><th style="width:32%" data-i18n="overview.slide3_th_weeks">对应周次</th></tr>
+    <tr><td data-i18n="overview.slide3_goal1">目标1</td><td style="text-align:left" data-i18n="overview.slide3_goal1_desc">运用"四重错配"框架系统识别固废工程多维约束</td><td data-i18n="overview.slide3_goal1_level">分析+评价</td><td data-i18n="overview.slide3_goal1_weeks">第1-8周</td></tr>
+    <tr><td data-i18n="overview.slide3_goal2">目标2</td><td style="text-align:left" data-i18n="overview.slide3_goal2_desc">从产品化/资产化/流程优化视角评价技术方案</td><td data-i18n="overview.slide3_goal2_level">评价+创造</td><td data-i18n="overview.slide3_goal2_weeks">第1-6周</td></tr>
+    <tr><td data-i18n="overview.slide3_goal3">目标3</td><td style="text-align:left" data-i18n="overview.slide3_goal3_desc">场景沉浸中展现信息不完全下的综合决策能力</td><td data-i18n="overview.slide3_goal3_level">综合决策</td><td data-i18n="overview.slide3_goal3_weeks">第1,3,5,7周</td></tr>
+    <tr><td data-i18n="overview.slide3_goal4">目标4</td><td style="text-align:left" data-i18n="overview.slide3_goal4_desc">完成从技术思维到系统决策思维的认知转变</td><td data-i18n="overview.slide3_goal4_level">内化+创造</td><td data-i18n="overview.slide3_goal4_weeks">全8周+期末</td></tr>
   </table>
 </div>
 
 <!-- Slide 4: 考核方式 -->
 <div class="slide slide-content">
-  <h2>考核方式：开卷+思维重塑报告</h2>
+  <h2 data-i18n="overview.slide4_heading">考核方式：开卷+思维重塑报告</h2>
   <div class="card animate-in d1" style="max-width:700px">
-    <h3>研究生双轨评价</h3>
-    <div class="progress"><span>开卷案例分析</span><span>50%</span></div><div class="bar"><span class="b4" style="width:50%"></span></div>
-    <p style="color:#8899aa;font-size:13px;margin:6px 0">给出一段未在课堂讨论过的纪实叙事文本，信息不充分条件下综合判断</p>
-    <div class="progress"><span>个人思维重塑报告</span><span>50%</span></div><div class="bar"><span class="b5" style="width:50%"></span></div>
-    <p style="color:#8899aa;font-size:13px;margin:6px 0">≥2000字，质性反思八周认知变化，不是标准答案</p>
+    <h3 data-i18n="overview.slide4_title">研究生双轨评价</h3>
+    <div class="progress"><span data-i18n="overview.slide4_exam_label">开卷案例分析</span><span data-i18n="overview.slide4_exam_percent">50%</span></div><div class="bar"><span class="b4" style="width:50%"></span></div>
+    <p style="color:#8899aa;font-size:13px;margin:6px 0" data-i18n="overview.slide4_exam_desc">给出一段未在课堂讨论过的纪实叙事文本，信息不充分条件下综合判断</p>
+    <div class="progress"><span data-i18n="overview.slide4_report_label">个人思维重塑报告</span><span data-i18n="overview.slide4_report_percent">50%</span></div><div class="bar"><span class="b5" style="width:50%"></span></div>
+    <p style="color:#8899aa;font-size:13px;margin:6px 0" data-i18n="overview.slide4_report_desc">≥2000字，质性反思八周认知变化，不是标准答案</p>
     <p class="hl-banner" style="margin-top:15px;background:linear-gradient(135deg,rgba(91,155,213,.15),rgba(46,204,113,.1));border:1px solid rgba(91,155,213,.2)">
-      <span style="color:#5b9bd5;font-weight:700">考核即教学</span>
+      <span style="color:#5b9bd5;font-weight:700" data-i18n="overview.slide4_motto_exam">考核即教学</span>
       <span style="color:#667;margin:0 12px">|</span>
-      <span style="color:#2ecc71;font-weight:700">产出即成果</span>
+      <span style="color:#2ecc71;font-weight:700" data-i18n="overview.slide4_motto_output">产出即成果</span>
       <span style="color:#667;margin:0 12px">|</span>
-      <span style="color:#e67e22;font-weight:700">反思即成长</span>
+      <span style="color:#e67e22;font-weight:700" data-i18n="overview.slide4_motto_reflect">反思即成长</span>
     </p>
   </div>
 </div>
 
 <!-- Slide 5: 课程思政 -->
 <div class="slide slide-content">
-  <h2>课程思政双主线（贯穿八周）</h2>
-  <p style="color:#667788;font-size:12px;text-align:center;margin-bottom:10px">两条主线覆盖全部8周教学，替代传统每周独立思政点</p>
+  <h2 data-i18n="overview.slide5_heading">课程思政双主线（贯穿八周）</h2>
+  <p style="color:#667788;font-size:12px;text-align:center;margin-bottom:10px" data-i18n="overview.slide5_subhead">两条主线覆盖全部8周教学，替代传统每周独立思政点</p>
   <table class="animate-in d1" style="font-size:12px">
-    <tr><th style="width:8%">周次</th><th style="width:46%">主线一：好好学习 天天向上</th><th style="width:46%">主线二：绿水青山 = 金山银山</th></tr>
-    <tr><td>1</td><td>雍葭初叩师门（S001）：资质平平但持续学习——"只要好好学习就能天天向上"</td><td>作品龙栖湾成果转化探索</td></tr>
-    <tr><td>2</td><td>雍葭行业笔记积累：从看论文到跑现场的梯度进阶</td><td>垃圾分类中的公民责任——守护绿水青山需要公共精神</td></tr>
-    <tr><td>3</td><td>脱硫石膏十年波折：技术攻关没有捷径，靠的是十年磨一剑</td><td>固废资源化=金山银山：火电厂"废渣"如何变成建材产业的原料</td></tr>
-    <tr><td>4</td><td>焚烧炉五年垃圾时间：自学、试错、画图纸——学习≠上课</td><td>医疗废物安全处置=专业的社会价值：非典期间的工程师担当</td></tr>
-    <tr><td>5</td><td>TQM降本：从"经验操作"到"数据驱动"——持续改善就是天天向上</td><td>精益思维=资源节约：每一寸降本都是对环境的尊重</td></tr>
-    <tr><td>6</td><td>碳交易机制：跨领域学习的勇气——进入一个全新知识领域</td><td>"双碳"战略=绿水青山的经济兑现：碳减排如何被定价</td></tr>
-    <tr><td>7</td><td>从学习者到输出者：雍葭独立面对客户、独立拟标书</td><td>工程伦理=专业守护绿水青山的方式：技术+法律+商业的交叉地带</td></tr>
-    <tr><td>8</td><td>雍葭的"样本意义"——读书改命秘笈前言：回头看，天天是否向上？</td><td>八周总结：环境保护领域的相关专业具备绿色、可持续、朝阳等特征——绿水青山和金山银山可以兼得</td></tr>
+    <tr><th style="width:8%" data-i18n="overview.slide5_th_week">周次</th><th style="width:46%" data-i18n="overview.slide5_th_line1">主线一：好好学习 天天向上</th><th style="width:46%" data-i18n="overview.slide5_th_line2">主线二：绿水青山 = 金山银山</th></tr>
+    <tr><td>1</td><td data-i18n="overview.slide5_w1_l1">雍葭初叩师门（S001）：资质平平但持续学习——"只要好好学习就能天天向上"</td><td data-i18n="overview.slide5_w1_l2">作品龙栖湾成果转化探索</td></tr>
+    <tr><td>2</td><td data-i18n="overview.slide5_w2_l1">雍葭行业笔记积累：从看论文到跑现场的梯度进阶</td><td data-i18n="overview.slide5_w2_l2">垃圾分类中的公民责任——守护绿水青山需要公共精神</td></tr>
+    <tr><td>3</td><td data-i18n="overview.slide5_w3_l1">脱硫石膏十年波折：技术攻关没有捷径，靠的是十年磨一剑</td><td data-i18n="overview.slide5_w3_l2">固废资源化=金山银山：火电厂"废渣"如何变成建材产业的原料</td></tr>
+    <tr><td>4</td><td data-i18n="overview.slide5_w4_l1">焚烧炉五年垃圾时间：自学、试错、画图纸——学习≠上课</td><td data-i18n="overview.slide5_w4_l2">医疗废物安全处置=专业的社会价值：非典期间的工程师担当</td></tr>
+    <tr><td>5</td><td data-i18n="overview.slide5_w5_l1">TQM降本：从"经验操作"到"数据驱动"——持续改善就是天天向上</td><td data-i18n="overview.slide5_w5_l2">精益思维=资源节约：每一寸降本都是对环境的尊重</td></tr>
+    <tr><td>6</td><td data-i18n="overview.slide5_w6_l1">碳交易机制：跨领域学习的勇气——进入一个全新知识领域</td><td data-i18n="overview.slide5_w6_l2">"双碳"战略=绿水青山的经济兑现：碳减排如何被定价</td></tr>
+    <tr><td>7</td><td data-i18n="overview.slide5_w7_l1">从学习者到输出者：雍葭独立面对客户、独立拟标书</td><td data-i18n="overview.slide5_w7_l2">工程伦理=专业守护绿水青山的方式：技术+法律+商业的交叉地带</td></tr>
+    <tr><td>8</td><td data-i18n="overview.slide5_w8_l1">雍葭的"样本意义"——读书改命秘笈前言：回头看，天天是否向上？</td><td data-i18n="overview.slide5_w8_l2">八周总结：环境保护领域的相关专业具备绿色、可持续、朝阳等特征——绿水青山和金山银山可以兼得</td></tr>
   </table>
-  <p style="margin-top:12px;color:#7fb8e0;font-size:12px;text-align:center">"试问又有几人相信，即使天赋普遍+资源匮乏，只要持续好好学习，真能天天向上？"</p>
-  <p style="color:#7fb8e0;font-size:12px;text-align:center">"绿水青山就是金山银山——不只是环保口号，更是空间经济学的真理。"</p>
+  <p style="margin-top:12px;color:#7fb8e0;font-size:12px;text-align:center" data-i18n="overview.slide5_quote1">"试问又有几人相信，即使天赋普遍+资源匮乏，只要持续好好学习，真能天天向上？"</p>
+  <p style="color:#7fb8e0;font-size:12px;text-align:center" data-i18n="overview.slide5_quote2">"绿水青山就是金山银山——不只是环保口号，更是空间经济学的真理。"</p>
 </div>
 
 <!-- Slide 6: 教学辅助团队（11-Agent + 叙·框·境·创） -->
 <div class="slide slide-content">
-  <h2>教学辅助团队（11-Agent + 叙·框·境·创）</h2>
-  <p style="color:#667788;font-size:11px;text-align:center;margin:-30px 0 20px">← 9席教学产出 ＋ 2席学生反馈 →</p>
+  <h2 data-i18n="overview.slide6_heading">教学辅助团队（11-Agent + 叙·框·境·创）</h2>
+  <p style="color:#667788;font-size:11px;text-align:center;margin:-30px 0 20px" data-i18n="overview.slide6_subhead">← 9席教学产出 ＋ 2席学生反馈 →</p>
   <div class="grid-3">
     <div class="card animate-in d1">
-      <h3>Agent 0 教务长</h3>
+      <h3 data-i18n="overview.slide6_agent0_name">Agent 0 教务长</h3>
       <p>质量总控/OBE审核<br>跨Agent把关<br>NFSC合规检查</p>
-      <span class="tag tag-red">审核</span>
+      <span class="tag tag-red" data-i18n="overview.slide6_agent0_tag">审核</span>
     </div>
     <div class="card animate-in d2">
-      <h3>Agent 1 资料归档</h3>
+      <h3 data-i18n="overview.slide6_agent1_name">Agent 1 资料归档</h3>
       <p>文件标准化命名<br>目录维护/版本管理<br>资料索引+缺失检测</p>
-      <span class="tag tag-blue">基础</span>
+      <span class="tag tag-blue" data-i18n="overview.slide6_agent1_tag">基础</span>
     </div>
     <div class="card animate-in d3">
-      <h3>Agent 2 文档生成</h3>
+      <h3 data-i18n="overview.slide6_agent2_name">Agent 2 文档生成</h3>
       <p>OBE大纲/教案<br>叙·框·境·创设计<br>自编讲义整合</p>
-      <span class="tag tag-green">产出</span>
+      <span class="tag tag-green" data-i18n="overview.slide6_agent2_tag">产出</span>
     </div>
     <div class="card animate-in d4">
-      <h3>Agent 3 课件设计</h3>
+      <h3 data-i18n="overview.slide6_agent3_name">Agent 3 课件设计</h3>
       <p>讲稿/PPT/HTML<br>动漫特质课件<br>四类页面设计</p>
-      <span class="tag tag-orange">产出</span>
+      <span class="tag tag-orange" data-i18n="overview.slide6_agent3_tag">产出</span>
     </div>
     <div class="card animate-in d5">
-      <h3>Agent 4 作业考务</h3>
+      <h3 data-i18n="overview.slide6_agent4_name">Agent 4 作业考务</h3>
       <p>作业题库/A/B卷<br>课程设计任务书<br>Rubric评分标准</p>
-      <span class="tag tag-green">产出</span>
+      <span class="tag tag-green" data-i18n="overview.slide6_agent4_tag">产出</span>
     </div>
     <div class="card animate-in d6">
-      <h3>Agent 5 教研教改</h3>
+      <h3 data-i18n="overview.slide6_agent5_name">Agent 5 教研教改</h3>
       <p>达成度计算分析<br>教学反思/改进<br>教改申报书</p>
-      <span class="tag tag-blue">分析</span>
+      <span class="tag tag-blue" data-i18n="overview.slide6_agent5_tag">分析</span>
     </div>
     <div class="card animate-in d7">
-      <h3>Agent-S 故事案例</h3>
+      <h3 data-i18n="overview.slide6_agent_s_name">Agent-S 故事案例</h3>
       <p>工程案例→叙事<br>五段式模板<br>方法论语块+空白</p>
-      <span class="tag tag-orange">特色</span>
+      <span class="tag tag-orange" data-i18n="overview.slide6_agent_s_tag">特色</span>
     </div>
     <div class="card animate-in d8">
-      <h3>Agent-I 场景沉浸</h3>
+      <h3 data-i18n="overview.slide6_agent_i_name">Agent-I 场景沉浸</h3>
       <p>角色扮演脚本<br>突发事件卡/手册<br>转化出口环节</p>
-      <span class="tag tag-orange">特色</span>
+      <span class="tag tag-orange" data-i18n="overview.slide6_agent_i_tag">特色</span>
     </div>
     <div class="card animate-in d9">
-      <h3>Agent-B 学术品牌</h3>
+      <h3 data-i18n="overview.slide6_agent_b_name">Agent-B 学术品牌</h3>
       <p>理念阐述/论文<br>成果奖申报书<br>NFSC理论输出</p>
-      <span class="tag tag-blue">特色</span>
+      <span class="tag tag-blue" data-i18n="overview.slide6_agent_b_tag">特色</span>
     </div>
   </div>
 </div>
 
 <!-- Slide 7: 叙·框·境·创 四维教学法 -->
 <div class="slide slide-content">
-  <h2>叙·框·境·创 四维教学法</h2>
+  <h2 data-i18n="overview.slide7_heading">叙·框·境·创 四维教学法</h2>
   <table class="animate-in d1">
-    <tr><th style="width:12%">维度</th><th style="width:18%">载体</th><th style="width:22%">学生行为</th><th style="width:18%">教师行为</th><th style="width:12%">占比</th><th style="width:18%">本质</th></tr>
-    <tr><td><strong>叙</strong> Narrate</td><td>纪实小说/真实工程叙事</td><td>被故事"抓住"，由情感触发主动追问</td><td>讲故事的人</td><td>15%</td><td>降低认知门槛</td></tr>
-    <tr><td><strong>框</strong> Framework</td><td>可迁移分析框架</td><td>套用框架独立解剖案例，自行发现规律</td><td>给工具的人</td><td>15%</td><td>保证思辨深度</td></tr>
-    <tr><td><strong>境</strong> Scene</td><td>沉浸式决策场景</td><td>高压情境中做出真实决策，承担角色后果</td><td>搭舞台的人</td><td>40%</td><td>加速认知转化</td></tr>
-    <tr><td><strong>创</strong> Create</td><td>可积累的创造性产出</td><td>创造可服务未来的成果</td><td>指方向的人</td><td>30%</td><td>实现知识致用</td></tr>
+    <tr><th style="width:12%" data-i18n="overview.slide7_th_dimension">维度</th><th style="width:18%" data-i18n="overview.slide7_th_carrier">载体</th><th style="width:22%" data-i18n="overview.slide7_th_student">学生行为</th><th style="width:18%" data-i18n="overview.slide7_th_teacher">教师行为</th><th style="width:12%" data-i18n="overview.slide7_th_ratio">占比</th><th style="width:18%" data-i18n="overview.slide7_th_essence">本质</th></tr>
+    <tr><td><strong data-i18n="overview.slide7_narrate_name">叙</strong> Narrate</td><td data-i18n="overview.slide7_narrate_carrier">纪实小说/真实工程叙事</td><td data-i18n="overview.slide7_narrate_student">被故事"抓住"，由情感触发主动追问</td><td data-i18n="overview.slide7_narrate_teacher">讲故事的人</td><td data-i18n="overview.slide7_narrate_ratio">15%</td><td data-i18n="overview.slide7_narrate_essence">降低认知门槛</td></tr>
+    <tr><td><strong data-i18n="overview.slide7_framework_name">框</strong> Framework</td><td data-i18n="overview.slide7_framework_carrier">可迁移分析框架</td><td data-i18n="overview.slide7_framework_student">套用框架独立解剖案例，自行发现规律</td><td data-i18n="overview.slide7_framework_teacher">给工具的人</td><td data-i18n="overview.slide7_framework_ratio">15%</td><td data-i18n="overview.slide7_framework_essence">保证思辨深度</td></tr>
+    <tr><td><strong data-i18n="overview.slide7_scene_name">境</strong> Scene</td><td data-i18n="overview.slide7_scene_carrier">沉浸式决策场景</td><td data-i18n="overview.slide7_scene_student">高压情境中做出真实决策，承担角色后果</td><td data-i18n="overview.slide7_scene_teacher">搭舞台的人</td><td data-i18n="overview.slide7_scene_ratio">40%</td><td data-i18n="overview.slide7_scene_essence">加速认知转化</td></tr>
+    <tr><td><strong data-i18n="overview.slide7_create_name">创</strong> Create</td><td data-i18n="overview.slide7_create_carrier">可积累的创造性产出</td><td data-i18n="overview.slide7_create_student">创造可服务未来的成果</td><td data-i18n="overview.slide7_create_teacher">指方向的人</td><td data-i18n="overview.slide7_create_ratio">30%</td><td data-i18n="overview.slide7_create_essence">实现知识致用</td></tr>
   </table>
   <p class="hl-banner" style="margin-top:20px;background:linear-gradient(135deg,rgba(91,155,213,.12),rgba(230,126,34,.08));border:1px solid rgba(91,155,213,.2)">
     <span style="color:#5b9bd5;font-weight:700">以叙事启蒙</span><span style="color:#8899aa;margin:0 6px">→</span>
@@ -369,12 +382,12 @@ td { color: #aabbcc; }
 
 <!-- Slide 8: 结尾 -->
 <div class="slide slide-cover">
-  <div class="title animate-in d1" style="font-size:16px;color:#7fb8e0">联系邮箱：huangzhengwen@cdu.edu.cn</div>
-  <div class="subtitle animate-in d2" style="color:#7fb8e0">固体废弃物污染防治技术研究生课程教学团队</div>
+  <div class="title animate-in d1" style="font-size:16px;color:#7fb8e0" data-i18n="overview.slide8_email">联系邮箱：huangzhengwen@cdu.edu.cn</div>
+  <div class="subtitle animate-in d2" style="color:#7fb8e0" data-i18n="overview.slide8_team_name">固体废弃物污染防治技术研究生课程教学团队</div>
   <div class="info animate-in d3">
-    黄正文 教授 主讲<br>
-     <br><span style="color:#667788;font-size:13px">📖 普惠教育咨询系列纪实小说 · QQ阅读/17K已发布 · 全部©已登记</span><br>
-    成都大学 · 环境工程系
+    <span data-i18n="overview.slide8_instructor">黄正文 教授 主讲</span><br>
+     <br><span style="color:#667788;font-size:13px" data-i18n="overview.slide8_novel_note">📖 普惠教育咨询系列纪实小说 · QQ阅读/17K已发布 · 全部©已登记</span><br>
+    <span data-i18n="overview.slide8_university">成都大学 · 环境工程系</span>
   </div>
 </div>
 
@@ -431,6 +444,7 @@ td { color: #aabbcc; }
     if (Math.abs(dx) > 50) { go(dx < 0 ? cur + 1 : cur - 1); }
   });
 })();
+window.addEventListener('i18n:translated',function(){I18N.translate();});
 </script>
 </body>
 </html>

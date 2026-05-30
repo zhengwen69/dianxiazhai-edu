@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第1周：空间错配Ⅰ — 从废弃物到资产</title>
+<title data-i18n="w1.page_title">第1周：空间错配Ⅰ — 从废弃物到资产</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -87,169 +87,181 @@ td{color:#aabbcc}
   .footer{margin-top:30px;font-size:10px}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
 }
-</style>
-</head>
-<body>
 
-<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
+</style>
+<script src="js/i18n.js"></script></head>
+<body>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+
+<a href="index.html" class="back-btn" title="返回首页" data-i18n-title="common.back_to_home"><span data-i18n="common.back_to_home">◀ 返回首页</span></a>
 
 <div class="header">
-  <h1><span>第1周</span> 空间错配Ⅰ</h1>
-  <div class="sub">从"废弃物"到"资产"的认知翻转</div>
-  <div class="meta">Spatial Mismatch → Assetization &nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,3,4</div>
+  <h1 data-i18n="w1.header_title"><span>第1周</span> 空间错配Ⅰ</h1>
+  <div class="sub" data-i18n="w1.header_sub">从"废弃物"到"资产"的认知翻转</div>
+  <div class="meta" data-i18n="w1.header_meta">Spatial Mismatch → Assetization &nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,3,4</div>
 </div>
 
 <div class="container">
 
 <!-- 核心追问 -->
 <div class="section">
-  <h2>核心追问</h2>
+  <h2 data-i18n="w1.section_core">核心追问</h2>
   <div class="card">
-    <h3>何以有废？何以成渣？</h3>
-    <p>    固废——放错时空的资源；学习困难者——放错时空的潜能；能力被低估者——放错平台的价值。<br>从工程技术到社会科学，"废"的哲学根源皆指向时空的错位。<br>知因便有法，有法便可解全域之渣与废。</p>
+    <h3 data-i18n="w1.core_question">何以有废？何以成渣？</h3>
+    <p data-i18n="w1.core_answer">    固废——放错时空的资源；学习困难者——放错时空的潜能；能力被低估者——放错平台的价值。<br>从工程技术到社会科学，"废"的哲学根源皆指向时空的错位。<br>知因便有法，有法便可解全域之渣与废。</p>
   </div>
 </div>
 
 <!-- 五垃圾标签 -->
 <div class="section">
-  <h2>垃圾 · 标签体系</h2>
+  <h2 data-i18n="w1.section_tag_system">垃圾 · 标签体系</h2>
   <div class="knowledge-grid">
-    <div class="knowledge-item"><strong>垃圾资产</strong><br>空间错配→资产化<br>案例01：龙马砂轮厂零收购</div>
-    <div class="knowledge-item"><strong>垃圾空间</strong><br>空间错配→邻利转化<br>案例02：填埋场选址与邻避</div>
-    <div class="knowledge-item" style="opacity:.5"><strong>垃圾时间</strong><br>时间错配→跨期兑现<br>案例04 · 第3-4周揭晓</div>
-    <div class="knowledge-item" style="opacity:.5"><strong>垃圾技术</strong><br>技术错配→产品化<br>案例03 · 第3周揭晓</div>
-    <div class="knowledge-item" style="opacity:.5"><strong>垃圾模式</strong><br>行为错配→流程优化<br>案例05 · 第5周揭晓</div>
+    <div class="knowledge-item" data-i18n="w1.tag_asset"><strong>垃圾资产</strong><br>空间错配→资产化<br>案例01：龙马砂轮厂零收购</div>
+    <div class="knowledge-item" data-i18n="w1.tag_space"><strong>垃圾空间</strong><br>空间错配→邻利转化<br>案例02：填埋场选址与邻避</div>
+    <div class="knowledge-item" style="opacity:.5" data-i18n="w1.tag_time"><strong>垃圾时间</strong><br>时间错配→跨期兑现<br>案例04 · 第3-4周揭晓</div>
+    <div class="knowledge-item" style="opacity:.5" data-i18n="w1.tag_tech"><strong>垃圾技术</strong><br>技术错配→产品化<br>案例03 · 第3周揭晓</div>
+    <div class="knowledge-item" style="opacity:.5" data-i18n="w1.tag_mode"><strong>垃圾模式</strong><br>行为错配→流程优化<br>案例05 · 第5周揭晓</div>
   </div>
 </div>
 
 <!-- 叙：叙事阅读 -->
 <div class="section">
-  <h2>叙 — 叙事阅读</h2>
+  <h2 data-i18n="w1.section_narrate">叙 — 叙事阅读</h2>
   <div class="card">
-    <h3>📖 《龙栖湾》选段</h3>
-    <div class="excerpt">
-      龙栖湾微雨之日，余闲坐无事，偶启电脑中一旧档，署曰"雍葭"。点入，便是彼昔年发来之第一条微信："呼昂老师，我想来您的公司实习，可以吗？"倏忽十二载矣。余凝望屏幕，当日天气如何已不复记忆，唯后来彼告余，发出此条消息之时，手在颤抖。
+    <h3 data-i18n="w1.excerpt_title1">📖 《龙栖湾》选段</h3>
+    <div class="excerpt" data-i18n="w1.excerpt_text1">
+       龙栖湾微雨之日，余闲坐无事，偶启电脑中一旧档，署曰"雍葭"。点入，便是彼昔年发来之第一条微信："呼昂老师，我想来您的公司实习，可以吗？"倏忽十二载矣。余凝望屏幕，当日天气如何已不复记忆，唯后来彼告余，发出此条消息之时，手在颤抖。
     </div>
-    <div class="src">来源：S001 | 《龙栖湾》第一卷·第1章 | ©已登记 | QQ阅读</div>
+    <div class="src" data-i18n="w1.excerpt_src1">来源：S001 | 《龙栖湾》第一卷·第1章 | ©已登记 | QQ阅读</div>
   </div>
   <div class="card">
-    <h3>📖 老呼昂的垃圾哲学</h3>
-    <div class="excerpt">
-      这老呼昂无论是给本科生还是研究生主讲的课程都是固废，年轻的时候创业给自己贴的标签也是焚烧炉专家，这垃圾处理与处置就两个字，要么"烧"要么"埋"……老领导是要给老呼昂补上这一课，挖掘研究院壳资源的残值。
+    <h3 data-i18n="w1.excerpt_title2">📖 老呼昂的垃圾哲学</h3>
+    <div class="excerpt" data-i18n="w1.excerpt_text2">
+       这老呼昂无论是给本科生还是研究生主讲的课程都是固废，年轻的时候创业给自己贴的标签也是焚烧炉专家，这垃圾处理与处置就两个字，要么"烧"要么"埋"……老领导是要给老呼昂补上这一课，挖掘研究院壳资源的残值。
     </div>
-    <div class="src">来源：S003 | 《龙栖湾》 | ©已登记</div>
+    <div class="src" data-i18n="w1.excerpt_src2">来源：S003 | 《龙栖湾》 | ©已登记</div>
   </div>
 </div>
 
 <!-- 框：分析框架 -->
 <div class="section">
-  <h2>框 — 四重错配分析框架</h2>
+  <h2 data-i18n="w1.section_framework">框 — 四重错配分析框架</h2>
 
   <div class="flow">
-    <div class="flow-step">空间错配</div>
+    <div class="flow-step" data-i18n="w1.framework_step1">空间错配</div>
     <div class="flow-arrow">→</div>
-    <div class="flow-step">资产化修复</div>
+    <div class="flow-step" data-i18n="w1.framework_step2">资产化修复</div>
     <div class="flow-arrow">→</div>
-    <div class="flow-step">价值重估</div>
+    <div class="flow-step" data-i18n="w1.framework_step3">价值重估</div>
   </div>
 
   <div class="knowledge-grid">
-    <div class="knowledge-item"><strong>固体废物定义</strong>（固废法）：丧失原有利用价值或被抛弃的固态/半固态物质。关键词："被抛弃"——主观性。</div>
-    <div class="knowledge-item"><strong>三化原则</strong>：减量化 → 资源化 → 无害化（优先级递减，无害化兜底）</div>
-    <div class="knowledge-item"><strong>空间错配</strong>：资产在一个没有市场的地方——不是东西没用，是位置不对</div>
-    <div class="knowledge-item"><strong>全生命周期视角</strong>：从"摇篮到坟墓"到"摇篮到摇篮"</div>
+    <div class="knowledge-item" data-i18n="w1.kp_def"><strong>固体废物定义</strong>（固废法）：丧失原有利用价值或被抛弃的固态/半固态物质。关键词："被抛弃"——主观性。</div>
+    <div class="knowledge-item" data-i18n="w1.kp_principle"><strong>三化原则</strong>：减量化 → 资源化 → 无害化（优先级递减，无害化兜底）</div>
+    <div class="knowledge-item" data-i18n="w1.kp_mismatch"><strong>空间错配</strong>：资产在一个没有市场的地方——不是东西没用，是位置不对</div>
+    <div class="knowledge-item" data-i18n="w1.kp_lifecycle"><strong>全生命周期视角</strong>：从"摇篮到坟墓"到"摇篮到摇篮"</div>
   </div>
 </div>
 
 <!-- 案例拆解 -->
 <div class="section">
-  <h2>案例拆解</h2>
+  <h2 data-i18n="w1.section_case">案例拆解</h2>
   <div class="card">
-    <h3>案例01：龙马砂轮厂零收购 <span class="tag tag-green">[S002]</span></h3>
-    <p>1998年，成都发动机公司旗下龙马砂轮厂濒临倒闭。12名工人，苏联老旧设备，市场饱和。老呼昂以零元接下全部资产——资产归己，债务归己，工人归己。</p>
-    <p>一年半内做了七件事：商务谈判、分期付款、出让股权、赴河南赊原料、以砂轮换垫圈、改配方降成本三成、开面包车跑遍成都五金市场。</p>
-    <p><strong>一年半后，砂轮厂关门。</strong>卖面包车给十二名工人发遣散费。但——七件事，每一件都沉淀为可复用的知识资产：谈判的方法论、成本控制的直觉、技术改造的手感、渠道拓展的门路。那一年半，比读一个商学院值。</p>
-    <p style="color:#e67e22;margin-top:8px">"屡战屡败、屡败屡战——教训与经验，都是无形资产的有效形态。"垃圾资产经过七策打磨，变成了黄金资产。</p>
+    <h3 data-i18n="w1.case01_title">案例01：龙马砂轮厂零收购 <span class="tag tag-green">[S002]</span></h3>
+    <p data-i18n="w1.case01_p1">1998年，成都发动机公司旗下龙马砂轮厂濒临倒闭。12名工人，苏联老旧设备，市场饱和。老呼昂以零元接下全部资产——资产归己，债务归己，工人归己。</p>
+    <p data-i18n="w1.case01_p2">一年半内做了七件事：商务谈判、分期付款、出让股权、赴河南赊原料、以砂轮换垫圈、改配方降成本三成、开面包车跑遍成都五金市场。</p>
+    <p data-i18n="w1.case01_p3"><strong>一年半后，砂轮厂关门。</strong>卖面包车给十二名工人发遣散费。但——七件事，每一件都沉淀为可复用的知识资产：谈判的方法论、成本控制的直觉、技术改造的手感、渠道拓展的门路。那一年半，比读一个商学院值。</p>
+    <p style="color:#e67e22;margin-top:8px" data-i18n="w1.case01_p4">"屡战屡败、屡败屡战——教训与经验，都是无形资产的有效形态。"垃圾资产经过七策打磨，变成了黄金资产。</p>
   </div>
   <div class="card">
-    <h3>案例02：填埋场选址与邻避 <span class="tag tag-orange">[S003]</span></h3>
-    <p>填埋场选址A址（龙脊坡）vs B址（石板滩）的博弈：<br>
+    <h3 data-i18n="w1.case02_title">案例02：填埋场选址与邻避 <span class="tag tag-orange">[S003]</span></h3>
+    <p data-i18n="w1.case02_p1">填埋场选址A址（龙脊坡）vs B址（石板滩）的博弈：<br>
     • A址：地质优（K≈5×10⁻⁸cm/s天然防渗），但近居民区（2400户准业主强烈反对）<br>
     • B址：远离居民，但岩溶发育（二叠系灰岩/溶蚀裂隙），与水源井群存在水力联系</p>
-    <p>邻避效应：技术安全 vs 公众感知——如何从"邻避"走向"邻利"？</p>
+    <p data-i18n="w1.case02_p2">邻避效应：技术安全 vs 公众感知——如何从"邻避"走向"邻利"？</p>
   </div>
 </div>
 
 <!-- 境：场景沉浸 -->
 <div class="section">
-  <h2>境 — 场景沉浸（第4学时）</h2>
+  <h2 data-i18n="w1.section_scene">境 — 场景沉浸（第4学时）</h2>
   <div class="card scene-card">
-    <h3>🎭 公众听证会模拟 <span class="tag tag-orange">[S003]</span></h3>
-    <p><strong>场景</strong>：填埋场选址公众听证会</p>
-    <p><strong>5个角色</strong>：政府规划官员 | 环保专家 | 投资方代表 | 周边居民代表 | 媒体记者</p>
-    <p><strong>决策点</strong>：该填埋场应建在A址还是B址？如何回应居民的"邻避"诉求？</p>
-    <p><strong>突发事件卡</strong>：① 第三方检测报告显示B址岩溶存在隐患 → ② 居民代表拿出联名请愿书 → ③ 媒体曝光"选址黑幕"</p>
-    <p style="margin-top:8px;color:#7fb8e0">转化出口：邻避→邻利的资产化路径设计</p>
+    <h3 data-i18n="w1.scene_title">🎭 公众听证会模拟 <span class="tag tag-orange">[S003]</span></h3>
+    <p data-i18n="w1.scene_setting"><strong>场景</strong>：填埋场选址公众听证会</p>
+    <p data-i18n="w1.scene_roles"><strong>5个角色</strong>：政府规划官员 | 环保专家 | 投资方代表 | 周边居民代表 | 媒体记者</p>
+    <p data-i18n="w1.scene_decision"><strong>决策点</strong>：该填埋场应建在A址还是B址？如何回应居民的"邻避"诉求？</p>
+    <p data-i18n="w1.scene_events"><strong>突发事件卡</strong>：① 第三方检测报告显示B址岩溶存在隐患 → ② 居民代表拿出联名请愿书 → ③ 媒体曝光"选址黑幕"</p>
+    <p style="margin-top:8px;color:#7fb8e0" data-i18n="w1.scene_output">转化出口：邻避→邻利的资产化路径设计</p>
   </div>
 </div>
 
 <!-- 知识体系 -->
 <div class="section">
-  <h2>本周知识点体系</h2>
+  <h2 data-i18n="w1.section_kp">本周知识点体系</h2>
   <table>
-    <tr><th>知识点</th><th>类型</th><th>对应环节</th></tr>
-    <tr><td>固废法律定义与"被抛弃"的主观性</td><td>概念</td><td>叙事导入</td></tr>
-    <tr><td>三化原则（减量化/资源化/无害化）</td><td>核心框架</td><td>框</td></tr>
-    <tr><td>空间错配概念与资产化修复路径</td><td>分析框架</td><td>框+案例</td></tr>
-    <tr><td>全生命周期视角</td><td>思维工具</td><td>框</td></tr>
-    <tr><td>固废管理法规体系（固废法2020修订）</td><td>法规</td><td>框</td></tr>
-    <tr><td>填埋场选址原则与防渗标准</td><td>技术</td><td>境</td></tr>
-    <tr><td>邻避效应与公众参与</td><td>社会维度</td><td>境</td></tr>
+    <tr><th data-i18n="w1.kp_th1">知识点</th><th data-i18n="w1.kp_th2">类型</th><th data-i18n="w1.kp_th3">对应环节</th></tr>
+    <tr><td data-i18n="w1.kp1">固废法律定义与"被抛弃"的主观性</td><td data-i18n="w1.kp1_type">概念</td><td data-i18n="w1.kp1_link">叙事导入</td></tr>
+    <tr><td data-i18n="w1.kp2">三化原则（减量化/资源化/无害化）</td><td data-i18n="w1.kp2_type">核心框架</td><td data-i18n="w1.kp2_link">框</td></tr>
+    <tr><td data-i18n="w1.kp3">空间错配概念与资产化修复路径</td><td data-i18n="w1.kp3_type">分析框架</td><td data-i18n="w1.kp3_link">框+案例</td></tr>
+    <tr><td data-i18n="w1.kp4">全生命周期视角</td><td data-i18n="w1.kp4_type">思维工具</td><td data-i18n="w1.kp4_link">框</td></tr>
+    <tr><td data-i18n="w1.kp5">固废管理法规体系（固废法2020修订）</td><td data-i18n="w1.kp5_type">法规</td><td data-i18n="w1.kp5_link">框</td></tr>
+    <tr><td data-i18n="w1.kp6">填埋场选址原则与防渗标准</td><td data-i18n="w1.kp6_type">技术</td><td data-i18n="w1.kp6_link">境</td></tr>
+    <tr><td data-i18n="w1.kp7">邻避效应与公众参与</td><td data-i18n="w1.kp7_type">社会维度</td><td data-i18n="w1.kp7_link">境</td></tr>
   </table>
 </div>
 
 <!-- 课程思政 -->
 <div class="section">
-  <h2>思政双主线</h2>
+  <h2 data-i18n="w1.section_sizheng">思政双主线</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
     <div class="card">
-      <h3>好好学习 天天向上</h3>
-      <p style="color:#e67e22;font-size:12px;margin-bottom:4px">雍葭的"样本意义"</p>
-      <p style="font-size:13px">天赋普遍、资源匮乏的雍葭叩开师门，从大二课堂到独立执业，靠的不是天赋，是持续学习。她的目标很明确——"很好保持进取之心"，"朝真、善、美高雅优雅知性受人尊敬的社会角色修习"，从考研到考博，"复制专家教授之路径"。"试问又有几人相信，即使天赋普遍+资源匮乏，只要持续好好学习，真能天天向上？"</p>
-      <p style="font-size:11px;color:#667;margin-top:4px">——摘自《读书改变命运秘笈》前言</p>
+      <h3 data-i18n="w1.sizheng_study_title">好好学习 天天向上</h3>
+      <p style="color:#e67e22;font-size:12px;margin-bottom:4px" data-i18n="w1.sizheng_study_sub">雍葭的"样本意义"</p>
+      <p style="font-size:13px" data-i18n="w1.sizheng_study_text">天赋普遍、资源匮乏的雍葭叩开师门，从大二课堂到独立执业，靠的不是天赋，是持续学习。她的目标很明确——"很好保持进取之心"，"朝真、善、美高雅优雅知性受人尊敬的社会角色修习"，从考研到考博，"复制专家教授之路径"。"试问又有几人相信，即使天赋普遍+资源匮乏，只要持续好好学习，真能天天向上？"</p>
+      <p style="font-size:11px;color:#667;margin-top:4px" data-i18n="w1.sizheng_study_source">——摘自《读书改变命运秘笈》前言</p>
     </div>
     <div class="card">
-      <h3>绿水青山 = 金山银山</h3>
-      <p style="color:#e67e22;font-size:12px;margin-bottom:4px">"两山"理论的空间经济学解读</p>
-      <p style="font-size:13px">龙栖湾渔村"垃圾围村→环境整治→价值重估"：同一块土地，生态修复后价值完全翻转。从"邻避"到"邻利"，就是空间资产化的过程。固废管理不是赔本买卖——环境保护是一个有前途的专业，可以实现"金山银山"。</p>
+      <h3 data-i18n="w1.sizheng_green_title">绿水青山 = 金山银山</h3>
+      <p style="color:#e67e22;font-size:12px;margin-bottom:4px" data-i18n="w1.sizheng_green_sub">"两山"理论的空间经济学解读</p>
+      <p style="font-size:13px" data-i18n="w1.sizheng_green_text">龙栖湾渔村"垃圾围村→环境整治→价值重估"：同一块土地，生态修复后价值完全翻转。从"邻避"到"邻利"，就是空间资产化的过程。固废管理不是赔本买卖——环境保护是一个有前途的专业，可以实现"金山银山"。</p>
     </div>
   </div>
-  <p style="color:#7fb8e0;font-size:13px;text-align:center;margin-top:10px">废物不废，仅是时间与空间的错配；学习困难者非天赋不足，仅是方法与信心的错配。知因则有法，全域渣与废，皆可修复。</p>
+  <p style="color:#7fb8e0;font-size:13px;text-align:center;margin-top:10px" data-i18n="w1.sizheng_closing">废物不废，仅是时间与空间的错配；学习困难者非天赋不足，仅是方法与信心的错配。知因则有法，全域渣与废，皆可修复。</p>
 </div>
 
 <!-- 素材引用 -->
 <div class="section">
-  <h2>本讲素材来源</h2>
+  <h2 data-i18n="w1.section_source">本讲素材来源</h2>
   <table>
     <tr><th>编号</th><th>素材</th><th>出处</th><th>可溯源</th></tr>
-    <tr><td>S001</td><td>龙栖湾开篇·雍葭初叩师门</td><td>《龙栖湾》第1章</td><td>QQ阅读</td></tr>
-    <tr><td>S002</td><td>龙马砂轮厂零收购案</td><td>《龙栖湾》第156-157回、第188回</td><td>母库登记</td></tr>
-    <tr><td>S003</td><td>填埋场选址/老呼昂垃圾哲学</td><td>《龙栖湾》</td><td>QQ阅读</td></tr>
+    <tr><td>S001</td><td data-i18n="w1.source_s001">龙栖湾开篇·雍葭初叩师门</td><td>《龙栖湾》第1章</td><td>QQ阅读</td></tr>
+    <tr><td>S002</td><td data-i18n="w1.source_s002">龙马砂轮厂零收购案</td><td>《龙栖湾》第156-157回、第188回</td><td>母库登记</td></tr>
+    <tr><td>S003</td><td data-i18n="w1.source_s003">填埋场选址/老呼昂垃圾哲学</td><td>《龙栖湾》</td><td>QQ阅读</td></tr>
   </table>
 </div>
 
 </div>
 
 <div class="section">
-  <h2>本周自检</h2>
+  <h2 data-i18n="w1.section_selfcheck">本周自检</h2>
   <div class="card">
     <p style="font-size:13px">□ 我能用一句话定义"空间错配"<br>□ 我能说出龙马砂轮厂的七件事各修复了什么错配<br>□ 我能在地图上标注我所在城市的固废设施分布<br>□ 我找到了一个自己项目中的"垃圾资产"——一个被低估却有价值的东西</p>
   </div>
 </div>
 
 <div class="footer">
-  <p>📖 素材来源：故事素材母库（S001-S003） | 可溯源至原著</p>
-  <p>© 黄正文（点暇斋）· 全部作品版权登记 | 成都大学 · 环境工程系</p>
+  <p data-i18n="common.source_traceable">📖 素材来源：故事素材母库（S001-S003） | 可溯源至原著</p>
+  <p data-i18n="common.copyright_full">© 黄正文（点暇斋）· 全部作品版权登记 | 成都大学 · 环境工程系</p>
 </div>
 
 </body>

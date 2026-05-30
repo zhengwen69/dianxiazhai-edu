@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>固废课程 — AI教学助手团队演示</title>
+<title data-i18n="agents.page_title">固废课程 — AI教学助手团队演示</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -92,47 +92,60 @@ h1 span{color:#5b9bd5}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .footer{font-size:10px;margin-top:24px}
 }
+
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
 
-<h1><span>固体废弃物污染防治技术</span><br>AI教学助手团队</h1>
-<p class="sub">11-Agent 协同工作体系 · 叙·框·境·创 四维教学法</p>
-<p style="text-align:center;color:#5b9bd5;font-size:13px;margin-bottom:20px;line-height:1.8">
+<a href="index.html" class="back-btn" title="返回首页" data-i18n="common.back_to_home">◀ 返回首页</a>
+
+<h1 data-i18n="agents.hero_title"><span>固体废弃物污染防治技术</span><br>AI教学助手团队</h1>
+<p class="sub" data-i18n="agents.hero_subtitle">11-Agent 协同工作体系 · 叙·框·境·创 四维教学法</p>
+<p style="text-align:center;color:#5b9bd5;font-size:13px;margin-bottom:20px;line-height:1.8" data-i18n="agents.hero_novel_intro">
 📖 纪实小说云驱动：黄正文'普惠教育咨询·读书改变命运秘笈'系列 → QQ阅读/17K已发布(©已登记) → Agent-S提取教学选段 → 故事化案例驱动全课程<br>
-<span style="color:#556;font-size:10px">素材母库编号：S001-S021（7部小说·21条教学情节段·全可溯源）</span>
+<span style="color:#556;font-size:10px" data-i18n="agents.hero_source_tag">素材母库编号：S001-S021（7部小说·21条教学情节段·全可溯源）</span>
 </p>
 
 <!-- 工作流 -->
 <div class="flow">
-  <div class="flow-box" style="--accent:#f39c12"><div class="icon">📖</div><div class="name">纪实小说云<br>普惠教育系列</div></div>
+  <div class="flow-box" style="--accent:#f39c12"><div class="icon">📖</div><div class="name" data-i18n="agents.flow_node_novel">纪实小说云<br>普惠教育系列</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#3498db"><div class="icon">📦</div><div class="name">原始资料</div></div>
+  <div class="flow-box" style="--accent:#3498db"><div class="icon">📦</div><div class="name" data-i18n="agents.flow_node_material">原始资料</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#3498db"><div class="icon">📋</div><div class="name">Agent1<br>资料归档</div></div>
+  <div class="flow-box" style="--accent:#3498db"><div class="icon">📋</div><div class="name" data-i18n="agents.flow_node_agent1">Agent1<br>资料归档</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#e67e22"><div class="icon">📖</div><div class="name">Agent-S<br>故事案例</div></div>
+  <div class="flow-box" style="--accent:#e67e22"><div class="icon">📖</div><div class="name" data-i18n="agents.flow_node_agent_s">Agent-S<br>故事案例</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#2ecc71"><div class="icon">📝</div><div class="name">Agent2<br>文档生成</div></div>
+  <div class="flow-box" style="--accent:#2ecc71"><div class="icon">📝</div><div class="name" data-i18n="agents.flow_node_agent2">Agent2<br>文档生成</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#9b59b6"><div class="icon">🎭</div><div class="name">Agent-I<br>场景沉浸</div></div>
+  <div class="flow-box" style="--accent:#9b59b6"><div class="icon">🎭</div><div class="name" data-i18n="agents.flow_node_agent_i">Agent-I<br>场景沉浸</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#e67e22"><div class="icon">🎨</div><div class="name">Agent3<br>PPT讲稿</div></div>
+  <div class="flow-box" style="--accent:#e67e22"><div class="icon">🎨</div><div class="name" data-i18n="agents.flow_node_agent3">Agent3<br>PPT讲稿</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#9b59b6"><div class="icon">📐</div><div class="name">Agent4<br>作业课设</div></div>
+  <div class="flow-box" style="--accent:#9b59b6"><div class="icon">📐</div><div class="name" data-i18n="agents.flow_node_agent4">Agent4<br>作业课设</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#1abc9c"><div class="icon">📊</div><div class="name">Agent5<br>教研教改</div></div>
+  <div class="flow-box" style="--accent:#1abc9c"><div class="icon">📊</div><div class="name" data-i18n="agents.flow_node_agent5">Agent5<br>教研教改</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#e74c3c"><div class="icon">🏆</div><div class="name">Agent-B<br>学术品牌</div></div>
+  <div class="flow-box" style="--accent:#e74c3c"><div class="icon">🏆</div><div class="name" data-i18n="agents.flow_node_agent_b">Agent-B<br>学术品牌</div></div>
   <div class="flow-arrow">→</div>
-  <div class="flow-box" style="--accent:#e74c3c"><div class="icon">✅</div><div class="name">输出</div></div>
+  <div class="flow-box" style="--accent:#e74c3c"><div class="icon">✅</div><div class="name" data-i18n="agents.flow_node_output">输出</div></div>
 </div>
 
 <!-- Agent 卡片 -->
 <div class="cards">
-  <div class="card t-a0">
+  <div class="card t-a0" data-i18n="agents.agent0">
     <span class="tag">审核岗</span>
     <div class="name">Agent 0 · 教务长</div>
     <div class="role">Chief Auditor — 质量总控</div>
@@ -143,7 +156,7 @@ h1 span{color:#5b9bd5}
     <div class="check">跨文档一致性（大纲↔试卷↔讲稿）</div>
   </div>
 
-  <div class="card t-a1">
+  <div class="card t-a1" data-i18n="agents.agent1">
     <span class="tag">基础岗</span>
     <div class="name">Agent 1 · 资料归档与标准化</div>
     <div class="role">Archivist — 资料管理 & 目录维护</div>
@@ -154,7 +167,7 @@ h1 span{color:#5b9bd5}
     <div class="check">重复文件检测 & 合并建议</div>
   </div>
 
-  <div class="card t-a2">
+  <div class="card t-a2" data-i18n="agents.agent2">
     <span class="tag">产出岗</span>
     <div class="name">Agent 2 · 教学文档生成</div>
     <div class="role">Document Builder — 大纲·日历·教案</div>
@@ -165,7 +178,7 @@ h1 span{color:#5b9bd5}
     <div class="check">课程思政要素自动嵌入</div>
   </div>
 
-  <div class="card t-a3">
+  <div class="card t-a3" data-i18n="agents.agent3">
     <span class="tag">产出岗</span>
     <div class="name">Agent 3 · PPT 与讲稿设计</div>
     <div class="role">Lecture Designer — 课件·演示·HTML</div>
@@ -176,7 +189,7 @@ h1 span{color:#5b9bd5}
     <div class="check">课程思政融入点设计</div>
   </div>
 
-  <div class="card t-a4">
+  <div class="card t-a4" data-i18n="agents.agent4">
     <span class="tag">产出岗</span>
     <div class="name">Agent 4 · 作业与课程设计</div>
     <div class="role">Assignment Designer — 题库·试卷·课设</div>
@@ -187,7 +200,7 @@ h1 span{color:#5b9bd5}
     <div class="check">Rubric 评分量表自动生成</div>
   </div>
 
-  <div class="card t-a5">
+  <div class="card t-a5" data-i18n="agents.agent5">
     <span class="tag">分析岗</span>
     <div class="name">Agent 5 · 教研教改与质量监控</div>
     <div class="role">QA & Reform — 达成度·反思·教改</div>
@@ -198,7 +211,7 @@ h1 span{color:#5b9bd5}
     <div class="check">工程教育认证对齐检查</div>
   </div>
 
-  <div class="card t-a6" style="--accent:#f39c12">
+  <div class="card t-a6" style="--accent:#f39c12" data-i18n="agents.agent_s">
     <span class="tag" style="background:rgba(243,156,18,.15);color:#f39c12">特色岗</span>
     <div class="name">Agent-S · 故事化案例拆解</div>
     <div class="role">Case Analyst — 工程→叙事</div>
@@ -209,7 +222,7 @@ h1 span{color:#5b9bd5}
     <div class="check">方法论语块+研究空白标注</div>
   </div>
 
-  <div class="card t-a7" style="--accent:#8e44ad">
+  <div class="card t-a7" style="--accent:#8e44ad" data-i18n="agents.agent_i">
     <span class="tag" style="background:rgba(142,68,173,.15);color:#8e44ad">特色岗</span>
     <div class="name">Agent-I · 场景沉浸设计</div>
     <div class="role">Immersion Designer — 角色扮演脚本</div>
@@ -220,7 +233,7 @@ h1 span{color:#5b9bd5}
     <div class="check">转化出口环节(创维度)</div>
   </div>
 
-  <div class="card t-a8" style="--accent:#16a085">
+  <div class="card t-a8" style="--accent:#16a085" data-i18n="agents.agent_b">
     <span class="tag" style="background:rgba(22,160,133,.15);color:#16a085">特色岗</span>
     <div class="name">Agent-B · 学术品牌建设</div>
     <div class="role">Brand Builder — 理念·论文·奖项</div>
@@ -232,7 +245,7 @@ h1 span{color:#5b9bd5}
   </div>
 </div>
 
-<p class="footer">← → 键切换Agent焦点 &nbsp;|&nbsp; 叙·框·境·创：叙事启蒙→框架赋能→场景淬炼→创造致用</p>
+<p class="footer" data-i18n="agents.footer_hint">← → 键切换Agent焦点 &nbsp;|&nbsp; 叙·框·境·创：叙事启蒙→框架赋能→场景淬炼→创造致用</p>
 
 <script>
 // 卡片渐入动画

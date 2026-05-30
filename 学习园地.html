@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>学习园地 — 固体废弃物污染防治技术</title>
+<title data-i18n="garden.page_title">学习园地 — 固体废弃物污染防治技术</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -151,37 +151,50 @@ body{
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
   .progress-bar-wrap{margin-bottom:12px}
 }
+
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+<a href="index.html" class="back-btn" title="返回首页" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="header">
-  <h1><span>学习园地</span></h1>
-  <div class="sub">研究生学习子门户 — 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
-  <div class="motto">「好好学习 天天向上」 — 以学为中心·八周思维重塑</div>
+  <h1 data-i18n="garden.header_title"><span>学习园地</span></h1>
+  <div class="sub" data-i18n="garden.header_sub">研究生学习子门户 — 课前预习 · 课中学习 · 课后作业 · AI赋能</div>
+  <div class="motto" data-i18n="garden.header_motto">「好好学习 天天向上」 — 以学为中心·八周思维重塑</div>
 </div>
 
 <!-- 学习导览 -->
-<div class="section-label">▾ 学习导览 ▾</div>
+<div class="section-label" data-i18n="garden.section_guide">▾ 学习导览 ▾</div>
 <div class="guide-wrap">
 
   <div class="acc-item">
     <div class="acc-header">
       <span class="icon">📋</span>
-      <span class="title">课程概览（学生版）</span>
+      <span class="title" data-i18n="garden.acc_course_overview_name">课程概览（学生版）</span>
       <span class="arrow">▶</span>
     </div>
     <div class="acc-content">
       <div class="acc-body">
         <ul>
-          <li><strong>课程名称：</strong>固体废弃物污染防治技术</li>
-          <li><strong>课程类型：</strong>专业学位研究生课程（环境工程/资源与环境）</li>
-          <li><strong>教学法：</strong>叙·框·境·创 四维教学法 · 纪实小说云驱动 · 错配-修复框架</li>
-          <li><strong>核心产出（OBE）：</strong>①能运用五维错配框架诊断固废问题 ②能提出工程修复方案 ③能融入工程伦理与社会维度 ④形成系统性思维（五维统一）</li>
-          <li><strong>考核方式：</strong>过程评价（案例讨论30%+场景参与30%）+ 结课产出三轨制（40%）：A课程论文 / B课程设计 / C教改论文</li>
-          <li><strong>先修要求：</strong>环境工程原理、固体废物处理与处置（本科已修，视为已掌握）</li>
+          <li data-i18n="garden.acc_course_name"><strong>课程名称：</strong>固体废弃物污染防治技术</li>
+          <li data-i18n="garden.acc_course_type"><strong>课程类型：</strong>专业学位研究生课程（环境工程/资源与环境）</li>
+          <li data-i18n="garden.acc_teaching_method"><strong>教学法：</strong>叙·框·境·创 四维教学法 · 纪实小说云驱动 · 错配-修复框架</li>
+          <li data-i18n="garden.acc_obe"><strong>核心产出（OBE）：</strong>①能运用五维错配框架诊断固废问题 ②能提出工程修复方案 ③能融入工程伦理与社会维度 ④形成系统性思维（五维统一）</li>
+          <li data-i18n="garden.acc_assessment"><strong>考核方式：</strong>过程评价（案例讨论30%+场景参与30%）+ 结课产出三轨制（40%）：A课程论文 / B课程设计 / C教改论文</li>
+          <li data-i18n="garden.acc_prereq"><strong>先修要求：</strong>环境工程原理、固体废物处理与处置（本科已修，视为已掌握）</li>
         </ul>
       </div>
     </div>
@@ -190,20 +203,20 @@ body{
   <div class="acc-item">
     <div class="acc-header">
       <span class="icon">🗂️</span>
-      <span class="title">章节导航（学习路径）</span>
+      <span class="title" data-i18n="garden.acc_nav_name">章节导航（学习路径）</span>
       <span class="arrow">▶</span>
     </div>
     <div class="acc-content">
       <div class="acc-body">
         <ul>
-          <li><strong>第1周：空间错配Ⅰ</strong> — 从废弃物到资产 · 空间错配五维框架 · S001-S003</li>
-          <li><strong>第2周：空间错配Ⅱ</strong> — 填埋场的空间正义 · 选址正义性四维 · S002-S003</li>
-          <li><strong>第3周：技术错配Ⅰ</strong> — 焚烧不是万能解 · 技术错配三型 · S004-S005</li>
-          <li><strong>第4周：技术错配Ⅱ</strong> — 生物处理的"垃圾时间" · 垃圾时间三维 · S006</li>
-          <li><strong>第5周：行为错配Ⅰ</strong> — 为什么人知道却做不到 · 行为错配四因 · S007-S008</li>
-          <li><strong>第6周：行为错配Ⅱ</strong> — 生产者为什么不负责 · EPR错配三源 · S009</li>
-          <li><strong>第7周：人文错配</strong> — 邻避不是自私 · 人文错配三维 · S010-S012</li>
-          <li><strong>第8周：思维整合</strong> — 五维统一诊断矩阵 · 结课三轨产出 · S001-S021全回顾</li>
+          <li data-i18n="garden.acc_nav_w1"><strong>第1周：空间错配Ⅰ</strong> — 从废弃物到资产 · 空间错配五维框架 · S001-S003</li>
+          <li data-i18n="garden.acc_nav_w2"><strong>第2周：空间错配Ⅱ</strong> — 填埋场的空间正义 · 选址正义性四维 · S002-S003</li>
+          <li data-i18n="garden.acc_nav_w3"><strong>第3周：技术错配Ⅰ</strong> — 焚烧不是万能解 · 技术错配三型 · S004-S005</li>
+          <li data-i18n="garden.acc_nav_w4"><strong>第4周：技术错配Ⅱ</strong> — 生物处理的"垃圾时间" · 垃圾时间三维 · S006</li>
+          <li data-i18n="garden.acc_nav_w5"><strong>第5周：行为错配Ⅰ</strong> — 为什么人知道却做不到 · 行为错配四因 · S007-S008</li>
+          <li data-i18n="garden.acc_nav_w6"><strong>第6周：行为错配Ⅱ</strong> — 生产者为什么不负责 · EPR错配三源 · S009</li>
+          <li data-i18n="garden.acc_nav_w7"><strong>第7周：人文错配</strong> — 邻避不是自私 · 人文错配三维 · S010-S012</li>
+          <li data-i18n="garden.acc_nav_w8"><strong>第8周：思维整合</strong> — 五维统一诊断矩阵 · 结课三轨产出 · S001-S021全回顾</li>
         </ul>
       </div>
     </div>
@@ -212,19 +225,19 @@ body{
   <div class="acc-item">
     <div class="acc-header">
       <span class="icon">🌳</span>
-      <span class="title">知识导图（自测版）</span>
+      <span class="title" data-i18n="garden.acc_mindmap_name">知识导图（自测版）</span>
       <span class="arrow">▶</span>
     </div>
     <div class="acc-content">
       <div class="acc-body">
         <ul>
-          <li><strong>空间认知：</strong>□ 空间错配五维（选址谬误/规划滞后/容量失衡/运输悖论/边界模糊） □ 选址正义性四维（地质承载/环境容量/社会可接受/代际公平） □ 空间错配量化指数 SMI</li>
-          <li><strong>技术认知：</strong>□ 技术错配三型（过度设计/低配高用/方向性错误） □ 垃圾时间三维（工艺/环境效益兑现/投资回收） □ 技术适用性矩阵</li>
-          <li><strong>行为认知：</strong>□ 行为错配四因（认知阻隔/便利性陷阱/规范缺位/反馈延迟） □ EPR错配三源（责任模糊/成本转嫁/监督失灵） □ Nudge干预设计方法</li>
-          <li><strong>人文认知：</strong>□ 人文错配三维（分配正义缺陷/程序正义缺失/承认正义忽视） □ 运行许可证 vs 社会许可证 □ 利益相关方分析与冲突化解</li>
-          <li><strong>方法认知：</strong>□ 五段叙事拆解（背景→冲突→决策→结局→启示） □ 委托-代理模型（激励相容） □ LCA时间维度分析 · GIS空间叠加 · MCDM</li>
-          <li><strong>综合思维：</strong>□ 五维统一诊断矩阵（空间×技术×行为×人文×时间） □ 叙·框·境·创 四维教学法内生逻辑 □ 从单点优化到系统再设计</li>
-          <li><em style="color:#556">（每周学习后对照自查，标记已掌握项。□ 可勾选）</em></li>
+          <li data-i18n="garden.acc_mindmap_spatial"><strong>空间认知：</strong>□ 空间错配五维（选址谬误/规划滞后/容量失衡/运输悖论/边界模糊） □ 选址正义性四维（地质承载/环境容量/社会可接受/代际公平） □ 空间错配量化指数 SMI</li>
+          <li data-i18n="garden.acc_mindmap_tech"><strong>技术认知：</strong>□ 技术错配三型（过度设计/低配高用/方向性错误） □ 垃圾时间三维（工艺/环境效益兑现/投资回收） □ 技术适用性矩阵</li>
+          <li data-i18n="garden.acc_mindmap_behavior"><strong>行为认知：</strong>□ 行为错配四因（认知阻隔/便利性陷阱/规范缺位/反馈延迟） □ EPR错配三源（责任模糊/成本转嫁/监督失灵） □ Nudge干预设计方法</li>
+          <li data-i18n="garden.acc_mindmap_humanistic"><strong>人文认知：</strong>□ 人文错配三维（分配正义缺陷/程序正义缺失/承认正义忽视） □ 运行许可证 vs 社会许可证 □ 利益相关方分析与冲突化解</li>
+          <li data-i18n="garden.acc_mindmap_method"><strong>方法认知：</strong>□ 五段叙事拆解（背景→冲突→决策→结局→启示） □ 委托-代理模型（激励相容） □ LCA时间维度分析 · GIS空间叠加 · MCDM</li>
+          <li data-i18n="garden.acc_mindmap_integration"><strong>综合思维：</strong>□ 五维统一诊断矩阵（空间×技术×行为×人文×时间） □ 叙·框·境·创 四维教学法内生逻辑 □ 从单点优化到系统再设计</li>
+          <li><em style="color:#556" data-i18n="garden.acc_mindmap_hint">（每周学习后对照自查，标记已掌握项。□ 可勾选）</em></li>
         </ul>
       </div>
     </div>
@@ -234,8 +247,8 @@ body{
     <div class="lc-row">
       <span class="lc-icon">🤖</span>
       <div>
-        <div class="lc-name">助学团队（AI Agent 学生版）</div>
-        <div class="lc-desc">9-Agent 学伴协同体系 — 从预习到论文全程护航</div>
+        <div class="lc-name" data-i18n="garden.link_agent_name">助学团队（AI Agent 学生版）</div>
+        <div class="lc-desc" data-i18n="garden.link_agent_desc">9-Agent 学伴协同体系 — 从预习到论文全程护航</div>
       </div>
       <span class="lc-arrow">→</span>
     </div>
@@ -244,39 +257,39 @@ body{
 </div>
 
 <!-- 五维认知框架 -->
-<div class="section-label">▾ 五维认知框架 · 案例直达 ▾</div>
+<div class="section-label" data-i18n="garden.section_framework">▾ 五维认知框架 · 案例直达 ▾</div>
 <div class="dim-row">
   <a class="dim-card" href="学习-第1周.html" style="border-color:rgba(230,126,34,.2)">
     <span class="dim-icon">💰</span>
-    <div class="dim-name" style="color:#e67e22">垃圾资产</div>
-    <div class="dim-sub">→ 第1周：空间错配</div>
+    <div class="dim-name" style="color:#e67e22" data-i18n="garden.dim_asset_name">垃圾资产</div>
+    <div class="dim-sub" data-i18n="garden.dim_asset_week">→ 第1周：空间错配</div>
   </a>
   <a class="dim-card" href="学习-第1周.html" style="border-color:rgba(91,155,213,.2)">
     <span class="dim-icon">🗺️</span>
-    <div class="dim-name" style="color:#5b9bd5">垃圾空间</div>
-    <div class="dim-sub">→ 第1-2周</div>
+    <div class="dim-name" style="color:#5b9bd5" data-i18n="garden.dim_space_name">垃圾空间</div>
+    <div class="dim-sub" data-i18n="garden.dim_space_week">→ 第1-2周</div>
   </a>
   <a class="dim-card" href="学习-第4周.html" style="border-color:rgba(46,204,113,.2)">
     <span class="dim-icon">⏱️</span>
-    <div class="dim-name" style="color:#2ecc71">垃圾时间</div>
-    <div class="dim-sub">→ 第3-4周</div>
+    <div class="dim-name" style="color:#2ecc71" data-i18n="garden.dim_time_name">垃圾时间</div>
+    <div class="dim-sub" data-i18n="garden.dim_time_week">→ 第3-4周</div>
   </a>
   <a class="dim-card" href="学习-第3周.html" style="border-color:rgba(155,89,182,.2)">
     <span class="dim-icon">⚙️</span>
-    <div class="dim-name" style="color:#9b59b6">垃圾技术</div>
-    <div class="dim-sub">→ 第3周</div>
+    <div class="dim-name" style="color:#9b59b6" data-i18n="garden.dim_tech_name">垃圾技术</div>
+    <div class="dim-sub" data-i18n="garden.dim_tech_week">→ 第3周</div>
   </a>
   <a class="dim-card" href="学习-第5周.html" style="border-color:rgba(241,196,15,.2)">
     <span class="dim-icon">🔄</span>
-    <div class="dim-name" style="color:#f1c40f">垃圾模式</div>
-    <div class="dim-sub">→ 第5-6周</div>
+    <div class="dim-name" style="color:#f1c40f" data-i18n="garden.dim_mode_name">垃圾模式</div>
+    <div class="dim-sub" data-i18n="garden.dim_mode_week">→ 第5-6周</div>
   </a>
 </div>
 
 <!-- 八周学习计划 -->
-<div class="section-label">▾ 八周学习计划 ▾</div>
+<div class="section-label" data-i18n="garden.section_plan">▾ 八周学习计划 ▾</div>
 <div class="progress-bar-wrap">
-  <span class="label">学习进度</span>
+  <span class="label" data-i18n="garden.progress_label">学习进度</span>
   <div class="progress-bar"><div class="fill" id="progressFill"></div></div>
   <span class="pct" id="progressPct">0/8</span>
 </div>
@@ -284,54 +297,54 @@ body{
 <div class="week-grid">
   <a class="week-item" href="学习-第1周.html" data-week="1">
     <span class="check-mark">✓</span>
-    <div class="wn">第1周</div>
-    <div class="wt">空间错配</div>
+    <div class="wn" data-i18n="common.week_1">第1周</div>
+    <div class="wt" data-i18n="common.week_1_topic">空间错配</div>
   </a>
   <a class="week-item" href="学习-第2周.html" data-week="2">
     <span class="check-mark">✓</span>
-    <div class="wn">第2周</div>
-    <div class="wt">空间错配Ⅱ</div>
+    <div class="wn" data-i18n="common.week_2">第2周</div>
+    <div class="wt" data-i18n="common.week_2_topic">空间错配Ⅱ</div>
   </a>
   <a class="week-item" href="学习-第3周.html" data-week="3">
     <span class="check-mark">✓</span>
-    <div class="wn">第3周</div>
-    <div class="wt">技术错配Ⅰ</div>
+    <div class="wn" data-i18n="common.week_3">第3周</div>
+    <div class="wt" data-i18n="common.week_3_topic">技术错配Ⅰ</div>
   </a>
   <a class="week-item" href="学习-第4周.html" data-week="4">
     <span class="check-mark">✓</span>
-    <div class="wn">第4周</div>
-    <div class="wt">技术错配Ⅱ</div>
+    <div class="wn" data-i18n="common.week_4">第4周</div>
+    <div class="wt" data-i18n="common.week_4_topic">技术错配Ⅱ</div>
   </a>
   <a class="week-item" href="学习-第5周.html" data-week="5">
     <span class="check-mark">✓</span>
-    <div class="wn">第5周</div>
-    <div class="wt">行为错配Ⅰ</div>
+    <div class="wn" data-i18n="common.week_5">第5周</div>
+    <div class="wt" data-i18n="common.week_5_topic">行为错配Ⅰ</div>
   </a>
   <a class="week-item" href="学习-第6周.html" data-week="6">
     <span class="check-mark">✓</span>
-    <div class="wn">第6周</div>
-    <div class="wt">行为错配Ⅱ</div>
+    <div class="wn" data-i18n="common.week_6">第6周</div>
+    <div class="wt" data-i18n="common.week_6_topic">行为错配Ⅱ</div>
   </a>
   <a class="week-item" href="学习-第7周.html" data-week="7">
     <span class="check-mark">✓</span>
-    <div class="wn">第7周</div>
-    <div class="wt">人文错配</div>
+    <div class="wn" data-i18n="common.week_7">第7周</div>
+    <div class="wt" data-i18n="common.week_7_topic">人文错配</div>
   </a>
   <a class="week-item" href="学习-第8周.html" data-week="8">
     <span class="check-mark">✓</span>
-    <div class="wn">第8周</div>
-    <div class="wt">思维整合</div>
+    <div class="wn" data-i18n="common.week_8">第8周</div>
+    <div class="wt" data-i18n="common.week_8_topic">思维整合</div>
   </a>
   <a class="week-item" href="学习-第9周.html" data-week="9">
     <span class="check-mark">✓</span>
-    <div class="wn">第9周</div>
-    <div class="wt">综合拓展</div>
+    <div class="wn" data-i18n="garden.week_9">第9周</div>
+    <div class="wt" data-i18n="garden.week_9_topic">综合拓展</div>
   </a>
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
-  <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
+  <p data-i18n="common.footer_story_cloud">📖 故事云驱动 · 叙·框·境·创 四维教学法</p>
+  <p data-i18n="common.copyright">© 黄正文（点暇斋）· 全部作品版权登记</p>
 </div>
 
 <script>

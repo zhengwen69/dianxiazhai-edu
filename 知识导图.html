@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="mindmap.page_title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,24 +97,37 @@ body {
   .back-btn { left: 8px; top:8px; padding:6px 10px; font-size:12px; }
   .sidebar p{display:none}
 }
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
+
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+<a href="index.html" class="back-btn" title="返回首页" data-i18n-title="common.back_to_home" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="sidebar">
-  <h3>八周思维重塑 · 知识导图</h3>
-  <p style="padding:0 25px;color:#5b9bd5;font-size:11px;margin-bottom:8px">📖 故事云驱动 @QQ阅读/17K</p>
-  <button class="ch-btn active" onclick="showChapter(0)">第1周 空间错配Ⅰ</button>
-  <button class="ch-btn" onclick="showChapter(1)">第2周 空间错配Ⅱ</button>
-  <button class="ch-btn" onclick="showChapter(2)">第3周 技术错配Ⅰ</button>
-  <button class="ch-btn" onclick="showChapter(3)">第4周 技术错配Ⅱ</button>
-  <button class="ch-btn" onclick="showChapter(4)">第5周 行为错配Ⅰ</button>
-  <button class="ch-btn" onclick="showChapter(5)">第6周 行为错配Ⅱ</button>
-  <button class="ch-btn" onclick="showChapter(6)">第7周 人文错配</button>
-  <button class="ch-btn" onclick="showChapter(7)">第8周 思维整合</button>
-  <div class="hint">键盘 ← → 切换章节<br>点击节点展开/折叠</div>
+  <h3 data-i18n="mindmap.sidebar_title">八周思维重塑 · 知识导图</h3>
+  <p style="padding:0 25px;color:#5b9bd5;font-size:11px;margin-bottom:8px" data-i18n="mindmap.sidebar_source">📖 故事云驱动 @QQ阅读/17K</p>
+  <button class="ch-btn active" onclick="showChapter(0)"><span data-i18n="common.week_1">第1周</span> <span data-i18n="common.week_1_topic">空间错配Ⅰ</span></button>
+  <button class="ch-btn" onclick="showChapter(1)"><span data-i18n="common.week_2">第2周</span> <span data-i18n="common.week_2_topic">空间错配Ⅱ</span></button>
+  <button class="ch-btn" onclick="showChapter(2)"><span data-i18n="common.week_3">第3周</span> <span data-i18n="common.week_3_topic">技术错配Ⅰ</span></button>
+  <button class="ch-btn" onclick="showChapter(3)"><span data-i18n="common.week_4">第4周</span> <span data-i18n="common.week_4_topic">技术错配Ⅱ</span></button>
+  <button class="ch-btn" onclick="showChapter(4)"><span data-i18n="common.week_5">第5周</span> <span data-i18n="common.week_5_topic">行为错配Ⅰ</span></button>
+  <button class="ch-btn" onclick="showChapter(5)"><span data-i18n="common.week_6">第6周</span> <span data-i18n="common.week_6_topic">行为错配Ⅱ</span></button>
+  <button class="ch-btn" onclick="showChapter(6)"><span data-i18n="common.week_7">第7周</span> <span data-i18n="common.week_7_topic">人文错配</span></button>
+  <button class="ch-btn" onclick="showChapter(7)"><span data-i18n="common.week_8">第8周</span> <span data-i18n="common.week_8_topic">思维整合</span></button>
+  <div class="hint" data-i18n="mindmap.sidebar_hint">键盘 ← → 切换章节<br>点击节点展开/折叠</div>
 </div>
 
 <div class="main" id="main"></div>
@@ -362,6 +375,7 @@ function render() {
   h += buildTree(ch.tree, 0);
   h += '</div>';
   document.getElementById('main').innerHTML = h;
+  if(window.I18N && I18N.current !== 'zh') I18N.translate();
 
   // 初始化折叠
   var headers = document.querySelectorAll('.node-header');

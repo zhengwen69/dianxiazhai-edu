@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="index.page_title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,129 +91,142 @@ body{
   transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,.4);
 }
 .nav-row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:800px;width:100%;margin-top:16px}
+
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
 <div class="header">
-  <h1><span>固体废弃物污染防治技术</span></h1>
-  <div class="sub">研究生教学演示  叙·框·境·创 四维教学法</div>
-  <div class="author">黄正文 教授 · 成都大学环境工程系</div>
+  <h1 data-i18n="index.hero_title"><span>固体废弃物污染防治技术</span></h1>
+  <div class="sub" data-i18n="index.hero_subtitle">研究生教学演示  叙·框·境·创 四维教学法</div>
+  <div class="author" data-i18n="index.hero_author">黄正文 教授 · 成都大学环境工程系</div>
   <div class="motto-line">
-    <span class="motto motto-study">「好好学习 天天向上」</span>
-    <span class="motto motto-green">「绿水青山 = 金山银山」</span>
+    <span class="motto motto-study" data-i18n="index.hero_motto_study">「好好学习 天天向上」</span>
+    <span class="motto motto-green" data-i18n="index.hero_motto_green">「绿水青山 = 金山银山」</span>
   </div>
-  <div class="pen-zhai">点暇叙事 匠心教学</div>
+  <div class="pen-zhai" data-i18n="index.hero_pen_zhai">点暇叙事 匠心教学</div>
 </div>
 
 <div class="nav">
   <a class="card" href="课程概览.html">
     <div class="icon">📋</div>
-    <div class="name">课程概览</div>
-    <div class="desc">八周思维重塑 · OBE 4目标</div>
+    <div class="name" data-i18n="index.card_overview_name">课程概览</div>
+    <div class="desc" data-i18n="index.card_overview_desc">八周思维重塑 · OBE 4目标</div>
   </a>
   <a class="card" href="章节导航.html">
     <div class="icon">🗂️</div>
-    <div class="name">章节导航</div>
-    <div class="desc">8周完整教学方案</div>
+    <div class="name" data-i18n="index.card_nav_name">章节导航</div>
+    <div class="desc" data-i18n="index.card_nav_desc">8周完整教学方案</div>
   </a>
   <a class="card" href="知识导图.html">
     <div class="icon">🌳</div>
-    <div class="name">知识导图</div>
-    <div class="desc">故事云驱动知识树</div>
+    <div class="name" data-i18n="index.card_mindmap_name">知识导图</div>
+    <div class="desc" data-i18n="index.card_mindmap_desc">故事云驱动知识树</div>
   </a>
   <a class="card" href="agent团队演示.html">
     <div class="icon">🤖</div>
-    <div class="name">教学团队</div>
-    <div class="desc">9-Agent 协同体系</div>
+    <div class="name" data-i18n="index.card_agents_name">教学团队</div>
+    <div class="desc" data-i18n="index.card_agents_desc">9-Agent 协同体系</div>
   </a>
 </div>
 
 <div class="nav-row2">
   <a class="card" href="互动社区.html" style="border-color:rgba(46,204,113,.25)">
     <div class="icon">📝</div>
-    <div class="name" style="color:#2ecc71">互动社区</div>
-    <div class="desc">签到打卡 · 周报 · 同行评价</div>
+    <div class="name" style="color:#2ecc71" data-i18n="index.card_community_name">互动社区</div>
+    <div class="desc" data-i18n="index.card_community_desc">签到打卡 · 周报 · 同行评价</div>
   </a>
   <a class="card" href="教师仪表盘.html" style="border-color:rgba(241,196,15,.25)">
     <div class="icon">📊</div>
-    <div class="name" style="color:#f1c40f">教师仪表盘</div>
-    <div class="desc">数据查阅 · 答疑 · 管理</div>
+    <div class="name" style="color:#f1c40f" data-i18n="index.card_dashboard_name">教师仪表盘</div>
+    <div class="desc" data-i18n="index.card_dashboard_desc">数据查阅 · 答疑 · 管理</div>
   </a>
   <a class="card" href="学习园地.html" style="border-color:rgba(0,184,148,.25)">
     <div class="icon">📖</div>
-    <div class="name" style="color:#00b894">学习园地</div>
-    <div class="desc">从学到研·八周蜕变 · AI助学</div>
+    <div class="name" style="color:#00b894" data-i18n="index.card_garden_name">学习园地</div>
+    <div class="desc" data-i18n="index.card_garden_desc">从学到研·八周蜕变 · AI助学</div>
   </a>
 </div>
 
-<div class="section-label">▾ 案例直达 ▾</div>
+<div class="section-label" data-i18n="index.section_label_cases">▾ 案例直达 ▾</div>
 <div class="week-row">
   <a class="week-card" href="第1周-空间错配.html" style="border-color:rgba(230,126,34,.2)">
-    <div class="wn" style="color:#e67e22">垃圾资产</div>
-    <div class="wt">→ 第1周</div>
+    <div class="wn" style="color:#e67e22" data-i18n="index.case_asset_name">垃圾资产</div>
+    <div class="wt" data-i18n="index.case_asset_week">→ 第1周</div>
   </a>
   <a class="week-card" href="第1周-空间错配.html" style="border-color:rgba(91,155,213,.25)">
-    <div class="wn" style="color:#5b9bd5">垃圾空间</div>
-    <div class="wt">→ 第1周</div>
+    <div class="wn" style="color:#5b9bd5" data-i18n="index.case_space_name">垃圾空间</div>
+    <div class="wt" data-i18n="index.case_space_week">→ 第1周</div>
   </a>
   <a class="week-card" href="第4周-技术错配Ⅱ.html" style="border-color:rgba(46,204,113,.25)">
-    <div class="wn" style="color:#2ecc71">垃圾时间</div>
-    <div class="wt">案例04 · 第3-4周</div>
+    <div class="wn" style="color:#2ecc71" data-i18n="index.case_time_name">垃圾时间</div>
+    <div class="wt" data-i18n="index.case_time_label">案例04 · 第3-4周</div>
   </a>
   <a class="week-card" href="第3周-技术错配Ⅰ.html" style="border-color:rgba(155,89,182,.25)">
-    <div class="wn" style="color:#9b59b6">垃圾技术</div>
-    <div class="wt">案例03 · 第3周</div>
+    <div class="wn" style="color:#9b59b6" data-i18n="index.case_tech_name">垃圾技术</div>
+    <div class="wt" data-i18n="index.case_tech_label">案例03 · 第3周</div>
   </a>
   <a class="week-card" href="第5周-行为错配Ⅰ.html" style="border-color:rgba(241,196,15,.25)">
-    <div class="wn" style="color:#f1c40f">垃圾模式</div>
-    <div class="wt">案例05 · 第5周</div>
+    <div class="wn" style="color:#f1c40f" data-i18n="index.case_mode_name">垃圾模式</div>
+    <div class="wt" data-i18n="index.case_mode_label">案例05 · 第5周</div>
   </a>
 </div>
 
-<div class="section-label">▾ 每周教学 ▾</div>
+<div class="section-label" data-i18n="index.section_label_weekly">▾ 每周教学 ▾</div>
 <div class="week-grid">
   <a class="week-card active" href="第1周-空间错配.html">
-    <div class="wn">第1周</div>
-    <div class="wt">空间错配</div>
+    <div class="wn" data-i18n="common.week_1">第1周</div>
+    <div class="wt" data-i18n="common.week_1_topic">空间错配</div>
   </a>
   <a class="week-card" href="第2周-空间错配Ⅱ.html">
-    <div class="wn">第2周</div>
-    <div class="wt">空间错配Ⅱ</div>
+    <div class="wn" data-i18n="common.week_2">第2周</div>
+    <div class="wt" data-i18n="common.week_2_topic">空间错配Ⅱ</div>
   </a>
   <a class="week-card" href="第3周-技术错配Ⅰ.html">
-    <div class="wn">第3周</div>
-    <div class="wt">技术错配Ⅰ</div>
+    <div class="wn" data-i18n="common.week_3">第3周</div>
+    <div class="wt" data-i18n="common.week_3_topic">技术错配Ⅰ</div>
   </a>
   <a class="week-card" href="第4周-技术错配Ⅱ.html">
-    <div class="wn">第4周</div>
-    <div class="wt">技术错配Ⅱ</div>
+    <div class="wn" data-i18n="common.week_4">第4周</div>
+    <div class="wt" data-i18n="common.week_4_topic">技术错配Ⅱ</div>
   </a>
   <a class="week-card" href="第5周-行为错配Ⅰ.html">
-    <div class="wn">第5周</div>
-    <div class="wt">行为错配Ⅰ</div>
+    <div class="wn" data-i18n="common.week_5">第5周</div>
+    <div class="wt" data-i18n="common.week_5_topic">行为错配Ⅰ</div>
   </a>
   <a class="week-card" href="第6周-行为错配Ⅱ.html">
-    <div class="wn">第6周</div>
-    <div class="wt">行为错配Ⅱ</div>
+    <div class="wn" data-i18n="common.week_6">第6周</div>
+    <div class="wt" data-i18n="common.week_6_topic">行为错配Ⅱ</div>
   </a>
   <a class="week-card" href="第7周-人文错配.html">
-    <div class="wn">第7周</div>
-    <div class="wt">人文错配</div>
+    <div class="wn" data-i18n="common.week_7">第7周</div>
+    <div class="wt" data-i18n="common.week_7_topic">人文错配</div>
   </a>
   <a class="week-card" href="第8周-思维整合.html">
-    <div class="wn">第8周</div>
-    <div class="wt">思维整合</div>
+    <div class="wn" data-i18n="common.week_8">第8周</div>
+    <div class="wt" data-i18n="common.week_8_topic">思维整合</div>
   </a>
 </div>
 
 <div class="footer">
-  <p>📖 故事云驱动 · 普惠教育咨询系列纪实小说 <span style="color:#556;font-size:10px">[素材母库: S001-S021]</span></p>
+  <p data-i18n="index.footer_novel_tag_full">📖 故事云驱动 · 普惠教育咨询系列纪实小说 <span style="color:#556;font-size:10px">[素材母库: S001-S021]</span></p>
   <p>
     <a href="https://book.qq.com/book-detail/54859488" target="_blank">QQ阅读</a> ·
     <a href="https://www.17k.com/book/3613430.html" target="_blank">17K文学</a>
   </p>
-  <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
+  <p data-i18n="common.copyright">© 黄正文（点暇斋）· 全部作品版权登记</p>
 </div>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第3周：技术错配Ⅰ — 技术达标与市场断裂</title>
+<title data-i18n="w3.page_title">第3周：技术错配Ⅰ — 技术达标与市场断裂</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
@@ -34,67 +34,77 @@ td{color:#aabbcc}
 .back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px}
 .back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
-@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:18px}.header .sub{font-size:12px}.header .meta{font-size:11px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}th,td{font-size:11px;padding:6px 8px}table{display:block;overflow-x:auto}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}.section h2{font-size:15px}.footer{font-size:10px}[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}th,td{white-space:nowrap}}
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:18px}.header .sub{font-size:12px}.header .meta{font-size:11px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}th,td{font-size:11px;padding:6px 8px}table{display:block;overflow-x:auto}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}.section h2{font-size:15px}.footer{font-size:10px}[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}th,td{white-space:nowrap}.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a href="index.html" class="back-btn">◀ 返回首页</a>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+<a href="index.html" class="back-btn" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="header">
-  <h1><span>第3周</span> 技术错配Ⅰ</h1>
-  <div class="sub">当技术参数达标而商业逻辑断裂</div>
-  <div class="meta">Tech Mismatch → Productization &nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,2,3</div>
+  <h1 data-i18n="w3.header_title"><span>第3周</span> 技术错配Ⅰ</h1>
+  <div class="sub" data-i18n="w3.header_sub">当技术参数达标而商业逻辑断裂</div>
+  <div class="meta" data-i18n="w3.header_meta">Tech Mismatch → Productization &nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,2,3</div>
 </div>
 
 <div class="container">
 
 <!-- 核心追问 -->
 <div class="section">
-  <h2>核心追问</h2>
+  <h2 data-i18n="w3.section_core">核心追问</h2>
   <div class="card">
-    <h3>为什么技术上漂亮的方案，在市场上失败了？</h3>
-    <p>十年、三条路线、两次失败——脱硫石膏的三条技术路线在工程参数上都达标了。A输在价格，B输在产业链，C输在市场认知。技术好≠产品好≠生意好。</p>
+    <h3 data-i18n="w3.core_question">为什么技术上漂亮的方案，在市场上失败了？</h3>
+    <p data-i18n="w3.core_answer">十年、三条路线、两次失败——脱硫石膏的三条技术路线在工程参数上都达标了。A输在价格，B输在产业链，C输在市场认知。技术好≠产品好≠生意好。</p>
   </div>
 </div>
 
 <!-- 三重转化 -->
 <div class="section">
-  <h2>框 — 三重转化模型</h2>
+  <h2 data-i18n="w3.section_framework">框 — 三重转化模型</h2>
   <div class="knowledge-grid">
-    <div class="knowledge-item"><strong>技术→产品</strong><br>需要：成本可控+规模可复制+标准可认证。断裂点：B路线水泥缓凝剂——产业链不配套</div>
-    <div class="knowledge-item"><strong>产品→商品</strong><br>需要：价格竞争力+渠道可触达+客户有需求。断裂点：A路线建筑石膏——价格不敌天然石膏</div>
-    <div class="knowledge-item"><strong>商品→业务</strong><br>需要：盈利模式+供应链+品牌信任。断裂点：C路线自流平材料——卖得出去但赚不到钱</div>
-    <div class="knowledge-item"><strong>产品化全链条</strong><br>案例04焚烧炉：研发→外包→获客→运输→安装→售后——六环节，任一断裂则全链条失败</div>
+    <div class="knowledge-item" data-i18n="w3.kp1"><strong>技术→产品</strong><br>需要：成本可控+规模可复制+标准可认证。断裂点：B路线水泥缓凝剂——产业链不配套</div>
+    <div class="knowledge-item" data-i18n="w3.kp2"><strong>产品→商品</strong><br>需要：价格竞争力+渠道可触达+客户有需求。断裂点：A路线建筑石膏——价格不敌天然石膏</div>
+    <div class="knowledge-item" data-i18n="w3.kp3"><strong>商品→业务</strong><br>需要：盈利模式+供应链+品牌信任。断裂点：C路线自流平材料——卖得出去但赚不到钱</div>
+    <div class="knowledge-item" data-i18n="w3.kp4"><strong>产品化全链条</strong><br>案例04焚烧炉：研发→外包→获客→运输→安装→售后——六环节，任一断裂则全链条失败</div>
   </div>
 </div>
 
 <!-- 案例 -->
 <div class="section">
-  <h2>案例拆解</h2>
+  <h2 data-i18n="w3.section_case">案例拆解</h2>
   <div class="card">
-    <h3>案例03：脱硫石膏建材化 <span class="tag tag-green">[S006]</span></h3>
-    <p>2008-2018，杨柳坝。火电厂脱硫副产物CaSO₄·2H₂O（脱硫石膏），十年尝试了三条资源化路线。三条路线均在技术上达标——但A线的产品价格打不过天然石膏，B线被水泥厂卡了脖子，C线在市场上水土不服。</p>
-    <p style="color:#e67e22">垃圾技术：好方案，坏市场——错在哪一步？</p>
+    <h3 data-i18n="w3.case1_title">案例03：脱硫石膏建材化 <span class="tag tag-green">[S006]</span></h3>
+    <p data-i18n="w3.case1_p1">2008-2018，杨柳坝。火电厂脱硫副产物CaSO₄·2H₂O（脱硫石膏），十年尝试了三条资源化路线。三条路线均在技术上达标——但A线的产品价格打不过天然石膏，B线被水泥厂卡了脖子，C线在市场上水土不服。</p>
+    <p style="color:#e67e22" data-i18n="w3.case1_p2">垃圾技术：好方案，坏市场——错在哪一步？</p>
   </div>
   <div class="card scene-card">
-    <h3>场景：技术路线论证会 <span class="tag tag-orange">[S007]</span></h3>
-    <p><strong>5角色</strong>：技术总监/研发经理/财务/市场/生产</p>
-    <p>三条路线，没有一条在所有维度上都最优。论证会的裁判不是技术参数，是多维约束下的权衡。</p>
+    <h3 data-i18n="w3.scene_title">场景：技术路线论证会 <span class="tag tag-orange">[S007]</span></h3>
+    <p data-i18n="w3.scene_desc"><strong>5角色</strong>：技术总监/研发经理/财务/市场/生产。三条路线，没有一条在所有维度上都最优。论证会的裁判不是技术参数，是多维约束下的权衡。</p>
   </div>
 </div>
 
 <!-- 思政 -->
 <div class="section">
-  <h2>思政双主线</h2>
+  <h2 data-i18n="w3.section_sizheng">思政双主线</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
     <div class="card">
-      <h3>好好学习 天天向上</h3>
-      <p style="font-size:13px">脱硫石膏十年波折——三次失败、十年坚持。技术攻关没有捷径，十年磨一剑——靠的不是天赋，是持续学习。</p>
+      <h3 data-i18n="w3.sizheng_study_title">好好学习 天天向上</h3>
+      <p style="font-size:13px" data-i18n="w3.sizheng_study_text">脱硫石膏十年波折——三次失败、十年坚持。技术攻关没有捷径，十年磨一剑——靠的不是天赋，是持续学习。</p>
     </div>
     <div class="card">
-      <h3>绿水青山 = 金山银山</h3>
-      <p style="font-size:13px">火电厂"废渣"如何变成建材产业的原料——脱硫石膏从污染负担到建材商品，就是"绿水青山变金山银山"的最直接证据。</p>
+      <h3 data-i18n="w3.sizheng_green_title">绿水青山 = 金山银山</h3>
+      <p style="font-size:13px" data-i18n="w3.sizheng_green_text">火电厂"废渣"如何变成建材产业的原料——脱硫石膏从污染负担到建材商品，就是"绿水青山变金山银山"的最直接证据。</p>
     </div>
   </div>
 </div>
@@ -103,7 +113,7 @@ td{color:#aabbcc}
 
 <div class="footer">
   <p>📖 素材来源：故事素材母库（S006-S008, S015）| 可溯源至原著小说</p>
-  <p>© 黄正文（点暇斋）· 成都大学环境工程系</p>
+  <p data-i18n="common.copyright_with_dept">© 黄正文（点暇斋）· 成都大学环境工程系</p>
 </div>
 
 </body>

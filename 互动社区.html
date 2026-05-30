@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>互动社区 — 固废课程</title>
+<title data-i18n="community.page_title">互动社区 — 固废课程</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -102,29 +102,42 @@ form{
   input,select,textarea{font-size:16px}
   .tag{font-size:10px}
 }
+
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
 <div style="text-align:center">
-  <a class="back-btn" href="index.html">← 返回首页</a>
+  <a class="back-btn" href="index.html" data-i18n="common.back_to_home_alt">← 返回首页</a>
 </div>
 
 <div class="header">
-  <h1><span>互动社区</span>平台</h1>
-  <div class="sub">签到打卡 · 周进度反馈 · 同行评价</div>
+  <h1 data-i18n="community.header_title"><span>互动社区</span>平台</h1>
+  <div class="sub" data-i18n="community.header_sub">签到打卡 · 周进度反馈 · 同行评价</div>
 </div>
 
-<div class="info-banner">
+<div class="info-banner" data-i18n="community.info_banner">
   📌 提交即记录 · 无需登录 · 每周更新<br>
   如需与老师深度交流，请前往 
   <a href="https://github.com/zhengwen69/cdu-gufei-web-demo/issues" target="_blank" style="color:#5b9bd5">GitHub Issues</a> 讨论区
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="switchTab('checkin')">📝 签到打卡</div>
-  <div class="tab" onclick="switchTab('weekly')">📋 周进度问卷</div>
-  <div class="tab" onclick="switchTab('peer')">🤝 同行评价</div>
+  <div class="tab active" onclick="switchTab('checkin')" data-i18n="community.tab_checkin">📝 签到打卡</div>
+  <div class="tab" onclick="switchTab('weekly')" data-i18n="community.tab_weekly">📋 周进度问卷</div>
+  <div class="tab" onclick="switchTab('peer')" data-i18n="community.tab_peer">🤝 同行评价</div>
 </div>
 
 <div class="form-wrap">
@@ -133,26 +146,26 @@ form{
 <div class="form-section active" id="checkin">
   <form id="form-checkin" action="YOUR_FORMSPREE_CHECKIN_URL" method="POST">
     <div class="form-group">
-      <label><span class="req">*</span> 姓名</label>
-      <input type="text" name="姓名" required placeholder="请输入姓名">
+      <label data-i18n="community.label_name"><span class="req">*</span> 姓名</label>
+      <input type="text" name="姓名" required data-i18n-placeholder="community.label_placeholder_name" placeholder="请输入姓名">
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 学号</label>
-      <input type="text" name="学号" required pattern="[0-9]{12}" placeholder="12位学号">
+      <label data-i18n="community.label_student_id"><span class="req">*</span> 学号</label>
+      <input type="text" name="学号" required pattern="[0-9]{12}" data-i18n-placeholder="community.label_placeholder_id" placeholder="12位学号">
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 第几周</label>
+      <label data-i18n="community.label_week"><span class="req">*</span> 第几周</label>
       <select name="周数" required>
-        <option value="">请选择</option>
-        <option>第1周</option><option>第2周</option><option>第3周</option><option>第4周</option>
-        <option>第5周</option><option>第6周</option><option>第7周</option><option>第8周</option>
+        <option value="" data-i18n="community.label_select_week">请选择</option>
+        <option data-i18n="common.week_1">第1周</option><option data-i18n="common.week_2">第2周</option><option data-i18n="common.week_3">第3周</option><option data-i18n="common.week_4">第4周</option>
+        <option data-i18n="common.week_5">第5周</option><option data-i18n="common.week_6">第6周</option><option data-i18n="common.week_7">第7周</option><option data-i18n="common.week_8">第8周</option>
       </select>
     </div>
     <div class="form-group">
-      <label>上课地点</label>
-      <input type="text" name="地点" placeholder="请输入上课地点">
+      <label data-i18n="community.label_location">上课地点</label>
+      <input type="text" name="地点" data-i18n-placeholder="community.label_placeholder_location" placeholder="请输入上课地点">
     </div>
-    <button type="submit" class="submit-btn" id="btn-checkin">✓ 签到打卡</button>
+    <button type="submit" class="submit-btn" id="btn-checkin" data-i18n="community.btn_checkin">✓ 签到打卡</button>
   </form>
 </div>
 
@@ -160,31 +173,31 @@ form{
 <div class="form-section" id="weekly">
   <form id="form-weekly" action="YOUR_FORMSPREE_WEEKLY_URL" method="POST">
     <div class="form-group">
-      <label><span class="req">*</span> 姓名</label>
+      <label data-i18n="community.label_name"><span class="req">*</span> 姓名</label>
       <input type="text" name="姓名" required>
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 学号</label>
+      <label data-i18n="community.label_student_id"><span class="req">*</span> 学号</label>
       <input type="text" name="学号" required pattern="[0-9]{12}">
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 第几周</label>
+      <label data-i18n="community.label_week"><span class="req">*</span> 第几周</label>
       <select name="周数" required>
-        <option value="">请选择</option>
-        <option>第1周</option><option>第2周</option><option>第3周</option><option>第4周</option>
-        <option>第5周</option><option>第6周</option><option>第7周</option><option>第8周</option>
+        <option value="" data-i18n="community.label_select_week">请选择</option>
+        <option data-i18n="common.week_1">第1周</option><option data-i18n="common.week_2">第2周</option><option data-i18n="common.week_3">第3周</option><option data-i18n="common.week_4">第4周</option>
+        <option data-i18n="common.week_5">第5周</option><option data-i18n="common.week_6">第6周</option><option data-i18n="common.week_7">第7周</option><option data-i18n="common.week_8">第8周</option>
       </select>
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 对本周课程安排的意见与建议</label>
-      <textarea name="意见与建议" required rows="4" placeholder="课程节奏、内容深度、案例理解等方面的意见与建议"></textarea>
+      <label data-i18n="community.label_opinion"><span class="req">*</span> 对本周课程安排的意见与建议</label>
+      <textarea name="意见与建议" required rows="4" data-i18n-placeholder="community.label_placeholder_opinion" placeholder="课程节奏、内容深度、案例理解等方面的意见与建议"></textarea>
     </div>
     <div class="form-group">
-      <label>需要老师答疑的问题（按优先级）</label>
+      <label data-i18n="community.label_questions">需要老师答疑的问题（按优先级）</label>
       <textarea name="问题" rows="3" placeholder="1.&#10;2.&#10;3."></textarea>
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 学习投入度自评</label>
+      <label data-i18n="community.label_engagement"><span class="req">*</span> 学习投入度自评</label>
       <div class="rating-group">
         <input type="radio" name="投入度" value="1" id="w1-1"><label for="w1-1" class="rating-star">1</label>
         <input type="radio" name="投入度" value="2" id="w1-2"><label for="w1-2" class="rating-star">2</label>
@@ -192,13 +205,13 @@ form{
         <input type="radio" name="投入度" value="4" id="w1-4"><label for="w1-4" class="rating-star">4</label>
         <input type="radio" name="投入度" value="5" id="w1-5" checked><label for="w1-5" class="rating-star">5</label>
       </div>
-      <div class="hint">1=几乎没做 · 5=全力以赴</div>
+      <div class="hint" data-i18n="community.label_engagement_hint">1=几乎没做 · 5=全力以赴</div>
     </div>
     <div class="form-group">
-      <label>对教学的建议（选填）</label>
-      <textarea name="建议" rows="2" placeholder="任何对课程或教学的建议"></textarea>
+      <label data-i18n="community.label_suggestion_optional">对教学的建议（选填）</label>
+      <textarea name="建议" rows="2" data-i18n-placeholder="community.label_placeholder_suggestion" placeholder="任何对课程或教学的建议"></textarea>
     </div>
-    <button type="submit" class="submit-btn" id="btn-weekly">✓ 提交周报</button>
+    <button type="submit" class="submit-btn" id="btn-weekly" data-i18n="community.btn_weekly">✓ 提交周报</button>
   </form>
 </div>
 
@@ -206,19 +219,19 @@ form{
 <div class="form-section" id="peer">
   <form id="form-peer" action="YOUR_FORMSPREE_PEER_URL" method="POST">
     <div class="form-group">
-      <label><span class="req">*</span> 您的姓名</label>
+      <label data-i18n="community.label_your_name"><span class="req">*</span> 您的姓名</label>
       <input type="text" name="评价人姓名" required>
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 您的邮箱</label>
-      <input type="email" name="评价人邮箱" required placeholder="your@email.com">
+      <label data-i18n="community.label_your_email"><span class="req">*</span> 您的邮箱</label>
+      <input type="email" name="评价人邮箱" required data-i18n-placeholder="community.label_placeholder_email" placeholder="your@email.com">
     </div>
     <div class="form-group">
-      <label>您的意见与建议</label>
-      <textarea name="意见建议" rows="4" placeholder="请从课题价值、方法合理性、改进空间等方面给出综合评价"></textarea>
+      <label data-i18n="community.label_your_opinion">您的意见与建议</label>
+      <textarea name="意见建议" rows="4" data-i18n-placeholder="community.label_placeholder_opinion" placeholder="请从课题价值、方法合理性、改进空间等方面给出综合评价"></textarea>
     </div>
     <div class="form-group">
-      <label><span class="req">*</span> 探索价值与合理性</label>
+      <label data-i18n="community.label_peer_value"><span class="req">*</span> 探索价值与合理性</label>
       <div class="rating-group">
         <input type="radio" name="选题意义" value="1" id="p1-1"><label for="p1-1" class="rating-star">1</label>
         <input type="radio" name="选题意义" value="2" id="p1-2"><label for="p1-2" class="rating-star">2</label>
@@ -227,20 +240,20 @@ form{
         <input type="radio" name="选题意义" value="5" id="p1-5" checked><label for="p1-5" class="rating-star">5</label>
       </div>
     </div>
-    <button type="submit" class="submit-btn" id="btn-peer">✓ 提交反馈</button>
+    <button type="submit" class="submit-btn" id="btn-peer" data-i18n="community.btn_peer">✓ 提交反馈</button>
   </form>
 </div>
 
 <!-- 提交成功 -->
 <div class="success-msg" id="success">
   <span class="emoji">✅</span>
-  <span>提交成功！</span>
-  <p style="font-size:14px;color:#7fb8e0;margin-top:8px;line-height:1.8">感谢您抽出宝贵时间，您的反馈将帮助我们持续改进课程质量，谢谢您！</p>
-  <button onclick="resetForms()" style="margin-top:16px;padding:8px 24px;border-radius:6px;background:rgba(91,155,213,.15);border:1px solid #5b9bd5;color:#5b9bd5;cursor:pointer">再填一份</button>
+  <span data-i18n="community.success_title">提交成功！</span>
+  <p style="font-size:14px;color:#7fb8e0;margin-top:8px;line-height:1.8" data-i18n="community.success_msg">感谢您抽出宝贵时间，您的反馈将帮助我们持续改进课程质量，谢谢您！</p>
+  <button onclick="resetForms()" style="margin-top:16px;padding:8px 24px;border-radius:6px;background:rgba(91,155,213,.15);border:1px solid #5b9bd5;color:#5b9bd5;cursor:pointer" data-i18n="community.btn_again">再填一份</button>
 </div>
 
 <div class="issue-link">
-  <p style="color:#556;font-size:12px;margin-top:8px">💬 深度讨论请前往
+  <p style="color:#556;font-size:12px;margin-top:8px" data-i18n="community.deep_discuss">💬 深度讨论请前往
   <a href="https://github.com/zhengwen69/cdu-gufei-web-demo/issues" target="_blank">GitHub Issues →</a></p>
 </div>
 

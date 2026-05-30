@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="nav.page_title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,36 +109,49 @@ body {
   .footer-hint{font-size:10px;margin-top:24px}
 }
 
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
+
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a href="index.html" class="back-btn" title="返回首页">◀ 返回首页</a>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+<a href="index.html" class="back-btn" title="返回首页" data-i18n-title="common.back_to_home" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="header">
-  <h1>八周思维重塑 · 教学章节总览</h1>
-  <p>研究生 · 叙·框·境·创 四维教学法 | 32学时 | 8周 | 四重错配→四重修复</p>
-  <p style="color:#5b9bd5;font-size:14px;margin-top:4px">主讲：黄正文 教授</p>
-  <p style="color:#5b9bd5;font-size:13px;margin-top:2px">📖 故事来源：黄正文'普惠教育咨询·读书改变命运秘笈'系列纪实小说（QQ阅读/17K·云发布·©已登记）</p>
+  <h1 data-i18n="nav.header_title">八周思维重塑 · 教学章节总览</h1>
+  <p data-i18n="nav.header_desc">研究生 · 叙·框·境·创 四维教学法 | 32学时 | 8周 | 四重错配→四重修复</p>
+  <p style="color:#5b9bd5;font-size:14px;margin-top:4px" data-i18n="nav.header_instructor">主讲：黄正文 教授</p>
+  <p style="color:#5b9bd5;font-size:13px;margin-top:2px" data-i18n="nav.header_source">📖 故事来源：黄正文'普惠教育咨询·读书改变命运秘笈'系列纪实小说（QQ阅读/17K·云发布·©已登记）</p>
 </div>
 
 <div class="container">
   <div class="tabs" id="tabs">
     <div class="tab active" onclick="filter('all')">
-      <span class="num">全部</span>8周
+      <span class="num" data-i18n="nav.tab_all">全部</span><span data-i18n="nav.tab_all_sub">8周</span>
     </div>
     <div class="tab" onclick="filter('theory')">
-      <span class="num">理论</span>24学时
+      <span class="num" data-i18n="nav.tab_theory">理论</span><span data-i18n="nav.tab_theory_sub">24学时</span>
     </div>
     <div class="tab" onclick="filter('immersion')">
-      <span class="num">场景沉浸</span>6场
+      <span class="num" data-i18n="nav.tab_immersion">场景沉浸</span><span data-i18n="nav.tab_immersion_sub">6场</span>
     </div>
   </div>
 
   <div class="cards" id="cards"></div>
 </div>
 
-<div class="footer-hint">键盘 1-8 快速跳转周次 | 点击 Tab 筛选 | 课堂演示专用</div>
+<div class="footer-hint" data-i18n="nav.footer_hint">键盘 1-8 快速跳转周次 | 点击 Tab 筛选 | 课堂演示专用</div>
 
 <script>
 var data = [
@@ -258,11 +271,11 @@ function buildCards(filterType) {
 
     h += '<div class="card-body">';
     h += '<div class="info-block">';
-    h += '<div><span class="key">英文名称：</span><span class="val">' + it.nameEn + '</span></div>';
-    h += '<div><span class="key">支撑目标：</span><span class="highlight">' + it.goals + '</span></div>';
-    h += '<div><span class="key">教学方式：</span><span class="val">' + (it.type==='theory'?'课堂讲授+案例分析+课堂讨论':'实验操作/现场参观') + '</span></div>';
+    h += '<div><span class="key" data-i18n="nav.field_en_name">英文名称：</span><span class="val">' + it.nameEn + '</span></div>';
+    h += '<div><span class="key" data-i18n="nav.field_support_goals">支撑目标：</span><span class="highlight">' + it.goals + '</span></div>';
+    h += '<div><span class="key" data-i18n="nav.field_teaching_method">教学方式：</span><span class="val" data-i18n="' + (it.type==='theory'?'nav.teaching_method_theory':'nav.teaching_method_practice') + '">' + (it.type==='theory'?'课堂讲授+案例分析+课堂讨论':'实验操作/现场参观') + '</span></div>';
     h += '</div>';
-    h += '<div class="info-block"><span class="key">内容概要：</span><br><span class="val">' + it.desc + '</span></div>';
+    h += '<div class="info-block"><span class="key" data-i18n="nav.field_content_summary">内容概要：</span><br><span class="val">' + it.desc + '</span></div>';
     h += '</div>';
 
     if (it.topics.length > 0) {
@@ -287,6 +300,7 @@ function buildCards(filterType) {
     h += '</div>';
   });
   document.getElementById('cards').innerHTML = h;
+  if(window.I18N && I18N.current !== 'zh') I18N.translate();
 }
 
 function filter(type) {

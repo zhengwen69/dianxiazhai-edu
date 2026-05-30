@@ -1,29 +1,41 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>第6周：行为错配Ⅱ — 填埋场与碳交易</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}.header h1{font-size:30px;color:#fff;margin-bottom:6px}.header h1 span{color:#5b9bd5}.header .sub{color:#667;font-size:14px;margin-top:4px}.header .meta{color:#5b9bd5;font-size:13px;margin-top:8px}.container{max-width:900px;width:100%}.section{margin-bottom:28px}.section h2{font-size:22px;color:#5b9bd5;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(91,155,213,.15)}.section h2::before{content:"▎";margin-right:8px;color:#e67e22}.card{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:12px;padding:22px 24px;margin-bottom:16px}.card h3{font-size:18px;color:#7fb8e0;margin-bottom:10px}.card p{font-size:14px;color:#aabbcc;line-height:1.8}.knowledge-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.knowledge-item{background:rgba(26,58,92,.3);border-radius:8px;padding:12px 16px;font-size:13px;color:#aabbcc;line-height:1.6}.knowledge-item strong{color:#7fb8e0}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{padding:10px 14px;text-align:left;border:1px solid rgba(91,155,213,.1);font-size:13px}th{background:rgba(91,155,213,.1);color:#7fb8e0;font-weight:normal}td{color:#aabbcc}.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}.tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5}.tag-orange{background:rgba(230,126,34,.15);color:#e67e22}.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}.scene-card{border-left:4px solid #e67e22}.back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px}.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}.header .meta{font-size:11px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}th,td{font-size:11px;padding:6px 8px}table{display:block;overflow-x:auto}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}.section h2{font-size:15px}.footer{font-size:10px}[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}th,td{white-space:nowrap}}</style></head><body>
-<a href="index.html" class="back-btn">◀ 返回首页</a>
-<div class="header"><h1><span>第6周</span> 行为错配Ⅱ</h1><div class="sub">填埋场全生命周期与碳交易</div><div class="meta">Behavioral Mismatch → Process Optimization（续）&nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,2,3</div></div>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title data-i18n="w6.page_title">第6周：行为错配Ⅱ — 填埋场与碳交易</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}.header{text-align:center;margin-bottom:30px;max-width:900px;width:100%}.header h1{font-size:30px;color:#fff;margin-bottom:6px}.header h1 span{color:#5b9bd5}.header .sub{color:#667;font-size:14px;margin-top:4px}.header .meta{color:#5b9bd5;font-size:13px;margin-top:8px}.container{max-width:900px;width:100%}.section{margin-bottom:28px}.section h2{font-size:22px;color:#5b9bd5;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(91,155,213,.15)}.section h2::before{content:"▎";margin-right:8px;color:#e67e22}.card{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:12px;padding:22px 24px;margin-bottom:16px}.card h3{font-size:18px;color:#7fb8e0;margin-bottom:10px}.card p{font-size:14px;color:#aabbcc;line-height:1.8}.knowledge-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.knowledge-item{background:rgba(26,58,92,.3);border-radius:8px;padding:12px 16px;font-size:13px;color:#aabbcc;line-height:1.6}.knowledge-item strong{color:#7fb8e0}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{padding:10px 14px;text-align:left;border:1px solid rgba(91,155,213,.1);font-size:13px}th{background:rgba(91,155,213,.1);color:#7fb8e0;font-weight:normal}td{color:#aabbcc}.tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:10px;margin:2px}.tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5}.tag-orange{background:rgba(230,126,34,.15);color:#e67e22}.tag-green{background:rgba(46,204,113,.15);color:#2ecc71}.scene-card{border-left:4px solid #e67e22}.back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px}.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:20px}.header .sub{font-size:12px}.header .meta{font-size:11px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}th,td{font-size:11px;padding:6px 8px}table{display:block;overflow-x:auto}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}.section h2{font-size:15px}.footer{font-size:10px}[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}th,td{white-space:nowrap}}
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
+.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.lang-switch-btn.active{background:rgba(91,155,213,.2)}
+@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
+</style><script src="js/i18n.js"></script></head><body>
+<div class="lang-switcher">
+  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
+  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
+  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
+</div>
+
+<a href="index.html" class="back-btn"><span data-i18n="common.back_to_home">◀ 返回首页</span></a>
+<div class="header"><h1 data-i18n="w6.header_title"><span>第6周</span> 行为错配Ⅱ</h1><div class="sub" data-i18n="w6.header_sub">填埋场全生命周期与碳交易</div><div class="meta" data-i18n="w6.header_meta">Behavioral Mismatch → Process Optimization（续）&nbsp;|&nbsp; 4学时（3理论+1沉浸）&nbsp;|&nbsp; 支撑目标1,2,3</div></div>
 <div class="container">
 
-<div class="section"><h2>核心追问</h2><div class="card"><h3>填埋场的一生——谁来为30年后买单？</h3><p>你今天30岁，设计一座填埋场。30年后它还在监测中，你60岁。你今天多花100万建100年标准的防渗，就能让30年后的自己睡得着觉。这100万，你花不花？——贴现率说它不值，但良知说地下水不可逆。</p></div></div>
+<div class="section"><h2 data-i18n="w6.section_core">核心追问</h2><div class="card"><h3 data-i18n="w6.core_question">填埋场的一生——谁来为30年后买单？</h3><p data-i18n="w6.core_answer">你今天30岁，设计一座填埋场。30年后它还在监测中，你60岁。你今天多花100万建100年标准的防渗，就能让30年后的自己睡得着觉。这100万，你花不花？——贴现率说它不值，但良知说地下水不可逆。</p></div></div>
 
-<div class="section"><h2>框 — 时间维度的工程决策</h2>
+<div class="section"><h2 data-i18n="w6.section_framework">框 — 时间维度的工程决策</h2>
 <div class="knowledge-grid">
-<div class="knowledge-item"><strong>填埋场防渗系统</strong><br>HDPE(≥1.5mm)+GCL+压实黏土→K≤10⁻⁷。薄弱环节不在材料，在焊缝。最贵的膜，焊不好也白搭</div>
-<div class="knowledge-item"><strong>填埋气(LFG)</strong><br>Scholl Canyon模型：Q=k×L₀×M×e⁻ᵏᵗ。产气峰值第3-5年，持续20-30年——埋了之后还在"工作"</div>
-<div class="knowledge-item"><strong>CCER碳交易</strong><br>"额外性"论证三步：法规是否强制→行业是否普遍→投资是否有障碍。减排量不是算出来的，是论证出来的</div>
-<div class="knowledge-item"><strong>30年vs100年</strong><br>LCC=建设+运营+封场+30年监测。贴现率把未来的钱打折——但地下水的修复费用不打折</div>
+<div class="knowledge-item" data-i18n="w6.kp1"><strong>填埋场防渗系统</strong><br>HDPE(≥1.5mm)+GCL+压实黏土→K≤10⁻⁷。薄弱环节不在材料，在焊缝。最贵的膜，焊不好也白搭</div>
+<div class="knowledge-item" data-i18n="w6.kp2"><strong>填埋气(LFG)</strong><br>Scholl Canyon模型：Q=k×L₀×M×e⁻ᵏᵗ。产气峰值第3-5年，持续20-30年——埋了之后还在"工作"</div>
+<div class="knowledge-item" data-i18n="w6.kp3"><strong>CCER碳交易</strong><br>"额外性"论证三步：法规是否强制→行业是否普遍→投资是否有障碍。减排量不是算出来的，是论证出来的</div>
+<div class="knowledge-item" data-i18n="w6.kp4"><strong>30年vs100年</strong><br>LCC=建设+运营+封场+30年监测。贴现率把未来的钱打折——但地下水的修复费用不打折</div>
 </div></div>
 
-<div class="section"><h2>场景</h2>
-<div class="card scene-card"><h3>CCER碳交易三方谈判 <span class="tag tag-orange">[S017]</span></h3><p><strong>3角色</strong>：项目业主/碳资产管理公司/审定机构</p><p>卖方报价80元/吨，买方砍到50——额外性是客观事实还是叙事建构？突发事件：环保部新规征求意见稿——填埋气收集或将被强制。已签发但未交易的CCER面临注销风险。</p><p>碳价不是单纯计算的产物，而是多方博弈的结果。</p></div>
+<div class="section"><h2 data-i18n="w6.section_scene">场景</h2>
+<div class="card scene-card"><h3 data-i18n="w6.scene_title">CCER碳交易三方谈判 <span class="tag tag-orange">[S017]</span></h3><p data-i18n="w6.scene_desc"><strong>3角色</strong>：项目业主/碳资产管理公司/审定机构</p><p data-i18n="w6.scene_desc">卖方报价80元/吨，买方砍到50——额外性是客观事实还是叙事建构？突发事件：环保部新规征求意见稿——填埋气收集或将被强制。已签发但未交易的CCER面临注销风险。</p><p data-i18n="w6.scene_desc">碳价不是单纯计算的产物，而是多方博弈的结果。</p></div>
 </div>
 
-<div class="section"><h2>思政双主线</h2>
+<div class="section"><h2 data-i18n="w6.section_sizheng">思政双主线</h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-<div class="card"><h3>好好学习 天天向上</h3><p style="font-size:13px">碳交易=跨领域学习的勇气。环境工程+金融+法律——进入一个你从未接触过的领域，本身就是"天天向上"的实践。</p></div>
-<div class="card"><h3>绿水青山 = 金山银山</h3><p style="font-size:13px">"双碳"战略=绿水青山的经济兑现。CCER让填埋气有了价格——不是口号，是可计算的、可交易的。</p></div>
+<div class="card"><h3 data-i18n="w6.sizheng_study_title">好好学习 天天向上</h3><p style="font-size:13px" data-i18n="w6.sizheng_study_text">碳交易=跨领域学习的勇气。环境工程+金融+法律——进入一个你从未接触过的领域，本身就是"天天向上"的实践。</p></div>
+<div class="card"><h3 data-i18n="w6.sizheng_green_title">绿水青山 = 金山银山</h3><p style="font-size:13px" data-i18n="w6.sizheng_green_text">"双碳"战略=绿水青山的经济兑现。CCER让填埋气有了价格——不是口号，是可计算的、可交易的。</p></div>
 </div></div>
 
 </div>
-<div class="footer"><p>📖 素材来源：故事素材母库（S017）| 可溯源至原著小说</p><p>© 黄正文（点暇斋）· 成都大学环境工程系</p></div>
+<div class="footer"><p data-i18n="common.source_traceable">📖 素材来源：故事素材母库（S017）| 可溯源至原著小说</p><p data-i18n="common.copyright_with_dept">© 黄正文（点暇斋）· 成都大学环境工程系</p></div>
 </body></html>
