@@ -1,0 +1,2 @@
+Remaining Chinese strings: 1
+.community.header_sub: 签到打卡 · 周进度反馈 · 同行评价

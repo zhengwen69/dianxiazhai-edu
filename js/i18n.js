@@ -11,7 +11,9 @@
     { code: 'en', flag: '🇬🇧', name: 'English', htmlLang: 'en'    },
     { code: 'th', flag: '🇹🇭', name: 'ไทย',     htmlLang: 'th'    },
     { code: 'fr', flag: '🇫🇷', name: 'Français', htmlLang: 'fr'    },
-    { code: 'de', flag: '🇩🇪', name: 'Deutsch',  htmlLang: 'de'    }
+    { code: 'de', flag: '🇩🇪', name: 'Deutsch',  htmlLang: 'de'    },
+    { code: 'ja', flag: '🇯🇵', name: '日本語',   htmlLang: 'ja'    },
+    { code: 'ko', flag: '🇰🇷', name: '한국어',   htmlLang: 'ko'    }
   ];
 
   var VALID_LANGS = {};
