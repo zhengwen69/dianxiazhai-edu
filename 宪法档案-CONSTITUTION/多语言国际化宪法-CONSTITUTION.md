@@ -1,20 +1,20 @@
 # 多语言国际化宪法 · CONSTITUTION
 
 > 适用范围：《固体废弃物污染防治技术》研究生精品课程演示门户（`https://zhengwen69.github.io/cdu-gufei-web-demo/`）之国际化改造
-> 语种：中文（zh）· 英文（en）· 泰文（th）· 法文（fr）· 德文（de）· 日文（ja）· 韩文（ko）
-> 版本 v3.0 · 2026.05.31
+> 语种：中文·简（zh）· 中文·繁（zh-Hant）· 英文（en）· 泰文（th）· 法文（fr）· 德文（de）· 日文（ja）· 韩文（ko）
+> 版本 v3.1 · 2026.05.31
 > 最高准则：凡国际化实现、翻译、维护之行为，均须符合本宪法之规定。
 
 ---
 
 ## 序言：总纲与宗旨
 
-本宪法为演示门户五语国际化改造工程的最高准则。
+本宪法为演示门户八语国际化改造工程的最高准则。
 
-**背景**：课题组成员在泰国攻读教育学博士学位，将在东南亚地区期刊投稿论文中引用门户截图，门户须支持中文、英文、泰文、法文、德文多语切换，以满足国际学术论文的截图需求。法/德语系为国际学院国际合作潜在需求增设。
+**背景**：课题组成员在泰国攻读教育学博士学位，将在东南亚及国际期刊投稿论文中引用门户截图，门户须支持八语切换以满足国际学术论文的截图需求。法/德语系为国际学院国际合作需求增设，日/韩/中文繁体为潜在需求追加。
 
 **目标**：
-- 全站 16 个 HTML 页面均支持五语实时切换
+- 全站 16 个 HTML 页面均支持八语实时切换
 - 语言切换器为下拉菜单，由 `i18n.js` 动态注入，截图包含语言标识
 - 纯客户端方案，不依赖后端，兼容 GitHub Pages 静态托管
 - 翻译由 AI Agent 团队完成机器自动翻译，不依赖人工翻译
@@ -27,7 +27,7 @@
 **第1条（架构原则）**
 
 采用客户端 JavaScript i18n 方案：
-- 翻译数据存储在 `lang/` 目录下的 JSON 文件（zh.json / en.json / th.json / fr.json / de.json）
+- 翻译数据存储在 `lang/` 目录下的 8 个 JSON 文件（zh.json / zh-Hant.json / en.json / th.json / fr.json / de.json / ja.json / ko.json）
 - 翻译引擎 `js/i18n.js` 负责语言检测、翻译加载、文本替换、切换器动态注入
 - HTML 元素通过 `data-i18n` 属性标记待翻译文本
 - 语言切换器为下拉菜单，由 i18n.js 通过 `injectSwitcher()` 方法动态创建 DOM 及注入 CSS，HTML 中不硬编码任何切换器代码
@@ -39,8 +39,9 @@
 URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 ```
 
-- 默认语言为中文，HTML 源文本即为中文，中文模式下零开销渲染
-- 切换至 en/th 时，JS 从 JSON 加载翻译并替换 DOM 文本
+- 默认语言为中文（简体），HTML 源文本即为中文简体，中文简体模式下零开销渲染
+- 切换至其他语种时，JS 从 JSON 加载翻译并替换 DOM 文本
+- 中文繁体（zh-Hant）由 zh.json 通过简繁转换生成，htmlLang 设为 zh-Hant
 - 语言偏好写入 localStorage，下次访问自动恢复
 
 **第3条（翻译引擎核心功能）**
@@ -52,7 +53,7 @@ URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 - `data-i18n-title`：替换元素 title 属性
 - `document.title` 通过 documentElement 的 `data-i18n-title` 属性翻译
 - `switchLang(lang)` 切换语言并重载页面（带 URL 参数）
-- 防闪烁：非中文时先设置 opacity:0，翻译完成后再显示
+- 防闪烁：非中文简体时先设置 visibility:hidden，翻译完成后再显示
 
 **第4条（语言切换器规范）**
 
@@ -74,11 +75,14 @@ URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 ├── js/
 │   └── i18n.js             ← 翻译引擎（含 LANGS 配置 + 动态切换器注入）
 ├── lang/
-│   ├── zh.json             ← 中文基准（唯一真实源文本）
+│   ├── zh.json             ← 中文·简（基准源）
+│   ├── zh-Hant.json         ← 中文·繁（简繁转换）
 │   ├── en.json             ← 英文翻译
 │   ├── th.json             ← 泰文翻译
 │   ├── fr.json             ← 法文翻译
-│   └── de.json             ← 德文翻译
+│   ├── de.json             ← 德文翻译
+│   ├── ja.json             ← 日文翻译
+│   └── ko.json             ← 韩文翻译
 └── 宪法档案-CONSTITUTION/
     └── 多语言国际化宪法-CONSTITUTION.md  ← 本宪法
 ```
@@ -113,7 +117,7 @@ URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 
 **第3条（zh.json 的源真理性）**
 
-- zh.json 为本宪法认可的**唯一真实源文本**
+- zh.json（中文·简）为本宪法认可的**唯一真实源文本**，zh-Hant.json 为其简繁转换衍生文本
 - HTML 中的中文原文仅作为后备显示，逻辑上应以 zh.json 为准
 - 凡修改中文文案，须同步更新 zh.json 及对应 HTML 的 data-i18n 属性
 - zh.json 的每个键必须为原始中文文本，不可变形
@@ -128,25 +132,25 @@ URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 
 **第2条（专业术语一致性）**
 
-以下核心术语须在五语间保持翻译一致：
+以下核心术语须在八语间保持翻译一致：
 
-| 中文 | 英文 | 泰文 | 法文 | 德文 |
-|------|------|------|------|------|
-| 固体废弃物污染防治技术 | Solid Waste Pollution Prevention and Control Technology | เทคโนโลยีการป้องกันและควบคุมมลพิษจากขยะมูลฝอย | Technologie de prévention et de contrôle de la pollution des déchets solides | Technologie zur Vermeidung und Kontrolle der Verschmutzung durch feste Abfälle |
-| 空间错配 | Spatial Mismatch | ความไม่สอดคล้องเชิงพื้นที่ | Mésappariement spatial | Räumliches Mismatch |
-| 技术错配 | Technical Mismatch | ความไม่สอดคล้องเชิงเทคนิค | Mésappariement technique | Technisches Mismatch |
-| 行为错配 | Behavioral Mismatch | ความไม่สอดคล้องเชิงพฤติกรรม | Mésappariement comportemental | Verhaltensbezogenes Mismatch |
-| 人文错配 | Humanistic Mismatch | ความไม่สอดคล้องเชิงมนุษยธรรม | Mésappariement humaniste | Humanistisches Mismatch |
-| 叙·框·境·创 | Narrate · Framework · Scene · Create | เล่าเรื่อง · กรอบความคิด · สถานการณ์ · สร้างสรรค์ | Narration · Cadre · Scène · Création | Erzählen · Rahmen · Szene · Schaffen |
-| 四维教学法 | Four-Dimensional Pedagogy | วิธีสอนสี่มิติ | Pédagogie quadridimensionnelle | Vierdimensionale Pädagogik |
-| 好好学习 天天向上 | Study Hard, Make Progress Every Day | ตั้งใจเรียน ก้าวหน้าทุกวัน | Bien étudier, progresser chaque jour | Fleißig lernen, täglich Fortschritte machen |
-| 绿水青山 = 金山银山 | Lucid Waters & Lush Mountains = Invaluable Assets | น้ำใสภูเขาเขียว = ขุนเขาทองคำ | Eaux limpides et montagnes luxuriantes = Montagnes d'or et d'argent | Klares Wasser und grüne Berge = Goldene Berge und silberne Flüsse |
-| 点暇斋 | Dianxia Studio | เตี่ยนเสียจ้าย | Studio Dianxia | Dianxia Studio |
-| 黄正文 | Huang Zhengwen | หวง เจิ้งเหวิน | Huang Zhengwen | Huang Zhengwen |
-| 成都大学 | Chengdu University | มหาวิทยาลัยเฉิงตู | Université de Chengdu | Universität Chengdu |
-| 雍葭 | Yong Jia | ยงเจีย | Yong Jia | Yong Jia |
-| OBE | OBE | OBE | OBE | OBE |
-| Agent | Agent | Agent | Agent | Agent |
+| 中文（简） | 中文（繁） | 英文 | 泰文 | 法文 | 德文 | 日文 | 韩文 |
+|----------|----------|------|------|------|------|------|------|
+| 固体废弃物污染防治技术 | 固體廢棄物污染防治技術 | Solid Waste Pollution Prevention and Control Technology | เทคโนโลยีการป้องกันและควบคุมมลพิษจากขยะมูลฝอย | Technologie de prévention et de contrôle de la pollution des déchets solides | Technologie zur Vermeidung und Kontrolle der Verschmutzung durch feste Abfälle | 固形廃棄物汚染防止・管理技術 | 고형폐기물 오염방지 및 관리기술 |
+| 空间错配 | 空間錯配 | Spatial Mismatch | ความไม่สอดคล้องเชิงพื้นที่ | Mésappariement spatial | Räumliches Mismatch | 空間的ミスマッチ | 공간적 미스매치 |
+| 技术错配 | 技術錯配 | Technical Mismatch | ความไม่สอดคล้องเชิงเทคนิค | Mésappariement technique | Technisches Mismatch | 技術的ミスマッチ | 기술적 미스매치 |
+| 行为错配 | 行為錯配 | Behavioral Mismatch | ความไม่สอดคล้องเชิงพฤติกรรม | Mésappariement comportemental | Verhaltensbezogenes Mismatch | 行動的ミスマッチ | 행동적 미스매치 |
+| 人文错配 | 人文錯配 | Humanistic Mismatch | ความไม่สอดคล้องเชิงมนุษยธรรม | Mésappariement humaniste | Humanistisches Mismatch | 人文的ミスマッチ | 인문적 미스매치 |
+| 叙·框·境·创 | 敘·框·境·創 | Narrate · Framework · Scene · Create | เล่าเรื่อง · กรอบความคิด · สถานการณ์ · สร้างสรรค์ | Narration · Cadre · Scène · Création | Erzählen · Rahmen · Szene · Schaffen | 叙事・枠組・場面・創造 | 서사 · 프레임 · 장면 · 창조 |
+| 四维教学法 | 四維教學法 | Four-Dimensional Pedagogy | วิธีสอนสี่มิติ | Pédagogie quadridimensionnelle | Vierdimensionale Pädagogik | 四次元教授法 | 4차원 교수법 |
+| 好好学习 天天向上 | 好好學習 天天向上 | Study Hard, Make Progress Every Day | ตั้งใจเรียน ก้าวหน้าทุกวัน | Bien étudier, progresser chaque jour | Fleißig lernen, täglich Fortschritte machen | よく学び、日々向上せよ | 열심히 배우고 날마다 발전하자 |
+| 绿水青山 = 金山银山 | 綠水青山 = 金山銀山 | Lucid Waters & Lush Mountains = Invaluable Assets | น้ำใสภูเขาเขียว = ขุนเขาทองคำ | Eaux limpides et montagnes luxuriantes = Montagnes d'or et d'argent | Klares Wasser und grüne Berge = Goldene Berge und silberne Flüsse | 清き水と緑の山 = 金の山銀の山 | 맑은 물과 푸른 산 = 금산은산 |
+| 点暇斋 | 點暇齋 | Dianxia Studio | เตี่ยนเสียจ้าย | Studio Dianxia | Dianxia Studio | 點暇斎 | 점하재 |
+| 黄正文 | 黃正文 | Huang Zhengwen | หวง เจิ้งเหวิน | Huang Zhengwen | Huang Zhengwen | 黄正文 | 황정문 |
+| 成都大学 | 成都大學 | Chengdu University | มหาวิทยาลัยเฉิงตู | Université de Chengdu | Universität Chengdu | 成都大学 | 청두대학 |
+| 雍葭 | 雍葭 | Yong Jia | ยงเจีย | Yong Jia | Yong Jia | 雍葭 | 옹가 |
+| OBE | OBE | OBE | OBE | OBE | OBE | OBE | OBE |
+| Agent | Agent | Agent | Agent | Agent | Agent | Agent | Agent |
 
 **第3条（版权内容处理）**
 
@@ -205,31 +209,45 @@ URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 
 ## 第五章：维护与更新宪法
 
-**第1条（新增页面）**
+**第1条（八语同步铁律）★核心**
 
-凡新增 HTML 页面，须在创建之初即完成 i18n 改造（添加 data-i18n 属性、引入 i18n.js、插入切换器），并在 zh.json / en.json / th.json 中同步添加翻译条目。
+凡浏览页新增或修改中文（简体）文案，须同步更新全部 8 个语种的翻译文件：
+- 修改 `zh.json`（中文·简基准）
+- 同步更新 `zh-Hant.json`（简繁转换）
+- 同步更新 `en.json` / `th.json` / `fr.json` / `de.json` / `ja.json` / `ko.json`
+- 同步更新 HTML 中的 `data-i18n` 属性
 
-**第2条（修改文案）**
+不得出现中文简体已更新而其他语种遗漏的情况。此为不可逾越之铁律。
+
+**第2条（新增页面）**
+
+凡新增 HTML 页面，须在创建之初即：
+1. 添加 `data-i18n` 属性标注全部中文文本
+2. 引入 `<script src="js/i18n.js"></script>`
+3. 在 `zh.json` 中新增对应翻译键
+4. 在其余 7 个语种 JSON 中同步新增翻译条目
+
+**第3条（修改文案）**
 
 凡修改页面中文文案，须同步：
-1. 更新 HTML 中对应的 data-i18n 属性值（中文文本）
-2. 更新 zh.json 中对应键的值
-3. 如修改涉及意义变更，同步更新 en.json 和 th.json
+1. 更新 HTML 中对应的 `data-i18n` 属性值
+2. 更新 `zh.json` 中对应键的值
+3. 更新其余 7 个语种 JSON 中对应键的值（如意义变更）
 
-**第3条（新增语种）**
+**第4条（新增语种）**
 
-凡新增语种（如日语），须：
-- 创建 `lang/ja.json`，基于 zh.json 结构逐键翻译
-- 在语言切换器中添加对应按钮
+凡新增语种，须：
+- 创建 `lang/xx.json`，基于 `zh.json` 结构逐键翻译
+- 在 `i18n.js` 的 `LANGS` 数组中添加配置项
 - 更新本宪法
 
-**第4条（检验标准）**
+**第5条（检验标准）**
 
 每次改造后须验证：
-- 中文模式：页面显示正常，无 data-i18n 属性泄漏为纯文本
-- 英文/泰文模式：页面所有文本均已翻译，无遗漏的中文残留
-- 语言切换器：三个按钮均可单击切换，激活状态正确高亮
-- 移动端：切换器位置不遮挡 back-btn 按钮
+- 中文模式：页面显示正常，无 `data-i18n` 属性泄漏为纯文本
+- 8 语种模式：各页面所有文本均已翻译，无中文残留
+- 切换器：下拉菜单正常展开，8 个选项均可切换，当前语言正确高亮
+- 移动端：切换器位置不遮挡 back-btn
 
 ---
 
@@ -237,9 +255,9 @@ URL 参数 ?lang=  >  localStorage('cdu-gufei-lang')  >  默认中文(zh)
 
 | 附件 | 文件名 | 用途 |
 |------|-------|------|
-| 附件1 | `术语表-三语对照.md` | 全站核心术语的三语对照清单 |
+| 附件1 | `术语表-八语对照.md` | 全站核心术语的八语对照清单 |
 | 附件2 | `翻译键索引.md` | 全站翻译键的完整索引（按页面分组） |
 
 ---
 
-*多语言国际化宪法 · v1.0 · 2026.05.31*
+*多语言国际化宪法 · v3.1 · 2026.05.31*

@@ -13,7 +13,8 @@
     { code: 'fr', flag: '🇫🇷', name: 'Français', htmlLang: 'fr'    },
     { code: 'de', flag: '🇩🇪', name: 'Deutsch',  htmlLang: 'de'    },
     { code: 'ja', flag: '🇯🇵', name: '日本語',   htmlLang: 'ja'    },
-    { code: 'ko', flag: '🇰🇷', name: '한국어',   htmlLang: 'ko'    }
+    { code: 'ko', flag: '🇰🇷', name: '한국어',   htmlLang: 'ko'    },
+    { code: 'zh-Hant', flag: '🇹🇼', name: '繁體中文', htmlLang: 'zh-Hant' }
   ];
 
   var VALID_LANGS = {};
