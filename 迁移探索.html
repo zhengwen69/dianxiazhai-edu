@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="transfer_hub.page_title">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="transfer_hub.page_title">迁移探索</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
+  color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;padding:40px 20px;
+}
+
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+
+.header{text-align:center;margin-bottom:40px;max-width:900px;width:100%}
+.header h1{font-size:36px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#5b9bd5}
+.header .sub{color:#667;font-size:15px;margin-bottom:24px}
+.header .intro{
+  color:#8899aa;font-size:14px;line-height:2;
+  max-width:800px;margin:0 auto;text-align:justify;text-indent:2em;
+}
+
+.cards-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  max-width:1100px;width:100%;margin-bottom:30px;
+}
+
+.case-card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);
+  border-radius:12px;padding:28px 24px;text-decoration:none;
+  transition:all .35s;color:#c8d6e5;display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.case-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  border-radius:12px 0 0 12px;
+  transition:width .3s;
+}
+.case-card:hover::before{width:6px}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.4);border-color:rgba(91,155,213,.25)}
+.case-card .card-icon{font-size:36px;margin-bottom:14px}
+.case-card .card-title{font-size:18px;font-weight:600;color:#e8e8e8;margin-bottom:6px}
+.case-card .card-subtitle{font-size:13px;color:#7fb8e0;margin-bottom:14px;line-height:1.5}
+.case-card .card-desc{font-size:13px;color:#8899aa;line-height:1.9;flex:1;margin-bottom:16px}
+.case-card .card-badges{display:flex;flex-wrap:wrap;gap:8px}
+.case-card .badge{
+  font-size:11px;padding:4px 12px;border-radius:20px;
+  background:rgba(91,155,213,.1);color:#7fb8e0;
+  border:1px solid rgba(91,155,213,.15);
+  white-space:nowrap;
+}
+.case-card .badge.accent{
+  border-color:rgba(91,155,213,.3);color:#c8d6e5;
+  font-weight:600;
+}
+
+/* Card accent colors */
+.card-accent-orange::before{background:#e67e22}
+.card-accent-orange .badge.accent{background:rgba(230,126,34,.15);border-color:rgba(230,126,34,.25);color:#e67e22}
+
+.card-accent-blue::before{background:#3498db}
+.card-accent-blue .badge.accent{background:rgba(52,152,219,.15);border-color:rgba(52,152,219,.25);color:#3498db}
+
+.card-accent-green::before{background:#2ecc71}
+.card-accent-green .badge.accent{background:rgba(46,204,113,.15);border-color:rgba(46,204,113,.25);color:#2ecc71}
+
+.pending-section{max-width:1100px;width:100%;margin-bottom:40px}
+.pending-label{
+  color:#556677;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  text-align:center;margin-bottom:14px;
+}
+.pending-card{
+  background:rgba(13,31,53,.5);border:1px solid rgba(91,155,213,.05);
+  border-radius:12px;padding:28px 24px;display:flex;align-items:center;
+  gap:18px;opacity:.4;pointer-events:none;max-width:380px;margin:0 auto;
+  position:relative;overflow:hidden;
+}
+.pending-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  border-radius:12px 0 0 12px;background:#556677;
+}
+.pending-card .card-icon{font-size:30px;flex-shrink:0}
+.pending-card .card-info{flex:1}
+.pending-card .card-title{font-size:16px;font-weight:600;color:#8899aa;margin-bottom:6px}
+.pending-card .badge{
+  font-size:10px;padding:3px 10px;border-radius:20px;
+  background:rgba(85,102,119,.15);color:#556677;
+  border:1px solid rgba(85,102,119,.15);
+  display:inline-block;
+}
+
+.privacy-note{color:#556677;font-size:11px;line-height:1.7;margin-bottom:4px;text-align:center}
+
+.footer{margin-top:20px;text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
+.footer a{color:#5b9bd5;text-decoration:none}
+
+@media (max-width:768px){
+  body{padding:30px 12px;justify-content:flex-start}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .header{margin-bottom:24px}
+  .header h1{font-size:24px}
+  .header .sub{font-size:13px;margin-bottom:16px}
+  .header .intro{font-size:12px;line-height:1.8}
+  .cards-grid{grid-template-columns:1fr;gap:14px}
+  .case-card{padding:20px 16px}
+  .case-card .card-icon{font-size:28px;margin-bottom:10px}
+  .case-card .card-title{font-size:16px}
+  .case-card .card-subtitle{font-size:12px}
+  .case-card .card-desc{font-size:12px}
+  .case-card .badge{font-size:10px;padding:3px 10px}
+  .pending-card{padding:18px 14px;max-width:100%}
+  .pending-card .card-icon{font-size:24px}
+  .pending-card .card-title{font-size:14px}
+  .footer{margin-top:10px;font-size:10px}
+}
+</style>
+<script src="js/i18n.js"></script>
+</head>
+<body>
+
+<a href="index.html" class="back-btn" title="返回首页" data-i18n-title="common.back_to_home" data-i18n="common.back_to_home">◀ 返回首页</a>
+
+<div class="header">
+  <h1 data-i18n="transfer_hub.page_title"><span data-i18n="transfer_hub.page_title_span">迁移探索</span></h1>
+  <div class="sub" data-i18n="transfer_hub.page_subtitle">NFSC+Agent 跨域应用验证</div>
+  <p class="intro" data-i18n="transfer_hub.intro">叙·框·境·创教学法、Agent辅助系统与双门户架构已在固废工程教育中验证有效。为检验其跨学科可迁移性，课题组在三个截然不同的领域进行了探索性应用，覆盖职业生存驱动与品质生活驱动两种学习动机类型，验证了同一套方法论在不同生命阶段与需求层次中的适应性。</p>
+</div>
+
+<div class="cards-grid">
+  <a class="case-card card-accent-orange" href="迁移探索-无人机应用技术.html">
+    <div class="card-icon">🔄</div>
+    <div class="card-title" data-i18n="transfer_hub.card1_title">跨学科师资自学</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card1_subtitle">从土地管理到无人机应用技术教学</div>
+    <div class="card-desc" data-i18n="transfer_hub.card1_desc">本硕均非无人机专业的高职教师，通过Agent辅助自学系统，在无外部培训资源的条件下独立建立知识体系，至今已胜任10门课程教学</div>
+    <div class="card-badges">
+      <span class="badge accent" data-i18n="transfer_hub.badge_survival">职业生存驱动</span>
+      <span class="badge" data-i18n="transfer_hub.badge1_tags">高职大专·跨专业</span>
+    </div>
+  </a>
+
+  <a class="case-card card-accent-blue" href="迁移探索-智能转型.html">
+    <div class="card-icon">🛡️</div>
+    <div class="card-title" data-i18n="transfer_hub.card2_title">环境工程专业转型</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card2_subtitle">智能应急管理与智能人居环境</div>
+    <div class="card-desc" data-i18n="transfer_hub.card2_desc">面对行业调整压力，80后/90后教师分别探索两个分支转型方向，将原有知识体系映射到新领域，构建跨学科课程体系</div>
+    <div class="card-badges">
+      <span class="badge accent" data-i18n="transfer_hub.badge_development">职业发展驱动</span>
+      <span class="badge" data-i18n="transfer_hub.badge2_tags">本科·分支转型</span>
+    </div>
+  </a>
+
+  <a class="case-card card-accent-green" href="迁移探索-竹韵乐养.html">
+    <div class="card-icon">🎵</div>
+    <div class="card-title" data-i18n="transfer_hub.card3_title">传统民乐入门</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card3_subtitle">气息训练与竹韵乐养融合</div>
+    <div class="card-desc" data-i18n="transfer_hub.card3_desc">环境工程教授年近六旬，零竹管民乐基础，通过Agent辅助自学探索"竹韵乐养"——传统民乐练习与中老年健康养生的融合实践</div>
+    <div class="card-badges">
+      <span class="badge accent" data-i18n="transfer_hub.badge_lifestyle">品质生活驱动</span>
+      <span class="badge" data-i18n="transfer_hub.badge3_tags">中老年·跨认知类型</span>
+    </div>
+  </a>
+</div>
+
+<div class="pending-section">
+  <div class="pending-label" data-i18n="transfer_hub.section_pending">▾ 即将开放 ▾</div>
+  <div class="pending-card">
+    <div class="card-icon">📐</div>
+    <div class="card-info">
+      <div class="card-title" data-i18n="transfer_hub.card4_title">中小学数学助学</div>
+      <span class="badge" data-i18n="transfer_hub.badge_coming">即将开放</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="privacy-note" data-i18n="transfer_hub.footer_privacy_cn">本页案例基于真实师生成长经历，为保护隐私，人物采用化名。所有教学数据经本人授权使用。</p>
+  <p class="privacy-note" data-i18n="transfer_hub.footer_privacy_en">The case studies on this page are based on authentic experiences. Pseudonyms are used for privacy. All data is used with permission.</p>
+  <p style="margin-top:8px" data-i18n="common.copyright">© 黄正文（点暇斋）· 全部作品版权登记</p>
+</div>
+
+</body>
+</html>
