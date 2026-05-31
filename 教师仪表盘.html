@@ -79,23 +79,10 @@ body{
   .dash-card .name{font-size:16px}
   .dash-card .icon{font-size:32px}
 }
-
-.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
-.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
-.lang-switch-btn.active{background:rgba(91,155,213,.2)}
-@media(max-width:768px){.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
 </style>
 <script src="js/i18n.js"></script>
 </head>
 <body>
-
-<div class="lang-switcher">
-  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
-  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
-  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
-</div>
-
 <div style="text-align:center">
   <a class="back-btn" href="index.html" data-i18n="common.back_to_home_alt">← 返回首页</a>
 </div>

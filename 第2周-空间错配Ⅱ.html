@@ -32,22 +32,11 @@ td{color:#aabbcc}
 .back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px}
 .back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px)}
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2}
-.lang-switcher{position:fixed;top:20px;right:20px;z-index:9999;display:flex;gap:6px}
-.lang-switch-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(91,155,213,.2);background:rgba(13,31,53,.85);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.lang-switch-btn:hover,.lang-switch-btn.active{border-color:#5b9bd5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
-.lang-switch-btn.active{background:rgba(91,155,213,.2)}
-@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:18px}.header .sub{font-size:12px}.header .meta{font-size:11px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}th,td{font-size:11px;padding:6px 8px}table{display:block;overflow-x:auto}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}.section h2{font-size:15px}.footer{font-size:10px}[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}.lang-switcher{top:10px;right:10px;gap:4px}.lang-switch-btn{width:28px;height:28px;font-size:14px}}
+@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:18px}.header .sub{font-size:12px}.header .meta{font-size:11px}.card{padding:16px 14px}.card h3{font-size:15px}.card p{font-size:12px}.knowledge-grid{grid-template-columns:1fr}th,td{font-size:11px;padding:6px 8px}table{display:block;overflow-x:auto}.back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}.section h2{font-size:15px}.footer{font-size:10px}[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
 </style>
 <script src="js/i18n.js"></script>
 </head>
 <body>
-
-<div class="lang-switcher">
-  <button class="lang-switch-btn active" data-lang="zh" onclick="I18N.switchLang('zh')" title="中文">🇨🇳</button>
-  <button class="lang-switch-btn" data-lang="en" onclick="I18N.switchLang('en')" title="English">🇬🇧</button>
-  <button class="lang-switch-btn" data-lang="th" onclick="I18N.switchLang('th')" title="ไทย">🇹🇭</button>
-</div>
-
 <a href="index.html" class="back-btn" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="header">
