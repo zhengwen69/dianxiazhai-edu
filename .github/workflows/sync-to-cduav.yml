@@ -1,0 +1,45 @@
+name: Sync UAV files to CD-UAV
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout CD-UAV repo
+        uses: actions/checkout@v4
+        with:
+          repository: zhengwen69/CD-UAV
+          ref: gh-pages
+          path: cd-uav-tmp
+
+      - name: Copy UAV files
+        run: |
+          cp -f 迁移探索-无人机应用技术.html cd-uav-tmp/ 2>/dev/null || true
+          cp -f 迁移探索-无人机-学生伴学子门户.html cd-uav-tmp/ 2>/dev/null || true
+          mkdir -p cd-uav-tmp/js && cp -f js/i18n.js cd-uav-tmp/js/ 2>/dev/null || true
+          mkdir -p cd-uav-tmp/lang && cp -f lang/*.json cd-uav-tmp/lang/ 2>/dev/null || true
+          cp -f Figure1-知识域映射轨迹.png cd-uav-tmp/ 2>/dev/null || true
+          cp -f Figure2-迁移探索枢纽页.png cd-uav-tmp/ 2>/dev/null || true
+          cp -f Figure3-无人机应用技术页面.png cd-uav-tmp/ 2>/dev/null || true
+
+      - name: Push to CD-UAV
+        run: |
+          cd cd-uav-tmp
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync."
+          else
+            git commit -m "Auto-sync from cdu-gufei-web-demo"
+            git push
+            echo "Synced to CD-UAV."
+          fi
