@@ -29,7 +29,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to sync."
           else
-            git commit -m "Auto-sync from cdu-gufei-web-demo"
+            git commit -m "Auto-sync from dianxiazhai-edu"
             git push origin gh-pages
             echo "Synced to CD-UAV."
           fi
