@@ -1,6 +1,6 @@
 # 多语言国际化宪法 · CONSTITUTION
 
-> 适用范围：《固体废弃物污染防治技术》研究生精品课程演示门户（`https://zhengwen69.github.io/dianxiazhai-edu/`）之国际化改造
+> 适用范围：《固体废弃物污染防治技术》研究生精品课程演示门户（`https://zhengwen69.github.io/cdu-gufei-web-demo/`）之国际化改造
 > 语种：中文·简（zh）· 中文·繁（zh-Hant）· 英文（en）· 泰文（th）· 法文（fr）· 德文（de）· 日文（ja）· 韩文（ko）
 > 版本 v3.1 · 2026.05.31
 > 最高准则：凡国际化实现、翻译、维护之行为，均须符合本宪法之规定。
