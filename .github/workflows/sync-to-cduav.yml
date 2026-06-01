@@ -1,4 +1,4 @@
-name: Sync UAV files to CD-UAV
+name: Sync UAV to CD-UAV
 
 on:
   push:
@@ -7,40 +7,29 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Checkout CD-UAV repo
-        uses: actions/checkout@v4
-        with:
-          repository: zhengwen69/CD-UAV
-          ref: gh-pages
-          path: cd-uav-tmp
-          token: ${{ secrets.CDUAV_TOKEN }}
-
-      - name: Copy UAV files
+      - name: Clone and sync CD-UAV
+        env:
+          TOKEN: ${{ secrets.CDUAV_TOKEN }}
         run: |
-          cp -f 迁移探索-无人机应用技术.html cd-uav-tmp/ 2>/dev/null || true
-          cp -f 迁移探索-无人机-学生伴学子门户.html cd-uav-tmp/ 2>/dev/null || true
-          mkdir -p cd-uav-tmp/js && cp -f js/i18n.js cd-uav-tmp/js/ 2>/dev/null || true
-          mkdir -p cd-uav-tmp/lang && cp -f lang/*.json cd-uav-tmp/lang/ 2>/dev/null || true
-          cp -f Figure1-知识域映射轨迹.png cd-uav-tmp/ 2>/dev/null || true
-          cp -f Figure2-迁移探索枢纽页.png cd-uav-tmp/ 2>/dev/null || true
-          cp -f Figure3-无人机应用技术页面.png cd-uav-tmp/ 2>/dev/null || true
-
-      - name: Push to CD-UAV
-        run: |
-          cd cd-uav-tmp
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git clone --depth 1 -b gh-pages https://x-access-token:${TOKEN}@github.com/zhengwen69/CD-UAV.git /tmp/cduav
+          cp -f 迁移探索-无人机应用技术.html /tmp/cduav/ 2>/dev/null || true
+          cp -f 迁移探索-无人机-学生伴学子门户.html /tmp/cduav/ 2>/dev/null || true
+          mkdir -p /tmp/cduav/js && cp -f js/i18n.js /tmp/cduav/js/ 2>/dev/null || true
+          mkdir -p /tmp/cduav/lang && cp -f lang/zh.json lang/en.json lang/fr.json lang/de.json lang/th.json lang/ja.json lang/ko.json lang/zh-Hant.json /tmp/cduav/lang/ 2>/dev/null || true
+          cp -f Figure1-知识域映射轨迹.png /tmp/cduav/ 2>/dev/null || true
+          cp -f Figure2-迁移探索枢纽页.png /tmp/cduav/ 2>/dev/null || true
+          cp -f Figure3-无人机应用技术页面.png /tmp/cduav/ 2>/dev/null || true
+          cd /tmp/cduav
+          git config user.name "GitHub Actions Bot"
+          git config user.email "bot@actions.local"
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to sync."
           else
             git commit -m "Auto-sync from cdu-gufei-web-demo"
-            git push
+            git push origin gh-pages
             echo "Synced to CD-UAV."
           fi
