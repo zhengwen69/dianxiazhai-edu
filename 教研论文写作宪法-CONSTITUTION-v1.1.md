@@ -8,7 +8,7 @@
 
 ## 序言：总纲与宗旨
 
-本宪法为基于《固体废弃物污染防治技术》研究生精品课程演示门户（`https://zhengwen69.github.io/dianxiazhai-edu/`，含学习园地子门户）衍生的教育教学教改教研系列期刊论文的写作与投稿全流程最高准则。
+本宪法为基于《固体废弃物污染防治技术》研究生精品课程演示门户（`https://zhengwen69.github.io/cdu-gufei-web-demo/`，含学习园地子门户）衍生的教育教学教改教研系列期刊论文的写作与投稿全流程最高准则。
 
 宪法依据：
 - `学习园地-内容宪法.md`（术语、框架、样式的单源真理）
@@ -69,7 +69,7 @@
 
 论文定稿时须锁定演示门户版本（以Git commit hash或日期标注），论文中标注：
 
-> "本研究依托的《固体废弃物污染防治技术》研究生精品课程演示门户，版本截至YYYY-MM-DD，在线访问URL：`https://zhengwen69.github.io/dianxiazhai-edu/`。"
+> "本研究依托的《固体废弃物污染防治技术》研究生精品课程演示门户，版本截至YYYY-MM-DD，在线访问URL：`https://zhengwen69.github.io/cdu-gufei-web-demo/`。"
 
 **第5条（素材更新同步原则）**
 
