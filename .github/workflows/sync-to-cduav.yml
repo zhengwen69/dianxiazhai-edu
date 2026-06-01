@@ -19,6 +19,7 @@ jobs:
           repository: zhengwen69/CD-UAV
           ref: gh-pages
           path: cd-uav-tmp
+          token: ${{ secrets.CDUAV_TOKEN }}
 
       - name: Copy UAV files
         run: |
