@@ -1,1 +1,1 @@
-https://zhengwen69.github.io/cdu-gufei-web-demo/
+https://zhengwen69.github.io/dianxiazhai-edu/
