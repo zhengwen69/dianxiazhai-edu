@@ -22,15 +22,51 @@ body{
 }
 .back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 
-.header{text-align:center;margin-bottom:40px;max-width:900px;width:100%}
+.header{text-align:center;margin-bottom:30px;max-width:1100px;width:100%}
 .header h1{font-size:36px;color:#fff;margin-bottom:6px}
 .header h1 span{color:#5b9bd5}
-.header .sub{color:#667;font-size:15px;margin-bottom:24px}
-.header .intro{
-  color:#8899aa;font-size:14px;line-height:2;
-  max-width:800px;margin:0 auto;text-align:justify;text-indent:2em;
+.header .sub{color:#667;font-size:15px;margin-bottom:20px}
+
+/* ── Motivation Table ── */
+.table-wrap{
+  max-width:1100px;width:100%;margin-bottom:16px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.15);
+  border-radius:12px;overflow:hidden;
+}
+.motivation-table{
+  width:100%;border-collapse:collapse;font-size:13px;
+}
+.motivation-table th{
+  background:rgba(91,155,213,.15);color:#7fb8e0;font-weight:600;
+  padding:12px 14px;text-align:left;font-size:12px;letter-spacing:1px;
+  border-bottom:2px solid rgba(91,155,213,.25);
+}
+.motivation-table td{
+  padding:12px 14px;color:#c8d6e5;border-bottom:1px solid rgba(91,155,213,.08);
+  line-height:1.6;
+}
+.motivation-table td a{color:#7fb8e0;text-decoration:none;transition:color .2s}
+.motivation-table td a:hover{color:#fff}
+.motivation-table tr:hover td{background:rgba(91,155,213,.06)}
+.motivation-table tr:nth-child(even) td{background:rgba(91,155,213,.03)}
+.motivation-table tr:nth-child(even):hover td{background:rgba(91,155,213,.08)}
+.motivation-table .case-name{font-weight:600;color:#fff;font-size:14px}
+.motivation-table .motive{color:#e67e22;font-size:12px}
+.motivation-table .lifecycle{color:#5b9bd5;font-size:12px}
+.motivation-table .essence{color:#8899aa;font-size:12px}
+.motivation-table .pending{opacity:.35}
+.motivation-table .pending a{pointer-events:none;color:#556677}
+.motivation-table .badge-pending{
+  font-size:10px;padding:2px 8px;border-radius:10px;
+  background:rgba(85,102,119,.15);color:#556677;white-space:nowrap;margin-left:6px;
 }
 
+.table-footer{
+  color:#667;font-size:12px;text-align:center;padding:14px 20px;
+  line-height:1.8;max-width:900px;margin:0 auto 30px;
+}
+
+/* ── Cards Grid ── */
 .cards-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
   max-width:1100px;width:100%;margin-bottom:30px;
@@ -61,11 +97,13 @@ body{
   white-space:nowrap;
 }
 .case-card .badge.accent{
-  border-color:rgba(91,155,213,.3);color:#c8d6e5;
-  font-weight:600;
+  border-color:rgba(91,155,213,.3);color:#c8d6e5;font-weight:600;
 }
 
-/* Card accent colors */
+/* Accent colors */
+.card-accent-teal::before{background:#1abc9c}
+.card-accent-teal .badge.accent{background:rgba(26,188,156,.15);border-color:rgba(26,188,156,.25);color:#1abc9c}
+
 .card-accent-orange::before{background:#e67e22}
 .card-accent-orange .badge.accent{background:rgba(230,126,34,.15);border-color:rgba(230,126,34,.25);color:#e67e22}
 
@@ -75,33 +113,17 @@ body{
 .card-accent-green::before{background:#2ecc71}
 .card-accent-green .badge.accent{background:rgba(46,204,113,.15);border-color:rgba(46,204,113,.25);color:#2ecc71}
 
-.pending-section{max-width:1100px;width:100%;margin-bottom:40px}
-.pending-label{
-  color:#556677;font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  text-align:center;margin-bottom:14px;
-}
-.pending-card{
-  background:rgba(13,31,53,.5);border:1px solid rgba(91,155,213,.05);
-  border-radius:12px;padding:28px 24px;display:flex;align-items:center;
-  gap:18px;opacity:.4;pointer-events:none;max-width:380px;margin:0 auto;
-  position:relative;overflow:hidden;
-}
-.pending-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
-  border-radius:12px 0 0 12px;background:#556677;
-}
-.pending-card .card-icon{font-size:30px;flex-shrink:0}
-.pending-card .card-info{flex:1}
-.pending-card .card-title{font-size:16px;font-weight:600;color:#8899aa;margin-bottom:6px}
+.card-accent-purple::before{background:#9b59b6}
+.card-accent-purple .badge.accent{background:rgba(155,89,182,.15);border-color:rgba(155,89,182,.25);color:#9b59b6}
+
+.card-accent-pink::before{background:#e91e63}
+.card-accent-pink .badge.accent{background:rgba(233,30,99,.15);border-color:rgba(233,30,99,.25);color:#e91e63}
+
+/* Pending card */
+.card-pending{opacity:.35;pointer-events:none}
+.card-pending::before{background:#556677}
 
 .tagline{text-align:center;font-size:20px;color:#5b9bd5;letter-spacing:4px;padding:24px 0 8px;font-weight:600}
-@media(max-width:768px){.tagline{font-size:16px;letter-spacing:2px}}
-.pending-card .badge{
-  font-size:10px;padding:3px 10px;border-radius:20px;
-  background:rgba(85,102,119,.15);color:#556677;
-  border:1px solid rgba(85,102,119,.15);
-  display:inline-block;
-}
 
 .privacy-note{color:#556677;font-size:11px;line-height:1.7;margin-bottom:4px;text-align:center}
 
@@ -111,10 +133,11 @@ body{
 @media (max-width:768px){
   body{padding:30px 12px;justify-content:flex-start}
   .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
-  .header{margin-bottom:24px}
+  .header{margin-bottom:20px}
   .header h1{font-size:24px}
-  .header .sub{font-size:13px;margin-bottom:16px}
-  .header .intro{font-size:12px;line-height:1.8}
+  .header .sub{font-size:13px;margin-bottom:14px}
+  .motivation-table{font-size:11px}
+  .motivation-table th,.motivation-table td{padding:8px 6px;font-size:10px}
   .cards-grid{grid-template-columns:1fr;gap:14px}
   .case-card{padding:20px 16px}
   .case-card .card-icon{font-size:28px;margin-bottom:10px}
@@ -122,9 +145,7 @@ body{
   .case-card .card-subtitle{font-size:12px}
   .case-card .card-desc{font-size:12px}
   .case-card .badge{font-size:10px;padding:3px 10px}
-  .pending-card{padding:18px 14px;max-width:100%}
-  .pending-card .card-icon{font-size:24px}
-  .pending-card .card-title{font-size:14px}
+  .table-footer{font-size:10px;padding:10px 12px}
   .footer{margin-top:10px;font-size:10px}
 }
 </style>
@@ -137,56 +158,145 @@ body{
 <div class="header">
   <h1 data-i18n="transfer_hub.page_title"><span data-i18n="transfer_hub.page_title_span">迁移探索</span></h1>
   <div class="sub" data-i18n="transfer_hub.page_subtitle">NFSC+Agent 跨域应用验证</div>
-  <p class="intro" data-i18n="transfer_hub.intro">叙·框·境·创教学法、Agent辅助系统与双门户架构已在固废工程教育中验证有效。为检验其跨学科可迁移性，课题组在三个截然不同的领域进行了探索性应用，覆盖职业生存驱动与品质生活驱动两种学习动机类型，验证了同一套方法论在不同生命阶段与需求层次中的适应性。</p>
 </div>
 
+<!-- ═══════ 动机分类总表 ═══════ -->
+<div class="table-wrap">
+<table class="motivation-table">
+<thead>
+<tr>
+  <th data-i18n="transfer_hub.table_no">序号</th>
+  <th data-i18n="transfer_hub.table_case">案例</th>
+  <th data-i18n="transfer_hub.table_motivation">动机驱动</th>
+  <th data-i18n="transfer_hub.table_lifecycle">生命周期</th>
+  <th data-i18n="transfer_hub.table_essence">迁移本质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><a class="case-name" href="迁移探索-固废硕本.html">固废硕→本</a></td>
+  <td class="motive" data-i18n="transfer_hub.badge_level">教学层次驱动</td>
+  <td class="lifecycle">在职精进</td>
+  <td class="essence">NFSC 诞生 → 首次向下验证</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><a class="case-name" href="迁移探索-无人机应用技术.html">无人机</a></td>
+  <td class="motive" data-i18n="transfer_hub.badge_development">职业发展驱动</td>
+  <td class="lifecycle">职场生存</td>
+  <td class="essence">跨学科飞跃</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><a class="case-name" href="迁移探索-智能转型.html">智能转型</a></td>
+  <td class="motive" data-i18n="transfer_hub.badge_development">职业发展驱动</td>
+  <td class="lifecycle">职场进阶</td>
+  <td class="essence">跨学科扩展</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><a class="case-name" href="迁移探索-竹韵乐养.html">竹韵乐养</a></td>
+  <td class="motive" data-i18n="transfer_hub.badge_lifestyle">品质生活驱动</td>
+  <td class="lifecycle">退休生活</td>
+  <td class="essence">跨生命阶段</td>
+</tr>
+<tr class="pending">
+  <td>5</td>
+  <td><span class="case-name">初中英语</span><span class="badge-pending" data-i18n="transfer_hub.card_pending">资料收集中</span></td>
+  <td class="motive" data-i18n="transfer_hub.badge_parenting">亲子助学驱动</td>
+  <td class="lifecycle">家庭责任</td>
+  <td class="essence">跨社会角色</td>
+</tr>
+<tr class="pending">
+  <td>6</td>
+  <td><span class="case-name">初中化学</span><span class="badge-pending" data-i18n="transfer_hub.card_pending">资料收集中</span></td>
+  <td class="motive" data-i18n="transfer_hub.badge_subject">学科教学驱动</td>
+  <td class="lifecycle">本职工作</td>
+  <td class="essence">跨学段</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="table-footer" data-i18n="transfer_hub.table_footer">六类动机互不重叠，覆盖全生命周期——从职场生存到退休生活、从家庭责任到本职工作，构成 NFSC 方法论可迁移性的完整论证链。</div>
+
+<!-- ═══════ 卡片矩阵 ═══════ -->
 <div class="cards-grid">
+  <!-- Card 1: 固废硕→本 -->
+  <a class="case-card card-accent-teal" href="迁移探索-固废硕本.html">
+    <div class="card-icon">🎓</div>
+    <div class="card-title" data-i18n="transfer_hub.card0_title">固废硕→本</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card0_subtitle">同科降维·教法适配 —— NFSC方法论的首次向下验证</div>
+    <div class="card-desc" data-i18n="transfer_hub.card0_desc">叙·框·境·创教学法诞生于固体废弃物污染防治技术研究生课程。在验证其有效性后，首次向下适配至同科本科生课堂：课程设计重构、线上教学方案、模拟题库与A/B卷、毕业设计指导、大创项目孵化，形成完整的"硕→本"教学层次迁移证据链。</div>
+    <div class="card-badges">
+      <span class="badge accent" data-i18n="transfer_hub.badge_level">教学层次驱动</span>
+      <span class="badge" data-i18n="transfer_hub.card0_tags">同科·层次降维</span>
+    </div>
+  </a>
+
+  <!-- Card 2: 无人机 -->
   <a class="case-card card-accent-orange" href="迁移探索-无人机应用技术.html">
     <div class="card-icon">🔄</div>
-    <div class="card-title" data-i18n="transfer_hub.card1_title">高职师资成长</div>
-    <div class="card-subtitle" data-i18n="transfer_hub.card1_subtitle">测绘·监测·教学·研究 —— 一条无人机实践脉络的多重收敛</div>
-    <div class="card-desc" data-i18n="transfer_hub.card1_desc">大学本科阶段，无人机已进入土地测绘类课程。硕士研究生阶段及环境保护领域一线企业历练期，无人机是监测与评估缺一不可的硬件助手。博士研究生课题方向，则将叙·框·境·创方法论迁移至高职无人机教席，探索高等职业教育师生自我学习成长的教改路径。</div>
+    <div class="card-title" data-i18n="transfer_hub.card2_title">高职师资成长</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card2_subtitle">测绘·监测·教学·研究 —— 一条无人机实践脉络的多重收敛</div>
+    <div class="card-desc" data-i18n="transfer_hub.card2_desc">大学本科阶段，无人机已进入土地测绘类课程。硕士研究生阶段及环境保护领域一线企业历练期，无人机是监测与评估缺一不可的硬件助手。博士研究生课题方向，则将叙·框·境·创方法论迁移至高职无人机教席，探索高等职业教育师生自我学习成长的教改路径。</div>
     <div class="card-badges">
       <span class="badge accent" data-i18n="transfer_hub.badge_development">职业发展驱动</span>
-      <span class="badge" data-i18n="transfer_hub.badge1_tags">交叉学科·无人机主线</span>
+      <span class="badge" data-i18n="transfer_hub.badge2_tags">交叉学科·无人机主线</span>
     </div>
   </a>
 
+  <!-- Card 3: 智能转型 -->
   <a class="case-card card-accent-blue" href="迁移探索-智能转型.html">
     <div class="card-icon">🛡️</div>
-    <div class="card-title" data-i18n="transfer_hub.card2_title">传统工科AI赋能转型</div>
-    <div class="card-subtitle" data-i18n="transfer_hub.card2_subtitle">智能应急管理与智能人居环境</div>
-    <div class="card-desc" data-i18n="transfer_hub.card2_desc">面对大周期行业调整压力，80后/90后教师分别探索两个分支转型方向，将原有知识体系映射到新领域，构建跨学科课程体系</div>
+    <div class="card-title" data-i18n="transfer_hub.card3_title">传统工科AI赋能转型</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card3_subtitle">智能应急管理与智能人居环境</div>
+    <div class="card-desc" data-i18n="transfer_hub.card3_desc">面对大周期行业调整压力，80后/90后教师分别探索两个分支转型方向，将原有知识体系映射到新领域，构建跨学科课程体系</div>
     <div class="card-badges">
       <span class="badge accent" data-i18n="transfer_hub.badge_development">职业发展驱动</span>
-      <span class="badge" data-i18n="transfer_hub.badge2_tags">本科·分支转型</span>
+      <span class="badge" data-i18n="transfer_hub.badge3_tags">本科·分支转型</span>
     </div>
   </a>
 
+  <!-- Card 4: 竹韵乐养 -->
   <a class="case-card card-accent-green" href="迁移探索-竹韵乐养.html">
     <div class="card-icon">🎵</div>
-    <div class="card-title" data-i18n="transfer_hub.card3_title">花甲早闻竹</div>
-    <div class="card-subtitle" data-i18n="transfer_hub.card3_subtitle">工科半生 · 花甲初闻竹</div>
-    <div class="card-desc" data-i18n="transfer_hub.card3_desc">不谙音律、不识工尺，唯以工程师拆解复杂系统之法，将气息训练剖为腹式、口风、长音、气震诸微步骤。昼勘固废之章，夜研箫笛之谱，两不相扰而两相滋养。所成"竹韵乐养"体系，非闲情偶寄，乃一理性头脑对"所谓短板"发起的静默实验。所谓短板，只是尚未被方法论照亮的一侧。</div>
+    <div class="card-title" data-i18n="transfer_hub.card4_title">花甲早闻竹</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card4_subtitle">工科半生 · 花甲初闻竹</div>
+    <div class="card-desc" data-i18n="transfer_hub.card4_desc">不谙音律、不识工尺，唯以工程师拆解复杂系统之法，将气息训练剖为腹式、口风、长音、气震诸微步骤。昼勘固废之章，夜研箫笛之谱，两不相扰而两相滋养。所成"竹韵乐养"体系，非闲情偶寄，乃一理性头脑对"所谓短板"发起的静默实验。所谓短板，只是尚未被方法论照亮的一侧。</div>
     <div class="card-badges">
       <span class="badge accent" data-i18n="transfer_hub.badge_lifestyle">品质生活驱动</span>
-      <span class="badge" data-i18n="transfer_hub.badge3_tags">中老年·跨认知类型</span>
+      <span class="badge" data-i18n="transfer_hub.badge4_tags">中老年·跨认知类型</span>
     </div>
   </a>
-</div>
 
-<div class="tagline" data-i18n="transfer_hub.tagline">知无界，法有常。</div>
+  <!-- Card 5: 初中英语 (pending) -->
+  <div class="case-card card-pending">
+    <div class="card-icon">📖</div>
+    <div class="card-title" data-i18n="transfer_hub.card4_title">初中英语助学</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card4_subtitle">亲子助学 · 家庭场景</div>
+    <div class="card-desc" data-i18n="transfer_hub.card4_desc">在初中阶段验证NFSC方法论迁移效果：以简驭繁，以趣导学，将大学课堂的叙·框·境·创四步框架适配于初中英语课外辅导场景。</div>
+    <div class="card-badges">
+      <span class="badge accent" data-i18n="transfer_hub.badge_parenting">亲子助学驱动</span>
+      <span class="badge" data-i18n="transfer_hub.badge4_tags">初中·跨学段助学</span>
+    </div>
+  </div>
 
-<div class="pending-section">
-  <div class="pending-label" data-i18n="transfer_hub.section_pending">▾ 即将开放 ▾</div>
-  <div class="pending-card">
-    <div class="card-icon">📐</div>
-    <div class="card-info">
-      <div class="card-title" data-i18n="transfer_hub.card4_title">中小学数学助学</div>
-      <span class="badge" data-i18n="transfer_hub.badge_coming">即将开放</span>
+  <!-- Card 6: 初中化学 (pending) -->
+  <div class="case-card card-pending">
+    <div class="card-icon">🧪</div>
+    <div class="card-title" data-i18n="transfer_hub.card5_title">初中化学教学</div>
+    <div class="card-subtitle" data-i18n="transfer_hub.card5_subtitle">学科教学 · 课堂提质</div>
+    <div class="card-desc" data-i18n="transfer_hub.card5_desc">在职初中化学教师将NFSC方法论嵌入日常课堂教学，验证同一套框架从高等教育向基础教育的跨学段迁移能力。</div>
+    <div class="card-badges">
+      <span class="badge accent" data-i18n="transfer_hub.badge_subject">学科教学驱动</span>
+      <span class="badge" data-i18n="transfer_hub.badge5_tags">初中·课堂提质</span>
     </div>
   </div>
 </div>
+
+<div class="tagline" data-i18n="transfer_hub.tagline">知无界，法有常。</div>
 
 <div class="footer">
   <p class="privacy-note" data-i18n="transfer_hub.footer_privacy_cn">本页案例基于真实师生成长经历，为保护隐私，人物采用化名。所有教学数据经本人授权使用。</p>

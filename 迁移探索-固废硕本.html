@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迁移探索：固废硕→本 · 教学层次驱动的教法适配</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:#0a1628;color:#c8d6e5;min-height:100vh;
+}
+/* ── Sidebar ── */
+.sidebar{
+  position:fixed;left:0;top:0;width:220px;height:100vh;
+  background:#0d1f35;padding:30px 0;
+  border-right:1px solid rgba(91,155,213,.15);
+  display:flex;flex-direction:column;z-index:900;overflow-y:auto;
+}
+.sidebar h3{color:#1abc9c;padding:0 20px;margin-bottom:6px;font-size:16px;line-height:1.5}
+.sidebar .case-label{color:#667;font-size:10px;letter-spacing:2px;padding:0 20px 10px;text-transform:uppercase}
+.sidebar .nav-label{color:#556677;font-size:10px;letter-spacing:2px;padding:0 20px;margin-bottom:10px;text-transform:uppercase}
+.sidebar .nav-btn{
+  display:block;width:100%;padding:12px 20px;text-align:left;
+  background:none;border:none;color:#8899aa;cursor:pointer;
+  font-size:13px;transition:all .3s;border-left:3px solid transparent;
+  font-family:inherit;
+}
+.sidebar .nav-btn:hover{background:rgba(26,188,156,.08);color:#aabbcc}
+.sidebar .nav-btn.active{background:rgba(26,188,156,.12);color:#fff;border-left-color:#1abc9c}
+.sidebar .back-link{
+  display:block;padding:14px 20px;color:#5b9bd5;text-decoration:none;
+  font-size:13px;margin-top:auto;border-top:1px solid rgba(91,155,213,.1);
+  transition:color .3s;
+}
+.sidebar .back-link:hover{color:#7fb8e0}
+
+/* ── Main ── */
+.main{
+  margin-left:220px;padding:40px 50px;max-width:1100px;min-height:100vh;
+}
+.main h2{font-size:28px;color:#fff;margin-bottom:4px}
+.main h2 span{color:#1abc9c}
+.main .page-sub{color:#667;font-size:14px;margin-bottom:10px}
+
+/* ── Evidence table ── */
+.evidence-table{
+  width:100%;border-collapse:collapse;margin:20px 0 30px;
+  font-size:13px;background:rgba(13,31,53,.6);
+  border:1px solid rgba(26,188,156,.12);border-radius:8px;overflow:hidden;
+}
+.evidence-table th{
+  background:rgba(26,188,156,.12);color:#1abc9c;font-weight:600;
+  padding:10px 14px;text-align:left;font-size:12px;letter-spacing:1px;
+  border-bottom:1px solid rgba(26,188,156,.2);
+}
+.evidence-table td{
+  padding:10px 14px;color:#aabbcc;border-bottom:1px solid rgba(26,188,156,.06);
+  line-height:1.6;
+}
+.evidence-table tr:hover td{background:rgba(26,188,156,.04)}
+.evidence-table .level-tag{
+  display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;
+  font-weight:600;
+}
+.level-grad{background:rgba(52,152,219,.15);color:#3498db}
+.level-undergrad{background:rgba(26,188,156,.15);color:#1abc9c}
+
+/* ── Module cards ── */
+.module{margin-bottom:40px}
+.module h3{font-size:20px;color:#1abc9c;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(26,188,156,.15)}
+.module h3 .emoji{margin-right:8px}
+
+.card{
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);
+  border-radius:12px;padding:22px 24px;margin-bottom:16px;
+  transition:all .3s;
+}
+.card:hover{border-color:rgba(26,188,156,.3);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.card p{font-size:14px;color:#aabbcc;line-height:1.9}
+.card .highlight{color:#1abc9c;font-weight:600}
+
+/* ── Argument block ── */
+.argument{
+  background:rgba(26,188,156,.06);border:1px solid rgba(26,188,156,.15);
+  border-radius:12px;padding:24px 28px;margin:30px 0;
+}
+.argument h4{color:#1abc9c;font-size:16px;margin-bottom:12px}
+.argument p{font-size:14px;color:#c8d6e5;line-height:2}
+
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
+.footer a{color:#5b9bd5;text-decoration:none}
+
+@media (max-width:768px){
+  .sidebar{display:none}
+  .main{margin-left:0;padding:24px 16px}
+  .main h2{font-size:22px}
+  .evidence-table{font-size:11px}
+  .evidence-table th,.evidence-table td{padding:6px 8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Sidebar ── -->
+<div class="sidebar">
+  <div class="case-label">▴ 案例 1 / 6</div>
+  <h3>固废硕→本</h3>
+  <div class="nav-label">▾ 页面导航</div>
+  <button class="nav-btn active" onclick="scrollToModule('origin')">📖 方法论起源</button>
+  <button class="nav-btn" onclick="scrollToModule('evidence')">📋 迁移证据链</button>
+  <button class="nav-btn" onclick="scrollToModule('argument')">💡 方法论论证</button>
+  <button class="nav-btn" onclick="scrollToModule('context')">🔗 六卡定位</button>
+  <a class="back-link" href="迁移探索.html">◀ 返回迁移探索</a>
+</div>
+
+<!-- ── Main Content ── -->
+<div class="main">
+  <h2><span>固废硕→本</span>：教学层次驱动的教法适配</h2>
+  <p class="page-sub">同科降维 —— NFSC 方法论诞生于研究生课程，首次向下验证于本科课堂</p>
+
+  <!-- Module 1: 方法论起源 -->
+  <div class="module" id="origin">
+    <h3><span class="emoji">📖</span>方法论起源：NFSC 在研究生课程中诞生</h3>
+    <div class="card">
+      <p>叙·框·境·创（NFSC）教学法诞生于成都大学环境工程系<span class="highlight">《固体废弃物污染防治技术》</span>研究生课程。该课程以黄正文的纪实小说为叙事载体，将工程案例拆解为"叙事（Narrative）— 框架（Framework）— 场景（Scene）— 创作（Creation）"四维教学环节，通过故事化案例与场景沉浸，实现研究生从知识接收者到问题解决者的思维重塑。</p>
+      <p style="margin-top:12px">课程经过三个完整教学周期（2023–2025）的迭代验证，形成了八周思维重塑方案（理论 24 学时 + 场景沉浸 8 学时），获成都大学精品课程、省级教改重点项目、课程思政示范课程等多项认定。</p>
+    </div>
+  </div>
+
+  <!-- Module 2: 迁移证据链 -->
+  <div class="module" id="evidence">
+    <h3><span class="emoji">📋</span>向下迁移：从研究生到本科生的教法适配证据链</h3>
+
+    <table class="evidence-table">
+    <thead>
+    <tr>
+      <th>层次</th>
+      <th>适配要素</th>
+      <th>具体内容</th>
+      <th>证据文件</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span class="level-tag level-grad">硕士</span></td>
+      <td>NFSC 教学法核心</td>
+      <td>纪实小说驱动的"故事化案例-场景沉浸"教学模式；八周思维重塑方案</td>
+      <td>纪实小说云驱动的研究生课程...zip</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><span class="level-tag level-undergrad">本科</span></td>
+      <td>课程设计重构</td>
+      <td>本科固废课程设计安排及指南；2022 线上教学方案</td>
+      <td>固废课程设计安排及指南.zip<br>2022年线上教学方案.zip</td>
+    </tr>
+    <tr>
+      <td>考核体系适配</td>
+      <td>2025 秋 A/B 卷 + 参考答案 + 试卷审核表；期末复习讲义；8 套模拟题库</td>
+      <td>本科期末考试-固废.zip<br>360AI(3).zip</td>
+    </tr>
+    <tr>
+      <td><span class="level-tag level-undergrad">本科</span></td>
+      <td>毕设指导 + 创新孵化</td>
+      <td>4 名本科生毕业设计归档（王飞/符棚/黄江云/吴忠伟）；国家级/省级大创项目结题；专利产出</td>
+      <td>毕设归档材料 (1)(2).zip<br>创业训练计划结题证书.zip</td>
+    </tr>
+    <tr>
+      <td><span class="level-tag level-grad">硕+本</span></td>
+      <td>科研反哺教学</td>
+      <td>德昌县焚烧炉项目、阆中市文成镇生态规划项目</td>
+      <td>360AI(3).zip（科研结题）</td>
+    </tr>
+    </tbody>
+    </table>
+
+    <div class="card">
+      <p>向下适配遵循<span class="highlight">"保留核心——简化载体——重构考核"</span>三原则：NFSC 的四维框架完整保留；将研究生层次的深度案例讨论简化为本科生可理解的工程情境分析；考核从论文撰写拓展为 A/B 卷标准化测试 + 模拟题库训练 + 课程设计实践的多元评价体系。</p>
+    </div>
+  </div>
+
+  <!-- Module 3: 方法论论证 -->
+  <div class="module" id="argument">
+    <h3><span class="emoji">💡</span>方法论论证：为何"同科降维"是最被低估的迁移证据</h3>
+
+    <div class="argument">
+      <h4>"灯下黑"—— 最近处最易被忽略</h4>
+      <p>在 6 张迁移探索卡片中，唯有本卡涉及<span class="highlight">零学科跨度</span>的迁移。正因为"同一个老师、同一门课、从研究生教到本科生"看起来理所当然，它恰恰成为最容易被忽略的论证环节。</p>
+    </div>
+
+    <div class="argument" style="margin-top:16px">
+      <h4>对审稿人最刁钻问题的回答</h4>
+      <p>若审稿人追问："你的 NFSC 方法论到底是因为换了学科才显得有效，还是方法本身在任何教学层次都有效？"—— 无人机/智能转型卡证明了<span class="highlight">跨学科</span>可迁移，而固废本卡证明了<span class="highlight">跨层次</span>可迁移。两者叠加构成方法论鲁棒性的双重证据。</p>
+    </div>
+
+    <div class="argument" style="margin-top:16px">
+      <h4>完整证据链</h4>
+      <p>NFSC 诞生于研究生课程（起源）→ 向下适配本科（本卡）→ 向外扩展无人机/智能转型（跨学科）→ 延伸至竹韵乐养（跨生命阶段）→ 覆盖初中英语/化学（跨社会角色 + 跨学段）。六卡共同构成"一套方法论，全生命周期验证"的闭环论证。</p>
+    </div>
+  </div>
+
+  <!-- Module 4: 六卡定位 -->
+  <div class="module" id="context">
+    <h3><span class="emoji">🔗</span>六卡定位：起源 → 扩展</h3>
+    <div class="card">
+      <p style="margin-bottom:10px">固废本卡作为第 <span class="highlight">1</span> 张（方法论起源），其余 5 卡形成"起源→扩展"的叙事弧：</p>
+      <p style="color:#667;font-size:13px;line-height:2.2">
+        ① 固废硕→本（<span style="color:#1abc9c">教学层次驱动</span>：NFSC 诞生 → 首次向下验证）<br>
+        ② 无人机（<span style="color:#e67e22">职业发展驱动</span>：跨学科飞跃）<br>
+        ③ 智能转型（<span style="color:#e67e22">职业发展驱动</span>：跨学科扩展）<br>
+        ④ 竹韵乐养（<span style="color:#2ecc71">品质生活驱动</span>：跨生命阶段）<br>
+        ⑤ 初中英语（亲子助学驱动：跨社会角色）<br>
+        ⑥ 初中化学（学科教学驱动：跨学段）
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p style="color:#556677;font-size:11px;line-height:1.7">本页案例基于真实师生成长经历，为保护隐私，人物采用化名。所有教学数据经本人授权使用。</p>
+    <p style="margin-top:8px">© 黄正文（点暇斋）· 全部作品版权登记</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var navBtns = document.querySelectorAll('.sidebar .nav-btn');
+  var modules = document.querySelectorAll('.module');
+
+  function updateActiveNav(){
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var currentId = '';
+    modules.forEach(function(m){
+      if(m.getBoundingClientRect().top <= 140) currentId = m.id;
+    });
+    navBtns.forEach(function(btn){
+      var target = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+      btn.classList.toggle('active', target === currentId);
+    });
+  }
+
+  window.scrollToModule = function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    navBtns.forEach(function(btn){
+      var target = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+      btn.classList.toggle('active', target === id);
+    });
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  window.addEventListener('scroll', updateActiveNav, {passive:true});
+
+  navBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+      navBtns.forEach(function(b){b.classList.toggle('active',b===btn);});
+      var el = document.getElementById(target);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
