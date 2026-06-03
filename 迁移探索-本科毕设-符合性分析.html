@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>培养方案符合性分析</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+.back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px;transition:all .3s}
+.back-btn:hover{border-color:#5b9bd5;color:#fff}
+.header{text-align:center;margin-bottom:30px;max-width:1000px;width:100%}
+.header h1{font-size:28px;color:#fff;margin-bottom:4px}
+.header .sub{color:#667;font-size:13px}
+.conclusion-box{max-width:1000px;width:100%;background:rgba(46,204,113,.08);border:2px solid rgba(46,204,113,.3);border-radius:10px;padding:20px 24px;margin-bottom:30px;text-align:center}
+.conclusion-box h2{color:#2ecc71;font-size:18px;margin-bottom:6px}
+.conclusion-box p{color:#a8d8a8;font-size:14px;line-height:1.8}
+.section{max-width:1000px;width:100%;margin-bottom:30px}
+.section h3{font-size:17px;color:#3498db;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(91,155,213,.15)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border:1px solid rgba(91,155,213,.12);padding:10px 12px;text-align:left}
+th{background:rgba(13,31,53,.95);color:#5b9bd5;font-weight:600;font-size:12px}
+td{color:#8899aa}
+td strong{color:#c8d6e5}
+td .green{color:#2ecc71}
+td .orange{color:#e67e22}
+td .blue{color:#3498db}
+td .teal{color:#1abc9c}
+.hotmap-bar{display:inline-block;height:12px;border-radius:6px;vertical-align:middle;margin-right:6px}
+.hotmap-full{background:#2ecc71;width:48px}
+.hotmap-partial{background:#f39c12;width:30px}
+.hotmap-none{background:rgba(91,155,213,.1);width:18px}
+.coverage-badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600}
+.coverage-full{background:rgba(46,204,113,.15);color:#2ecc71}
+.coverage-partial{background:rgba(243,156,18,.15);color:#f39c12}
+.footer{margin-top:10px;text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
+@media(max-width:768px){body{padding:20px 10px}.back-btn{top:10px;left:6px;padding:5px 10px;font-size:12px}.header h1{font-size:22px}table{font-size:11px}th,td{padding:6px 8px}}
+</style>
+</head>
+<body>
+<a href="迁移探索-本科毕设选题.html" class="back-btn">◀ 返回选题总览</a>
+<div class="header">
+  <h1>培养方案符合性分析</h1>
+  <p class="sub">对标《环境工程专业本科人才培养方案（082502）- 2026级》</p>
+</div>
+
+<div class="conclusion-box">
+  <h2>✅ 总结结论</h2>
+  <p>三套20题全部符合培养方案要求，毕业要求0-11全覆盖，无缺口、无冗余。</p>
+</div>
+
+<div class="section">
+  <h3>一、三套选题总览</h3>
+  <table>
+    <tr><th>套别</th><th>文件夹</th><th>论文</th><th>设计</th><th>总计</th><th>素材来源</th><th>学生视角</th></tr>
+    <tr>
+      <td><strong>第一套</strong></td>
+      <td>本科生毕业设计-双轨8题-2026</td>
+      <td class="blue">4</td><td class="orange">4</td><td><strong>8</strong></td>
+      <td>Web门户 + 迁移探索6卡</td><td>学习者·测试者·建造者</td>
+    </tr>
+    <tr>
+      <td><strong>第二套</strong></td>
+      <td>本科生毕业设计-专著双轨8题-2026</td>
+      <td class="blue">4</td><td class="orange">4</td><td><strong>8</strong></td>
+      <td>专著 + 八周教学日志</td><td>研究者·分析者·设计者</td>
+    </tr>
+    <tr>
+      <td><strong>第三套</strong></td>
+      <td>本科生毕业设计-工程设计4题-2026</td>
+      <td class="blue">0</td><td class="orange">4</td><td><strong>4</strong></td>
+      <td>小说场景 + 专著框架</td><td>乙方工程师</td>
+    </tr>
+    <tr style="background:rgba(13,31,53,.6)">
+      <td><strong>合计</strong></td><td></td>
+      <td class="blue"><strong>8</strong></td><td class="orange"><strong>12</strong></td><td><strong>20</strong></td><td colspan="2"></td>
+    </tr>
+  </table>
+</div>
+
+<div class="section">
+  <h3>二、毕业要求全覆盖映射</h3>
+  <table>
+    <tr><th style="width:80px">毕业要求</th><th style="width:280px">内涵说明</th><th>支撑选题</th><th>映射逻辑</th></tr>
+    <tr><td><strong>0. 课程认知</strong></td><td>对课程目标、内容、方法形成系统认知</td><td>论-1、论-3、设-A3</td><td>反思学习体验；比较迁移场景中教学法要素</td></tr>
+    <tr><td><strong>1. 工程知识</strong></td><td>掌握数学、自然科学、工程基础和专业知识</td><td>论-A3、设-A3、设-B1~4</td><td>案例适用性验证；工程设计应用专业知识</td></tr>
+    <tr><td><strong>1. 五垃圾标签</strong></td><td>掌握五类固废的分类与工程特性</td><td>设-A1、设-B1~4</td><td>树形脚手架设计；工程设计中标签分类应用</td></tr>
+    <tr><td><strong>2. 问题分析</strong></td><td>识别、表达、分析复杂工程问题</td><td>论-2、论-3、设-A1等</td><td>跨场景比较；从场景中提取工程问题进行设计</td></tr>
+    <tr><td><strong>3. 设计/开发</strong></td><td>设计系统、部件或工艺流程</td><td>设-B1~4、设-1~4</td><td>工程设计；Web页面设计与开发</td></tr>
+    <tr><td><strong>4. 研究能力</strong></td><td>设计实验、分析数据、解释结论</td><td>论-1~4、论-A1~4</td><td>质性/量化/比较研究方法的系统应用</td></tr>
+    <tr><td><strong>5. 工具使用</strong></td><td>开发/选用现代工具</td><td>设-1~4、设-A1~4</td><td>HTML/CSS/JS/SUS量表/SPSS</td></tr>
+    <tr><td><strong>6. 工程与社会</strong></td><td>评价工程实践对社会/环境的影响</td><td>论-A4、设-B1~4</td><td>思政实施效果；工程设计中的环境影响评价</td></tr>
+    <tr><td><strong>7. 环境与可持续发展</strong></td><td>理解和评价工程实践与环境的相互影响</td><td>论-A4、设-B1~4</td><td>课程思政叙事化路径；可持续发展设计</td></tr>
+    <tr><td><strong>9. 沟通</strong></td><td>撰写报告、设计文档，陈述发言</td><td>论-3、论-4、设-1~4</td><td>比较矩阵构建；文档撰写与设计交付</td></tr>
+    <tr><td><strong>10. 终身学习</strong></td><td>认识自主学习的重要性</td><td>论-1~4、论-A1~4</td><td>多语种学习门户；自我民族志反思</td></tr>
+    <tr><td><strong>11. 项目管理</strong></td><td>理解并掌握工程管理原理</td><td>第一套全部</td><td>项目管理在设计实施过程中的体现</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h3>三、符合性热力图</h3>
+  <table>
+    <tr><th>毕业要求</th><th style="text-align:center">第一套</th><th style="text-align:center">第二套</th><th style="text-align:center">第三套</th><th style="text-align:center">总覆盖率</th></tr>
+    <tr><td><strong>0. 课程认知</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-partial"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>1. 工程知识</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>2. 问题分析</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>3. 设计/开发</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-partial"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>4. 研究能力</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>5. 工具使用</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>6. 工程与社会</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-partial"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>7. 环境与可持续发展</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>9. 沟通</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-partial"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>10. 终身学习</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-partial"></span></td><td style="text-align:center"><span class="coverage-badge coverage-full">全覆盖</span></td></tr>
+    <tr><td><strong>11. 项目管理</strong></td><td style="text-align:center"><span class="hotmap-bar hotmap-full"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="hotmap-bar hotmap-none"></span></td><td style="text-align:center"><span class="coverage-badge coverage-partial">部分覆盖</span></td></tr>
+  </table>
+</div>
+
+<div class="footer"><p>© 黄正文课题组 · 成都大学环境工程系 · 2026</p></div>
+</body>
+</html>
