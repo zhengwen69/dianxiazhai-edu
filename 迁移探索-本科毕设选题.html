@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本科生毕业设计选题 · 双轨8题</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+  background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
+  color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;padding:40px 20px;
+}
+
+.back-btn{
+  position:fixed;top:20px;left:20px;z-index:1000;
+  padding:8px 16px;border-radius:8px;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);
+  color:#7fb8e0;text-decoration:none;font-size:14px;
+  transition:all .3s;user-select:none;
+}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+
+.header{text-align:center;margin-bottom:30px;max-width:1000px;width:100%}
+.header h1{font-size:32px;color:#fff;margin-bottom:6px}
+.header h1 span{color:#1abc9c}
+.header .sub{color:#667;font-size:14px;margin-bottom:20px;line-height:1.8}
+
+/* ── Section label ── */
+.section-label{
+  max-width:1000px;width:100%;text-align:center;
+  color:#5b9bd5;font-size:18px;font-weight:600;letter-spacing:2px;
+  padding:20px 0 14px;border-top:1px solid rgba(91,155,213,.1);
+}
+.section-label:first-of-type{border-top:none}
+
+/* ── Topic card ── */
+.topic-card{
+  max-width:1000px;width:100%;
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);
+  border-radius:12px;padding:24px 28px;margin-bottom:14px;
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.topic-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  border-radius:12px 0 0 12px;
+}
+.topic-card:hover{border-color:rgba(91,155,213,.25);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.topic-card .card-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.topic-card .card-num{font-size:24px;font-weight:700}
+.topic-card .card-title{font-size:17px;font-weight:600;color:#e8e8e8;flex:1;line-height:1.5}
+.topic-card .card-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.topic-card .badge{
+  font-size:11px;padding:3px 10px;border-radius:20px;
+  white-space:nowrap;
+}
+.topic-card .card-desc{font-size:13px;color:#8899aa;line-height:1.8}
+
+/* Accent colors */
+.thesis::before{background:#3498db}
+.thesis .card-num{color:#3498db}
+.thesis .badge.accent{background:rgba(52,152,219,.15);border:1px solid rgba(52,152,219,.25);color:#3498db}
+.thesis .badge.tag{background:rgba(52,152,219,.06);border:1px solid rgba(52,152,219,.1);color:#7fb8e0}
+
+.design::before{background:#e67e22}
+.design .card-num{color:#e67e22}
+.design .badge.accent{background:rgba(230,126,34,.15);border:1px solid rgba(230,126,34,.25);color:#e67e22}
+.design .badge.tag{background:rgba(230,126,34,.06);border:1px solid rgba(230,126,34,.1);color:#f0c78e}
+
+/* ── Download section ── */
+.download-section{
+  max-width:1000px;width:100%;margin-top:24px;
+  background:rgba(26,188,156,.05);border:1px solid rgba(26,188,156,.15);
+  border-radius:12px;padding:20px 24px;text-align:center;
+}
+.download-section h3{color:#1abc9c;font-size:16px;margin-bottom:10px}
+.download-section p{color:#8899aa;font-size:13px;line-height:1.8}
+.download-section .file-link{
+  display:inline-block;margin:4px 8px;padding:6px 14px;
+  background:rgba(26,188,156,.1);border:1px solid rgba(26,188,156,.2);
+  border-radius:8px;color:#1abc9c;text-decoration:none;
+  font-size:12px;transition:all .3s;
+}
+.download-section .file-link:hover{background:rgba(26,188,156,.2);color:#fff}
+
+.footer{margin-top:30px;text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
+.footer a{color:#5b9bd5;text-decoration:none}
+
+@media (max-width:768px){
+  body{padding:24px 12px}
+  .back-btn{top:10px;left:8px;padding:6px 10px;font-size:12px}
+  .header h1{font-size:22px}
+  .header .sub{font-size:12px}
+  .topic-card{padding:16px 14px}
+  .topic-card .card-title{font-size:15px}
+  .topic-card .card-desc{font-size:12px}
+  .section-label{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<a href="迁移探索.html" class="back-btn">◀ 返回迁移探索</a>
+
+<div class="header">
+  <h1>环境工程专业 · <span>本科生毕业设计选题</span></h1>
+  <p class="sub">双轨8题：🧪 论文系列 4 题 × 🔧 设计系列 4 题<br>全部选题依托课题组已有素材池，学生以学习者/验证者/设计者视角独立完成，5周可闭环</p>
+</div>
+
+<!-- ═══════ 论文系列 ═══════ -->
+<div class="section-label">🧪 论文系列 (Thesis Track) — 4 题</div>
+
+<div class="topic-card thesis">
+  <div class="card-header">
+    <span class="card-num">论-1</span>
+    <span class="card-title">环境工程专业固废课程中纪实小说辅助学习的认知体验初探</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🧪 毕业论文</span>
+    <span class="badge tag">质性研究</span>
+    <span class="badge tag">自我民族志 + 半结构化访谈</span>
+    <span class="badge tag">5-8人</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>固废课堂的学习者反思者。以自身8周学习日志和5-8名同学访谈数据，探索纪实小说作为辅助学习材料在认知过程中扮演的角色。<strong>已有素材：</strong>7部长篇小说全文、课程大纲、NFSC教学法文档。</p>
+</div>
+
+<div class="topic-card thesis">
+  <div class="card-header">
+    <span class="card-num">论-2</span>
+    <span class="card-title">环境工程专业固废课程学习门户可用性评价研究</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🧪 毕业论文</span>
+    <span class="badge tag">量化研究</span>
+    <span class="badge tag">SUS/TAM 问卷</span>
+    <span class="badge tag">15-20份</span>
+    <span class="badge tag">SPSS</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>学习系统的用户测试者。定制SUS可用性量表+TAM技术接受模型问卷，发放15-20份，完成统计分析。<strong>已有素材：</strong>固废课程学习子门户、问卷模板、Agent辅助系统。</p>
+</div>
+
+<div class="topic-card thesis">
+  <div class="card-header">
+    <span class="card-num">论-3</span>
+    <span class="card-title">环境工程专业固废课程 NFSC 教学法要素在迁移场景中的呈现比较分析</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🧪 毕业论文</span>
+    <span class="badge tag">定性比较分析</span>
+    <span class="badge tag">多案例</span>
+    <span class="badge tag">6卡素材</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>跨场景的观察比较者。从6个迁移场景中系统提取NFSC四要素，构建比较矩阵，归纳要素保留与变异的规律。<strong>已有素材：</strong>迁移探索6卡详情页、教学日志、课程设计文档。</p>
+</div>
+
+<div class="topic-card thesis">
+  <div class="card-header">
+    <span class="card-num">论-4</span>
+    <span class="card-title">环境工程专业固废课程多语种学习门户无障碍性研究</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🧪 毕业论文</span>
+    <span class="badge tag">启发式评估</span>
+    <span class="badge tag">Nielsen 10原则</span>
+    <span class="badge tag">8语种</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>国际化适配的评估者。对照Nielsen 10项启发式原则逐页评估8语种门户，核对翻译完整性与准确性。<strong>已有素材：</strong>8语种HTML门户、i18n JSON语言包、Nielsen评估量表模板。</p>
+</div>
+
+<!-- ═══════ 设计系列 ═══════ -->
+<div class="section-label">🔧 设计系列 (Design Track) — 4 题</div>
+
+<div class="topic-card design">
+  <div class="card-header">
+    <span class="card-num">设-1</span>
+    <span class="card-title">环境工程专业固废浏览页——迁移探索 Pending 详情页的设计</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🔧 毕业设计</span>
+    <span class="badge tag">HTML + CSS + JS</span>
+    <span class="badge tag">i18n 国际化</span>
+    <span class="badge tag">2个页面</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>前端设计者。补全迁移探索6卡体系中2个Pending卡片的详情页，遵循现有深色主题模板风格，接入8语种i18n框架。<strong>已有素材：</strong>迁移探索枢纽页模板、4个已完成的详情页源码、i18n.js框架。</p>
+</div>
+
+<div class="topic-card design">
+  <div class="card-header">
+    <span class="card-num">设-2</span>
+    <span class="card-title">环境工程专业固废浏览页——NFSC 方法论时间线的设计</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🔧 毕业设计</span>
+    <span class="badge tag">HTML + CSS + JS</span>
+    <span class="badge tag">时间线交互</span>
+    <span class="badge tag">i18n</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>信息架构设计者。梳理NFSC方法论从2023年诞生到2026年6卡迁移的完整时间节点，设计纵轴交互时间线页。<strong>已有素材：</strong>6卡素材、教学日志、课程大纲、P1论文。</p>
+</div>
+
+<div class="topic-card design">
+  <div class="card-header">
+    <span class="card-num">设-3</span>
+    <span class="card-title">环境工程专业固废浏览页——小说-教学法映射可视化的设计</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🔧 毕业设计</span>
+    <span class="badge tag">HTML + CSS Grid + JS</span>
+    <span class="badge tag">交互矩阵</span>
+    <span class="badge tag">i18n</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>内容可视化设计者。构建"7部小说×8周课程×4种错配"三维映射矩阵，实现支持按类型筛选的交互式可视化页。<strong>已有素材：</strong>7部长篇目录、课程大纲、错配-修复框架文档。</p>
+</div>
+
+<div class="topic-card design">
+  <div class="card-header">
+    <span class="card-num">设-4</span>
+    <span class="card-title">环境工程专业固废课题组育人成果展示浏览页的设计</span>
+  </div>
+  <div class="card-meta">
+    <span class="badge accent">🔧 毕业设计</span>
+    <span class="badge tag">HTML + CSS Grid + JS</span>
+    <span class="badge tag">作品集</span>
+    <span class="badge tag">分类筛选</span>
+    <span class="badge tag">i18n</span>
+  </div>
+  <p class="card-desc"><strong>学生人设：</strong>作品集设计者。汇聚课题组毕设/大创/专利/竞赛等育人成果，设计支持标签分类筛选与详情展开的交互式作品集展示页。<strong>已有素材：</strong>毕设归档材料、大创证书、专利清单、竞赛成果。</p>
+</div>
+
+<!-- ═══════ 下载区 ═══════ -->
+<div class="download-section">
+  <h3>📥 选题资料下载</h3>
+  <p>每道题均配备：开题报告模板、中期报告模板、论文/设计大纲。学生选定后联系指导教师获取。</p>
+  <a class="file-link" href="#">📄 开题报告模板（论文系列）</a>
+  <a class="file-link" href="#">📄 开题报告模板（设计系列）</a>
+  <a class="file-link" href="#">📋 中期报告模板（通用）</a>
+  <a class="file-link" href="#">📐 论文大纲模板</a>
+  <a class="file-link" href="#">🖥️ 设计大纲模板</a>
+  <p style="margin-top:14px;color:#556677;font-size:11px">全部模板文件位于 本科生毕业设计-双轨8题-2026/ 目录中。宪法红线：正文提及小说时使用笔名公式，版权行保留课题组署名。</p>
+</div>
+
+<div class="footer">
+  <p style="color:#556677;font-size:11px;line-height:1.7">本页选题基于课题组真实教改成果。学生独立完成的研究/设计工作，指导教师提供素材与方法论框架。</p>
+  <p style="margin-top:8px">© 黄正文课题组 · 成都大学环境工程系 · 2026</p>
+</div>
+
+</body>
+</html>
