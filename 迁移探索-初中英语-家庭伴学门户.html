@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-protect="full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,25 @@ tr:hover td{background:rgba(155,89,182,.04)}
 .sample-box{background:rgba(0,0,0,.2);border-radius:8px;padding:18px;margin-top:10px;font-size:12px;color:#aabbcc;line-height:1.8}
 
 .footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
-@media(max-width:768px){.sidebar{display:none}.main{margin-left:0;padding:24px 16px}.main h2{font-size:22px}}
+/* Mobile hamburger menu */
+.mobile-nav-toggle{display:none;position:fixed;top:12px;left:12px;z-index:1000;width:40px;height:40px;background:rgba(155,89,182,.15);border:1px solid rgba(155,89,182,.25);border-radius:8px;color:#9b59b6;font-size:20px;cursor:pointer}
+.sidebar.open{transform:translateX(0)}
+.mobile-nav-toggle.open{left:232px}
+@media(max-width:768px){
+  .mobile-nav-toggle{display:flex;align-items:center;justify-content:center}
+  .sidebar{transform:translateX(-240px);transition:transform .3s}
+  .main{margin-left:0;padding:50px 16px 24px}
+  .main h2{font-size:22px}
+  .main .page-sub{font-size:12px;margin-bottom:20px}
+  .legal-top{font-size:10px;padding:8px 12px}
+  .module h3{font-size:16px}
+  .card{padding:14px 16px}
+  .card p{font-size:12px;line-height:1.7}
+  table{font-size:11px;display:block;overflow-x:auto}
+  th,td{padding:8px 6px;white-space:nowrap}
+  .sample-box{font-size:10px;padding:12px}
+  .footer{font-size:10px}
+}
 @media print{body{display:none}}
 </style>
 </head>
@@ -56,6 +74,7 @@ tr:hover td{background:rgba(155,89,182,.04)}
 </div>
 
 <div class="main">
+  <button class="mobile-nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open');this.classList.toggle('open')">☰</button>
   <h2><span>初中英语</span> · 家庭伴学门户</h2>
   <p class="page-sub">五年陪伴（2021-2026），覆盖七年级至九年级完整初中周期<br>一间书房、一位家长、一份英语学科背景——全部的资源条件</p>
   <div class="legal-top">⚠ 本页面系<strong>家庭成员内部学习记录</strong>展示，不涉及学科培训。素材受版权保护，禁止复制、下载、转载。</div>
@@ -184,9 +203,10 @@ tr:hover td{background:rgba(155,89,182,.04)}
     });
   });
 })();
-document.addEventListener('contextmenu',function(e){e.preventDefault()});
+
 document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
-document.addEventListener('dragstart',function(e){e.preventDefault()});
+
 </script>
+  <script src="js/protect-content.js"></script>
 </body>
 </html>

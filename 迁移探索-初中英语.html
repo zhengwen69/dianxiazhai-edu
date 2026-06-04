@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-protect="full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -230,12 +230,13 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
 </script>
 <script>
 // Anti-copy protection
-document.addEventListener('contextmenu', function(e){e.preventDefault()});
+
 document.addEventListener('keydown', function(e){
   if(e.ctrlKey && ['c','s','p','u','a'].includes(e.key)) e.preventDefault();
   if(e.key==='F12') e.preventDefault();
 });
-document.addEventListener('dragstart', function(e){e.preventDefault()});
+
 </script>
+  <script src="js/protect-content.js"></script>
 </body>
 </html>

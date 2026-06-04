@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-protect="full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gr
 .back-link{color:#5b9bd5;text-decoration:none;font-size:13px;margin-bottom:20px;transition:color .3s}
 .back-link:hover{color:#7fb8e0}
 .footer{text-align:center;color:#445;font-size:12px;padding-bottom:20px}
-@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:22px}.cards{flex-direction:column}.card{padding:24px 18px}.card-left .card-emoji,.card-right .card-emoji{font-size:36px}}
+@media(max-width:768px){body{padding:20px 12px;justify-content:flex-start}.legal-banner{font-size:10px;padding:8px 12px;margin-bottom:20px}.header .emoji{font-size:36px;margin-bottom:8px}.header h1{font-size:22px}.header .en{font-size:11px}.header .tagline{font-size:12px}.cards{flex-direction:column;gap:16px}.card{padding:24px 16px;min-width:auto}.card-left .card-emoji,.card-right .card-emoji{font-size:36px}.card-left .card-title,.card-right .card-title{font-size:18px}.card-left .card-sub,.card-right .card-sub{font-size:12px}.card-left .card-desc,.card-right .card-desc{font-size:11px}.card .arrow{padding:7px 18px;font-size:11px}.tagline-bottom{font-size:16px;padding:14px 0 10px}.sub-footer{font-size:10px}.legal-footer{font-size:9px;padding:10px 12px}.legal-footer h4{font-size:10px}.back-link{font-size:11px}.footer{font-size:10px}}
 @media print{body{display:none}}
 </style>
 </head>
@@ -90,10 +90,7 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gr
 
 <div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
 
-<script>
-document.addEventListener('contextmenu',function(e){e.preventDefault()});
-document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
-document.addEventListener('dragstart',function(e){e.preventDefault()});
-</script>
+
+  <script src="js/protect-content.js"></script>
 </body>
 </html>
