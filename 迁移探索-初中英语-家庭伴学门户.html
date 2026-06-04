@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初中英语 · 家庭伴学门户</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;color:#c8d6e5;min-height:100vh}
+.sidebar{position:fixed;left:0;top:0;width:220px;height:100vh;background:#0d1f35;padding:30px 0;border-right:1px solid rgba(91,155,213,.15);display:flex;flex-direction:column;z-index:900;overflow-y:auto}
+.sidebar h3{color:#9b59b6;padding:0 20px;margin-bottom:6px;font-size:16px;line-height:1.5}
+.sidebar .nav-label{color:#556677;font-size:10px;letter-spacing:2px;padding:0 20px;margin-bottom:10px}
+.sidebar .nav-btn{display:block;width:100%;padding:12px 20px;text-align:left;background:none;border:none;color:#8899aa;cursor:pointer;font-size:13px;transition:all .3s;border-left:3px solid transparent;font-family:inherit}
+.sidebar .nav-btn:hover{background:rgba(155,89,182,.08);color:#aabbcc}
+.sidebar .nav-btn.active{background:rgba(155,89,182,.12);color:#fff;border-left-color:#9b59b6}
+.sidebar .back-link{display:block;padding:14px 20px;color:#5b9bd5;text-decoration:none;font-size:13px;margin-top:auto;border-top:1px solid rgba(91,155,213,.1)}
+.sidebar .back-link:hover{color:#7fb8e0}
+.main{margin-left:220px;padding:40px 50px;max-width:1100px;min-height:100vh}
+.main h2{font-size:28px;color:#fff;margin-bottom:4px}
+.main h2 span{color:#9b59b6}
+.main .page-sub{color:#667;font-size:14px;margin-bottom:30px;line-height:1.6}
+.legal-top{color:#e91e63;font-size:11px;margin-bottom:30px;padding:10px 16px;border:1px solid rgba(233,30,99,.12);border-radius:8px;background:rgba(233,30,99,.03);line-height:1.6}
+.module{margin-bottom:40px}
+.module h3{font-size:20px;color:#9b59b6;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(155,89,182,.15)}
+.module h3 .emoji{margin-right:8px}
+.card{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:12px;padding:22px 24px;margin-bottom:16px;transition:all .3s}
+.card:hover{border-color:rgba(155,89,182,.3)}
+.card p{font-size:14px;color:#aabbcc;line-height:1.9}
+.card .highlight{color:#9b59b6;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th,td{padding:12px 14px;text-align:left;border:1px solid rgba(91,155,213,.1)}
+th{background:rgba(155,89,182,.1);color:#9b59b6;font-weight:600;font-size:12px;letter-spacing:1px}
+td{color:#aabbcc;line-height:1.7}
+tr:hover td{background:rgba(155,89,182,.04)}
+
+.protected{-webkit-user-select:none;-moz-user-select:none;user-select:none;position:relative}
+.protected::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(233,30,99,.015) 80px,rgba(233,30,99,.015) 82px);pointer-events:none;z-index:10}
+.sample-box{background:rgba(0,0,0,.2);border-radius:8px;padding:18px;margin-top:10px;font-size:12px;color:#aabbcc;line-height:1.8}
+
+.footer{margin-top:40px;text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
+@media(max-width:768px){.sidebar{display:none}.main{margin-left:0;padding:24px 16px}.main h2{font-size:22px}}
+@media print{body{display:none}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <h3>初中英语伴学</h3>
+  <div class="nav-label">▾ 页面导航</div>
+  <button class="nav-btn active" onclick="scrollToModule('overview')">📖 迁移概览</button>
+  <button class="nav-btn" onclick="scrollToModule('timeline')">📋 五年历程</button>
+  <button class="nav-btn" onclick="scrollToModule('catalog')">📚 素材体系</button>
+  <button class="nav-btn" onclick="scrollToModule('samples')">🔒 核心浏览</button>
+  <button class="nav-btn" onclick="scrollToModule('mapping')">💡 方法论映射</button>
+  <button class="nav-btn" onclick="scrollToModule('legal')">📜 使用声明</button>
+  <a class="back-link" href="CDU-English/">◀ 返回独立门户</a>
+</div>
+
+<div class="main">
+  <h2><span>初中英语</span> · 家庭伴学门户</h2>
+  <p class="page-sub">五年陪伴（2021-2026），覆盖七年级至九年级完整初中周期<br>一间书房、一位家长、一份英语学科背景——全部的资源条件</p>
+  <div class="legal-top">⚠ 本页面系<strong>家庭成员内部学习记录</strong>展示，不涉及学科培训。素材受版权保护，禁止复制、下载、转载。</div>
+
+  <div class="module" id="overview">
+    <h3><span class="emoji">📖</span>迁移概览</h3>
+    <div class="card">
+      <p>NFSC（叙·框·境·创）教学法在工科研究生课程中经三轮验证后，引发了一个追问：这套方法论能否在<span class="highlight">非制度化的家庭学习场景</span>中发挥作用？本案例的实践者是一位<span class="highlight">具备英语学科背景的家长</span>。TA将四维框架从大学讲台迁移至家庭书桌，用工程师拆解复杂系统的方式拆解初中英语知识体系——语法是"框架"、课文是"叙事"、真题是"场景"、自主命题是"创造"。</p>
+    </div>
+  </div>
+
+  <div class="module" id="timeline">
+    <h3><span class="emoji">📋</span>五年历程（2021 → 2026）</h3>
+    <table>
+    <thead><tr><th>年份</th><th>年级</th><th>讲义/课件</th><th>练习检测</th><th>真题卷</th><th>阶段特征</th></tr></thead>
+    <tbody>
+    <tr><td>2021</td><td>7-8</td><td>12套</td><td>16组</td><td>—</td><td>初期探索：单元讲义+语法梳理</td></tr>
+    <tr><td>2022</td><td>9</td><td>13套</td><td>—</td><td>—</td><td>九年级系统梳理（U11-14）</td></tr>
+    <tr><td>2024</td><td>7-9</td><td>20+套</td><td>12组</td><td>8套</td><td>引入成都市重点初中真题</td></tr>
+    <tr><td>2025</td><td>7-9</td><td>40+套</td><td>30+组</td><td>6套</td><td>新人教版新教材适配 + 四维词汇包</td></tr>
+    <tr><td>2026</td><td>7-9</td><td>15+套</td><td>10组</td><td>15+套</td><td>六城区一诊 + 电子课本 + 必刷题</td></tr>
+    </tbody>
+    </table>
+    <p style="color:#667;font-size:11px;margin-top:6px">注：以上系家庭成员内部学习记录，非商业培训资料。</p>
+  </div>
+
+  <div class="module" id="catalog">
+    <h3><span class="emoji">📚</span>素材体系（四大类）</h3>
+    <table>
+    <thead><tr><th>类别</th><th>子项</th><th>规模</th><th>覆盖范围</th></tr></thead>
+    <tbody>
+    <tr><td>📖 单元讲义</td><td>学生版+教师版双版本，每单元Section A/B各一</td><td>32套</td><td>2025新教材 Unit 1-8 全套</td></tr>
+    <tr><td>📝 语法体系</td><td>时态·语态·从句·词法·句型五大专题</td><td>15+专题</td><td>7-9全年级梯度递进</td></tr>
+    <tr><td>📊 真题卷</td><td>成都市重点初中七/八/九年级期末+六城区初三一诊</td><td>23+套</td><td>2024-2026多区覆盖</td></tr>
+    <tr><td>🔤 单词默写</td><td>四维体系（背诵版·音标版·中译英·英译中）</td><td>32组</td><td>Unit 1-8 全单元 + 小学/初中分层</td></tr>
+    <tr><td>📦 同步练习</td><td>每课时配套，具体到Section级别</td><td>40+套</td><td>同步课堂教学进度</td></tr>
+    </tbody>
+    </table>
+  </div>
+
+  <div class="module protected" id="samples">
+    <h3><span class="emoji">🔒</span>核心浏览（保护模式·仅供在线浏览）</h3>
+
+    <!-- 讲义样例 -->
+    <div class="card">
+      <h4 style="color:#9b59b6;margin-bottom:8px">📖 2025新人教版新教材讲义（Unit 1-8 双版本）</h4>
+      <table><thead><tr><th>单元</th><th>主题</th><th>Section A</th><th>Section B</th></tr></thead>
+      <tbody>
+      <tr><td>Unit 1</td><td>Animal Friends</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 2</td><td>No Rules, No Order</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 3</td><td>Keep Fit</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 4</td><td>Eat Well</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 5</td><td>Here and Now</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 6</td><td>Rain or Shine</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 7</td><td>A Day to Remember</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      <tr><td>Unit 8</td><td>Once Upon a Time</td><td>学生版+教师版</td><td>学生版+教师版</td></tr>
+      </tbody></table>
+    </div>
+
+    <!-- 语法样例 -->
+    <div class="sample-box">
+      <span class="highlight">语法专题示范：</span>时态体系（一般现在时→一般过去时→现在进行时→过去进行时→现在完成时）按年级梯度递进；从句体系（状语从句·时间/条件/原因/让步）在八年级引入；语态体系（被动语态）在九年级完成。每专题含：知识点梳理→典型例题→常见错误→巩固练习四段结构。
+    </div>
+
+    <!-- 真题样例 -->
+    <div class="sample-box" style="margin-top:12px">
+      <span class="highlight">真题卷示范：</span>2026年成都市某重点初中七年级期末学业反馈英语试卷——含完整试题、听力材料、参考答案及评分标准。试卷覆盖七上全册知识点，题型涵盖单项选择、完形填空、阅读理解、词语运用、补全对话、书面表达六大题型。
+    </div>
+
+    <!-- 单词样例 -->
+    <div class="sample-box" style="margin-top:12px">
+      <span class="highlight">四维词汇包示范：</span>2025新人教版七下 Unit 1 "Animal Friends"——背诵版（单词+音标+词性+中文释义完整版）、音标版（看音标写单词）、中译英（看中文释义默写英文）、英译中（看英文单词写出中文释义）。全8单元均配备此四维体系。
+    </div>
+  </div>
+
+  <div class="module" id="mapping">
+    <h3><span class="emoji">💡</span>方法论映射：NFSC 四要素 × 英语辅导</h3>
+    <table>
+    <thead><tr><th>NFSC 要素</th><th>工科课堂（来源）</th><th>初中英语辅导（迁移后）</th></tr></thead>
+    <tbody>
+    <tr><td><strong>叙</strong> Narrative</td><td>纪实小说长篇叙事选段</td><td>课文情境导入 → 生活化英语故事</td></tr>
+    <tr><td><strong>框</strong> Framework</td><td>错配-修复五维分析框架</td><td>语法框架 → 时态/语态/从句/词法体系</td></tr>
+    <tr><td><strong>境</strong> Scene</td><td>工程案例场景沉浸</td><td>真题演练 → 限时模拟考试环境</td></tr>
+    <tr><td><strong>创</strong> Creation</td><td>学生自创工程解决方案</td><td>自主命题 → 学生自己出题并给出答案</td></tr>
+    </tbody>
+    </table>
+    <div class="card" style="margin-top:14px">
+      <p>四要素的<span class="highlight">降维平移</span>：长篇工程叙事→课文情境（降低认知门槛）、错配框架→语法框架（保留结构化思维）、工程场景→真题演练（保留高压即时决策特征）、创新产出→自主命题（保留知识再生产闭环）。迁移的核心不是内容的替换，而是<span class="highlight">结构化思维方式的继承</span>。</p>
+    </div>
+  </div>
+
+  <div class="module" id="legal">
+    <h3><span class="emoji">📜</span>使用声明</h3>
+    <div class="card">
+      <p style="color:#8899aa;line-height:2.2;font-size:13px">
+        1. 本页面所展示的学习记录均系<strong>家庭成员内部辅导</strong>过程中积累的素材，不涉及任何学科类校外培训活动。<br>
+        2. 页面内容不构成任何形式的商业服务或培训产品，仅供有类似家庭资源条件者进行<strong>公益性方法参考</strong>。<br>
+        3. 所总结的迁移模式以<strong>"家长具备英语学科背景"为特定前提条件</strong>，不具有普遍适用性。<br>
+        4. 页面中提及的"真题"均指<strong>已公开流传的历年学业质量监测试卷</strong>，非商业机构内部资料。<br>
+        5. 所有素材受<strong>版权保护</strong>，禁止复制、下载、转载或用于商业目的。
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
+</div>
+
+<script>
+(function(){
+  var navBtns=document.querySelectorAll('.sidebar .nav-btn'),modules=document.querySelectorAll('.module');
+  function updateActiveNav(){
+    var st=window.pageYOffset||document.documentElement.scrollTop,cid='';
+    modules.forEach(function(m){if(m.getBoundingClientRect().top<=140)cid=m.id});
+    navBtns.forEach(function(b){var t=b.getAttribute('onclick').match(/'([^']+)'/)[1];b.classList.toggle('active',t===cid)});
+  }
+  window.scrollToModule=function(id){
+    var el=document.getElementById(id);if(!el)return;
+    navBtns.forEach(function(b){var t=b.getAttribute('onclick').match(/'([^']+)'/)[1];b.classList.toggle('active',t===id)});
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.addEventListener('scroll',updateActiveNav,{passive:true});
+  navBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('onclick').match(/'([^']+)'/)[1];navBtns.forEach(function(x){x.classList.toggle('active',x===b)});
+      var el=document.getElementById(t);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+document.addEventListener('contextmenu',function(e){e.preventDefault()});
+document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
+document.addEventListener('dragstart',function(e){e.preventDefault()});
+</script>
+</body>
+</html>
