@@ -24,6 +24,9 @@
 
   // Audio element
   var audio = document.createElement('audio');
+  audio.setAttribute('playsinline', '');
+  audio.setAttribute('webkit-playsinline', '');
+  audio.style.display = 'none';
   audio.preload = 'metadata';
   audio.src = audioBase + TRACKS[state.track].file;
 
@@ -103,6 +106,7 @@
   bar.appendChild(css);
   
   bar.appendChild(css);
+  bar.appendChild(audio);
   bar.insertAdjacentHTML('beforeend',
     '<div class="ab-row">' +
     '<span class="ab-label">🎵 刘胜笛箫</span>' +
