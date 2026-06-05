@@ -2,6 +2,7 @@
   'use strict';
 
   var TRACKS = [
+    { name: 'TEST', sub: 'WAV test tone', file: 'test-tone.wav' },
     { name: '戒网', sub: '《黑神话：孙悟》箫独奏', file: '01-jiewang.m4a' },
     { name: '神话', sub: '一二声部合并 · 箫', file: '02-shenhua.m4a' },
     { name: '天边', sub: '南箫 完整版', file: '03-tianbian.m4a' },
