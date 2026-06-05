@@ -91,38 +91,7 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
 
   <div class="section">
     <h3>▸ 演奏试听</h3>
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
-        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 戒网 ——《黑神话：孙悟》箫独奏 · 刘胜演奏</div>
-        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
-          <source src="../刘胜工作室/戒网  《黑神话：孙悟》箫独奏 刘胜演奏.m4a" type="audio/mp4">
-        </audio>
-      </div>
-      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
-        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 神话 —— 一二声部合并 · 箫 同一只 G</div>
-        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
-          <source src="../刘胜工作室/神话 一二声部合并 箫 同一只G.m4a" type="audio/mp4">
-        </audio>
-      </div>
-      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
-        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 天边 —— 南箫 完整版</div>
-        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
-          <source src="../刘胜工作室/天边 南箫 完整版 Ls 2.m4a" type="audio/mp4">
-        </audio>
-      </div>
-      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
-        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 梧桐月 —— 乙巳年八月十五 · 南箫 · 刘胜</div>
-        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
-          <source src="../刘胜工作室/梧桐月 乙巳年八月十五 南箫 刘胜.m4a" type="audio/mp4">
-        </audio>
-      </div>
-      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
-        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 新赛马 —— 加速版</div>
-        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
-          <source src="../刘胜工作室/新赛马 加速.m4a" type="audio/mp4">
-        </audio>
-      </div>
-    </div>
+    <p>刘胜老师笛箫演奏曲目 5 首，由页面底部浮动播放器控制。点下方 🎵 条展开播放列表，▶ 开始收听。</p>
   </div>
 
   <div class="section">
@@ -147,5 +116,6 @@ document.addEventListener('contextmenu',function(e){e.preventDefault()});
 document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
 document.addEventListener('dragstart',function(e){e.preventDefault()});
 </script>
+<script src="../js/audio-player.js"></script>
 </body>
 </html>
