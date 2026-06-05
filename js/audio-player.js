@@ -2,12 +2,11 @@
   'use strict';
 
   var TRACKS = [
-    { name: 'TEST', sub: 'WAV test tone', file: 'test-tone.wav' },
-    { name: '戒网', sub: '《黑神话：孙悟》箫独奏', file: '01-jiewang.m4a' },
-    { name: '神话', sub: '一二声部合并 · 箫', file: '02-shenhua.m4a' },
-    { name: '天边', sub: '南箫 完整版', file: '03-tianbian.m4a' },
-    { name: '梧桐月', sub: '乙巳年八月十五 · 南箫', file: '04-wutongyue.m4a' },
-    { name: '新赛马', sub: '加速版', file: '05-xinsaima.m4a' }
+    { name: '戒网', sub: '《黑神话：孙悟》箫独奏', file: '01-jiewang.mp3' },
+    { name: '神话', sub: '一二声部合并 · 箫', file: '02-shenhua.mp3' },
+    { name: '天边', sub: '南箫 完整版', file: '03-tianbian.mp3' },
+    { name: '梧桐月', sub: '乙巳年八月十五 · 南箫', file: '04-wutongyue.mp3' },
+    { name: '新赛马', sub: '加速版', file: '05-xinsaima.mp3' }
   ];
 
   // Determine audio base path
