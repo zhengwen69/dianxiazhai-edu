@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-protect="full">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探微 NFSC — 点暇斋</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",serif;background:linear-gradient(135deg,#0a141e 0%,#1a2a3c 100%);color:#b8c4ce;min-height:100vh;position:relative}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(233,30,99,.01) 60px,rgba(233,30,99,.01) 62px);pointer-events:none;z-index:10}
+.protected{-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.back-btn{position:fixed;top:20px;left:20px;z-index:100;padding:8px 16px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.2);color:#7fb8e0;text-decoration:none;font-size:14px;transition:all .3s}
+.back-btn:hover{border-color:#5b9bd5;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.main{max-width:780px;margin:0 auto;padding:60px 24px 40px}
+.hero{text-align:center;margin-bottom:36px}
+.hero h1{font-size:24px;color:#e8ecef;margin-bottom:6px;line-height:1.5}
+.hero h1 span{color:#5b9bd5}
+.hero .sub{color:#5a6a7a;font-size:13px;line-height:1.8;margin-top:8px}
+.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(91,155,213,.2),transparent);margin:32px 0}
+.section{margin-bottom:24px}
+.section h2{font-size:18px;color:#5b9bd5;margin-bottom:12px}
+.section p,.section li{font-size:14px;line-height:2.1;color:#9aa9b8}
+.section li{list-style:decimal inside;margin:2px 0}
+.badge{display:inline-block;padding:3px 12px;border-radius:10px;font-size:11px;background:rgba(241,196,15,.12);color:#f1c40f;border:1px solid rgba(241,196,15,.2)}
+.toc-toggle{background:none;border:1px solid rgba(91,155,213,.2);color:#7fb8e0;font-size:13px;padding:8px 18px;border-radius:6px;cursor:pointer;margin:10px 0;font-family:inherit;transition:all .3s}
+.toc-toggle:hover{background:rgba(91,155,213,.1);color:#fff}
+.toc{display:none;margin:12px 0;padding:18px 22px;background:rgba(13,31,53,.4);border:1px solid rgba(91,155,213,.08);border-radius:8px;font-size:13px;color:#8899aa;line-height:2.0}
+.toc.open{display:block}
+.toc h3{font-size:14px;color:#7fb8e0;margin:10px 0 4px}
+.toc ul{margin-left:16px;list-style:none}
+.toc li{font-size:12px;color:#778899}
+.sample{background:rgba(13,31,53,.5);border:1px solid rgba(91,155,213,.1);border-radius:10px;padding:24px 26px;margin:12px 0;position:relative}
+.sample h3{font-size:15px;color:#7fb8e0;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(91,155,213,.1)}
+.sample p{font-size:13px;line-height:2.1;color:#8899aa;text-indent:2em}
+.sample p+p{margin-top:8px}
+.sample .ref{font-size:10px;color:#556677}
+.preface,.postscript{background:rgba(13,31,53,.3);border:1px solid rgba(241,196,15,.12);border-radius:10px;padding:24px 26px;margin:12px 0}
+.preface p,.postscript p{font-size:13px;line-height:2.2;color:#aabbcc;text-indent:2em}
+.postscript .sign{text-align:right;color:#667;font-size:12px;margin-top:12px;line-height:1.8}
+.disclaimer{margin-top:32px;padding:18px 22px;background:rgba(233,30,99,.04);border:1px solid rgba(233,30,99,.12);border-radius:10px;font-size:11px;color:#667;line-height:1.9}
+.disclaimer h4{color:#e74c3c;font-size:12px;margin-bottom:6px}
+.footer{text-align:center;color:#445;font-size:12px;line-height:2;padding-top:30px;padding-bottom:20px}
+@media(max-width:768px){.main{padding:50px 14px 30px}.hero h1{font-size:20px}.section p,.sample p{font-size:12px}.sample{padding:16px 18px}.toc li{font-size:11px}}
+@media print{body{display:none}}
+</style>
+<script src="js/protect-content.js"></script>
+</head>
+<body class="protected">
+
+<a class="back-btn" href="index.html">◀ 返回首页</a>
+
+<div class="main">
+  <div class="hero">
+    <h1>《叙事·门户·智能体——<span>"叙·框·境·创"工程专业硕士研究生教学法</span>》</h1>
+    <div class="sub">黄正文 · 成都大学环境工程系<br>约 20 万字 · 10 章 + 4 附录 · 约 450 页<br><span class="badge">合同阶段 · 出版中</span> &nbsp; <span style="color:#556677;font-size:11px">版权登记办理中</span></div>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- ===== 自序 ===== -->
+  <div class="section" id="preface">
+    <h2>▸ 自序</h2>
+    <div class="preface">
+      <p>此书非劝学之著，亦非成功之秘笈。</p>
+      <p>余自莲城乡野间出，农家子弟，凭勤奋苦读、反复试错，跌撞以至今，倏忽半生。余之点暇斋头条号，尝自诩为"长城公社脚下白云村小第一位三流教授"——此非谦辞，乃自知之明。其间辗转数职，失而复得教职，安生偷闲二十余载。此二十余年所历——课堂之困局、学生之迷茫、工程现场之教训、咨询案中之博弈——后来皆化为小说之素材、专著之案例。讲台下数十位研究生列坐，一届一茬，面孔年年不同，出身却大抵相似：多如余一般，农家子弟，赖读书行至今日。余常默问：彼等于此，究竟何所得？彼等读书，能否如余一般——改变命运？</p>
+      <p>此问，便是此书之起点。</p>
+      <p>论及此问，须先谢过座中诸生。余生涯数度穿越周期——创业、转行、重操教职——若非每届皆有数十位同学选余为师，余之讲台早已不存。是彼等，为余创就业之机；是彼等，令余于辗转半生之后，尚有一方书斋可安放此身。余欠彼等一份答卷——非论文，非分数，乃是关于"读书改变命运"之全心全意。此书，便是余之答卷。</p>
+      <p>余另有一重身份。授课之余，余以"点暇斋"或"点暇斋主"为笔名，于网络小说平台连载纪实文言小说，或可统称为"读书改变命运秘笈"系列。此系列非闭门造车之虚構，乃余二十余年教学教研及教育咨询生涯之纪实——课堂上不及讲授者、学生尚未问及者、面谈难以遍及者，余一一写入小说。小说如一部活页类书，触类旁通，有问必答，无问亦备。一卷既成，公诸网络，读者不必坐于余之课堂，不必约余之面谈，随时随地开卷即得。此即"普惠"二字之本意：一介农家子弟半生摸爬滚打之经验教训，不止惠及讲台下数十人，而可抵达任何愿读之人。</p>
+      <p>小说之中有一人物，名唤"老呼昂"。彼从事工程咨询，走访填埋场，于论证会上沉默，听一位不识字之老妪道："可以问我一声吗？"彼非完人——幸而彼不必是。彼乃余半生阅历所化：余见过之人、处理过之事、犯过之错、至今未解之困惑，一一托付于彼。小说记录经历，专书记录教学。同一人，两副笔墨，一条贯穿二十年之叙事弧线。</p>
+      <p>本书凡十章，自"三多三少"之困境诊断始，经由叙事引擎、数字基座、智能协同、课程思政之方法建构，落在八周课堂之真实实践与三届教学之实证评估，终章归于推广与展望。余自知此书之局限：单门课程，单所学校，每届不过三十人——无对照组，无统计显著，不可证明任何因果。然余不以为憾——田野笔记之价值不在因果推断，在诚实记录。余记彼八秒之沉默、彼十九比十一之站队分歧、彼"素质低"三字自十一位学生手中消失之瞬间。斯非结论，乃种子。</p>
+      <p>予不答案，不诺结局。列位若从中读出何事，乃列位自家之事。</p>
+      <p style="text-align:right;color:#667;font-size:11px;text-indent:0">黄正文（点暇斋）<br>识于龙栖湾<br>时维丙午年孟夏</p>
+    </div>
+  </div>
+
+  <!-- ===== 跋 ===== -->
+  <div class="section" id="postscript">
+    <h2>▸ 跋</h2>
+    <div class="postscript">
+      <p>搁笔之日，夏意已深。书稿初成未敢称定。</p>
+      <p>余数度尝试以"课堂教学质量评估之五维指标"入稿交卷，终觉辞气不合而罢。书中十章、二十余万字，论证渐次铺陈，框架逐层完备。然余深知其缺——缺在评教数据：指标达标、证书叠加，未必对应真实学习发生之深度证据。缺在范式论证：虽以纪实小说七部、素材母库S001-S021为叙事根基，然"小说云驱动"作为教学方法论之合法性，尚需更多独立验证与批判对话。缺在推广边界：一门课、一所校、三十人之规模——不可证因果，不可立通则。</p>
+      <p>此三缺，书中已诚实注明，然注明不等于解决。</p>
+      <p>书稿之成，仰赖一众师友：唐毅谦、叶安胜、胡秀琼、练丰丽、孙姝娟、颜伟、黄灏、王海燕、杨何、李苗——二十余年相助之情谊，每一次失散与重逢，未尽此墨，然意不遗一日落下。</p>
+      <p>至当谢者，历届研究生。他们端坐于讲台之下，每一笔课堂笔记、每一道随堂提问、每一刻沉默片刻，均为教学改革之数据来源。讲台不是我的，是学生的——是彼等选余为师，未令余失去这座讲台，故有此书。</p>
+      <p>"好好学习 天天向上""绿水青山就是金山银山"——两行朴素箴言，立于课程网站之首页，是余一辈子的信念，也是一切教学之归依。</p>
+      <p style="text-align:right;color:#667;font-size:11px;text-indent:0">黄正文（点暇斋）<br>识于龙栖湾<br>时维丙午年仲夏</p>
+    </div>
+  </div>
+
+  <!-- ===== 试读样章 ===== -->
+  <div class="section" id="sample">
+    <h2>▸ 试读样章（约 1,800 字 / 全本 0.9%）</h2>
+
+    <div class="sample">
+      <h3>§1.1.1 "三多三少"的课堂现实</h3>
+      <p>固废方向研究生课堂教学长期沿用本科讲授模式，课程体系未依研究生培养层级作差异化重构，本硕课堂不存在显著教学逻辑区分。授课教师以多媒体课件与专业教材为核心载体，按章节系统讲授固废资源化处置工艺、焚烧系统热力工况核算、填埋场防渗结构设计诸类常规工程知识点；研究生以笔记记录、阶段性考核为主要学习方式，依学期进度完成知识识记与逐周消化。该灌输式范式于本科人才培养体系中应用经年，标准化知识传递效率已获长期实践确证。然该范式直接平移至研究生教育阶段后，未能匹配研究生培养定位、认知特征与高阶育人目标已发生之根本转变，致培养身份、育人目标、教学实施路径三者间失配显著。</p>
+      <p>固废方向研究生课堂教学供需失配可归为"三多三少"结构性失衡。</p>
+      <p><strong>其一，知识灌输偏多，工程实践能力培育偏少。</strong>研究生课程知识广度、深度均远超本科层次——固废治理技术自四种主流工艺拓展至十余种细分技术路线，环境政策研究自国内管理制度延伸至跨国区域规制比较分析。然单纯知识体量提升无法等效替代工程研判与综合应用能力之养成。以课堂常见场景为例：学生可熟练阐述垃圾焚烧"3T+E"运行调控准则，然面对南方多雨地区生活垃圾低位热值偏离设计工况等现场异常工况时，难以开展系统性工况调控与工程优化决策。此落差折射工程研究生培养中一普遍性矛盾：学生获有"给定条件下求解最优方案"之能，而未获"条件偏离时重定义问题结构、调整分析策略"之能。</p>
+      <p><strong>其二，教师讲授偏多，学生自主知识建构偏少。</strong>32 学时标准研究生课程，教师课堂讲授时长占比常逾 87.5%。研究生须依托科研方法与分析工具开展自主逻辑推演、知识重构与体系内化。全程系统化满堂授课可使学生在被动状态中完整掌握既有理论框架，然难以培育框架溯源逻辑、架构优化思辨与多路径方案对比权衡之高阶能力——此类能力不可经听课习得，仅能依托典型工程案例实操分析、理论边界适用性验证、模型与工艺迭代优化等自主探究过程逐步形成。</p>
+      <p><strong>其三，技术维度分析偏多，工程全周期社会价值与多维属性反思偏少。</strong>填埋场选址决策受场地地质水文条件、周边邻避效应、公众接受意愿多重约束；垃圾分类治理成效之关键不在末端处置设施多寡，而在数百万居民日常行为之持续改变与治理机制之有效运转。社会因素、民生因素、治理因素等非技术性约束均为固废工程之刚性决策边界，然传统研究生课堂仅将此类要素简化为政策背景补充、案例前置假设，严重弱化研究生工程伦理研判、环境治理综合决策与全生命周期价值考量之能力养成。</p>
+      <p class="ref">——节选自《叙事·门户·智能体》第一章 1.1.1 节</p>
+    </div>
+
+    <div class="sample">
+      <h3>§1.1.2 传统讲授法的三重结构性极限</h3>
+      <p>"三多三少"非教师个人偏好使然，乃传统讲授法于研究生教育阶段遭遇三重结构性极限之外在表征。</p>
+      <p><strong>首限在案例与理论之分离。</strong>讲授法基本操作即将课程内容组织为"理论讲解→案例举例"之线性结构。然工程实践之认知逻辑恰反向而行：工程师先面对具体、嘈杂、信息不完整之真实情境，自情境中识别问题结构，再选择与适配分析工具。于此认知链条中，情境第一、工具第二。讲授法"理论先行"架构颠倒实践认知顺序——先教工具、再用案例"验证"工具有效性。此颠倒致二重后果：学生擅在既有框架中作选择，难自具体情境生成分析框架；案例被剥离原生语境——纪实小说《龙栖湾》中老农王老汉"一亩三分地没了"所承载之土地贬值、社区分化等深层冲突，被简化为"空间错配五维框架"一道习题。</p>
+      <p><strong>次限在场景与课堂之割裂。</strong>真实工程场景具高压力、多角色、信息不完整、即时决策诸特征。反观课堂，乃低压力、单角色、信息完备、可延时思考之去情境化空间。学生通常以数周时间安静查阅资料、从容组织论述完成案例分析——此训练可培育分析能力，然此能力于真实场景中是否仍然有效，并未获检验。</p>
+      <p><strong>末限在产出与学习之脱节。</strong>传统研究生课程多以期末考试或课程论文为终结性考核，学习活动于"提交—评分"后即告终止。然工程研究生核心产出非仅为评分之作业，乃能支撑后续工程实践、政策研究、学术探索之有效成果。于成果导向教育理念下，课程产出应被设计为具超越单门课程之持续价值——非仅为"被评分之作业"，更应为可服务未来工程实践之可积累产出。</p>
+      <p class="ref">——节选自《叙事·门户·智能体》第一章 1.1.2 节</p>
+    </div>
+
+    <div class="sample">
+      <h3>§2.1.1 叙事学习理论：故事作为认知入口</h3>
+      <p>Bruner 于 1991 年在《Critical Inquiry》发表《The Narrative Construction of Reality》，明确提出核心论断：人类认知活动之首要形式非逻辑推理，乃叙事活动——个体主要依托故事梳理生活经验、认知客观世界。Egan 于 1986 年出版《Teaching as Storytelling》，将叙事理论引入教育领域，论证叙事为兼具悠久历史与普适性之认知载体——于抽象化、去情境化之科学知识而言，叙事搭建起知识理解与学习者经验间之桥梁。</p>
+      <p>叙事学习理论在工科研究生教育中具突出应用价值。固废治理领域所提出之空间错配、技术错配、行为错配、人文错配，均属高度抽象之分析模型。据叙事学习理论，可将故事设为认知前置环节——学生先遭遇《龙栖湾》老农"一亩三分地没了"之叙事，在情感共鸣中生成"为什么会这样"之追问，而后接触"空间错配五维框架"时，此框架不再是外在于其经验之抽象定义，乃对其已产生之追问的结构化回应。Bruner 区分范式性认知与叙事性认知——该区分于课程中获得直接教学应用："叙"维度先以叙事性认知激发学习动机与直观理解，再循次搭建范式性认知之分析框架。</p>
+      <p>从认知心理学视角视之，叙事有效降低学习认知门槛。据认知负荷理论，具象化情境载体可削减知识学习过程中之内在认知负荷；同时，依托情节与情感形成之情景记忆，其信息提取效率与记忆留存效果显著优于单纯语义记忆。</p>
+      <p class="ref">——节选自《叙事·门户·智能体》第二章 2.1.1 节</p>
+    </div>
+  </div>
+
+  <!-- ===== 全书目录 ===== -->
+  <div class="section" id="toc">
+    <h2>▸ 全书目录</h2>
+    <button class="toc-toggle" onclick="var t=document.getElementById('toc-content');t.classList.toggle('open');this.textContent=t.classList.contains('open')?'收起目录 ▴':'展开目录 ▾'">展开目录 ▾</button>
+    <div class="toc" id="toc-content">
+      <h3>第一章　绪论：工程研究生教学的困境与突围（~1.5 万字）</h3>
+      <ul><li>1.1　工程研究生教育的时代困境</li><li>1.2　固体废弃物课程的教改契机</li><li>1.3　本书的写作逻辑与阅读指引</li></ul>
+      <h3>第二章　理论基础："叙·框·境·创"四维教学法（~2.5 万字）</h3>
+      <ul><li>2.1　四维教学法的理论溯源</li><li>2.2　"叙·框·境·创"的完整学理推导</li><li>2.3　与已有教学法的比较分析</li></ul>
+      <h3>第三章　分析框架：五维错配-修复体系（~2.5 万字）</h3>
+      <ul><li>3.1　为什么是"错配"——工程实践的认识论提炼</li><li>3.2　七个子框架的完整展开</li><li>3.3　五维统一诊断矩阵</li><li>3.4　"五垃圾"标签体系——课程的认知脚手架</li></ul>
+      <h3>第四章　叙事引擎：纪实小说云驱动的案例方法（~2.5 万字）</h3>
+      <ul><li>4.1　纪实小说云的构建</li><li>4.2　五段叙事拆解法</li><li>4.3　四重错配的叙事化呈现</li><li>4.4　纪实小说作为教学素材的独特价值</li></ul>
+      <h3>第五章　数字基座："教学-学习"双重门户设计与操作（~2.5 万字）</h3>
+      <ul><li>5.1　门户的设计哲学</li><li>5.2　教师门户——功能架构与使用指南</li><li>5.3　学习园地——以学为中心的子门户</li></ul>
+      <h3>第六章　智能协同：AI Agent 教学体系（~2 万字）</h3>
+      <ul><li>6.1　Agent 协同教学的设计理念</li><li>6.2　九-Agent 协同体系的角色定义与工作流</li><li>6.3　教师→学生双向角色映射</li></ul>
+      <h3>第七章　价值融入：课程思政的叙事化路径（~2 万字）</h3>
+      <ul><li>7.1　"看不见的思政"——双线叙事理念</li><li>7.2　八周课程思政的分层落地</li></ul>
+      <h3>第八章　八周实践：教学全程实录（~3 万字）</h3>
+      <ul><li>8.1-8.8　第 1-8 周完整教学记录</li></ul>
+      <h3>第九章　效果评价：数据、反思与迭代（~1.5 万字）</h3>
+      <ul><li>9.1　三届教学数据的纵向评估</li><li>9.2　反思与迭代方向</li></ul>
+      <h3>第十章　推广与展望：向其他工程课程的迁移（~1 万字）</h3>
+      <ul><li>10.1　四维教学法的可迁移性分析</li><li>10.2　面向未来的研究方向</li></ul>
+      <h3>附录（4 项）</h3>
+      <ul><li>附录 A：场景沉浸脚本全集（6 脚本）</li><li>附录 B：教学素材母库索引 S001–S021</li><li>附录 C：中英术语对照表</li><li>附录 D：门户截图目录 SC01–SC20</li></ul>
+    </div>
+  </div>
+
+  <!-- ===== 各章概要 ===== -->
+  <div class="section" id="overview">
+    <h2>▸ 各章概要</h2>
+    <div class="sample">
+      <p>本书凡十章四附录，以成都大学环境工程研究生课程《固体废弃物污染防治技术》为实践载体，贯通理念建构、框架开发、门户部署、Agent 协同、思政融入、八周实录、效果评价、迁移推广之全链。</p>
+      <p>首章以"三多三少"诊断工科研究生课堂之结构性困境；次章追溯叙事学习、建构主义、情境学习、成果导向教育四重理论根柢；第三章展开五维错配-修复分析体系与七个子框架；第四章阐释纪实小说云驱动的案例方法；第五章详解教学-学习双重数字门户架构；第六章呈现九-Agent 协同教学体系与双向角色映射；第七章立"看不见的思政"之则，化价值引领于叙事与场景之中；第八章录八周教学全程；第九章呈现三届纵向评估数据；第十章讨论四维教学法向其他工程课程的可迁移性。</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <h4>⚠ 版权声明</h4>
+    1. 本页面仅展示专著目录、自序、跋及不超过全文 1% 的试读内容。<br>
+    2. 完整出版物版权归作者黄正文（点暇斋）所有。本书处于出版合同阶段，节选展示不影响正式出版之排他性。<br>
+    3. 禁止任何形式的复制、下载、转载或商业使用。<br>
+    4. 版权登记号：<span style="color:#f1c40f">办理中（后补）</span>
+  </div>
+
+  <div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
+</div>
+
+<script>
+document.addEventListener('contextmenu',function(e){e.preventDefault()});
+document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
+document.addEventListener('dragstart',function(e){e.preventDefault()});
+</script>
+</body>
+</html>
