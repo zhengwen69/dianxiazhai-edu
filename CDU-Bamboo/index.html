@@ -13,33 +13,40 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gr
 .header h1 span{color:#2ecc71}
 .header .en{font-size:13px;color:#667;margin-bottom:8px}
 .header .tagline{color:#8899aa;font-size:14px;line-height:1.8}
-.cards{display:flex;gap:24px;max-width:800px;width:100%;margin-bottom:30px;flex-wrap:wrap}
-.card{flex:1;min-width:280px;background:rgba(13,31,53,.85);border:1px solid rgba(46,204,113,.15);border-radius:14px;padding:32px 26px;text-decoration:none;color:#c8d6e5;transition:all .35s;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cards{display:flex;gap:20px;max-width:920px;width:100%;margin-bottom:30px;flex-wrap:wrap;justify-content:center}
+.card{flex:1;min-width:240px;max-width:290px;background:rgba(13,31,53,.85);border:1px solid rgba(46,204,113,.15);border-radius:14px;padding:28px 22px;text-decoration:none;color:#c8d6e5;transition:all .35s;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:14px 14px 0 0}
 .card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.4);border-color:rgba(46,204,113,.35)}
 .card-left::before{background:#2ecc71}
-.card-left .card-emoji{font-size:48px;margin-bottom:16px}
-.card-left .card-title{font-size:22px;font-weight:700;color:#2ecc71;margin-bottom:4px}
-.card-left .card-sub{font-size:14px;color:#7fb8e0;margin-bottom:16px;line-height:1.5}
-.card-left .card-desc{font-size:12px;color:#8899aa;line-height:1.8;margin-bottom:20px}
+.card-left .card-emoji{font-size:44px;margin-bottom:14px}
+.card-left .card-title{font-size:20px;font-weight:700;color:#2ecc71;margin-bottom:4px}
+.card-left .card-sub{font-size:13px;color:#7fb8e0;margin-bottom:12px;line-height:1.5}
+.card-left .card-desc{font-size:12px;color:#8899aa;line-height:1.8;margin-bottom:18px}
+.card-center{border-color:rgba(240,165,0,.35);border-width:1.5px;box-shadow:0 0 20px rgba(240,165,0,.08);min-width:250px;max-width:300px;z-index:1}
+.card-center::before{background:linear-gradient(90deg,#f0a500,#e67e22)}
+.card-center .card-emoji{font-size:48px;margin-bottom:14px}
+.card-center .card-title{font-size:22px;font-weight:700;color:#f0a500;margin-bottom:4px}
+.card-center .card-sub{font-size:14px;color:#f5d078;margin-bottom:12px;line-height:1.5;font-weight:600}
+.card-center .card-desc{font-size:12px;color:#aabbcc;line-height:1.8;margin-bottom:18px}
+.card-center:hover{border-color:rgba(240,165,0,.55);box-shadow:0 12px 36px rgba(240,165,0,.15)}
 .card-right::before{background:#e67e22}
-.card-right .card-emoji{font-size:48px;margin-bottom:16px}
-.card-right .card-title{font-size:22px;font-weight:700;color:#e67e22;margin-bottom:4px}
-.card-right .card-sub{font-size:14px;color:#f0c78e;margin-bottom:16px;line-height:1.5}
-.card-right .card-desc{font-size:12px;color:#8899aa;line-height:1.8;margin-bottom:20px}
-.card .arrow{display:inline-block;margin-top:auto;padding:8px 24px;border-radius:20px;font-size:13px;transition:all .3s}
+.card-right .card-emoji{font-size:44px;margin-bottom:14px}
+.card-right .card-title{font-size:20px;font-weight:700;color:#e67e22;margin-bottom:4px}
+.card-right .card-sub{font-size:13px;color:#f0c78e;margin-bottom:12px;line-height:1.5}
+.card-right .card-desc{font-size:12px;color:#8899aa;line-height:1.8;margin-bottom:18px}
+.card .arrow{display:inline-block;margin-top:auto;padding:8px 22px;border-radius:20px;font-size:13px;transition:all .3s}
 .card-left .arrow{background:rgba(46,204,113,.15);color:#2ecc71;border:1px solid rgba(46,204,113,.25)}
 .card-left .arrow:hover{background:rgba(46,204,113,.25);color:#fff}
+.card-center .arrow{background:rgba(240,165,0,.15);color:#f0a500;border:1px solid rgba(240,165,0,.3);font-weight:600}
+.card-center .arrow:hover{background:rgba(240,165,0,.3);color:#fff}
 .card-right .arrow{background:rgba(230,126,34,.15);color:#e67e22;border:1px solid rgba(230,126,34,.25)}
 .card-right .arrow:hover{background:rgba(230,126,34,.25);color:#fff}
 .tagline-bottom{text-align:center;font-size:18px;color:#5b9bd5;letter-spacing:4px;padding:20px 0 16px;font-weight:600}
 .sub-footer{text-align:center;color:#667;font-size:12px;margin-bottom:20px;line-height:1.8}
-.patent-note{max-width:700px;width:100%;color:#556677;font-size:10px;line-height:1.8;text-align:left;margin-bottom:14px;padding:12px 16px;border:1px solid rgba(91,155,213,.06);border-radius:8px}
-.patent-note h4{color:#667;font-size:11px;margin-bottom:6px}
 .back-link{color:#5b9bd5;text-decoration:none;font-size:13px;margin-bottom:20px;transition:color .3s}
 .back-link:hover{color:#7fb8e0}
 .footer{text-align:center;color:#445;font-size:12px;padding-bottom:20px}
-@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:22px}.cards{flex-direction:column}.card{padding:24px 16px}.card-left .card-emoji,.card-right .card-emoji{font-size:36px}}
+@media(max-width:768px){body{padding:20px 12px}.header h1{font-size:22px}.cards{flex-direction:column;align-items:center}.card{max-width:100%}.card-center{order:0}}
 @media print{body{display:none}}
 </style>
 </head>
@@ -49,23 +56,31 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gr
   <div class="emoji">🎵</div>
   <h1>竹韵乐养 <span>· 花甲初闻竹</span></h1>
   <div class="en">Bamboo-Music Wellness · A Late-Life Encounter with the Flute</div>
-  <div class="tagline">「不谙音律、不识工尺，唯以工程师拆解复杂系统之法」<br>昼勘固废之章，夜研箫笛之谱，两不相扰而两相滋养</div>
+  <div class="tagline">「不谙音律、不识工尺，唯以工程师拆解复杂系统之法」<br>或勘科学之秘，或研箫笛之理，两不相扰而两相滋养</div>
 </div>
 
 <div class="cards">
   <a class="card card-left" href="../迁移探索-竹韵乐养.html">
-    <div class="card-emoji">🎵</div>
+    <div class="card-emoji">🌿</div>
     <div class="card-title">花甲初闻竹</div>
     <div class="card-sub">工科半生 · 花甲初闻竹</div>
-    <div class="card-desc">六旬工科教授自研传统民乐。NFSC 方法论从固废工程到竹笛/洞箫/古琴的跨生命阶段迁移。<br>6 张迁移卡片之一：品质生活驱动。</div>
+    <div class="card-desc">NFSC 方法论从工程教学到竹笛/洞箫的跨生命阶段迁移。 品质生活驱动 · 终身学习。</div>
     <span class="arrow">进入详情页 →</span>
   </a>
 
-  <a class="card card-right" href="../CDU-Bamboo/乐养成果门户.html">
+  <a class="card card-center" href="刘胜笛箫工作室.html">
+    <div class="card-emoji">🏯</div>
+    <div class="card-title">刘胜笛箫工作室</div>
+    <div class="card-sub">成都青羊宫</div>
+    <div class="card-desc">竹笛 / 洞箫 · 面授<br>公益交流</div>
+    <span class="arrow">进入工作室门户 →</span>
+  </a>
+
+  <a class="card card-right" href="乐养成果门户.html">
     <div class="card-emoji">🔬</div>
     <div class="card-title">六艺赋新声</div>
-    <div class="card-sub">专利集群 · 版权登记 · 社区教学</div>
-    <div class="card-desc">6 件专利申请 + 版权登记 + 社区教学实践。<br>材料·教学·硬件·文化遗产数字化全链覆盖。<br>工程师方法论在传统民乐领域的系统性产出。</div>
+    <div class="card-sub">专利集群 · 版权登记 · 公益交流</div>
+    <div class="card-desc">6 件专利申请全链覆盖。 材料·教学·硬件·文化遗产数字化。</div>
     <span class="arrow">进入成果门户 →</span>
   </a>
 </div>
@@ -73,11 +88,6 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gr
 <div class="tagline-bottom">知无界 法有常</div>
 
 <div class="sub-footer">📖 NFSC+Agent 方法论 · 品质生活驱动 · 跨生命阶段迁移实证<br>Type IV: Quality-of-Life Pursuit — Lifelong Learning</div>
-
-<div class="patent-note">
-  <h4>📜 专利声明</h4>
-  <p>本页面展示的专利均已在中华人民共和国国家知识产权局正式受理。专利内容受法律保护，禁止未经授权的复制、转载或商业使用。</p>
-</div>
 
 <a class="back-link" href="../迁移探索.html">← 返回点暇斋课程主门户</a>
 
