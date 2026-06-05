@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="academic.page_title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,23 +61,24 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
 @media(max-width:768px){.main{padding:50px 12px 30px}.hero h1{font-size:22px}.paper{padding:14px 16px}.paper .p-title{font-size:13px}}
 @media print{body{display:none}}
 </style>
+<script src="js/i18n.js"></script>
 </head>
 <body>
 
-<a class="back-btn" href="index.html">◀ 返回首页</a>
+<a class="back-btn" href="index.html" data-i18n="common.back_to_home">◀ 返回首页</a>
 
 <div class="main">
   <div class="hero">
-    <h1><span>教研科研进展</span></h1>
-    <div class="sub">学术专著 1 部 · 系列论文 10 篇 · 10 个国家和地区投稿</div>
+    <h1><span data-i18n="academic.page_title">教研科研进展</span></h1>
+    <div class="sub" data-i18n="academic.hero_sub">学术专著 1 部 · 系列论文 10 篇 · 10 个国家和地区投稿</div>
   </div>
 
   <div class="section" id="monograph">
-    <h2>📚 学术专著</h2>
+    <h2 data-i18n="academic.sec_mono">📚 学术专著</h2>
     <div class="monograph">
       <h3>《叙事·门户·智能体——"叙·框·境·创"工程专业硕士研究生教学法》</h3>
-      <div class="meta"><span>作者</span> 黄正文 · 成都大学环境工程系 &nbsp;|&nbsp; <span>规模</span> 约 20 万字 · 10 章 + 4 附录 &nbsp;|&nbsp; <span class="mono-status">合同阶段 · 出版中</span></div>
-      <button class="toc-toggle" onclick="var t=document.getElementById('toc');t.classList.toggle('open');this.textContent=t.classList.contains('open')?'收起目录 ▴':'展开目录 ▾'">展开目录 ▾</button>
+      <div class="meta"><span data-i18n="academic.mono_author">作者</span> 黄正文 · 成都大学环境工程系 &nbsp;|&nbsp; <span data-i18n="academic.mono_scale">规模</span> <span data-i18n="academic.mono_about">约 20 万字 · 10 章 + 4 附录</span> &nbsp;|&nbsp; <span class="mono-status" data-i18n="academic.mono_status">合同阶段 · 出版中</span></div>
+      <button class="toc-toggle" id="tocToggle" data-i18n="academic.toc_show" onclick="toggleToc()">展开目录 ▾</button>
       <ol class="toc" id="toc">
         <li>绪论：工程研究生教学的困境与突围</li>
         <li>理论基础："叙·框·境·创"四维教学法</li>
@@ -98,94 +99,94 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
   </div>
 
   <div class="section" id="papers">
-    <h2>📄 系列论文</h2>
+    <h2 data-i18n="academic.sec_papers">📄 系列论文</h2>
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterPapers('all',this)">全部 10 篇</button>
-      <button class="filter-btn" onclick="filterPapers('submitted',this)">已投稿 3 篇</button>
-      <button class="filter-btn" onclick="filterPapers('revision',this)">大修中 1 篇</button>
-      <button class="filter-btn" onclick="filterPapers('pending',this)">待投 4 篇</button>
-      <button class="filter-btn" onclick="filterPapers('data',this)">待数据 2 篇</button>
+      <button class="filter-btn active" data-i18n="academic.f_all" onclick="filterPapers('all',this)">全部 10 篇</button>
+      <button class="filter-btn" data-i18n="academic.f_sub" onclick="filterPapers('submitted',this)">已投稿 3 篇</button>
+      <button class="filter-btn" data-i18n="academic.f_rev" onclick="filterPapers('revision',this)">大修中 1 篇</button>
+      <button class="filter-btn" data-i18n="academic.f_pend" onclick="filterPapers('pending',this)">待投 4 篇</button>
+      <button class="filter-btn" data-i18n="academic.f_data" onclick="filterPapers('data',this)">待数据 2 篇</button>
     </div>
 
     <div class="paper" data-status="submitted">
-      <div class="p-header"><span class="p-id">P1</span><span class="p-title">四维教学法在工程研究生课程中的建构与验证</span><span class="p-badge bg-blue">已投稿</span></div>
+      <div class="p-header"><span class="p-id">P1</span><span class="p-title">四维教学法在工程研究生课程中的建构与验证</span><span class="p-badge bg-blue" data-i18n="academic.s_sub">已投稿</span></div>
       <div class="p-meta"><span class="j">European Journal of Engineering Education</span> · SSCI · 🇪🇺 欧洲</div>
-      <div class="p-keywords"><strong>关键词</strong> 四维教学法 · 工程教育 · 研究生课程 · 叙事教学 · 错配-修复</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 四维教学法 · 工程教育 · 研究生课程 · 叙事教学 · 错配-修复</div>
       <div class="p-desc">以研究生固废课程为案例，阐述"叙·框·境·创"四维教学法的学理基础与八周实践路径，构建可迁移的方法论框架。</div>
     </div>
 
     <div class="paper" data-status="data">
-      <div class="p-header"><span class="p-id">P2</span><span class="p-title">教学-学习双重数字门户协同架构</span><span class="p-badge bg-orange">待数据</span></div>
+      <div class="p-header"><span class="p-id">P2</span><span class="p-title">教学-学习双重数字门户协同架构</span><span class="p-badge bg-orange" data-i18n="academic.s_data">待数据</span></div>
       <div class="p-meta"><span class="j">Kasetsart Journal of Social Sciences</span> · Scopus · 🇹🇭 泰国</div>
-      <div class="p-keywords"><strong>关键词</strong> 数字门户 · 以学为中心 · 零配置 · 研究生课程 · 双重架构</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 数字门户 · 以学为中心 · 零配置 · 研究生课程 · 双重架构</div>
       <div class="p-desc">提出"教师教学门户 + 学生学习子门户"双向信息映射架构，实现从"展示教学材料"到"支撑学习过程"的范式转换。</div>
     </div>
 
     <div class="paper" data-status="submitted">
-      <div class="p-header"><span class="p-id">P3</span><span class="p-title">AI Agent 从教到伴学的角色重塑</span><span class="p-badge bg-blue">已投稿</span></div>
+      <div class="p-header"><span class="p-id">P3</span><span class="p-title">AI Agent 从教到伴学的角色重塑</span><span class="p-badge bg-blue" data-i18n="academic.s_sub">已投稿</span></div>
       <div class="p-meta"><span class="j">现代教育技术</span> · CSSCI · 🇨🇳 中国</div>
-      <div class="p-keywords"><strong>关键词</strong> AI Agent · 协同教学 · 角色重塑 · 学伴系统 · 研究生课程</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> AI Agent · 协同教学 · 角色重塑 · 学伴系统 · 研究生课程</div>
       <div class="p-desc">系统阐述 9-Agent 协同教学体系中 Agent 从教师端到学生端的双向角色映射方法论与学伴重塑路径。</div>
     </div>
 
     <div class="paper" data-status="pending">
-      <div class="p-header"><span class="p-id">P4</span><span class="p-title">跨学科师资自学与教学身份建构</span><span class="p-badge bg-green">待投</span></div>
+      <div class="p-header"><span class="p-id">P4</span><span class="p-title">跨学科师资自学与教学身份建构</span><span class="p-badge bg-green" data-i18n="academic.s_pend">待投</span></div>
       <div class="p-meta"><span class="j">South African Journal of Education</span> · SSCI · 🇿🇦 南非</div>
-      <div class="p-keywords"><strong>关键词</strong> 跨学科 · 教师自学 · 身份建构 · 课程设计 · 高等工程教育</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 跨学科 · 教师自学 · 身份建构 · 课程设计 · 高等工程教育</div>
       <div class="p-desc">以纪实小说云驱动为方法论，考察跨学科师资自主建构教学身份的过程与教学创新路径。</div>
     </div>
 
     <div class="paper" data-status="data">
-      <div class="p-header"><span class="p-id">P5</span><span class="p-title">UAV 赋能职教教师的教学效能实证</span><span class="p-badge bg-orange">待数据</span></div>
+      <div class="p-header"><span class="p-id">P5</span><span class="p-title">UAV 赋能职教教师的教学效能实证</span><span class="p-badge bg-orange" data-i18n="academic.s_data">待数据</span></div>
       <div class="p-meta"><span class="j">Education Research – VET</span> · Scopus · 🇪🇸 西班牙</div>
-      <div class="p-keywords"><strong>关键词</strong> 无人机 · 职业教育 · 教学效能 · 实证研究 · 教师培训</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 无人机 · 职业教育 · 教学效能 · 实证研究 · 教师培训</div>
       <div class="p-desc">以无人机应用技术为切入点，实证检验 NFSC 教学法在高职教师课堂教学效能提升中的作用机制。</div>
     </div>
 
     <div class="paper" data-status="submitted">
-      <div class="p-header"><span class="p-id">P6</span><span class="p-title">跨情境教学迁移的六动机分类法</span><span class="p-badge bg-blue">已投稿</span></div>
+      <div class="p-header"><span class="p-id">P6</span><span class="p-title">跨情境教学迁移的六动机分类法</span><span class="p-badge bg-blue" data-i18n="academic.s_sub">已投稿</span></div>
       <div class="p-meta"><span class="j">Knowledge Management &amp; E-Learning</span> · Scopus · 🇭🇰 香港</div>
-      <div class="p-keywords"><strong>关键词</strong> 教学迁移 · 动机分类 · 工程教育 · 知识转移 · 跨情境适应</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 教学迁移 · 动机分类 · 工程教育 · 知识转移 · 跨情境适应</div>
       <div class="p-desc">提出六种互不重叠的跨情境教学迁移动机类型（教学层次/风口职业/职场周期/品质生活/亲子助学/学科教学），覆盖全职业生涯周期。</div>
     </div>
 
     <div class="paper" data-status="pending">
-      <div class="p-header"><span class="p-id">P7</span><span class="p-title">NFSC 教学法三年纵向评估</span><span class="p-badge bg-green">待投</span></div>
+      <div class="p-header"><span class="p-id">P7</span><span class="p-title">NFSC 教学法三年纵向评估</span><span class="p-badge bg-green" data-i18n="academic.s_pend">待投</span></div>
       <div class="p-meta"><span class="j">JUTLP · Journal of University Teaching &amp; Learning Practice</span> · Scopus Q1 · 🇦🇺 澳大利亚</div>
-      <div class="p-keywords"><strong>关键词</strong> 纵向评估 · 工程教育 · 叙事教学法 · 量规评价 · OBE</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 纵向评估 · 工程教育 · 叙事教学法 · 量规评价 · OBE</div>
       <div class="p-desc">基于三届研究生（2023–2025）纵向数据，以量规驱动过程评价闭环验证 NFSC 教学法的教学效果持续性。</div>
     </div>
 
     <div class="paper" data-status="pending">
-      <div class="p-header"><span class="p-id">P8</span><span class="p-title">信息素养研究的知识结构图谱</span><span class="p-badge bg-green">待投</span></div>
+      <div class="p-header"><span class="p-id">P8</span><span class="p-title">信息素养研究的知识结构图谱</span><span class="p-badge bg-green" data-i18n="academic.s_pend">待投</span></div>
       <div class="p-meta"><span class="j">Information Research</span> · Scopus · 🇸🇪 瑞典</div>
-      <div class="p-keywords"><strong>关键词</strong> 信息素养 · 文献计量 · 知识结构 · 高等教育 · VOSviewer</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 信息素养 · 文献计量 · 知识结构 · 高等教育 · VOSviewer</div>
       <div class="p-desc">基于 WoS 核心合集 747 篇文献（1990–2024），以 VOSviewer 图谱揭示信息素养研究的知识域演变与前沿方向。</div>
     </div>
 
     <div class="paper" data-status="revision">
-      <div class="p-header"><span class="p-id">P9</span><span class="p-title">高校教师自我效能感的知识演进</span><span class="p-badge bg-gold">大修中</span></div>
+      <div class="p-header"><span class="p-id">P9</span><span class="p-title">高校教师自我效能感的知识演进</span><span class="p-badge bg-gold" data-i18n="academic.s_rev">大修中</span></div>
       <div class="p-meta"><span class="j">Open Education Studies</span> · Scopus · 🇩🇪 德国</div>
-      <div class="p-keywords"><strong>关键词</strong> 教师自我效能 · 高等教育 · 文献计量 · 知识结构 · 教师发展</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 教师自我效能 · 高等教育 · 文献计量 · 知识结构 · 教师发展</div>
       <div class="p-desc">基于 WoS 核心合集 1,150 篇文献（1985–2024），全景呈现高校教师自我效能研究的知识基础、合作网络与研究前沿。</div>
     </div>
 
     <div class="paper" data-status="pending">
-      <div class="p-header"><span class="p-id">P10</span><span class="p-title">全球高校教师发展研究的结构演变</span><span class="p-badge bg-green">待投</span></div>
+      <div class="p-header"><span class="p-id">P10</span><span class="p-title">全球高校教师发展研究的结构演变</span><span class="p-badge bg-green" data-i18n="academic.s_pend">待投</span></div>
       <div class="p-meta"><span class="j">IJAD · International Journal for Academic Development</span> · Scopus · 🇬🇧 英国</div>
-      <div class="p-keywords"><strong>关键词</strong> 教师发展 · 高等教育 · 文献计量 · 知识结构 · 全球知识不对称</div>
+      <div class="p-keywords"><strong data-i18n="academic.kw">关键词</strong> 教师发展 · 高等教育 · 文献计量 · 知识结构 · 全球知识不对称</div>
       <div class="p-desc">基于 WoS 核心合集 1,425 篇文献（1990–2025），首次全景呈现高校教师发展研究的知识结构、南北不对称与领域演变。</div>
     </div>
   </div>
 
   <div class="disclaimer">
-    <h4>⚠ 学术诚信声明</h4>
+    <h4 data-i18n="academic.disc_title">⚠ 学术诚信声明</h4>
     1. 以上论文均处于审稿流程中，所列标题为领域研究方向描述，非正式投稿标题。<br>
     2. 为遵守双盲审稿要求，不公开完整摘要、投稿编号及除通讯作者外的作者名单。<br>
     3. 专著处于出版合同阶段，仅公示目录框架。
   </div>
 
-  <div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
+  <div class="footer" data-i18n="common.copyright">© 黄正文（点暇斋）· 全部作品版权登记</div>
 </div>
 
 <script>
@@ -196,6 +197,22 @@ function filterPapers(status,btn){
     p.style.display=(status==='all'||p.getAttribute('data-status')===status)?'block':'none';
   });
 }
+var tocTexts={zh:{show:'展开目录 ▾',hide:'收起目录 ▴'},en:{show:'Expand TOC ▾',hide:'Collapse TOC ▴'}};
+function updateTocBtn(){
+  var t=document.getElementById('toc');
+  var btn=document.getElementById('tocToggle');
+  if(!t||!btn)return;
+  var open=t.classList.contains('open');
+  var lang=(localStorage.getItem('cdu-gufei-lang')||'zh');
+  var tx=tocTexts[lang]||tocTexts.en;
+  btn.textContent=open?tx.hide:tx.show;
+}
+function toggleToc(){
+  var t=document.getElementById('toc');
+  t.classList.toggle('open');
+  updateTocBtn();
+}
+window.addEventListener('i18n:translated',function(){setTimeout(updateTocBtn,100)});
 document.addEventListener('contextmenu',function(e){e.preventDefault()});
 document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
 document.addEventListener('dragstart',function(e){e.preventDefault()});
