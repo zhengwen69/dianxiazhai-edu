@@ -36,13 +36,14 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
 @media(max-width:768px){body{padding:20px 12px}.hero h1{font-size:22px}.info-box{padding:16px 18px}}
 @media print{body{display:none}}
 </style>
+<script src="../js/i18n.js"></script>
 </head>
 <body>
 <div class="container">
 
   <div class="hero">
     <div class="emoji">🏯</div>
-    <h1><span>刘胜笛箫工作室</span></h1>
+    <h1><span>刘胜笛箫工作室</div></h1>
     <div class="sub">成都青羊宫</div>
     <div class="addr">成都市青羊区一环路西二段 青羊宫内</div>
   </div>
@@ -89,6 +90,42 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
   </div>
 
   <div class="section">
+    <h3>▸ 演奏试听</h3>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
+        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 戒网 ——《黑神话：孙悟》箫独奏 · 刘胜演奏</div>
+        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
+          <source src="../刘胜工作室/戒网  《黑神话：孙悟》箫独奏 刘胜演奏.m4a" type="audio/mp4">
+        </audio>
+      </div>
+      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
+        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 神话 —— 一二声部合并 · 箫 同一只 G</div>
+        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
+          <source src="../刘胜工作室/神话 一二声部合并 箫 同一只G.m4a" type="audio/mp4">
+        </audio>
+      </div>
+      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
+        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 天边 —— 南箫 完整版</div>
+        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
+          <source src="../刘胜工作室/天边 南箫 完整版 Ls 2.m4a" type="audio/mp4">
+        </audio>
+      </div>
+      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
+        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 梧桐月 —— 乙巳年八月十五 · 南箫 · 刘胜</div>
+        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
+          <source src="../刘胜工作室/梧桐月 乙巳年八月十五 南箫 刘胜.m4a" type="audio/mp4">
+        </audio>
+      </div>
+      <div style="background:rgba(13,31,53,.5);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 18px">
+        <div style="font-size:13px;color:#e8e8e8;margin-bottom:6px">🎵 新赛马 —— 加速版</div>
+        <audio controls controlsList="nodownload" preload="none" style="width:100%;height:36px">
+          <source src="../刘胜工作室/新赛马 加速.m4a" type="audio/mp4">
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
     <h3>▸ 原创内容</h3>
     <p>发布原创内容 15 篇，包含视频 / 音乐 / 教学演示</p>
   </div>
@@ -103,7 +140,7 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;c
 
 </div>
 
-<div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
+<div class="footer" data-i18n="common.copyright">© 黄正文（点暇斋）· 全部作品版权登记</div>
 
 <script>
 document.addEventListener('contextmenu',function(e){e.preventDefault()});
