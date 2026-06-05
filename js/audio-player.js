@@ -24,9 +24,9 @@
 
   // Audio element
   var audio = document.createElement('audio');
+  audio.src = encodeURI(audioBase + TRACKS[state.track].file);
   audio.preload = 'auto';
-  audio.src = audioBase + TRACKS[state.track].file;
-  if (state.time > 0) audio.currentTime = state.time;
+  audio.load();
 
   audio.addEventListener('ended', function() { nextTrack(); });
   audio.addEventListener('timeupdate', saveState);
@@ -53,8 +53,8 @@
 
   function loadTrack(autoplay) {
     var wasPlaying = !audio.paused;
-    audio.src = audioBase + TRACKS[state.track].file;
-    audio.currentTime = 0;
+    audio.src = encodeURI(audioBase + TRACKS[state.track].file);
+    audio.load();
     saveState();
     updateUI();
     if (autoplay || wasPlaying) { var p = audio.play(); if (p) p.catch(function(){}) }
