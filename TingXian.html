@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-protect="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>听弦 — 点暇斋</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0f1923;color:#b8c4ce;min-height:100vh}
+.progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#c0392b,#e67e22,#27ae60,#16a085,#2980b9,#8e44ad,#2c3e50);z-index:9999;transition:width .1s linear}
+.main{max-width:780px;margin:0 auto;padding:60px 24px 40px}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:32px}
+.hero h1{font-size:36px;color:#e8ecef;margin-bottom:4px;font-weight:400;letter-spacing:8px}
+.hero .sub{color:#5a6a7a;font-size:14px;line-height:2.0;margin-top:6px}
+.hero .sub span{color:#c0824a}
+.sep{width:60px;height:2px;background:linear-gradient(90deg,transparent,rgba(192,130,74,.4),transparent);margin:20px auto 0}
+
+/* String */
+.strings{position:relative;padding-left:20px;margin:40px 0}
+.strings::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:1px;background:repeating-linear-gradient(to bottom,rgba(192,130,74,.15) 0,rgba(192,130,74,.15) 4px,transparent 4px,transparent 12px)}
+
+.string{margin-bottom:28px;padding:20px 24px 18px 20px;background:rgba(13,24,38,.5);border-radius:8px;position:relative;transition:all .3s;border:1px solid rgba(192,130,74,.06)}
+.string:hover{border-color:rgba(192,130,74,.15);background:rgba(13,24,38,.7);transform:translateX(3px)}
+.string::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:8px 0 0 8px}
+.string-1::before{background:#c0392b}
+.string-2::before{background:#e67e22}
+.string-3::before{background:#27ae60}
+.string-4::before{background:#16a085}
+.string-5::before{background:#2980b9}
+.string-6::before{background:#8e44ad}
+.string-7::before{background:#2c3e50}
+
+.string .s-header{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+.string .s-num{font-size:10px;color:#556677;letter-spacing:2px;text-transform:uppercase}
+.string .s-name{font-family:Georgia,"楷体","KaiTi",serif;font-size:17px;color:#e8ecef;font-weight:600}
+.string .s-meta{font-size:11px;color:#556677;margin-bottom:10px}
+.string .s-quote{font-family:Georgia,"楷体","KaiTi",serif;font-size:15px;color:#b8956a;font-style:italic;margin-bottom:12px;line-height:1.8;padding-left:12px;border-left:1px solid rgba(192,130,74,.15)}
+.string .s-link{display:inline-block;padding:6px 18px;border-radius:16px;font-size:12px;text-decoration:none;transition:all .3s;border:1px solid}
+.string-1 .s-link{border-color:rgba(192,57,43,.3);color:#c0392b}
+.string-2 .s-link{border-color:rgba(230,126,34,.3);color:#e67e22}
+.string-3 .s-link{border-color:rgba(39,174,96,.3);color:#27ae60}
+.string-4 .s-link{border-color:rgba(22,160,133,.3);color:#16a085}
+.string-5 .s-link{border-color:rgba(41,128,185,.3);color:#2980b9}
+.string-6 .s-link{border-color:rgba(142,68,173,.3);color:#8e44ad}
+.string-7 .s-link{border-color:rgba(44,62,80,.4);color:#7f8c8d}
+.s-link:hover{filter:brightness(1.3);box-shadow:0 0 12px rgba(192,130,74,.1)}
+
+/* Connector between strings */
+.connector{text-align:center;margin:-14px 0 -14px 20px;color:rgba(192,130,74,.2);font-size:18px;letter-spacing:4px;user-select:none}
+
+/* Mapping table */
+.mapping{margin:36px 0}
+.mapping h2{font-size:16px;color:#c0824a;margin-bottom:14px;font-weight:400;letter-spacing:2px}
+.map-table{width:100%;border-collapse:collapse;font-size:12px}
+.map-table th{text-align:left;padding:8px 10px;color:#7a8a9a;font-weight:400;font-size:11px;border-bottom:2px solid rgba(192,130,74,.15)}
+.map-table td{padding:7px 10px;color:#8899aa;border-bottom:1px solid rgba(192,130,74,.06)}
+.map-table .dot{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.map-table tr:hover td{background:rgba(192,130,74,.03);color:#aabbcc}
+
+/* Bottom flow */
+.flow{margin:40px 0 20px;text-align:center}
+.flow h2{font-size:16px;color:#c0824a;margin-bottom:16px;font-weight:400;letter-spacing:2px}
+.flow-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+.flow-node{padding:8px 18px;border-radius:16px;font-size:12px;background:rgba(13,24,38,.5);border:1px solid rgba(192,130,74,.12);color:#8899aa;text-decoration:none;transition:all .3s}
+.flow-node:hover{background:rgba(192,130,74,.08);color:#c0824a;border-color:rgba(192,130,74,.25)}
+.flow-arrow{color:rgba(192,130,74,.3);font-size:14px}
+.flow-node.accent{border-color:rgba(192,130,74,.3);color:#c0824a}
+
+.back-link{display:block;text-align:center;margin:30px 0 10px;color:#5b9bd5;text-decoration:none;font-size:13px;transition:color .3s}
+.back-link:hover{color:#7fb8e0}
+.footer{text-align:center;color:#445;font-size:12px;line-height:2;padding-bottom:20px}
+
+@media(max-width:768px){
+  .main{padding:40px 14px 30px}
+  .hero h1{font-size:26px;letter-spacing:4px}
+  .string{padding:14px 14px 14px 14px}
+  .string .s-quote{font-size:13px}
+  .flow-row{flex-direction:column;gap:0}
+  .flow-arrow{transform:rotate(90deg)}
+  .strings{padding-left:12px}
+}
+@media print{body{display:none}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progressBar"></div>
+
+<div class="main">
+  <div class="hero">
+    <h1>听 弦</h1>
+    <div class="sub"><span>「请你来听 弦上之曲」</span><br>七部纪实 · 二百余万字 · 弦歌不辍</div>
+    <div class="sep"></div>
+  </div>
+
+  <div class="strings">
+
+    <!-- 第一弦 -->
+    <div class="string string-1">
+      <div class="s-header"><span class="s-num">第一弦</span><span class="s-name">龙栖湾</span></div>
+      <div class="s-meta">S001-S003 · 第 1-2 周 · 空间错配</div>
+      <div class="s-quote">「一亩三分地没了」</div>
+      <a class="s-link" href="https://book.qq.com/book-detail/54859488" target="_blank">📖 QQ阅读 · 实时连载 →</a>
+    </div>
+
+    <div class="connector">↕</div>
+
+    <!-- 第二弦 -->
+    <div class="string string-2">
+      <div class="s-header"><span class="s-num">第二弦</span><span class="s-name">青龙湖</span></div>
+      <div class="s-meta">S004-S005 · 第 3 周 · 技术错配</div>
+      <div class="s-quote">「技术选对了，来料不对」</div>
+      <a class="s-link" href="https://www.17k.com/book/3616238.html" target="_blank">📖 17K文学 · 实时连载 →</a>
+    </div>
+
+    <div class="connector">↕</div>
+
+    <!-- 第三弦 -->
+    <div class="string string-3">
+      <div class="s-header"><span class="s-num">第三弦</span><span class="s-name">杨柳坝与刘家湾</span></div>
+      <div class="s-meta">S006-S008 · 第 4-5 周 · 行为错配</div>
+      <div class="s-quote">「隔着那张塘，两村投不同的桶」</div>
+      <a class="s-link" href="https://www.17k.com/book/3608077.html" target="_blank">📖 17K文学 · 实时连载 →</a>
+    </div>
+
+    <div class="connector">↕</div>
+
+    <!-- 第四弦 -->
+    <div class="string string-4">
+      <div class="s-header"><span class="s-num">第四弦</span><span class="s-name">三多里巷</span></div>
+      <div class="s-meta">S009-S011 · 第 5-7 周 · 人文错配</div>
+      <div class="s-quote">「可以问我一声吗」</div>
+      <a class="s-link" href="https://www.17k.com/book/3608078.html" target="_blank">📖 17K文学 · 实时连载 →</a>
+    </div>
+
+    <div class="connector">↕</div>
+
+    <!-- 第五弦 -->
+    <div class="string string-5">
+      <div class="s-header"><span class="s-num">第五弦</span><span class="s-name">艾沙巴赢白云村</span></div>
+      <div class="s-meta">S012-S014 · 第 7 周 · 人文错配</div>
+      <div class="s-quote">&nbsp;</div>
+      <a class="s-link" href="https://www.17k.com/book/3608076.html" target="_blank">📖 17K文学 · 实时连载 →</a>
+    </div>
+
+    <div class="connector">↕</div>
+
+    <!-- 第六弦 -->
+    <div class="string string-6">
+      <div class="s-header"><span class="s-num">第六弦</span><span class="s-name">破界者</span></div>
+      <div class="s-meta">S015-S017 · 纯素材库</div>
+      <div class="s-quote">&nbsp;</div>
+      <a class="s-link" href="https://www.17k.com/book/3625872.html" target="_blank">📖 17K文学 · 实时连载 →</a>
+    </div>
+
+    <div class="connector">↕</div>
+
+    <!-- 第七弦 -->
+    <div class="string string-7">
+      <div class="s-header"><span class="s-num">第七弦</span><span class="s-name">长城公社脚下的白云上村</span></div>
+      <div class="s-meta">S018-S021 · 第 8 周 · 思维整合</div>
+      <div class="s-quote">&nbsp;</div>
+      <a class="s-link" href="https://www.17k.com/book/3613430.html" target="_blank">📖 17K文学 · 实时连载 →</a>
+    </div>
+
+  </div>
+
+  <!-- 素材母库 -->
+  <div class="mapping">
+    <h2>▸ 弦外 · 索隐  S001-S021 素材母库</h2>
+    <table class="map-table">
+      <thead><tr><th></th><th>S 编号</th><th>小说</th><th>教学周</th><th>错配类型</th><th>阅读平台</th></tr></thead>
+      <tbody>
+        <tr><td><span class="dot" style="background:#c0392b"></span></td><td>S001-S003</td><td>龙栖湾</td><td>第 1-2 周</td><td>空间错配</td><td>QQ阅读</td></tr>
+        <tr><td><span class="dot" style="background:#e67e22"></span></td><td>S004-S005</td><td>青龙湖</td><td>第 3 周</td><td>技术错配</td><td>17K文学</td></tr>
+        <tr><td><span class="dot" style="background:#27ae60"></span></td><td>S006-S008</td><td>杨柳坝与刘家湾</td><td>第 4-5 周</td><td>行为错配</td><td>17K文学</td></tr>
+        <tr><td><span class="dot" style="background:#16a085"></span></td><td>S009-S011</td><td>三多里巷</td><td>第 5-7 周</td><td>人文错配</td><td>17K文学</td></tr>
+        <tr><td><span class="dot" style="background:#2980b9"></span></td><td>S012-S014</td><td>艾沙巴赢白云村</td><td>第 7 周</td><td>人文错配</td><td>17K文学</td></tr>
+        <tr><td><span class="dot" style="background:#8e44ad"></span></td><td>S015-S017</td><td>破界者</td><td>—（纯素材库）</td><td>—</td><td>17K文学</td></tr>
+        <tr><td><span class="dot" style="background:#2c3e50"></span></td><td>S018-S021</td><td>长城公社脚下的白云上村</td><td>第 8 周</td><td>思维整合</td><td>17K文学</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 闭环 -->
+  <div class="flow">
+    <h2>▸ 闭环</h2>
+    <div class="flow-row">
+      <span class="flow-node accent">听弦 · 小说</span>
+      <span class="flow-arrow">→</span>
+      <a class="flow-node" href="Exploring-NFSC.html">探微 · 教学法</a>
+      <span class="flow-arrow">→</span>
+      <a class="flow-node" href="迁移探索.html">迁移探索</a>
+      <span class="flow-arrow">→</span>
+      <a class="flow-node" href="教研科研进展.html">10 篇论文</a>
+    </div>
+  </div>
+
+  <a class="back-link" href="index.html">← 返回首页</a>
+  <div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var st=document.documentElement.scrollTop||document.body.scrollTop;
+  var sh=document.documentElement.scrollHeight||document.body.scrollHeight;
+  var ch=document.documentElement.clientHeight||document.body.clientHeight;
+  document.getElementById('progressBar').style.width=Math.min(st/(sh-ch)*100,100)+'%';
+});
+document.addEventListener('contextmenu',function(e){e.preventDefault()});
+document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
+</script>
+</body>
+</html>
