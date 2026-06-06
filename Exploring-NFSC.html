@@ -28,7 +28,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 
 /* Hero */
 .hero{margin-bottom:40px;text-align:left}
-.hero h1{font-size:24px;color:#e8ecef;margin-bottom:8px;line-height:1.5}
+.hero h1{font-size:21px;color:#e8ecef;margin-bottom:8px;line-height:1.5}
 .hero h1 span{color:#f0a500}
 .hero .meta{color:#556677;font-size:12px;line-height:1.9}
 .hero .meta .badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:10px;border:1px solid rgba(241,196,15,.2);color:#f1c40f;background:rgba(241,196,15,.06);margin-right:6px}
@@ -72,13 +72,28 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .footer{text-align:center;color:#445;font-size:12px;line-height:2;padding:30px 0 20px}
 
 @media(max-width:768px){
+  .progress{height:2px}
   .sidebar{display:none}
-  .main{margin-left:0;padding:40px 16px 30px}
-  .hero h1{font-size:20px}
-  .book-page{padding:18px 16px}
-  .academic-card{padding:16px 18px}
-  .academic-card p,.book-page p{font-size:12px}
+  .main{margin-left:0;padding:48px 14px 30px}
+  .hero h1{font-size:16px}
+  .hero .meta{font-size:11px}
+  .s-block h2{font-size:15px}
+  .book-page{padding:16px 14px}
+  .book-page p{font-size:12px;line-height:2.0}
+  .academic-card{padding:14px 16px}
+  .academic-card p{font-size:12px;line-height:1.9}
+  .academic-card h3{font-size:13px}
+  .toc-content{padding:14px 16px;max-height:350px}
+  .toc-content h3{font-size:12px}
+  .toc-content li{font-size:10px}
+  /* Mobile back button */
+  .mobile-back{display:flex}
 }
+/* Mobile back button — hidden on desktop */
+.mobile-back{display:none;position:fixed;top:0;left:0;right:0;z-index:999;padding:8px 12px;background:rgba(10,22,40,.95);border-bottom:1px solid rgba(240,165,0,.12);align-items:center;gap:8px}
+.mobile-back a{color:#f0a500;text-decoration:none;font-size:13px;font-weight:600}
+.mobile-back .spacer{flex:1}
+.mobile-back .section-indicator{color:#556677;font-size:10px}
 @media print{body{display:none}}
 </style>
 <script src="js/protect-content.js"></script>
@@ -86,6 +101,13 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 <body class="protected">
 
 <div class="progress" id="progressBar"></div>
+
+<!-- Mobile back button -->
+<div class="mobile-back">
+  <a href="index.html">◀ 返回</a>
+  <span class="spacer"></span>
+  <span class="section-indicator" id="mobileIndicator">探微 NFSC</span>
+</div>
 
 <nav class="sidebar">
   <div class="s-title">探微 NFSC</div>
@@ -104,10 +126,9 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div class="hero">
     <h1>《叙事·门户·智能体——<span>"叙·框·境·创"工程专业硕士研究生教学法</span>》</h1>
     <div class="meta">
-      <span>黄正文 · 成都大学环境工程系</span><br>
+      <span>黄正文等 · 成都大学环境工程系</span><br>
       <span style="color:#5a6a7a">约 20 万字 · 10 章 + 4 附录 · 约 450 页</span><br>
-      <span class="badge">合同阶段 · 出版中</span>
-      <span style="color:#556677;font-size:10px">版权登记办理中</span>
+      <span style="color:#556677;font-size:10px">作品版权登记办理中</span>
     </div>
   </div>
 
@@ -253,6 +274,12 @@ window.addEventListener('scroll',function(){
   navLinks.forEach(function(l){
     l.classList.toggle('active',l.getAttribute('onclick').indexOf(active)>-1);
   });
+  // Update mobile indicator
+  var mi=document.getElementById('mobileIndicator');
+  if(mi){
+    var labels={'preface':'自序','postscript':'跋','sample':'试读样章','toc':'全书目录','overview':'各章概要','disclaimer':'版权声明'};
+    mi.textContent=labels[active]||'探微 NFSC';
+  }
 });
 
 document.addEventListener('contextmenu',function(e){e.preventDefault()});
