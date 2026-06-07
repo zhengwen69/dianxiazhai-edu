@@ -6,399 +6,278 @@
 <title>新政解读 — 点暇斋</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#1a1a1a;color:#333;min-height:100vh;overflow:hidden;position:relative}
-body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(233,30,99,.008) 60px,rgba(233,30,99,.008) 62px);pointer-events:none;z-index:100}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#0a1628;color:#b8c4ce;min-height:100vh;position:relative;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(233,30,99,.008) 60px,rgba(233,30,99,.008) 62px);pointer-events:none;z-index:10}
 .protected{-webkit-user-select:none;-moz-user-select:none;user-select:none}
 
-/* Book container */
-.book-container{display:flex;justify-content:center;align-items:center;height:100vh;padding:20px;perspective:2000px}
+.sidebar{position:fixed;left:0;top:0;width:200px;height:100vh;background:rgba(8,20,40,.95);border-right:1px solid rgba(192,130,74,.12);padding:20px 0;display:flex;flex-direction:column;z-index:900;overflow-y:auto}
+.sidebar .s-title{color:#c0824a;font-size:13px;font-weight:700;padding:0 18px 12px;letter-spacing:1px}
+.sidebar .s-link{display:block;padding:8px 18px;color:#778899;text-decoration:none;font-size:12px;transition:all .2s;border-left:3px solid transparent;background:none;border-top:none;border-right:none;border-bottom:none;text-align:left;width:100%;font-family:inherit;cursor:pointer}
+.sidebar .s-link:hover{color:#aabbcc;background:rgba(192,130,74,.04)}
+.sidebar .s-link.active{color:#c0824a;border-left-color:#c0824a;background:rgba(192,130,74,.06)}
+.sidebar .back-link{display:block;padding:10px 18px;color:#5b9bd5;text-decoration:none;font-size:11px;margin-top:auto;border-top:1px solid rgba(91,155,213,.08)}
+.sidebar .back-link:hover{color:#7fb8e0}
 
-/* Book */
-.book{position:relative;width:900px;height:620px;background:#f5f0e8;border-radius:4px 8px 8px 4px;box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 0 0 1px rgba(0,0,0,.05);display:flex;overflow:hidden}
-.book::before{content:'';position:absolute;left:0;top:0;bottom:0;width:20px;background:linear-gradient(90deg,rgba(0,0,0,.06),transparent);z-index:5;pointer-events:none}
+.main{margin-left:200px;padding:40px 50px 30px;max-width:860px;min-height:100vh}
 
-/* Page group */
-.pages{display:flex;flex:1;position:relative;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;padding-bottom:16px;border-bottom:1px solid rgba(192,130,74,.12)}
+.top-bar h1{font-size:20px;color:#e8ecef;font-weight:700}
+.top-bar h1 span{color:#c0824a}
+.top-bar .dl-btn{display:inline-block;padding:6px 16px;border-radius:14px;font-size:12px;background:rgba(192,130,74,.1);color:#c0824a;border:1px solid rgba(192,130,74,.2);text-decoration:none;transition:all .2s}
+.top-bar .dl-btn:hover{background:rgba(192,130,74,.2);color:#fff}
 
-.page{flex:1;min-width:0;padding:30px 36px;overflow-y:auto;background:#faf6ee;border-left:1px solid rgba(0,0,0,.06);font-size:13px;line-height:1.85;color:#3a3a3a;position:relative}
-.page:first-child{border-left:none}
-.page::-webkit-scrollbar{width:4px}
-.page::-webkit-scrollbar-thumb{background:rgba(0,0,0,.1);border-radius:2px}
+.hero{text-align:center;margin-bottom:28px}
+.hero h2{font-size:18px;color:#e8ecef;margin-bottom:4px}
+.hero .meta{color:#5a6a7a;font-size:11px;line-height:1.8}
 
-.page h1{font-size:20px;color:#2c3e50;text-align:center;margin-bottom:8px}
-.page h2{font-size:16px;color:#34495e;margin:10px 0 4px;padding-bottom:3px;border-bottom:2px solid #ddd}
-.page h3{font-size:14px;color:#555;margin:6px 0 3px}
-.page p{text-indent:2em;margin:3px 0;font-family:"FangSong","仿宋",serif}
-.page table{width:100%;border-collapse:collapse;font-size:11px;margin:6px 0}
-.page th{border-top:1.5px solid #333;border-bottom:.75px solid #333;padding:4px 6px;text-align:left;font-size:10px;background:#f5f0e8}
-.page td{padding:3px 6px;font-size:10px;border-bottom:.75px solid #ddd}
-.page tr:last-child td{border-bottom:1.5px solid #333}
-.page img{max-width:100%;display:block;margin:8px auto;border-radius:4px}
-.page .fig-caption{text-align:center;font-size:10px;color:#888;margin-top:2px}
-.page .tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;margin:0 2px}
-.tag-red{background:#fde8e8;color:#c0392b;border:1px solid #f5c6c6}
-.tag-yel{background:#fef8e8;color:#e67e22;border:1px solid #fadc9a}
-.tag-grn{background:#e8f8e8;color:#27ae60;border:1px solid #b7e4b7}
-.tag-blu{background:#e8f0f8;color:#2980b9;border:1px solid #b7d4e8}
+.section{margin-bottom:28px}
+.section h2{font-size:15px;color:#c0824a;padding-bottom:6px;border-bottom:1px solid rgba(192,130,74,.15);margin-bottom:10px}
+.section h3{font-size:13px;color:#7fb8e0;margin:8px 0 4px}
+.section p{font-size:13px;line-height:2.0;color:#8899aa;text-indent:2em;margin:4px 0}
+.section p.no-indent{text-indent:0}
 
-/* Cover page */
-.page.cover{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#f5f0e8;background-image:radial-gradient(circle at center,rgba(0,0,0,.02) 0,transparent 60%)}
-.page.cover h1{font-size:22px;margin-bottom:6px}
-.page.cover .sub{font-size:15px;color:#666;margin-bottom:20px}
-.page.cover .meta{font-size:12px;color:#999}
+/* Tables */
+.s-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:11px}
+.s-table th{text-align:left;padding:6px 8px;color:#7fb8e0;font-weight:600;font-size:10px;border-top:2px solid rgba(192,130,74,.2);border-bottom:1px solid rgba(192,130,74,.15);background:rgba(192,130,74,.03)}
+.s-table td{padding:5px 8px;color:#8899aa;border-bottom:1px solid rgba(192,130,74,.06)}
+.s-table tr:last-child td{border-bottom:2px solid rgba(192,130,74,.2)}
+.s-table tr:hover td{background:rgba(192,130,74,.03)}
+.tbl-caption{text-align:center;color:#667;font-size:10px;margin:-6px 0 8px}
 
-/* Back cover */
-.page.back{display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f5f0e8;font-size:12px;color:#999}
-.page.back p{text-indent:0;text-align:center}
+/* Figures */
+.figure{text-align:center;margin:14px 0}
+.figure img{max-width:100%;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.figure .fig-cap{font-size:10px;color:#556677;margin-top:4px}
 
-/* Navigation */
-.nav-bar{position:fixed;bottom:0;left:0;right:0;height:48px;background:rgba(20,20,20,.95);border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;gap:16px;z-index:200}
-.nav-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#ccc;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:13px;transition:all .2s;font-family:inherit}
-.nav-btn:hover{background:rgba(255,255,255,.12);color:#fff}
-.nav-btn:active{background:rgba(192,130,74,.2)}
-.nav-info{color:#888;font-size:12px;min-width:80px;text-align:center}
-.dl-btn{background:rgba(192,130,74,.15);border-color:rgba(192,130,74,.3);color:#c0824a;text-decoration:none;padding:6px 18px;border-radius:6px;font-size:13px;transition:all .2s}
-.dl-btn:hover{background:rgba(192,130,74,.25);color:#f0c080}
+/* Abstract box */
+.abstract-box{background:rgba(192,130,74,.05);border:1px solid rgba(192,130,74,.1);border-radius:8px;padding:18px 22px;margin-bottom:24px}
+.abstract-box p{font-size:12px;line-height:2.0;color:#a0afbc;text-indent:0}
+.abstract-box .kw{color:#c0824a;font-size:11px;margin-top:8px}
+.abstract-box .en{font-family:Georgia,serif;font-size:11px;color:#8899aa;margin-top:6px}
 
-/* Top bar */
-.top-bar{position:fixed;top:0;left:0;right:0;height:36px;background:rgba(20,20,20,.9);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;padding:0 16px;z-index:200;justify-content:space-between}
-.top-bar a{color:#888;text-decoration:none;font-size:12px;transition:color .2s}
-.top-bar a:hover{color:#c0824a}
-.top-bar .tb-title{color:#aaa;font-size:12px}
+/* Tags */
+.tag{display:inline-block;padding:1px 7px;border-radius:8px;font-size:9px;margin:0 1px}
+.tag-s{background:rgba(231,76,60,.12);color:#e74c3c}
+.tag-y{background:rgba(241,196,15,.12);color:#f1c40f}
+.tag-g{background:rgba(46,204,113,.12);color:#2ecc71}
+.tag-b{background:rgba(52,152,219,.12);color:#3498db}
+
+.disclaimer{margin-top:30px;padding:14px 18px;background:rgba(233,30,99,.03);border:1px solid rgba(233,30,99,.08);border-radius:8px;font-size:11px;color:#556677;line-height:1.8}
+.footer{text-align:center;color:#445;font-size:11px;padding:24px 0 16px}
+
+/* Mobile top nav */
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,22,40,.95);border-bottom:1px solid rgba(192,130,74,.12);padding:8px 12px;justify-content:space-between;align-items:center}
+.mobile-nav .mn-back{color:#c0824a;text-decoration:none;font-size:13px}
+.mobile-nav .mn-dl{color:#c0824a;font-size:11px;text-decoration:none;border:1px solid rgba(192,130,74,.2);padding:3px 10px;border-radius:12px}
+.mobile-nav .mn-title{color:#aabbcc;font-size:11px}
 
 @media(max-width:768px){
-  .book{width:100vw;height:auto;min-height:100vh;border-radius:0;flex-direction:column}
-  .book::before{display:none}
-  .pages{flex-direction:column}
-  .page{flex:none;min-height:100vh;padding:24px 18px;border-left:none;border-bottom:1px solid rgba(0,0,0,.06)}
-  .page:last-child{border-bottom:none}
-  .page h1{font-size:18px}
-  .page p{font-size:12px}
-  .page.cover{min-height:100vh}
+  .sidebar{display:none}
+  .main{margin-left:0;padding:48px 14px 30px}
+  .mobile-nav{display:flex}
+  .top-bar{display:none}
+  .section h2{font-size:14px}
+  .section p{font-size:12px}
+  .s-table{font-size:10px}
+  .s-table th,.s-table td{padding:4px 5px}
 }
 @media print{body{display:none}}
 </style>
 <script src="js/protect-content.js"></script>
-<script src="js/audio-player.js"></script>
-<script src="js/back-btn.js"></script>
 </head>
 <body class="protected">
 
-<div class="top-bar">
-  <a href="index.html">◀ 返回首页</a>
-  <span class="tb-title">📖 战略报告</span>
-  <a class="dl-btn" href="绩效新政解读-文言版.pdf" download>📥 下载 PDF</a>
+<div class="mobile-nav">
+  <a class="mn-back" href="index.html">◀ 返回</a>
+  <span class="mn-title">战略报告</span>
+  <a class="mn-dl" href="绩效新政解读-文言版.pdf" download>📥 PDF</a>
 </div>
 
-<div class="book-container">
-  <div class="book" id="book">
+<nav class="sidebar">
+  <div class="s-title">战略报告</div>
+  <button class="s-link active" onclick="scrollTo('abstract')">摘要</button>
+  <button class="s-link" onclick="scrollTo('ch1')">1 政策背景</button>
+  <button class="s-link" onclick="scrollTo('ch2')">2 成果全景</button>
+  <button class="s-link" onclick="scrollTo('ch3')">3 适配矩阵</button>
+  <button class="s-link" onclick="scrollTo('ch4')">4 风控机会</button>
+  <button class="s-link" onclick="scrollTo('ch5')">5 时间线</button>
+  <button class="s-link" onclick="scrollTo('ch6')">6 竞争壁垒</button>
+  <button class="s-link" onclick="scrollTo('ch7')">7 战略建议</button>
+  <button class="s-link" onclick="scrollTo('ch8')">8 结论</button>
+  <a class="back-link" href="index.html">◀ 返回首页</a>
+</nav>
 
-    <!-- Page 1: Cover -->
-    <div class="page cover">
-      <h1>成都大学建筑与土木工程学院<br>2026 绩效新政解读</h1>
-      <div class="sub">——环境工程系黄正文教授<br>工作布局、战略适配与成效预判</div>
-      <div class="meta">黄正文<br>成都大学 建筑与土木工程学院 环境工程系<br>2026-06-07</div>
-    </div>
+<div class="main">
 
-    <div class="page cover">
-      <h1>成都大学建筑与土木工程学院<br>2026 绩效新政解读</h1>
-      <div class="sub">——环境工程系黄正文教授<br>工作布局、战略适配与成效预判</div>
-      <div class="meta">黄正文 · 成都大学 环境工程系<br>2026-06-07</div>
-    </div>
-
-    <!-- Page 2-3: Abstract -->
-    <div class="page">
-      <h2>摘　要</h2>
-      <p>成都大学建筑与土木工程学院 2026 绩效新政，教授教学权重从约 60% 提升至 90%～95%，科研压缩至 5%～10%。本文以黄正文教授既有成果——学术专著 1 部、系列论文 10 篇、数字浏览页全套、课程思政精品示范、校级教学资源建设重点项目、普惠教育纪实小说故事云素材教改探索——逐项对标新政，构教学-科研双维适配矩阵，评 6 大风险与 4 大机会窗口，提分阶段战略之议。析之可见：黄正文教授三载教学中心之布局，与新政若合符节，先发优势显豁，竞争壁垒初显。</p>
-      <p><strong>关键词：</strong>绩效分配；教学导向改革；战略适配度；NFSC 教学法；成都大学</p>
-      <p><strong>中图分类号：</strong>G647　<strong>文献标识码：</strong>A</p>
-    </div>
-    <div class="page">
-      <h2>Abstract</h2>
-      <p style="font-family:Times New Roman,serif;font-size:12px;text-indent:0">Chengdu University's 2026 performance pay reform significantly raises teaching weight for professors from ～60% to 90-95%, while compressing research to 5-10%. This analysis maps Professor Huang Zhengwen's existing portfolio against the new policy, constructs a dual-dimension adaptation matrix, assesses risks and opportunities, and provides phased strategic recommendations. Findings indicate strong pre-adaptive alignment conferring significant first-mover advantage.</p>
-      <p style="font-family:Times New Roman,serif;font-size:12px;text-indent:0"><strong>Keywords:</strong> performance-based pay; teaching-oriented reform; strategic alignment; NFSC pedagogy; Chengdu University</p>
-    </div>
-
-    <!-- Page 4-5: Ch1 -->
-    <div class="page">
-      <h2>1 政策背景与核心条款</h2>
-      <h3>1.1 政策来源</h3>
-      <p>本报告所据为《建筑与土木工程学院绩效工资分配办法（征求意见稿）》（2026 年 5 月版），由学院行政办公室面征全体教师修订意见，系〔2025〕21 号文件之修订。拟自 2026 年秋季学期正式施行。</p>
-      <h3>1.2 基础分配框架</h3>
-      <table>
-        <tr><th>职称层级</th><th>教学权重</th><th>科研权重</th><th>机动</th><th>变化趋势</th></tr>
-        <tr><td>教授</td><td>90%～95%</td><td>5%～10%</td><td>～5%</td><td>教学从～60%大幅提升</td></tr>
-        <tr><td>副教授</td><td>80%～90%</td><td>10%</td><td>～10%</td><td>科研压缩至10%</td></tr>
-        <tr><td>讲师</td><td>64%～75%</td><td>10%～15%</td><td>～15%</td><td>教学为主均衡</td></tr>
-        <tr><td>其他</td><td>40%</td><td>35%</td><td>～25%</td><td>机动空间最大</td></tr>
-      </table>
-      <div class="fig-caption">表1 基础分配框架（四层级对照）</div>
-    </div>
-    <div class="page">
-      <h3>1.3 超工作量资金池</h3>
-      <p>年度绩效总额中约 15% 进入超工作量与奖励资金池：超教学工作量占 5%，超科研工作量占 5%，学院核心任务完成奖励占 3%，机动调剂占 2%。教学与科研的超额空间对等，但教学基础权重远高于科研，因此超教学量实质上回报更大。</p>
-      <img src="report-fig1.png" alt="Fig1">
-      <div class="fig-caption">图1 新旧政策教学-科研权重对比</div>
-      <h3>1.4 教学量与奖励标准</h3>
-      <p>教授年教学参考量为 160 学时，副教授 96 学时，讲师 48 学时。单项奖励：专著 10,000 元，高水平论文 5,000～10,000 元，省级教改 10,000 元，校级课程思政 5,000 元，单项教学奖励 200～2,000 元。</p>
-    </div>
-
-    <!-- Page 6-7: Ch2 -->
-    <div class="page">
-      <h2>2 黄正文既有成果全景</h2>
-      <h3>2.1 教学维度</h3>
-      <table>
-        <tr><th>#</th><th>成果</th><th>类型</th><th>状态</th><th>适配度</th></tr>
-        <tr><td>1</td><td>专著《叙事·门户·智能体》</td><td>教学法专著</td><td>版权登记中</td><td><span class="tag tag-red">★★★★★</span></td></tr>
-        <tr><td>2</td><td>数字浏览页全套</td><td>教学平台</td><td>已上线</td><td><span class="tag tag-red">★★★★★</span></td></tr>
-        <tr><td>3</td><td>课程思政精品示范</td><td>教学荣誉</td><td>已获批</td><td><span class="tag tag-yel">★★★★</span></td></tr>
-        <tr><td>4</td><td>校级教学资源建设重点项目</td><td>教学项目</td><td>建设中</td><td><span class="tag tag-red">★★★★★</span></td></tr>
-        <tr><td>5</td><td>固废课程教学</td><td>工作量</td><td>32学时/期</td><td><span class="tag tag-grn">★★★</span></td></tr>
-        <tr><td>6</td><td>本科毕设指导</td><td>工作量</td><td>3套20题</td><td><span class="tag tag-grn">★★★</span></td></tr>
-        <tr><td>7</td><td>普惠教育纪实小说故事云素材教改探索</td><td>教学素材</td><td>7部200万字</td><td><span class="tag tag-grn">★★★</span></td></tr>
-        <tr><td>8</td><td>CDU-Bamboo/English</td><td>教学拓展</td><td>2门户</td><td><span class="tag tag-blu">★★</span></td></tr>
-      </table>
-      <div class="fig-caption">表2 教学成果清单（8项）</div>
-    </div>
-    <div class="page">
-      <img src="report-fig2.png" alt="Fig2" style="max-width:70%">
-      <div class="fig-caption">图2 教学成果维度覆盖雷达图</div>
-      <h3>2.2 科研维度</h3>
-      <p>10篇系列论文中，5篇已投稿（P1 EJEE/SSCI、P3 现代教育技术/CSSCI、P6 KM&EL/Scopus、P7 JUTLP/Scopus Q1、P10 IJAD/Scopus），1篇大修中（P9 Open Edu Studies/Scopus），1篇待投（P4 SAJE/SSCI），1篇待更新图表（P8 IR/Scopus），2篇待问卷数据（P2 KJSS、P5 ER-VET）。在科研仅占 5%～10% 的新政策下，5篇已投稿已超额覆盖考核要求。</p>
-      <h3>2.3 双跨成果</h3>
-      <p>专著（教学法+学术出版物）、P1（教学验证+SSCI）、P7（教学实证+Scopus Q1）、P6（教学迁移+Scopus）四项成果兼具教学与科研属性，可在两个维度同时计分。</p>
-    </div>
-
-    <!-- Page 8-9: Ch3 -->
-    <div class="page">
-      <h2>3 新政适配度矩阵</h2>
-      <p>热力图显示：专著和浏览页在四个评估维度上获得最高评分（90～98分），构成教学绩效核心支柱。政策适配度排序为：专著 ≈ 浏览页 > 课程思政 > 校级教学资源建设 > 故事云 > 教学课时 > 毕设 > CDU-Bamboo。</p>
-      <img src="report-fig3.png" alt="Fig3">
-      <div class="fig-caption">图3 成果-政策适配度热力图</div>
-    </div>
-    <div class="page">
-      <p>科研侧适配度：10篇论文在5%～10%的科研权重框架下，已呈显著“超额覆盖”。今之关键非增数量，乃确保已投稿成果及时见刊，为P4、P8、P9补全投稿环节。教授层级下，95%的教学权重意味着科研几乎退化为“锦上添花”——5篇已投稿已超额覆盖，剩余论文的主要价值在于学术影响力积累和职称评审支撑，而非绩效评分。</p>
-    </div>
-
-    <!-- Page 10-11: Ch4 -->
-    <div class="page">
-      <h2>4 风控矩阵与机会窗口</h2>
-      <h3>4.1 六大风险</h3>
-      <table>
-        <tr><th>风险</th><th>概率/%</th><th>影响</th><th>应对</th><th>优先级</th></tr>
-        <tr><td>课程被分走</td><td>35</td><td>高</td><td>申报教学创新替代课时</td><td><span class="tag tag-red">高</span></td></tr>
-        <tr><td>专著出版滞后</td><td>25</td><td>中</td><td>版权先行·持续推进</td><td><span class="tag tag-yel">中</span></td></tr>
-        <tr><td>教改未获批</td><td>15</td><td>高</td><td>备选已足·不计单次</td><td><span class="tag tag-yel">中</span></td></tr>
-        <tr><td>论文被拒</td><td>10</td><td>低</td><td>多投策略·无系统风险</td><td><span class="tag tag-grn">低</span></td></tr>
-        <tr><td>平台不被认定</td><td>10</td><td>低</td><td>备好使用说明+数据</td><td><span class="tag tag-grn">低</span></td></tr>
-        <tr><td>持续分课</td><td>30</td><td>高</td><td>争取新课+增加毕设量</td><td><span class="tag tag-red">高</span></td></tr>
-      </table>
-      <div class="fig-caption">表3 六大风险矩阵</div>
-    </div>
-    <div class="page">
-      <img src="report-fig5.png" alt="Fig5">
-      <div class="fig-caption">图4 风险矩阵（气泡=严重度）</div>
-      <h3>4.2 四大机会窗口</h3>
-      <table>
-        <tr><th>机会</th><th>可能</th><th>收益</th><th>行动</th></tr>
-        <tr><td>浏览页申请校级平台</td><td>中</td><td>教学品牌+绩效</td><td>提交使用报告</td></tr>
-        <tr><td>专著后申报省教学成果奖</td><td>中</td><td>极大</td><td>提前备申报材料</td></tr>
-        <tr><td>教学法外校借鉴</td><td>低-中</td><td>学术影响力</td><td>扩大传播</td></tr>
-        <tr><td>乐养教学入素质教育</td><td>低</td><td>中</td><td>申报校级美育项目</td></tr>
-      </table>
-      <div class="fig-caption">表4 机会窗口分析</div>
-    </div>
-
-    <!-- Page 12-13: Ch5 -->
-    <div class="page">
-      <h2>5 时间线推演</h2>
-      <table>
-        <tr><th>时间</th><th>事件</th><th>类型</th><th>影响</th></tr>
-        <tr><td>2026.06</td><td>新政意见/版权登记/P4投稿</td><td>政策+行动</td><td>高</td></tr>
-        <tr><td>2026.07</td><td>新政实施/P8图表更新→投稿</td><td>政策+科研</td><td>中</td></tr>
-        <tr><td>2026.09</td><td>秋季学期/浏览页完善/教改推进</td><td>教学</td><td>高</td></tr>
-        <tr><td>2026.12</td><td>首阶段考核·三件套就位</td><td>考核</td><td>高</td></tr>
-        <tr><td>2027.03</td><td>专著出版（预估）</td><td>教学</td><td>高</td></tr>
-        <tr><td>2027.06</td><td>全年考核·绩效满格</td><td>考核</td><td>高</td></tr>
-      </table>
-      <div class="fig-caption">表5 时间线推演</div>
-      <img src="report-fig4.png" alt="Fig4" style="max-width:80%">
-      <div class="fig-caption">图5 战略时间线甘特图（2026.06-2027.06）</div>
-    </div>
-    <div class="page">
-      <h2>6 竞争壁垒分析</h2>
-      <p>浏览页非寻常教学平台可复者。以下五层要素构竞争壁垒：</p>
-      <table>
-        <tr><th>层级</th><th>要素</th><th>不可复制性/%</th><th>说明</th></tr>
-        <tr><td>1</td><td>7部纪实小说著作权</td><td>95</td><td>200万字原创，版权已登记</td></tr>
-        <tr><td>2</td><td>NFSC四维教学法</td><td>85</td><td>原创方法论，专著+论文支撑</td></tr>
-        <tr><td>3</td><td>八周教学全程实录</td><td>70</td><td>三届学生纵向数据，不可回溯</td></tr>
-        <tr><td>4</td><td>GitHub Pages零费部署</td><td>55</td><td>纯静态，推送即用</td></tr>
-        <tr><td>5</td><td>9-Agent协同设计</td><td>40</td><td>AI教学系统，可复制但周期长</td></tr>
-      </table>
-      <div class="fig-caption">表6 竞争壁垒五层塔</div>
-    </div>
-
-    <!-- Page 14-15: Ch6-7 -->
-    <div class="page">
-      <img src="report-fig6.png" alt="Fig6" style="max-width:80%">
-      <div class="fig-caption">图6 浏览页竞争壁垒五层塔</div>
-      <p>全校域内，兼原创教学内容（小说著作权）、原创教学方法论（NFSC）、原创教学数据（三年实录）、原创教学平台（浏览页）、原创AI辅助系统（9-Agent）五要素于一身者，或属少数。</p>
-    </div>
-    <div class="page">
-      <h2>7 战略建议</h2>
-      <h3>7.1 短期（2026年6月前）</h3>
-      <table>
-        <tr><th>#</th><th>行动</th><th>时间</th><th>效果</th></tr>
-        <tr><td>1</td><td>版权登记</td><td>1～2周</td><td>专著合法身份·绩效刚需</td></tr>
-        <tr><td>2</td><td>P4投稿SAJE</td><td>1天</td><td>科研补充·全部覆盖</td></tr>
-        <tr><td>3</td><td>浏览页音频上线+推送</td><td>1天</td><td>教学平台完整化</td></tr>
-        <tr><td>4</td><td>教学平台使用说明</td><td>1～2h</td><td>防“不被认定”风险</td></tr>
-        <tr><td>5</td><td>教改项目跟进</td><td>持续</td><td>教学最高级别证明</td></tr>
-      </table>
-      <div class="fig-caption">表7 短期行动清单</div>
-    </div>
-
-    <!-- Page 16-17: Ch7 cont -->
-    <div class="page">
-      <h3>7.2 中期（2026年秋季学期）</h3>
-      <table>
-        <tr><th>#</th><th>行动</th><th>预期效果</th></tr>
-        <tr><td>1</td><td>新课纲+浏览页+学习园地组合申报教学绩效</td><td>教学满格</td></tr>
-        <tr><td>2</td><td>学院NFSC教学法公开展示</td><td>影响力+证明</td></tr>
-        <tr><td>3</td><td>P9大修完成→重新提交</td><td>科研全覆盖</td></tr>
-      </table>
-      <div class="fig-caption">表8 中期行动清单</div>
-      <h3>7.3 长期（2027年）</h3>
-      <table>
-        <tr><th>#</th><th>行动</th><th>预期效果</th></tr>
-        <tr><td>1</td><td>专著出版→申报省级教学成果奖</td><td>教学绩效终极证明</td></tr>
-        <tr><td>2</td><td>浏览页申请校级/省级教学平台认定</td><td>制度化护城河</td></tr>
-      </table>
-      <div class="fig-caption">表9 长期行动清单</div>
-    </div>
-    <div class="page">
-      <h2>8 结论</h2>
-      <p>成都大学建筑与土木工程学院 2026 绩效新政，标评价体系自“重科研”向“重教学”的根本转向。教授层级教学权重从约60%骤升至90%～95%，对于以论文为主要产出路径的教师构成颠覆性冲击。</p>
-      <p>黄正文教授三载布局——学术专著、数字浏览页、10篇论文（含多篇教学研究）、课程思政精品示范、校级教学资源建设、普惠教育纪实小说故事云素材教改探索——呈与新政高度吻合之“预适应”特征。此非偶合，乃对工科研究生教改方向之持续预判与践累。</p>
-      <p>核心结论：新政如东风，船早造讫。今之课题非疲于奔逐，以逸待之——序版权登记、论文投稿、教改申报诸里程碑，保每项成果于新政框架下获最大化绩效反响。课程被分其半，为主要风险；然浏览页之教学平台属性、专著之独创性、双跨成果之策略价值，构坚实安全垫与增长空间。</p>
-      <p style="text-align:right;color:#999;font-size:11px;margin-top:20px">（日期：2026-06-07）</p>
-    </div>
-
-    <!-- Page 18: Back cover -->
-    <div class="page back">
-      <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
-      <p style="margin-top:16px">本报告仅供内部参考<br>完整 PDF 版可通过顶部下载按钮获取</p>
-    </div>
-
-    <div class="page back">
-      <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
-      <p style="margin-top:16px">本报告仅供内部参考<br>完整 PDF 版可通过顶部下载按钮获取</p>
-    </div>
-
+  <div class="top-bar">
+    <h1>绩效新政解读 <span>· 战略报告</span></h1>
+    <a class="dl-btn" href="绩效新政解读-文言版.pdf" download>📥 下载 PDF</a>
   </div>
-</div>
 
-<div class="nav-bar" id="navBar">
-  <button class="nav-btn" onclick="prevPage()">◀ 上一页</button>
-  <span class="nav-info" id="pageInfo">1 / 18</span>
-  <button class="nav-btn" onclick="nextPage()">下一页 ▶</button>
+  <div class="hero">
+    <h2>成都大学建筑与土木工程学院 2026 绩效新政解读</h2>
+    <div class="meta">——环境工程系黄正文教授工作布局、战略适配与成效预判<br>黄正文 · 成都大学 建筑与土木工程学院 环境工程系 · 2026-06-07</div>
+  </div>
+
+  <!-- Abstract -->
+  <div class="abstract-box" id="abstract">
+    <p><strong>中图分类号：</strong>G647　<strong>文献标识码：</strong>A</p>
+    <p><strong>摘　要：</strong>成都大学建筑与土木工程学院 2026 绩效新政，教授教学权重从约 60% 提升至 90%～95%，科研压缩至 5%～10%。本文以黄正文教授既有成果——学术专著 1 部、系列论文 10 篇、数字浏览页全套、课程思政精品示范、校级教学资源建设重点项目、普惠教育纪实小说故事云素材教改探索——逐项对标新政，构教学-科研双维适配矩阵，评 6 大风险与 4 大机会窗口，提分阶段战略之议。析之可见：黄正文教授三载教学中心之布局，与新政若合符节，先发优势显豁，竞争壁垒初显。</p>
+    <p class="kw"><strong>关键词：</strong>绩效分配；教学导向改革；战略适配度；NFSC 教学法；成都大学</p>
+    <p class="en"><strong>Abstract:</strong> Chengdu University's 2026 performance pay reform significantly raises teaching weight for professors from ~60% to 90–95%, while compressing research to 5–10%. This analysis maps Professor Huang Zhengwen's existing portfolio against the new policy, constructs a dual-dimension adaptation matrix, assesses risks and opportunities, and provides phased strategic recommendations.</p>
+    <p class="en"><strong>Keywords:</strong> performance-based pay; teaching-oriented reform; strategic alignment; NFSC pedagogy; Chengdu University</p>
+  </div>
+
+  <!-- Ch1 -->
+  <div class="section" id="ch1">
+    <h2>1 政策背景与核心条款</h2>
+    <h3>1.1 政策来源</h3>
+    <p>本报告所据为《建筑与土木工程学院绩效工资分配办法（征求意见稿）》（2026 年 5 月版），由学院行政办公室面征全体教师修订意见，系〔2025〕21 号文件之修订。拟自 2026 年秋季学期正式施行。</p>
+    <h3>1.2 基础分配框架</h3>
+    <p>新政按职称分级设教-研权重。基础分配比例自政策文本中提取如下：</p>
+    <table class="s-table"><tr><th>职称层级</th><th>教学权重</th><th>科研权重</th><th>机动</th><th>变化趋势</th></tr>
+      <tr><td>教授</td><td>90%～95%</td><td>5%～10%</td><td>～5%</td><td>教学从～60%大幅提升</td></tr>
+      <tr><td>副教授</td><td>80%～90%</td><td>10%</td><td>～10%</td><td>科研压缩至10%</td></tr>
+      <tr><td>讲师</td><td>64%～75%</td><td>10%～15%</td><td>～15%</td><td>教学为主均衡</td></tr>
+      <tr><td>其他</td><td>40%</td><td>35%</td><td>～25%</td><td>机动空间最大</td></tr></table>
+    <p class="tbl-caption">表1 基础分配框架（四层级对照）</p>
+    <div class="figure"><img src="report-fig1.png" alt="Fig1"><div class="fig-cap">图1 新旧政策教学-科研权重对比</div></div>
+    <h3>1.3 超工作量资金池</h3>
+    <p>年度绩效总额中约 15% 进入超工作量与奖励资金池：超教学工作量占 5%，超科研工作量占 5%，学院核心任务完成奖励占 3%，机动调剂占 2%。教学与科研之超额空间虽对等，然教学基础权重远高于科研，故超教学量回报实大。</p>
+    <h3>1.4 教学量与奖励标准</h3>
+    <p>教授年教学参考量为 160 学时，副教授 96 学时，讲师 48 学时。单项奖励：专著 10,000 元，高水平论文 5,000～10,000 元，校级教学资源建设项目 10,000 元，校级课程思政 5,000 元，单项教学奖励 200～2,000 元。</p>
+  </div>
+
+  <!-- Ch2 -->
+  <div class="section" id="ch2">
+    <h2>2 黄正文既有成果全景</h2>
+    <h3>2.1 教学维度</h3>
+    <table class="s-table"><tr><th>#</th><th>成果</th><th>类型</th><th>状态</th><th>适配度</th></tr>
+      <tr><td>1</td><td>专著《叙事·门户·智能体》</td><td>教学法专著</td><td>版权登记中</td><td><span class="tag tag-s">★★★★★</span></td></tr>
+      <tr><td>2</td><td>数字浏览页全套</td><td>教学平台</td><td>已上线</td><td><span class="tag tag-s">★★★★★</span></td></tr>
+      <tr><td>3</td><td>课程思政精品示范</td><td>教学荣誉</td><td>已获批</td><td><span class="tag tag-y">★★★★</span></td></tr>
+      <tr><td>4</td><td>校级教学资源建设重点项目</td><td>教学项目</td><td>建设中</td><td><span class="tag tag-s">★★★★★</span></td></tr>
+      <tr><td>5</td><td>固废课程教学</td><td>工作量</td><td>32学时/期</td><td><span class="tag tag-g">★★★</span></td></tr>
+      <tr><td>6</td><td>本科毕设指导</td><td>工作量</td><td>3套20题</td><td><span class="tag tag-g">★★★</span></td></tr>
+      <tr><td>7</td><td>普惠教育纪实小说故事云素材教改探索</td><td>教学素材</td><td>7部200万字</td><td><span class="tag tag-g">★★★</span></td></tr>
+      <tr><td>8</td><td>CDU-Bamboo/English</td><td>教学拓展</td><td>2门户</td><td><span class="tag tag-b">★★</span></td></tr></table>
+    <p class="tbl-caption">表2 教学成果清单（8项）</p>
+    <div class="figure"><img src="report-fig2.png" alt="Fig2" style="max-width:70%"><div class="fig-cap">图2 教学成果维度覆盖雷达图</div></div>
+    <h3>2.2 科研维度</h3>
+    <p>10 篇系列论文中，5 篇已投稿（P1 EJEE/SSCI、P3 现代教育技术/CSSCI、P6 KM&EL/Scopus、P7 JUTLP/Scopus Q1、P10 IJAD/Scopus），1 篇大修中（P9 Open Edu Studies/Scopus），1 篇待投（P4 SAJE/SSCI），1 篇待更新图表（P8 Information Research/Scopus），2 篇待问卷数据（P2 KJSS、P5 ER-VET）。在科研仅占 5%～10% 的新政策下，5 篇已投稿已超额覆盖考核要求。</p>
+    <h3>2.3 双跨成果</h3>
+    <p>以下 4 项成果兼具教学与科研属性，可双维计分：专著（教学法方法论兼学术出版物）、P1 论文（教学法验证兼 SSCI 论文）、P7 论文（教学效果实证兼 Scopus Q1 论文）、P6 论文（教学迁移理论兼 Scopus 论文）。双跨之策，乃政策套利之最优解。</p>
+  </div>
+
+  <!-- Ch3 -->
+  <div class="section" id="ch3">
+    <h2>3 新政适配度矩阵</h2>
+    <p>热力图（图3）所示：专著与浏览页于四个评估维度中得分最高（90～98 分），为教学绩效之核心支柱。政策适配度排序：专著 ≈ 浏览页 > 课程思政 > 校级教学资源建设 > 故事云 > 教学课时 > 毕设 > CDU-Bamboo。</p>
+    <div class="figure"><img src="report-fig3.png" alt="Fig3"><div class="fig-cap">图3 成果-政策适配度热力图</div></div>
+    <p>科研侧适配度：10 篇论文在 5%～10% 的科研权重框架下，已呈显著"超额覆盖"。今之关键非增数量，乃确保已投稿成果及时见刊，为 P4、P8、P9 补全投稿环节。</p>
+  </div>
+
+  <!-- Ch4 -->
+  <div class="section" id="ch4">
+    <h2>4 风控矩阵与机会窗口</h2>
+    <h3>4.1 六大风险</h3>
+    <table class="s-table"><tr><th>风险</th><th>概率/%</th><th>影响</th><th>应对</th><th>优先级</th></tr>
+      <tr><td>课程被分走</td><td>35</td><td>高</td><td>申报教学创新替代课时</td><td><span class="tag tag-s">高</span></td></tr>
+      <tr><td>专著出版滞后</td><td>25</td><td>中</td><td>版权先行·持续推进</td><td><span class="tag tag-y">中</span></td></tr>
+      <tr><td>教改未获批</td><td>15</td><td>高</td><td>备选已足·不计单次</td><td><span class="tag tag-y">中</span></td></tr>
+      <tr><td>论文被拒</td><td>10</td><td>低</td><td>多投策略·无系统风险</td><td><span class="tag tag-g">低</span></td></tr>
+      <tr><td>平台不被认定</td><td>10</td><td>低</td><td>备好使用说明+数据</td><td><span class="tag tag-g">低</span></td></tr>
+      <tr><td>持续分课</td><td>30</td><td>高</td><td>争取新课+增加毕设量</td><td><span class="tag tag-s">高</span></td></tr></table>
+    <p class="tbl-caption">表3 六大风险矩阵</p>
+    <div class="figure"><img src="report-fig5.png" alt="Fig5"><div class="fig-cap">图4 风险矩阵（气泡=严重度）</div></div>
+    <h3>4.2 四大机会窗口</h3>
+    <table class="s-table"><tr><th>机会</th><th>可能</th><th>收益</th><th>行动</th></tr>
+      <tr><td>浏览页申请校级平台</td><td>中</td><td>教学品牌+绩效</td><td>提交使用报告</td></tr>
+      <tr><td>专著后申报省教学成果奖</td><td>中</td><td>极大</td><td>提前备申报材料</td></tr>
+      <tr><td>教学法外校借鉴</td><td>低-中</td><td>学术影响力</td><td>扩大传播</td></tr>
+      <tr><td>乐养教学入素质教育</td><td>低</td><td>中</td><td>申报校级美育项目</td></tr></table>
+    <p class="tbl-caption">表4 机会窗口分析</p>
+  </div>
+
+  <!-- Ch5 -->
+  <div class="section" id="ch5">
+    <h2>5 时间线推演</h2>
+    <table class="s-table"><tr><th>时间</th><th>事件</th><th>类型</th><th>影响</th></tr>
+      <tr><td>2026.06</td><td>新政意见/版权登记/P4投稿</td><td>政策+行动</td><td>高</td></tr>
+      <tr><td>2026.07</td><td>新政实施/P8图表更新→投稿</td><td>政策+科研</td><td>中</td></tr>
+      <tr><td>2026.09</td><td>秋季学期/浏览页完善/教改推进</td><td>教学</td><td>高</td></tr>
+      <tr><td>2026.12</td><td>首阶段考核·三件套就位</td><td>考核</td><td>高</td></tr>
+      <tr><td>2027.03</td><td>专著出版（预估）</td><td>教学</td><td>高</td></tr>
+      <tr><td>2027.06</td><td>全年考核·绩效满格</td><td>考核</td><td>高</td></tr></table>
+    <p class="tbl-caption">表5 时间线推演</p>
+    <div class="figure"><img src="report-fig4.png" alt="Fig4" style="max-width:80%"><div class="fig-cap">图5 战略时间线甘特图（2026.06-2027.06）</div></div>
+  </div>
+
+  <!-- Ch6 -->
+  <div class="section" id="ch6">
+    <h2>6 竞争壁垒分析</h2>
+    <p>浏览页非寻常教学平台可复者。以下五层要素构竞争壁垒：</p>
+    <table class="s-table"><tr><th>层级</th><th>要素</th><th>不可复制性/%</th><th>说明</th></tr>
+      <tr><td>1</td><td>7部纪实小说著作权</td><td>95</td><td>200万字原创，版权已登记</td></tr>
+      <tr><td>2</td><td>NFSC四维教学法</td><td>85</td><td>原创方法论，专著+论文支撑</td></tr>
+      <tr><td>3</td><td>八周教学全程实录</td><td>70</td><td>三届学生纵向数据，不可回溯</td></tr>
+      <tr><td>4</td><td>GitHub Pages零费部署</td><td>55</td><td>纯静态，推送即用</td></tr>
+      <tr><td>5</td><td>9-Agent协同设计</td><td>40</td><td>AI教学系统，可复制但周期长</td></tr></table>
+    <p class="tbl-caption">表6 竞争壁垒五层塔</p>
+    <div class="figure"><img src="report-fig6.png" alt="Fig6" style="max-width:80%"><div class="fig-cap">图6 浏览页竞争壁垒五层塔</div></div>
+    <p>全校域内，兼原创教学内容（小说著作权）、原创教学方法论（NFSC）、原创教学数据（三年实录）、原创教学平台（浏览页）、原创 AI 辅助系统（9-Agent）五要素于一身者，或属少数。</p>
+  </div>
+
+  <!-- Ch7 -->
+  <div class="section" id="ch7">
+    <h2>7 战略建议</h2>
+    <h3>7.1 短期（2026年6月前）</h3>
+    <table class="s-table"><tr><th>#</th><th>行动</th><th>时间</th><th>效果</th></tr>
+      <tr><td>1</td><td>版权登记</td><td>1～2周</td><td>专著合法身份·绩效刚需</td></tr>
+      <tr><td>2</td><td>P4投稿SAJE</td><td>1天</td><td>科研补充·全部覆盖</td></tr>
+      <tr><td>3</td><td>浏览页音频上线+推送</td><td>1天</td><td>教学平台完整化</td></tr>
+      <tr><td>4</td><td>教学平台使用说明</td><td>1～2h</td><td>防"不被认定"风险</td></tr>
+      <tr><td>5</td><td>教改项目跟进</td><td>持续</td><td>教学最高级别证明</td></tr></table>
+    <p class="tbl-caption">表7 短期行动清单</p>
+    <h3>7.2 中期（2026年秋季学期）</h3>
+    <table class="s-table"><tr><th>#</th><th>行动</th><th>预期效果</th></tr>
+      <tr><td>1</td><td>新课纲+浏览页+学习园地组合申报教学绩效</td><td>教学满格</td></tr>
+      <tr><td>2</td><td>学院NFSC教学法公开展示</td><td>影响力+证明</td></tr>
+      <tr><td>3</td><td>P9大修完成→重新提交</td><td>科研全覆盖</td></tr></table>
+    <p class="tbl-caption">表8 中期行动清单</p>
+    <h3>7.3 长期（2027年）</h3>
+    <table class="s-table"><tr><th>#</th><th>行动</th><th>预期效果</th></tr>
+      <tr><td>1</td><td>专著出版→申报省级教学成果奖</td><td>教学绩效终极证明</td></tr>
+      <tr><td>2</td><td>浏览页申请校级/省级教学平台认定</td><td>制度化护城河</td></tr></table>
+    <p class="tbl-caption">表9 长期行动清单</p>
+  </div>
+
+  <!-- Ch8 -->
+  <div class="section" id="ch8">
+    <h2>8 结论</h2>
+    <p>成都大学建筑与土木工程学院 2026 绩效新政，标评价体系自"重科研"向"重教学"之根本转向。教授层级教学权重从约 60% 骤升至 90%～95%，以论文为主要产出者受颠覆性冲击。</p>
+    <p>黄正文教授三载布局——学术专著、数字浏览页、10 篇论文（含多篇教学研究）、课程思政精品示范、校级教学资源建设、普惠教育纪实小说故事云素材教改探索——呈与新政高度吻合之"预适应"特征。此非偶合，乃对工科研究生教改方向之持续预判与践累。</p>
+    <p>核心结论：新政如东风，船早造讫。今之课题非疲于奔逐，以逸待之——序版权登记、论文投稿、教改申报诸里程碑，保每项成果于新政框架下获最大化绩效反响。课程被分其半，为主要风险；然浏览页之教学平台属性、专著之独创性、双跨成果之策略价值，构坚实安全垫与增长空间。</p>
+    <p class="no-indent" style="text-align:right;color:#556677;font-size:11px;margin-top:16px">（日期：2026-06-07）</p>
+  </div>
+
+  <div class="disclaimer">本报告仅供内部参考。完整 PDF 版（双栏学术排版）可通过右上角按钮下载。</div>
+  <div class="footer">© 黄正文（点暇斋）· 全部作品版权登记</div>
 </div>
 
 <script>
-(function(){
-  var pages = document.querySelectorAll('#book .page');
-  var totalPages = pages.length;
-  var current = 0; // 0-indexed pair (2 pages per view on desktop)
-  var isMobile = window.innerWidth <= 768;
-  var perView = isMobile ? 1 : 2;
-  var totalViews = Math.ceil(totalPages / perView);
-
-  function updateView(){
-    var pagesEl = document.querySelector('#book .pages');
-    if (!pagesEl) {
-      // Wrap pages
-      var book = document.getElementById('book');
-      var pagesDiv = document.createElement('div');
-      pagesDiv.className = 'pages';
-      while(book.firstChild) pagesDiv.appendChild(book.firstChild);
-      book.appendChild(pagesDiv);
-      pagesEl = pagesDiv;
-    }
-    var offset = isMobile ? -current * 100 : -current * 50;
-    pagesEl.style.transform = 'translateX(' + offset + '%)';
-    if(isMobile){
-      pagesEl.style.transform = 'translateX(-' + (current * 100 / totalPages) * totalPages + '%)';
-      // Actually simpler: translate by percentage based on current pair
-    }
-    document.getElementById('pageInfo').textContent = (current+1) + ' / ' + totalViews;
-    
-    // Show/hide nav buttons
-    document.querySelectorAll('.nav-btn')[0].style.visibility = current === 0 ? 'hidden' : 'visible';
-    document.querySelectorAll('.nav-btn')[1].style.visibility = current >= totalViews-1 ? 'hidden' : 'visible';
-  }
-
-  // Simpler approach: manage transform directly
-  function gotoView(idx){
-    if(idx < 0) idx = 0;
-    if(idx >= totalViews) idx = totalViews - 1;
-    current = idx;
-    var pagesEl = document.getElementById('book').querySelector('.pages');
-    if(!pagesEl) return;
-    var shift = idx * (isMobile ? 100 : 200);
-    pagesEl.style.transform = 'translateX(-' + shift + '%)';
-    document.getElementById('pageInfo').textContent = (idx+1) + ' / ' + totalViews;
-    document.querySelectorAll('.nav-btn')[0].style.visibility = idx === 0 ? 'hidden' : 'visible';
-    document.querySelectorAll('.nav-btn')[1].style.visibility = idx >= totalViews-1 ? 'hidden' : 'visible';
-  }
-
-  window.prevPage = function(){ gotoView(current - 1); };
-  window.nextPage = function(){ gotoView(current + 1); };
-
-  // Keyboard
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'ArrowLeft') { e.preventDefault(); gotoView(current - 1); }
-    if(e.key === 'ArrowRight') { e.preventDefault(); gotoView(current + 1); }
-  });
-
-  // Touch swipe
-  var touchStart = 0;
-  document.addEventListener('touchstart', function(e){ touchStart = e.touches[0].clientX; });
-  document.addEventListener('touchend', function(e){
-    var diff = touchStart - e.changedTouches[0].clientX;
-    if(Math.abs(diff) > 50) { diff > 0 ? gotoView(current + 1) : gotoView(current - 1); }
-  });
-
-  // Init
-  window.addEventListener('resize', function(){
-    isMobile = window.innerWidth <= 768;
-    perView = isMobile ? 1 : 2;
-    totalViews = Math.ceil(totalPages / perView);
-    current = Math.min(current, totalViews - 1);
-    gotoView(current);
-  });
-
-  // Init page wrapping
-  var book = document.getElementById('book');
-  var pagesDiv = document.createElement('div');
-  pagesDiv.className = 'pages';
-  while(book.firstChild) pagesDiv.appendChild(book.firstChild);
-  book.appendChild(pagesDiv);
-  pagesDiv.style.width = (totalPages * (isMobile ? 100 : 50)) + '%';
-  pagesDiv.querySelectorAll('.page').forEach(function(p){
-    p.style.width = (isMobile ? (100/totalPages) : (50/totalPages)) + '%';
-    p.style.flex = 'none';
-  });
-  gotoView(0);
-
-  // Anti-copy
-  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
-  document.addEventListener('keydown', function(e){
-    if(e.ctrlKey && ['c','s','p','u','a'].includes(e.key)) e.preventDefault();
-    if(e.key === 'F12') e.preventDefault();
-  });
-  document.addEventListener('dragstart', function(e){ e.preventDefault(); });
-})();
+function scrollTo(id){var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})}
+var links=document.querySelectorAll('.sidebar .s-link'),secs=document.querySelectorAll('.section,.abstract-box');
+window.addEventListener('scroll',function(){
+  var st=window.pageYOffset||document.documentElement.scrollTop,a='';
+  secs.forEach(function(s){if(s.getBoundingClientRect().top<=120)a=s.id});
+  links.forEach(function(l){l.classList.toggle('active',l.getAttribute('onclick')&&l.getAttribute('onclick').indexOf(a)>-1)})
+});
+document.addEventListener('contextmenu',function(e){e.preventDefault()});
+document.addEventListener('keydown',function(e){if(e.ctrlKey&&['c','s','p','u','a'].includes(e.key))e.preventDefault();if(e.key==='F12')e.preventDefault()});
+document.addEventListener('dragstart',function(e){e.preventDefault()});
 </script>
+<script src="js/audio-player.js"></script>
+<script src="js/back-btn.js"></script>
 </body>
 </html>
