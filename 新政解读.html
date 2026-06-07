@@ -73,13 +73,28 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 
 @media(max-width:768px){
   .sidebar{display:none}
-  .main{margin-left:0;padding:48px 14px 30px}
+  .main{margin-left:0;padding:48px 12px 30px}
   .mobile-nav{display:flex}
   .top-bar{display:none}
-  .section h2{font-size:14px}
-  .section p{font-size:12px}
-  .s-table{font-size:10px}
-  .s-table th,.s-table td{padding:4px 5px}
+  .hero h2{font-size:15px}
+  .hero .meta{font-size:10px}
+  .section h2{font-size:14px;padding-bottom:4px}
+  .section h3{font-size:12px}
+  .section p{font-size:11px;text-indent:1.5em;line-height:1.9}
+  .abstract-box{padding:14px 14px}
+  .abstract-box p{font-size:11px;line-height:1.8}
+  .abstract-box .kw,.abstract-box .en{font-size:10px}
+  /* Table scroll wrapper */
+  .s-table{font-size:9px;min-width:500px}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0}
+  .s-table th,.s-table td{padding:3px 4px;word-break:keep-all;white-space:nowrap}
+  .s-table th{font-size:8px}
+  .tbl-caption{font-size:9px}
+  .figure img{max-width:100%;height:auto}
+  .figure .fig-cap{font-size:9px}
+  .tag{font-size:7px;padding:0 4px}
+  .disclaimer{font-size:10px;padding:10px 12px}
+  .footer{font-size:10px}
 }
 @media print{body{display:none}}
 </style>
@@ -135,11 +150,11 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
     <p>本报告所据为《建筑与土木工程学院绩效工资分配办法（征求意见稿）》（2026 年 5 月版），由学院行政办公室面征全体教师修订意见，系〔2025〕21 号文件之修订。拟自 2026 年秋季学期正式施行。</p>
     <h3>1.2 基础分配框架</h3>
     <p>新政按职称分级设教-研权重。基础分配比例自政策文本中提取如下：</p>
-    <table class="s-table"><tr><th>职称层级</th><th>教学权重</th><th>科研权重</th><th>机动</th><th>变化趋势</th></tr>
+    <div class="table-wrap"><div class="table-wrap"><table class="s-table"><tr><th>职称层级</th><th>教学权重</th><th>科研权重</th><th>机动</th><th>变化趋势</th></tr>
       <tr><td>教授</td><td>90%～95%</td><td>5%～10%</td><td>～5%</td><td>教学从～60%大幅提升</td></tr>
       <tr><td>副教授</td><td>80%～90%</td><td>10%</td><td>～10%</td><td>科研压缩至10%</td></tr>
       <tr><td>讲师</td><td>64%～75%</td><td>10%～15%</td><td>～15%</td><td>教学为主均衡</td></tr>
-      <tr><td>其他</td><td>40%</td><td>35%</td><td>～25%</td><td>机动空间最大</td></tr></table>
+      <tr><td>其他</td><td>40%</td><td>35%</td><td>～25%</td><td>机动空间最大</td></tr></table></div>
     <p class="tbl-caption">表1 基础分配框架（四层级对照）</p>
     <div class="figure"><img src="report-fig1.png" alt="Fig1"><div class="fig-cap">图1 新旧政策教学-科研权重对比</div></div>
     <h3>1.3 超工作量资金池</h3>
@@ -152,7 +167,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div class="section" id="ch2">
     <h2>2 黄正文既有成果全景</h2>
     <h3>2.1 教学维度</h3>
-    <table class="s-table"><tr><th>#</th><th>成果</th><th>类型</th><th>状态</th><th>适配度</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>#</th><th>成果</th><th>类型</th><th>状态</th><th>适配度</th></tr>
       <tr><td>1</td><td>专著《叙事·门户·智能体》</td><td>教学法专著</td><td>版权登记中</td><td><span class="tag tag-s">★★★★★</span></td></tr>
       <tr><td>2</td><td>数字浏览页全套</td><td>教学平台</td><td>已上线</td><td><span class="tag tag-s">★★★★★</span></td></tr>
       <tr><td>3</td><td>课程思政精品示范</td><td>教学荣誉</td><td>已获批</td><td><span class="tag tag-y">★★★★</span></td></tr>
@@ -160,7 +175,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
       <tr><td>5</td><td>固废课程教学</td><td>工作量</td><td>32学时/期</td><td><span class="tag tag-g">★★★</span></td></tr>
       <tr><td>6</td><td>本科毕设指导</td><td>工作量</td><td>3套20题</td><td><span class="tag tag-g">★★★</span></td></tr>
       <tr><td>7</td><td>普惠教育纪实小说故事云素材教改探索</td><td>教学素材</td><td>7部200万字</td><td><span class="tag tag-g">★★★</span></td></tr>
-      <tr><td>8</td><td>CDU-Bamboo/English</td><td>教学拓展</td><td>2门户</td><td><span class="tag tag-b">★★</span></td></tr></table>
+      <tr><td>8</td><td>CDU-Bamboo/English</td><td>教学拓展</td><td>2门户</td><td><span class="tag tag-b">★★</span></td></tr></table></div>
     <p class="tbl-caption">表2 教学成果清单（8项）</p>
     <div class="figure"><img src="report-fig2.png" alt="Fig2" style="max-width:70%"><div class="fig-cap">图2 教学成果维度覆盖雷达图</div></div>
     <h3>2.2 科研维度</h3>
@@ -181,34 +196,34 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div class="section" id="ch4">
     <h2>4 风控矩阵与机会窗口</h2>
     <h3>4.1 六大风险</h3>
-    <table class="s-table"><tr><th>风险</th><th>概率/%</th><th>影响</th><th>应对</th><th>优先级</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>风险</th><th>概率/%</th><th>影响</th><th>应对</th><th>优先级</th></tr>
       <tr><td>课程被分走</td><td>35</td><td>高</td><td>申报教学创新替代课时</td><td><span class="tag tag-s">高</span></td></tr>
       <tr><td>专著出版滞后</td><td>25</td><td>中</td><td>版权先行·持续推进</td><td><span class="tag tag-y">中</span></td></tr>
       <tr><td>教改未获批</td><td>15</td><td>高</td><td>备选已足·不计单次</td><td><span class="tag tag-y">中</span></td></tr>
       <tr><td>论文被拒</td><td>10</td><td>低</td><td>多投策略·无系统风险</td><td><span class="tag tag-g">低</span></td></tr>
       <tr><td>平台不被认定</td><td>10</td><td>低</td><td>备好使用说明+数据</td><td><span class="tag tag-g">低</span></td></tr>
-      <tr><td>持续分课</td><td>30</td><td>高</td><td>争取新课+增加毕设量</td><td><span class="tag tag-s">高</span></td></tr></table>
+      <tr><td>持续分课</td><td>30</td><td>高</td><td>争取新课+增加毕设量</td><td><span class="tag tag-s">高</span></td></tr></table></div>
     <p class="tbl-caption">表3 六大风险矩阵</p>
     <div class="figure"><img src="report-fig5.png" alt="Fig5"><div class="fig-cap">图4 风险矩阵（气泡=严重度）</div></div>
     <h3>4.2 四大机会窗口</h3>
-    <table class="s-table"><tr><th>机会</th><th>可能</th><th>收益</th><th>行动</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>机会</th><th>可能</th><th>收益</th><th>行动</th></tr>
       <tr><td>浏览页申请校级平台</td><td>中</td><td>教学品牌+绩效</td><td>提交使用报告</td></tr>
       <tr><td>专著后申报省教学成果奖</td><td>中</td><td>极大</td><td>提前备申报材料</td></tr>
       <tr><td>教学法外校借鉴</td><td>低-中</td><td>学术影响力</td><td>扩大传播</td></tr>
-      <tr><td>乐养教学入素质教育</td><td>低</td><td>中</td><td>申报校级美育项目</td></tr></table>
+      <tr><td>乐养教学入素质教育</td><td>低</td><td>中</td><td>申报校级美育项目</td></tr></table></div>
     <p class="tbl-caption">表4 机会窗口分析</p>
   </div>
 
   <!-- Ch5 -->
   <div class="section" id="ch5">
     <h2>5 时间线推演</h2>
-    <table class="s-table"><tr><th>时间</th><th>事件</th><th>类型</th><th>影响</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>时间</th><th>事件</th><th>类型</th><th>影响</th></tr>
       <tr><td>2026.06</td><td>新政意见/版权登记/P4投稿</td><td>政策+行动</td><td>高</td></tr>
       <tr><td>2026.07</td><td>新政实施/P8图表更新→投稿</td><td>政策+科研</td><td>中</td></tr>
       <tr><td>2026.09</td><td>秋季学期/浏览页完善/教改推进</td><td>教学</td><td>高</td></tr>
       <tr><td>2026.12</td><td>首阶段考核·三件套就位</td><td>考核</td><td>高</td></tr>
       <tr><td>2027.03</td><td>专著出版（预估）</td><td>教学</td><td>高</td></tr>
-      <tr><td>2027.06</td><td>全年考核·绩效满格</td><td>考核</td><td>高</td></tr></table>
+      <tr><td>2027.06</td><td>全年考核·绩效满格</td><td>考核</td><td>高</td></tr></table></div>
     <p class="tbl-caption">表5 时间线推演</p>
     <div class="figure"><img src="report-fig4.png" alt="Fig4" style="max-width:80%"><div class="fig-cap">图5 战略时间线甘特图（2026.06-2027.06）</div></div>
   </div>
@@ -217,12 +232,12 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div class="section" id="ch6">
     <h2>6 竞争壁垒分析</h2>
     <p>浏览页非寻常教学平台可复者。以下五层要素构竞争壁垒：</p>
-    <table class="s-table"><tr><th>层级</th><th>要素</th><th>不可复制性/%</th><th>说明</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>层级</th><th>要素</th><th>不可复制性/%</th><th>说明</th></tr>
       <tr><td>1</td><td>7部纪实小说著作权</td><td>95</td><td>200万字原创，版权已登记</td></tr>
       <tr><td>2</td><td>NFSC四维教学法</td><td>85</td><td>原创方法论，专著+论文支撑</td></tr>
       <tr><td>3</td><td>八周教学全程实录</td><td>70</td><td>三届学生纵向数据，不可回溯</td></tr>
       <tr><td>4</td><td>GitHub Pages零费部署</td><td>55</td><td>纯静态，推送即用</td></tr>
-      <tr><td>5</td><td>9-Agent协同设计</td><td>40</td><td>AI教学系统，可复制但周期长</td></tr></table>
+      <tr><td>5</td><td>9-Agent协同设计</td><td>40</td><td>AI教学系统，可复制但周期长</td></tr></table></div>
     <p class="tbl-caption">表6 竞争壁垒五层塔</p>
     <div class="figure"><img src="report-fig6.png" alt="Fig6" style="max-width:80%"><div class="fig-cap">图6 浏览页竞争壁垒五层塔</div></div>
     <p>全校域内，兼原创教学内容（小说著作权）、原创教学方法论（NFSC）、原创教学数据（三年实录）、原创教学平台（浏览页）、原创 AI 辅助系统（9-Agent）五要素于一身者，或属少数。</p>
@@ -232,23 +247,23 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
   <div class="section" id="ch7">
     <h2>7 战略建议</h2>
     <h3>7.1 短期（2026年6月前）</h3>
-    <table class="s-table"><tr><th>#</th><th>行动</th><th>时间</th><th>效果</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>#</th><th>行动</th><th>时间</th><th>效果</th></tr>
       <tr><td>1</td><td>版权登记</td><td>1～2周</td><td>专著合法身份·绩效刚需</td></tr>
       <tr><td>2</td><td>P4投稿SAJE</td><td>1天</td><td>科研补充·全部覆盖</td></tr>
       <tr><td>3</td><td>浏览页音频上线+推送</td><td>1天</td><td>教学平台完整化</td></tr>
       <tr><td>4</td><td>教学平台使用说明</td><td>1～2h</td><td>防"不被认定"风险</td></tr>
-      <tr><td>5</td><td>教改项目跟进</td><td>持续</td><td>教学最高级别证明</td></tr></table>
+      <tr><td>5</td><td>教改项目跟进</td><td>持续</td><td>教学最高级别证明</td></tr></table></div>
     <p class="tbl-caption">表7 短期行动清单</p>
     <h3>7.2 中期（2026年秋季学期）</h3>
-    <table class="s-table"><tr><th>#</th><th>行动</th><th>预期效果</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>#</th><th>行动</th><th>预期效果</th></tr>
       <tr><td>1</td><td>新课纲+浏览页+学习园地组合申报教学绩效</td><td>教学满格</td></tr>
       <tr><td>2</td><td>学院NFSC教学法公开展示</td><td>影响力+证明</td></tr>
-      <tr><td>3</td><td>P9大修完成→重新提交</td><td>科研全覆盖</td></tr></table>
+      <tr><td>3</td><td>P9大修完成→重新提交</td><td>科研全覆盖</td></tr></table></div>
     <p class="tbl-caption">表8 中期行动清单</p>
     <h3>7.3 长期（2027年）</h3>
-    <table class="s-table"><tr><th>#</th><th>行动</th><th>预期效果</th></tr>
+    <div class="table-wrap"><table class="s-table"><tr><th>#</th><th>行动</th><th>预期效果</th></tr>
       <tr><td>1</td><td>专著出版→申报省级教学成果奖</td><td>教学绩效终极证明</td></tr>
-      <tr><td>2</td><td>浏览页申请校级/省级教学平台认定</td><td>制度化护城河</td></tr></table>
+      <tr><td>2</td><td>浏览页申请校级/省级教学平台认定</td><td>制度化护城河</td></tr></table></div>
     <p class="tbl-caption">表9 长期行动清单</p>
   </div>
 
