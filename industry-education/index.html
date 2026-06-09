@@ -4,505 +4,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏭</text></svg>">
-<title>产教融合课程 — 固体废物处理与资源化</title>
+<title>产教融合 — 固体废物处理与资源化</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:"Microsoft YaHei","PingFang SC",sans-serif;
   background:linear-gradient(135deg,#0a1628 0%,#1a3a5c 100%);
   color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;
-  align-items:center;padding:40px 20px;
+  align-items:center;justify-content:center;padding:30px 20px;
+  overflow:hidden;
 }
-.header{text-align:center;margin-bottom:50px}
-.header .badge{display:inline-block;padding:6px 24px;background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.35);border-radius:24px;color:#f0a500;font-size:14px;font-weight:600;letter-spacing:2px;margin-bottom:16px;animation:badgeGlow 3s ease-in-out infinite}
-@keyframes badgeGlow{0%,100%{box-shadow:0 0 8px rgba(240,165,0,.1)}50%{box-shadow:0 0 20px rgba(240,165,0,.2)}}
-.header h1{font-size:36px;color:#fff;margin-bottom:4px}
-.header h1 span{color:#f0a500}
-.header .sub{color:#667;font-size:13px;margin-top:6px}
-.header .motto{margin-top:14px}
-.header .motto span{display:inline-block;padding:5px 20px;border:1px solid rgba(240,165,0,.3);border-radius:20px;color:#f0a500;font-size:13px;font-weight:600;letter-spacing:1px}
-.header .author{color:#7fb8e0;font-size:13px;margin-top:10px}
-.header .author a{color:#7fb8e0;text-decoration:none}
-.header .sep{width:60%;max-width:400px;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,rgba(240,165,0,.4),transparent)}
+hdr{text-align:center;margin-bottom:36px}
+hdr .badge{display:inline-block;padding:5px 20px;background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);border-radius:20px;color:#f0a500;font-size:13px;font-weight:600;letter-spacing:2px;margin-bottom:12px;animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 6px rgba(240,165,0,.08)}50%{box-shadow:0 0 18px rgba(240,165,0,.18)}}
+hdr h1{font-size:30px;color:#fff;margin-bottom:2px}
+hdr h1 span{color:#f0a500}
+hdr .sub{color:#667;font-size:12px;line-height:1.6}
+hdr .author{color:#7fb8e0;font-size:12px;margin-top:6px}
+hdr .author a{color:#7fb8e0;text-decoration:none}
 
-.container{max-width:900px;width:100%}
-
-.section-label{text-align:center;color:#5a6a7a;font-size:12px;letter-spacing:2px;margin:32px 0 10px}
-
-.card{
-  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.12);
-  border-radius:12px;padding:24px 28px;transition:all .35s;
+.gate{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:620px;width:100%}
+.gate .g{
+  background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);
+  border-radius:14px;padding:32px 22px;text-align:center;cursor:pointer;
+  text-decoration:none;transition:all .4s;color:#c8d6e5;
+  position:relative;overflow:hidden;
 }
-.card:hover{border-color:rgba(91,155,213,.25)}
+.gate .g::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(240,165,0,.5),transparent);opacity:0;transition:opacity .4s}
+.gate .g:hover{border-color:#f0a500;transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.gate .g:hover::before{opacity:1}
+.gate .g .icon{font-size:40px;margin-bottom:12px;transition:transform .4s}
+.gate .g:hover .icon{transform:scale(1.1)}
+.gate .g .t{font-size:18px;font-weight:700;color:#e8e8e8;margin-bottom:8px}
+.gate .g .d{font-size:12px;color:#667;line-height:1.7}
+.gate .g .tag{display:inline-block;margin-top:10px;padding:3px 12px;border-radius:10px;font-size:10px}
+.gate .g:nth-child(1){border-color:rgba(240,165,0,.2)}
+.gate .g:nth-child(1) .tag{background:rgba(240,165,0,.12);color:#f0a500}
+.gate .g:nth-child(2){border-color:rgba(91,155,213,.2)}
+.gate .g:nth-child(2) .tag{background:rgba(91,155,213,.12);color:#5b9bd5}
+.gate .g:nth-child(3){border-color:rgba(46,204,113,.2)}
+.gate .g:nth-child(3) .tag{background:rgba(46,204,113,.12);color:#2ecc71}
+.gate .g:nth-child(4){border-color:rgba(52,152,219,.2)}
+.gate .g:nth-child(4) .tag{background:rgba(52,152,219,.12);color:#3498db}
 
-.policy-block{
-  background:rgba(240,165,0,0.05);border:1px solid rgba(240,165,0,.15);
-  border-left:3px solid #f0a500;border-radius:8px;padding:18px 22px;margin-bottom:10px;
-}
-.policy-block .source{color:#667;font-size:11px;margin-bottom:8px}
-.policy-block .quote{color:#c8d6e5;font-size:15px;line-height:1.8}
-.policy-block .cite{color:#f0a500;font-size:12px;margin-top:6px;text-align:right}
-.policy-foot{color:#667;font-size:12px;margin-top:8px}
-
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.stat-card{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.15);border-radius:10px;padding:18px 14px;text-align:center}
-.stat-card .num{font-size:36px;font-weight:700;color:#f0a500;line-height:1}
-.stat-card .lbl{font-size:11px;color:#667;margin-top:4px}
-.progress-bar{margin-top:14px;background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.15);border-radius:10px;padding:16px 20px}
-.progress-bar .label{font-size:13px;color:#889;margin-bottom:8px}
-.progress-bar .track{height:12px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
-.progress-bar .fill{height:100%;background:linear-gradient(90deg,#f0a500,#f7c948);border-radius:6px;transition:width 1s ease}
-.progress-bar .val{font-size:12px;color:#f0a500;margin-top:6px;text-align:right}
-.progress-info{display:flex;gap:20px;margin-top:10px;flex-wrap:wrap}
-.progress-info .item{color:#667;font-size:11px}
-.progress-info .item b{color:#f0a500}
-
-.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.compare-col{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:10px;padding:18px 16px}
-.compare-col.l1{opacity:.55}
-.compare-col.l2{border-color:rgba(91,155,213,.2)}
-.compare-col.l3{border:2px solid #f0a500;box-shadow:0 0 30px rgba(240,165,0,.15);background:rgba(240,165,0,.04)}
-.compare-col h3{font-size:14px;text-align:center;margin-bottom:12px}
-.compare-col.l1 h3{color:#889}
-.compare-col.l2 h3{color:#5b9bd5}
-.compare-col.l3 h3{color:#f0a500}
-.compare-col .rows{margin:8px 0}
-.compare-col .row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px}
-.compare-col .row .k{color:#667;min-width:50px}
-.compare-col .row .v{color:#99aabb;text-align:right}
-.compare-col.l3 .row .v{color:#f0a500}
-.compare-col .tag{text-align:center;font-size:10px;color:#556;margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.05)}
-.compare-col.l3 .tag{color:#f0a500}
-.compare-arrow{text-align:center;font-size:11px;color:#667;margin-top:12px}
-.compare-arrow span{color:#f0a500;font-weight:600}
-
-.uniques-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-.unique-card{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:16px 14px;text-align:center;transition:all .3s}
-.unique-card:hover{border-color:rgba(240,165,0,.3);transform:translateY(-2px)}
-.unique-card .num{font-size:24px;font-weight:700;color:#f0a500;margin-bottom:4px}
-.unique-card .title{font-size:13px;color:#e8e8e8;font-weight:600;margin-bottom:6px}
-.unique-card .desc{font-size:10px;color:#667;line-height:1.6}
-.unique-foot{text-align:center;color:#556;font-size:11px;margin-top:14px;line-height:1.8}
-
-.agent-flow{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.12);border-radius:12px;padding:28px 24px}
-.agent-flow .pipeline{text-align:center}
-.agent-flow .stage{margin-bottom:10px}
-.agent-flow .stage span{display:inline-block;padding:6px 16px;background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.2);border-radius:6px;font-size:12px;color:#f0a500;margin:0 4px}
-.agent-flow .arrow-row{color:#667;font-size:16px;margin:4px 0}
-.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:16px}
-.agent-card{background:rgba(13,31,53,.6);border:1px solid rgba(91,155,213,.08);border-radius:8px;padding:12px;text-align:center}
-.agent-card .code{font-size:14px;font-weight:700;color:#5b9bd5;margin-bottom:2px}
-.agent-card .role{font-size:10px;color:#667;margin-bottom:4px}
-.agent-card .task{font-size:9px;color:#556;line-height:1.5}
-.agent-card.audit .code{color:#e74c3c}
-.agent-card.student .code{color:#2ecc71}
-.agent-foot{text-align:center;color:#556;font-size:11px;margin-top:14px}
-.agent-foot span{color:#f0a500}
-
-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
-table th{background:rgba(13,31,53,.9);color:#f0a500;font-weight:600;padding:10px 6px;border:1px solid rgba(240,165,0,.15);font-size:11px;text-align:center}
-table td{padding:9px 6px;border:1px solid rgba(91,155,213,.08);color:#99aabb;text-align:center;vertical-align:middle}
-table tr:nth-child(even) td{background:rgba(13,31,53,.5)}
-table tr td:first-child{color:#f0a500;font-weight:600;white-space:nowrap}
-table tr td:nth-child(2){text-align:left;color:#c8d6e5;font-size:11px;line-height:1.4}
-.tag-row{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
-.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;white-space:nowrap}
-.tag-orange{background:rgba(230,126,34,.15);color:#e67e22;border:1px solid rgba(230,126,34,.25)}
-.tag-blue{background:rgba(91,155,213,.15);color:#5b9bd5;border:1px solid rgba(91,155,213,.25)}
-.tag-green{background:rgba(46,204,113,.15);color:#2ecc71;border:1px solid rgba(46,204,113,.25)}
-.tag-gold{background:rgba(240,165,0,.15);color:#f0a500;border:1px solid rgba(240,165,0,.25)}
-.tag-red{background:rgba(231,76,60,.12);color:#e74c3c;border:1px solid rgba(231,76,60,.2)}
-.stats-mini{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:14px;font-size:11px;color:#667}
-.stats-mini b{color:#f0a500}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px}
-.tab-s{display:inline-block;padding:3px 12px;border-radius:10px;font-size:10px}
-.tab-n{background:rgba(230,126,34,.1);color:#e67e22}
-.tab-f{background:rgba(91,155,213,.1);color:#5b9bd5}
-.tab-j{background:rgba(46,204,113,.1);color:#2ecc71}
-.tab-c{background:rgba(240,165,0,.1);color:#f0a500}
-
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.process-card{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:16px;text-align:center}
-.process-card .step{font-size:20px;font-weight:700;color:#f0a500;margin-bottom:4px}
-.process-card .sname{font-size:13px;color:#e8e8e8;font-weight:600;margin-bottom:4px}
-.process-card .sdesc{font-size:10px;color:#667;line-height:1.5}
-.process-arrow{text-align:center;color:#667;font-size:16px;margin:4px 0}
-.process-highlight{background:rgba(240,165,0,.06);border:1px solid rgba(240,165,0,.2);border-radius:10px;padding:12px 20px;margin-top:12px;text-align:center;font-size:13px;color:#c8d6e5}
-.process-highlight b{color:#f0a500}
-
-.chain-row{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
-.chain-card{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.15);border-radius:10px;padding:16px 20px;text-align:center;min-width:120px}
-.chain-card .cicon{font-size:24px;margin-bottom:4px}
-.chain-card .cname{font-size:13px;color:#e8e8e8;font-weight:600;margin-bottom:2px}
-.chain-card .cdesc{font-size:10px;color:#667}
-.chain-arrow{color:#f0a500;font-size:20px}
-
-.nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
-.nav-card{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.15);border-radius:10px;padding:18px 14px;text-align:center;text-decoration:none;transition:all .35s;color:#c8d6e5}
-.nav-card:hover{border-color:#5b9bd5;transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
-.nav-card .icon{font-size:22px;margin-bottom:4px}
-.nav-card .name{font-size:13px;color:#e8e8e8}
-
-.back-btn{
-  position:fixed;top:20px;left:20px;z-index:1000;
-  padding:6px 14px;border-radius:8px;
-  background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.2);
-  color:#f0a500;text-decoration:none;font-size:12px;transition:all .3s;
-}
-.back-btn:hover{border-color:#f0a500;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
-
-.footer{margin-top:50px;text-align:center;color:#445;font-size:12px;line-height:2}
-.footer a{color:#5b9bd5;text-decoration:none}
+.btm{margin-top:30px;text-align:center}
+.btm a{color:#445;text-decoration:none;font-size:12px;transition:color .3s}
+.btm a:hover{color:#f0a500}
 
 @media(max-width:768px){
-  body{padding:30px 12px;justify-content:flex-start}
-  .header h1{font-size:24px}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
-  .compare-grid{grid-template-columns:1fr}
-  .compare-col{opacity:1!important}
-  .compare-col.l3{border:2px solid #f0a500}
-  .process-grid{grid-template-columns:1fr}
-  .process-arrow{display:none}
-  .chain-row{flex-direction:column;gap:8px}
-  .chain-arrow{transform:rotate(90deg)}
-  .back-btn{top:10px;left:8px;padding:4px 10px;font-size:10px}
-  table{font-size:10px}
-  table th,table td{padding:6px 3px}
+  body{overflow:auto;justify-content:flex-start;padding:40px 14px}
+  .gate{grid-template-columns:1fr;max-width:360px}
+  .gate .g{padding:24px 18px}
+  hdr h1{font-size:22px}
 }
 </style>
 </head>
 <body>
 
-<a class="back-btn" href="../index.html">← 返回主站</a>
-
-<div class="header">
+<hdr>
   <div class="badge">「产教融合课程」</div>
-  <h1>固体废物处理与资源化</h1>
-  <div class="sub">2026级 · 环境工程专业 · 本科人才培养方案<br>专业教育类 → 产教融合课程</div>
-  <div class="motto"><span>真题真做 · 真岗实练</span></div>
+  <h1><span>固体废物处理与资源化</span></h1>
+  <div class="sub">2026级 · 环境工程专业 · 本科人才培养方案</div>
   <div class="author"><a href="../HuangZhengwen.html">黄正文</a> 教授 · 成都大学环境工程系</div>
-  <div class="sep"></div>
+</hdr>
+
+<div class="gate">
+  <a class="g" href="overview.html">
+    <div class="icon">📊</div>
+    <div class="t">产教融合总览</div>
+    <div class="d">政策依据 · 课程定位<br>数据看板 · 近三年案例占比 ≥50%</div>
+    <span class="tag">真题真做 真岗实练</span>
+  </a>
+  <a class="g" href="cases.html">
+    <div class="icon">📖</div>
+    <div class="t">案例映射表</div>
+    <div class="d">故事云素材 10回 × 6课题<br>NFSC四维映射 · 产教标签体系</div>
+    <span class="tag">可追溯 可验证</span>
+  </a>
+  <a class="g" href="innovation.html">
+    <div class="icon">⿻</div>
+    <div class="t">教学创新与壁垒</div>
+    <div class="d">L1→L2→L3 三层次对比<br>门户即壁垒 · 故事云五唯一</div>
+    <span class="tag">差异定位</span>
+  </a>
+  <a class="g" href="agents.html">
+    <div class="icon">🤖</div>
+    <div class="t">智能体与实践</div>
+    <div class="d">11-Agent 协同生产线<br>实践教学流程 · 成效证据链</div>
+    <span class="tag">技术底座</span>
+  </a>
 </div>
 
-<div class="container">
-
-<!-- ===== ① 政策依据 ===== -->
-<div class="section-label">▾ 政策依据 ▾</div>
-<div class="policy-block">
-  <div class="source">《关于编制2026级人才培养方案的通知》&ensp;成都大学教务处 · 2026年5月29日</div>
-  <div class="quote">产教融合课程中，<b style="color:#f0a500">近三年企业或政府真实课题案例占比不低于50%</b>，实现<b style="color:#f0a500">"真题真做、真岗实练"</b>。</div>
-  <div class="cite">—— 通知 §三(一)2</div>
-</div>
-<div class="policy-foot">国家级、省级一流专业至少开设2门"产教融合"课程；其他专业至少开设1门"产教融合"课程和1门"科教融汇"课程。</div>
-
-<!-- ===== ② 数据看板 ===== -->
-<div class="section-label">▾ 产教融合数据看板 ▾</div>
-<div class="stats-row">
-  <div class="stat-card"><div class="num">100</div><div class="lbl">环工大三学生</div></div>
-  <div class="stat-card"><div class="num">6</div><div class="lbl">课程设计课题</div></div>
-  <div class="stat-card"><div class="num">10</div><div class="lbl">故事云回目</div></div>
-  <div class="stat-card"><div class="num">2</div><div class="lbl">行业导师</div></div>
-</div>
-<div class="progress-bar">
-  <div class="label">近三年（2023-2026）企业/政府真实课题案例占比</div>
-  <div class="track"><div class="fill" style="width:75%"></div></div>
-  <div class="val">≥ 50% &ensp;✅ 达标</div>
-</div>
-<div class="progress-info">
-  <div class="item">时间窗口：<b>2023-2026</b></div>
-  <div class="item">教学形式：<b>分批面授 · 每周一组</b></div>
-  <div class="item">数据来源：<b>企业工程图纸 · 运行日报 · 产线照片</b></div>
-  <div class="item">案例编号：<b>S022-S027</b></div>
-</div>
-
-<!-- ===== ②.5 案例教学三种层次 ===== -->
-<div class="section-label">▾ 案例教学的三种层次 ▾</div>
-<div class="compare-grid">
-  <div class="compare-col l1">
-    <h3>L1 传统教科书案例</h3>
-    <div class="rows">
-      <div class="row"><span class="k">来源</span><span class="v">习题集·教材</span></div>
-      <div class="row"><span class="k">载体</span><span class="v">纸质·板书</span></div>
-      <div class="row"><span class="k">可见性</span><span class="v">仅课堂学生</span></div>
-      <div class="row"><span class="k">关联</span><span class="v">案例孤立</span></div>
-      <div class="row"><span class="k">验证</span><span class="v">无法验证</span></div>
-      <div class="row"><span class="k">更新</span><span class="v">数年不变</span></div>
-      <div class="row"><span class="k">思政</span><span class="v">标签式</span></div>
-      <div class="row"><span class="k">产教融合</span><span class="v">✗ 不涉及</span></div>
-    </div>
-    <div class="tag">≈ 80% 同行</div>
-  </div>
-  <div class="compare-col l2">
-    <h3>L2 引入行业案例</h3>
-    <div class="rows">
-      <div class="row"><span class="k">来源</span><span class="v">企业项目</span></div>
-      <div class="row"><span class="k">载体</span><span class="v">PPT附件</span></div>
-      <div class="row"><span class="k">可见性</span><span class="v">选课学生</span></div>
-      <div class="row"><span class="k">关联</span><span class="v">案例孤立</span></div>
-      <div class="row"><span class="k">验证</span><span class="v">口头声称</span></div>
-      <div class="row"><span class="k">更新</span><span class="v">偶尔补充</span></div>
-      <div class="row"><span class="k">思政</span><span class="v">专题嵌入</span></div>
-      <div class="row"><span class="k">产教融合</span><span class="v">△ 部分达标</span></div>
-    </div>
-    <div class="tag">≈ 15% 同行</div>
-  </div>
-  <div class="compare-col l3">
-    <h3>L3 故事云+NFSC门户</h3>
-    <div class="rows">
-      <div class="row"><span class="k">来源</span><span class="v">纪实小说云素材</span></div>
-      <div class="row"><span class="k">载体</span><span class="v">可浏览网页门户</span></div>
-      <div class="row"><span class="k">可见性</span><span class="v">全网公开发布</span></div>
-      <div class="row"><span class="k">关联</span><span class="v">网状全文映射</span></div>
-      <div class="row"><span class="k">验证</span><span class="v">可追溯可审计</span></div>
-      <div class="row"><span class="k">更新</span><span class="v">持续生长</span></div>
-      <div class="row"><span class="k">思政</span><span class="v">故事中自然浮现</span></div>
-      <div class="row"><span class="k">产教融合</span><span class="v">✅ 全面达标</span></div>
-    </div>
-    <div class="tag">← 你在这里</div>
-  </div>
-</div>
-<div class="compare-arrow">L1 → L2 → <span>L3 故事云+门户 ← 此处</span></div>
-
-<!-- ===== ②.6 门户即壁垒 ===== -->
-<div class="section-label">▾ 门户即壁垒 · 故事云的五个唯一 ▾</div>
-<div class="uniques-grid">
-  <div class="unique-card">
-    <div class="num">①</div>
-    <div class="title">可浏览</div>
-    <div class="desc">案例不再是PPT里的附件<br>而是网页上可翻阅的公共资源</div>
-  </div>
-  <div class="unique-card">
-    <div class="num">②</div>
-    <div class="title">可追溯</div>
-    <div class="desc">每个案例→小说回目→教学模块<br>→知识点，全程可溯源</div>
-  </div>
-  <div class="unique-card">
-    <div class="num">③</div>
-    <div class="title">可验证</div>
-    <div class="desc">课设课题·技术要点·产教标签<br>全部公开，可审计可核实</div>
-  </div>
-  <div class="unique-card">
-    <div class="num">④</div>
-    <div class="title">可关联</div>
-    <div class="desc">案例↔模块↔NFSC维度↔课题<br>多维度交叉网状互联</div>
-  </div>
-  <div class="unique-card">
-    <div class="num">⑤</div>
-    <div class="title">可生长</div>
-    <div class="desc">故事云不是静态库<br>新案例持续回写·索引·扩容</div>
-  </div>
-</div>
-<div class="unique-foot">
-  同行PPT里的案例 = 一间<b>没有索引</b>的档案室<br>
-  故事云门户 = 一个<b>可查询可公开</b>的图书馆
-</div>
-
-<!-- ===== ②.7 智能体协同 ===== -->
-<div class="section-label">▾ 故事云背后 · 智能体协同生产线 ▾</div>
-<div class="agent-flow">
-  <div class="pipeline">
-    <div class="stage"><span>纪实小说素材入口</span></div>
-    <div class="arrow-row">↓</div>
-    <div class="stage"><span>Agent-S 案例拆解</span><span>Agent-I 场景设计</span></div>
-    <div class="arrow-row">↓</div>
-    <div class="stage"><span>Agent2 大纲日历</span><span>Agent3 PPT讲稿</span><span>Agent4 作业试卷</span><span>Agent-B 品牌建设</span></div>
-    <div class="arrow-row">↓</div>
-    <div class="stage"><span>Agent0 质量审核 (A/B/C/D评级)</span></div>
-    <div class="arrow-row">↓</div>
-    <div class="stage"><span>S1 学霸追问 (深度)</span><span>S2 普惠反馈 (可及性)</span><span>Agent5 教改分析 (达成度)</span></div>
-    <div class="arrow-row">↓</div>
-    <div class="stage"><span>产教融合门户发布</span></div>
-  </div>
-</div>
-<div class="agent-grid" style="margin-top:16px">
-  <div class="agent-card"><div class="code">Agent-S</div><div class="role">案例拆解</div><div class="task">小说→五段式教学案例</div></div>
-  <div class="agent-card"><div class="code">Agent-I</div><div class="role">场景设计</div><div class="task">课堂角色扮演沉浸脚本</div></div>
-  <div class="agent-card"><div class="code">Agent2</div><div class="role">文档生成</div><div class="task">教学大纲·日历·教案</div></div>
-  <div class="agent-card"><div class="code">Agent3</div><div class="role">PPT讲稿</div><div class="task">16:9课件·HTML演示页</div></div>
-  <div class="agent-card"><div class="code">Agent4</div><div class="role">作业试卷</div><div class="task">作业·课设任务书·A/B卷</div></div>
-  <div class="agent-card"><div class="code">Agent5</div><div class="role">教改监控</div><div class="task">达成度分析·反思报告</div></div>
-  <div class="agent-card"><div class="code">Agent-B</div><div class="role">品牌建设</div><div class="task">论文·申报·学术品牌</div></div>
-  <div class="agent-card audit"><div class="code">Agent0</div><div class="role">质量审核</div><div class="task">四维审计·A/B/C/D评级</div></div>
-  <div class="agent-card student"><div class="code">S1</div><div class="role">学霸追问</div><div class="task">概念链·深度·迁移检查</div></div>
-  <div class="agent-card student"><div class="code">S2</div><div class="role">普惠反馈</div><div class="task">术语墙·认知负荷检测</div></div>
-  <div class="agent-card"><div class="code">Agent1</div><div class="role">归档标准</div><div class="task">版本管理·索引维护</div></div>
-</div>
-<div class="agent-foot">传统：<span>1人</span> × 备课数小时 = 散点产出 &emsp; 智能体：<span>11体</span> × 并行协作 = 系统化流水线</div>
-
-<!-- ===== ③ 案例映射表 ===== -->
-<div class="section-label">▾ 故事云素材 · 产教融合案例映射表 ▾</div>
-<table>
-<thead>
-<tr>
-  <th>回</th>
-  <th>回目标题</th>
-  <th>课设课题</th>
-  <th>教学模块</th>
-  <th>核心知识点</th>
-  <th>NFSC</th>
-  <th>产教融合标签</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>418</td>
-  <td>秋风微信传秋语<br>花店镜头待故人</td>
-  <td>— 产教启动</td>
-  <td>全局</td>
-  <td>双导师制·校企联合指导启动</td>
-  <td><span class="tag tag-orange">叙</span></td>
-  <td><span class="tag tag-gold">双导师</span></td>
-</tr>
-<tr>
-  <td>419</td>
-  <td>花如艺里初窥镜<br>搪瓷杯底印初痕</td>
-  <td>— 场景建立</td>
-  <td>全局</td>
-  <td>非正式教学空间·行业首接触</td>
-  <td><span class="tag tag-orange">叙</span></td>
-  <td><span class="tag tag-gold">双导师</span></td>
-</tr>
-<tr>
-  <td>420</td>
-  <td>放大镜中寻错线<br>老手指下辨分毫</td>
-  <td>填埋场防渗系统设计</td>
-  <td>模块5 §5.3</td>
-  <td>HDPE防渗膜·焊缝检测·K≤1×10⁻⁷cm/s·设计→施工转化</td>
-  <td><span class="tag tag-blue">框</span><span class="tag tag-green">境</span></td>
-  <td><span class="tag tag-gold">真实图纸</span><span class="tag tag-gold">行业标准</span></td>
-</tr>
-<tr>
-  <td>421</td>
-  <td>十三秒默喉轻动<br>五指弹烟如放生</td>
-  <td>焚烧烟气净化系统选型</td>
-  <td>模块4 §4.2/4.4</td>
-  <td>3T+E·850°C/2s·二噁英阻断·PID图</td>
-  <td><span class="tag tag-blue">框</span><span class="tag tag-green">境</span></td>
-  <td><span class="tag tag-gold">行业标准</span><span class="tag tag-gold">实战判断</span></td>
-</tr>
-<tr>
-  <td>422</td>
-  <td>闭眼浮来三日臭<br>鸡粪未算入方程</td>
-  <td>好氧堆肥厂工艺设计</td>
-  <td>模块3 §3.1-3.4</td>
-  <td>C/N比25:1-30:1·含水率40-65%·参数偏差·腐熟度</td>
-  <td><span class="tag tag-blue">框</span><span class="tag tag-green">境</span></td>
-  <td><span class="tag tag-gold">调试复盘</span></td>
-</tr>
-<tr>
-  <td>423</td>
-  <td>蘸茶翻透三年报<br>数据无言指上痕</td>
-  <td>渗滤液处理站设计</td>
-  <td>模块5 §5.5</td>
-  <td>COD异常诊断三步法·B/C比·运行日报分析·偷排判断</td>
-  <td><span class="tag tag-blue">框</span><span class="tag tag-green">境</span></td>
-  <td><span class="tag tag-gold">真实数据</span></td>
-</tr>
-<tr>
-  <td>424</td>
-  <td>三辆两辆争半世<br>一杖滑落彼手扶</td>
-  <td>垃圾收运系统优化</td>
-  <td>模块2 §2.2-2.4</td>
-  <td>移动/固定容器成本曲线·车辆调度·运筹比选</td>
-  <td><span class="tag tag-blue">框</span><span class="tag tag-gold">创</span></td>
-  <td><span class="tag tag-gold">运筹优化</span></td>
-</tr>
-<tr>
-  <td>425</td>
-  <td>碎屏手抖说前岁<br>暖灯初照启新程</td>
-  <td>退役电池回收产线</td>
-  <td>模块6 §6.7</td>
-  <td>三元前驱体回收·湿法回收·投资回收期</td>
-  <td><span class="tag tag-blue">框</span><span class="tag tag-green">境</span></td>
-  <td><span class="tag tag-gold">新质生产力</span></td>
-</tr>
-<tr>
-  <td>426</td>
-  <td>三碗面汤收镜去<br>一声来字答明年</td>
-  <td>— 收束传承</td>
-  <td>全局</td>
-  <td>工程传承·行业精神·"明年还来"</td>
-  <td><span class="tag tag-green">境</span><span class="tag tag-gold">创</span></td>
-  <td><span class="tag tag-gold">代际传承</span></td>
-</tr>
-<tr>
-  <td>427</td>
-  <td>十二曾经皆旧墨<br>十三初展句方新</td>
-  <td>— 案例入库</td>
-  <td>全局</td>
-  <td>教学案例整理入库·S022-S027·产教融合闭环</td>
-  <td><span class="tag tag-gold">创</span></td>
-  <td><span class="tag tag-gold">案例闭环</span></td>
-</tr>
-</tbody>
-</table>
-<div class="stats-mini">
-  <div>素材源自《龙栖湾》纪实小说 第418-427回</div>
-  <div>案例编号：<b>S022-S027</b></div>
-</div>
-<div class="tabs">
-  <span class="tab-s tab-n">叙 20%</span>
-  <span class="tab-s tab-f">框 40%</span>
-  <span class="tab-s tab-j">境 60%</span>
-  <span class="tab-s tab-c">创 30%</span>
-</div>
-<div class="stats-mini" style="margin-top:8px">
-  <div>产教标签覆盖：<b>双导师·真实图纸·真实数据·行业标准·调试复盘·运筹优化·新质生产力·代际传承·案例闭环</b></div>
-</div>
-
-<!-- ===== ④ 实践教学环节 ===== -->
-<div class="section-label">▾ 实践教学环节 ▾</div>
-<div class="process-grid">
-  <div class="process-card"><div class="step">①</div><div class="sname">任务书</div><div class="sdesc">企业真实数据输入<br>工程参数作为设计条件</div></div>
-  <div class="process-card"><div class="step">②</div><div class="sname">计算</div><div class="sdesc">参数取值·公式校核<br>行业规范逐条验证</div></div>
-  <div class="process-card"><div class="step">③</div><div class="sname">出图</div><div class="sdesc">按行业标准绘制<br>施工图深度要求</div></div>
-</div>
-<div class="process-arrow">↓&emsp;&emsp;&emsp;↓&emsp;&emsp;&emsp;↓</div>
-<div class="process-grid">
-  <div class="process-card"><div class="step">④</div><div class="sname">面授</div><div class="sdesc">行业导师逐图点评<br>学术导师补充讲解</div></div>
-  <div class="process-card"><div class="step">⑤</div><div class="sname">修改</div><div class="sdesc">图纸多轮迭代<br>真实工程深度打磨</div></div>
-  <div class="process-card"><div class="step">⑥</div><div class="sname">答辩</div><div class="sdesc">行业标准验收<br>施工图级成果交付</div></div>
-</div>
-<div class="process-highlight">
-  <b>双导师制</b>：学术导师（黄教授） + 行业导师（企业专家）&emsp;|&emsp;
-  <b>课程标准</b>：按企业施工图标准验收，非课本标准
-</div>
-
-<!-- ===== ⑤ 成效证据链 ===== -->
-<div class="section-label">▾ 成效证据链 ▾</div>
-<div class="chain-row">
-  <div class="chain-card"><div class="cicon">🔬</div><div class="cname">教研创新</div><div class="cdesc">三阶叙事教学法<br>NFSC四维模型</div></div>
-  <div class="chain-arrow">→</div>
-  <div class="chain-card"><div class="cicon">🏗️</div><div class="cname">课程建设</div><div class="cdesc">产教融合课程<br>故事云案例体系</div></div>
-  <div class="chain-arrow">→</div>
-  <div class="chain-card"><div class="cicon">📝</div><div class="cname">考核迭代</div><div class="cdesc">开卷案例分析<br>心得报告·无标答</div></div>
-  <div class="chain-arrow">→</div>
-  <div class="chain-card"><div class="cicon">🎯</div><div class="cname">育人出口</div><div class="cdesc">毕设·专利产出<br>技术咨询·社会服务</div></div>
-</div>
-<div style="text-align:center;margin-top:12px">
-  <a href="../迁移探索-固废硕本.html" style="color:#f0a500;font-size:12px;text-decoration:none;border-bottom:1px solid rgba(240,165,0,.3)">查看完整证据链 →</a>
-</div>
-
-<!-- ===== ⑥ 相关入口 ===== -->
-<div class="section-label">▾ 相关入口 ▾</div>
-<div class="nav-grid">
-  <a class="nav-card" href="../index.html"><div class="icon">🏠</div><div class="name">返回主站</div></a>
-  <a class="nav-card" href="../课程概览.html"><div class="icon">📋</div><div class="name">课程概览</div></a>
-  <a class="nav-card" href="../章节导航.html"><div class="icon">🗂️</div><div class="name">章节导航</div></a>
-  <a class="nav-card" href="../知识导图.html"><div class="icon">🌳</div><div class="name">知识导图</div></a>
-  <a class="nav-card" href="../迁移探索-本科毕设选题.html"><div class="icon">🎓</div><div class="name">毕设选题</div></a>
-  <a class="nav-card" href="../制度在线.html"><div class="icon">📋</div><div class="name">制度在线</div></a>
-  <a class="nav-card" href="../迁移探索.html"><div class="icon">🔄</div><div class="name">迁移探索</div></a>
-  <a class="nav-card" href="../agent团队演示.html"><div class="icon">🤖</div><div class="name">Agent团队</div></a>
-</div>
-
-</div>
-
-<div class="footer">
-  <p>📖 故事云驱动 · 产教融合叙事案例体系 &ensp;<span style="color:#556;font-size:10px">[案例编号: S022-S027]</span></p>
-  <p>素材源自《龙栖湾》纪实小说 第418-427回</p>
-  <p><a href="https://book.qq.com/book-detail/54859488" target="_blank">QQ阅读</a> · <a href="https://www.17k.com/book/3613430.html" target="_blank">17K文学</a></p>
-  <p>© 黄正文（点暇斋）· 全部作品版权登记</p>
+<div class="btm">
+  <a href="../index.html">← 返回主站</a>
 </div>
 
 </body>
