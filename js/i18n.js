@@ -43,7 +43,8 @@
 
       var self = this;
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'lang/' + lang + '.json', true);
+      var langBase = (window.location.pathname.indexOf('/industry-education/') !== -1 || window.location.pathname.indexOf('/CDU-Bamboo/') !== -1 || window.location.pathname.indexOf('/CDU-English/') !== -1) ? '../lang/' : 'lang/';
+      xhr.open('GET', langBase + lang + '.json', true);
       xhr.onload = function () {
         if (xhr.status === 200) {
           try {

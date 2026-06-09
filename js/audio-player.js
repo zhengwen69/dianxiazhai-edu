@@ -11,7 +11,7 @@
 
   // Determine audio base path
   var pathname = window.location.pathname;
-  var depth = (pathname.indexOf('/CDU-Bamboo/') !== -1 || pathname.indexOf('/CDU-English/') !== -1) ? 1 : 0;
+  var depth = (pathname.indexOf('/CDU-Bamboo/') !== -1 || pathname.indexOf('/CDU-English/') !== -1 || pathname.indexOf('/industry-education/') !== -1) ? 1 : 0;
   var audioBase = depth === 1 ? '../刘胜工作室/' : '刘胜工作室/';
 
   // Restore state
