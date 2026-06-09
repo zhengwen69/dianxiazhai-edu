@@ -16,6 +16,7 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gr
 .subnav .pager a{color:#5b9bd5;font-size:12px;text-decoration:none}
 
 .cont{max-width:900px;width:100%}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 
 table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:14px}
 table th{background:rgba(13,31,53,.9);color:#f0a500;font-weight:600;padding:10px 5px;border:1px solid rgba(240,165,0,.15);font-size:10px;text-align:center;white-space:nowrap}
@@ -41,7 +42,7 @@ table tr td:nth-child(2){text-align:left;color:#c8d6e5;font-size:10px;line-heigh
 .footer{margin-top:24px;text-align:center;color:#445;font-size:11px}
 .footer a{color:#5b9bd5;text-decoration:none}
 
-@media(max-width:768px){table{font-size:9px}table th,table td{padding:5px 2px}body{padding:16px 8px}}
+@media(max-width:768px){body{padding:16px 8px}.subnav{font-size:11px}.tbl-wrap{margin:0 -8px;padding:0 8px}table{font-size:9px}table th,table td{padding:5px 2px}}@media(max-width:480px){.subnav .pager{gap:8px}}
 </style>
 </head>
 <body>
@@ -54,6 +55,7 @@ table tr td:nth-child(2){text-align:left;color:#c8d6e5;font-size:10px;line-heigh
 
 <div class="cont">
 
+<div class="tbl-wrap">
 <table>
 <thead>
 <tr>
@@ -159,6 +161,7 @@ table tr td:nth-child(2){text-align:left;color:#c8d6e5;font-size:10px;line-heigh
 </tr>
 </tbody>
 </table>
+</div>
 
 <div class="mini">
   <div>素材源自《龙栖湾》纪实小说 第418-427回</div>
@@ -180,5 +183,7 @@ table tr td:nth-child(2){text-align:left;color:#c8d6e5;font-size:10px;line-heigh
   <p><a href="../index.html">返回主站</a> · <a href="index.html">产教融合首页</a></p>
 </div>
 
+<script src="../js/audio-player.js"></script>
+<script src="../js/i18n.js"></script>
 </body>
 </html>
