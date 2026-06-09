@@ -4,213 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🏭</text></svg>">
-<title>产教融合 — 故事云驱动的 NFSC 产业闭环</title>
+<title>产教融合 — 故事云驱动的 NFSC 案例场景闭环</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628,#1a3a5c);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:30px 20px}
-
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628,#1a3a5c);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 20px;overflow:hidden}
 .back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:6px 14px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.2);color:#f0a500;text-decoration:none;font-size:12px;transition:all .3s}
 .back-btn:hover{border-color:#f0a500;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 
-.container{max-width:900px;width:100%}
-
-header{text-align:center;margin-bottom:36px}
-header .badge{display:inline-block;padding:5px 20px;background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);border-radius:20px;color:#f0a500;font-size:13px;font-weight:600;letter-spacing:2px;margin-bottom:12px;animation:glow 3s ease-in-out infinite}
+hdr{text-align:center;margin-bottom:30px}
+hdr .badge{display:inline-block;padding:5px 20px;background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.3);border-radius:20px;color:#f0a500;font-size:13px;font-weight:600;letter-spacing:2px;margin-bottom:10px;animation:glow 3s ease-in-out infinite}
 @keyframes glow{0%,100%{box-shadow:0 0 6px rgba(240,165,0,.08)}50%{box-shadow:0 0 18px rgba(240,165,0,.18)}}
-header h1{font-size:28px;color:#fff;margin-bottom:4px}
-header h1 span{color:#f0a500}
-header .sub{color:#667;font-size:12px;line-height:1.6;margin-top:4px}
-header .pipe{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap;font-size:10px;color:#556}
-header .pipe span{display:inline-block;padding:3px 10px;background:rgba(240,165,0,.06);border:1px solid rgba(240,165,0,.12);border-radius:4px;color:#889;white-space:nowrap}
-header .pipe .arr{color:#f0a500;font-weight:700}
-header .author{color:#7fb8e0;font-size:11px;margin-top:8px}
-header .author a{color:#7fb8e0;text-decoration:none}
-header .sep{width:50%;max-width:350px;height:1px;margin:10px auto 0;background:linear-gradient(90deg,transparent,rgba(240,165,0,.4),transparent)}
+hdr h1{font-size:26px;color:#fff;margin-bottom:2px}
+hdr h1 span{color:#f0a500}
+hdr .pipe{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:10px;flex-wrap:wrap;font-size:10px;color:#556}
+hdr .pipe span{display:inline-block;padding:3px 9px;background:rgba(240,165,0,.05);border:1px solid rgba(240,165,0,.1);border-radius:4px;color:#889;white-space:nowrap}
+hdr .pipe .arr{color:#f0a500;font-weight:700}
+hdr .sub{color:#667;font-size:11px;margin-top:6px}
+hdr .author{color:#7fb8e0;font-size:11px;margin-top:4px}
+hdr .author a{color:#7fb8e0;text-decoration:none}
 
-.sl{text-align:center;color:#5a6a7a;font-size:11px;letter-spacing:2px;margin:28px 0 8px}
+.gate{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:580px;width:100%}
+.g{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:14px;padding:28px 20px;text-align:center;text-decoration:none;transition:all .4s;color:#c8d6e5;position:relative;overflow:hidden}
+.g:hover{border-color:#f0a500;transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.g .icon{font-size:36px;margin-bottom:10px;transition:transform .4s}
+.g:hover .icon{transform:scale(1.1)}
+.g .t{font-size:16px;font-weight:700;color:#e8e8e8;margin-bottom:6px}
+.g .d{font-size:11px;color:#667;line-height:1.7}
+.g .tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:8px;font-size:10px}
+.g:nth-child(1){border-color:rgba(240,165,0,.2)}.g:nth-child(1) .tag{background:rgba(240,165,0,.12);color:#f0a500}
+.g:nth-child(2){border-color:rgba(91,155,213,.2)}.g:nth-child(2) .tag{background:rgba(91,155,213,.12);color:#5b9bd5}
+.g:nth-child(3){border-color:rgba(46,204,113,.2)}.g:nth-child(3) .tag{background:rgba(46,204,113,.12);color:#2ecc71}
+.g:nth-child(4){border-color:rgba(155,89,182,.2)}.g:nth-child(4) .tag{background:rgba(155,89,182,.12);color:#9b59b6}
 
-.truth-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
-.tc{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.1);border-radius:8px;padding:14px 8px;text-align:center;transition:all .3s}
-.tc:hover{border-color:#f0a500;transform:translateY(-2px)}
-.tc .tno{font-size:20px;font-weight:700;color:#f0a500;margin-bottom:2px}
-.tc .tnm{font-size:11px;color:#e8e8e8;font-weight:600;margin-bottom:3px}
-.tc .tds{font-size:9px;color:#667;line-height:1.5}
+.policy-strip{max-width:580px;width:100%;margin-top:10px;text-align:center}
+.policy-strip .ps{font-size:10px;color:#556;line-height:1.7}
+.policy-strip .ps a{color:#f0a500;text-decoration:none}
 
-.cmp{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
-.cc{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.08);border-radius:10px;padding:18px 16px}
-.cc.l{opacity:.55;border-color:rgba(100,120,150,.1)}
-.cc.r{border:2px solid #f0a500;box-shadow:0 0 20px rgba(240,165,0,.08);background:rgba(240,165,0,.03)}
-.cc h3{font-size:13px;text-align:center;margin-bottom:8px}
-.cc.l h3{color:#889}.cc.r h3{color:#f0a500}
-.cc .r{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.02);font-size:10px}
-.cc .r .k{color:#667}.cc .r .v{color:#99aabb;text-align:right}
-.cc.r .r .v{color:#f0a500}
-.cc .btm{text-align:center;font-size:9px;color:#556;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.03)}
-.cc.r .btm{color:#f0a500}
-
-.steps{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:14px}
-.steps .st{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.1);border-radius:8px;padding:10px 12px;text-align:center;min-width:90px;transition:all .3s;font-size:10px}
-.steps .st:hover{border-color:#f0a500}
-.steps .st .sn{font-weight:700;color:#f0a500;font-size:13px}
-.steps .st .sa{color:#667;font-size:9px;margin-top:2px}
-.steps .st .sr{color:#556;font-size:8px;margin-top:2px}
-.steps .arrow{color:#f0a500;font-weight:700;align-self:center}
-
-.card{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:12px;padding:22px 24px;margin-bottom:14px}
-.card:hover{border-color:rgba(240,165,0,.2)}
-
-table{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0}
-table th{background:rgba(13,31,53,.9);color:#f0a500;font-weight:600;padding:8px 5px;border:1px solid rgba(240,165,0,.12);font-size:10px;text-align:center}
-table td{padding:7px 5px;border:1px solid rgba(91,155,213,.06);color:#99aabb;text-align:center;font-size:10px}
-table tr:nth-child(even) td{background:rgba(13,31,53,.4)}
-table .td-l{text-align:left;color:#c8d6e5;font-size:10px}
-.tag{display:inline-block;padding:2px 6px;border-radius:6px;font-size:9px;margin:1px}
-.t-o{background:rgba(230,126,34,.12);color:#e67e22}.t-b{background:rgba(91,155,213,.12);color:#5b9bd5}
-.t-g{background:rgba(46,204,113,.12);color:#2ecc71}.t-a{background:rgba(240,165,0,.12);color:#f0a500}
-.t-r{background:rgba(231,76,60,.1);color:#e74c3c}
-
-.jump{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.jump a{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.15);border-radius:10px;padding:16px 12px;text-align:center;text-decoration:none;transition:all .3s;color:#c8d6e5}
-.jump a:hover{border-color:#f0a500;transform:translateY(-2px)}
-.jump a .ji{font-size:24px;margin-bottom:4px}
-.jump a .jn{font-size:12px;color:#e8e8e8}
-
-.footer{margin-top:30px;text-align:center;color:#445;font-size:11px;line-height:2}
-.footer a{color:#5b9bd5;text-decoration:none}
+.btm{margin-top:20px;text-align:center}
+.btm a{color:#445;text-decoration:none;font-size:12px;transition:color .3s;margin:0 10px}
+.btm a:hover{color:#f0a500}
 
 @media(max-width:768px){
-  body{padding:20px 10px}
-  .truth-row{grid-template-columns:repeat(2,1fr)}
-  .cmp{grid-template-columns:1fr}.cc{opacity:1!important}
-  table{font-size:9px}table th,table td{padding:4px 2px}
-  .jump{grid-template-columns:1fr}
-  header h1{font-size:20px}
-  header .pipe{font-size:8px}
+  body{overflow:auto;justify-content:flex-start;padding:40px 14px}
+  .gate{grid-template-columns:1fr;max-width:340px}
+  .g{padding:22px 16px}
+  hdr h1{font-size:20px}
+  hdr .pipe{font-size:9px}
 }
 </style>
 </head>
 <body>
 
-<a class="back-btn" href="../迁移探索.html" data-i18n="common.back_to_home">← 迁移探索</a>
+<a class="back-btn" href="../迁移探索.html">← 迁移探索</a>
 
-<header>
-  <div class="badge">「产教融合课程」· 2026培养方案</div>
-  <h1><span>产教融合</span> —— 故事云驱动的 NFSC 产业闭环</h1>
-  <div class="sub">《固体废物处理与资源化》本科课程 · 成都大学环境工程系</div>
+<hdr>
+  <h1><span>产教融合</span> —— 故事云驱动的 NFSC 案例场景闭环</h1>
   <div class="pipe">
-    <span>①真实工程</span><span class="arr">→</span><span>②纪实小说</span><span class="arr">→</span><span>③素材母库</span><span class="arr">→</span><span>④NFSC拆解</span><span class="arr">→</span><span>⑤双师课堂</span><span class="arr">→</span><span>⑥成效验证</span><span class="arr">→</span><span>⑦回写闭环</span>
+    <span>真实工程</span><span class="arr">→</span><span>纪实小说</span><span class="arr">→</span><span>素材母库</span><span class="arr">→</span><span>NFSC拆解</span><span class="arr">→</span><span>双师课堂</span><span class="arr">→</span><span>成效验证</span><span class="arr">→</span><span>回写闭环</span>
   </div>
+  <div class="sub">《固体废物处理与资源化》本科课程 · 真题真做 · 真岗实练</div>
   <div class="author"><a href="../HuangZhengwen.html">黄正文</a> 教授 · 成都大学环境工程系</div>
-  <div class="sep"></div>
-</header>
+</hdr>
 
-<div class="container">
-
-<!-- ① 五层真 -->
-<div class="sl">▾ 为什么"真"？—— 五层可验证的层次 ▾</div>
-<div class="truth-row">
-  <div class="tc"><div class="tno">①</div><div class="tnm">真人</div><div class="tds">双师20+162年<br>工程亲历积淀</div></div>
-  <div class="tc"><div class="tno">②</div><div class="tnm">真事</div><div class="tds">S001-S027<br>可指向具体时间地点</div></div>
-  <div class="tc"><div class="tno">③</div><div class="tnm">真境</div><div class="tds">纪实小说还原<br>五感身临其境</div></div>
-  <div class="tc"><div class="tno">④</div><div class="tnm">真做</div><div class="tds">企业真实图纸<br>行业标准验收</div></div>
-  <div class="tc"><div class="tno">⑤</div><div class="tnm">真验</div><div class="tds">学生成果公开<br>可追溯可审计</div></div>
+<div class="gate">
+  <a class="g" href="cases-full.html">
+    <div class="icon">📖</div>
+    <div class="t">全量案例映射表</div>
+    <div class="d">S001-S027 全部27个故事云案例<br>× 6模块 × 35知识群 × 小说章回溯源<br>覆盖率 100%</div>
+    <span class="tag">可追溯 · 可验证</span>
+  </a>
+  <a class="g" href="pipeline.html">
+    <div class="icon">🔄</div>
+    <div class="t">故事云 → NFSC 流水线</div>
+    <div class="d">真实工程→小说→素材→NFSC四维拆解<br>→双师课堂→成效验证→回写闭环<br>叙15%·框15%·境40%·创30%</div>
+    <span class="tag">七环全景</span>
+  </a>
+  <a class="g" href="agents.html">
+    <div class="icon">🤖</div>
+    <div class="t">Agent 七步赋能</div>
+    <div class="d">预·备·教·学·练·验·改<br>11-Agent并行协同生产线<br>每步有角色·每产有审核·每轮有反馈</div>
+    <span class="tag">技术底座</span>
+  </a>
+  <a class="g" href="../迁移探索-固废硕本.html">
+    <div class="icon">🎓</div>
+    <div class="t">本硕贯通 · 迁移验证</div>
+    <div class="d">NFSC方法论从研究生→本科生<br>产教融合为产业场景的自然延伸<br>同一套NFSC·不同场景·同一闭环</div>
+    <span class="tag">迁移探索</span>
+  </a>
 </div>
 
-<!-- ② 故事云突破32学时 -->
-<div class="sl">▾ 故事云：突破32学时的时空限制 ▾</div>
-<div class="cmp">
-  <div class="cc l">
-    <h3>传统课堂 32 学时</h3>
-    <div class="r"><span class="k">案例</span><span class="v">讲梗概·PPT翻页</span></div>
-    <div class="r"><span class="k">记忆</span><span class="v">听过即忘·无回放</span></div>
-    <div class="r"><span class="k">检索</span><span class="v">AI录音40分钟线性</span></div>
-    <div class="r"><span class="k">深度</span><span class="v">时间限制·无法展开</span></div>
-    <div class="r"><span class="k">情感</span><span class="v">一次性·不可复温</span></div>
-    <div class="r"><span class="k">存续</span><span class="v">结课即结束</span></div>
-    <div class="btm">物理时空天花板</div>
-  </div>
-  <div class="cc r">
-    <h3>故事云 无限延展</h3>
-    <div class="r"><span class="k">案例</span><span class="v">400+回小说原文字字可读</span></div>
-    <div class="r"><span class="k">记忆</span><span class="v">反复品读·复盘深思考</span></div>
-    <div class="r"><span class="k">检索</span><span class="v">全文搜索标注·任意跳转</span></div>
-    <div class="r"><span class="k">深度</span><span class="v">细节远超课堂·不限时</span></div>
-    <div class="r"><span class="k">情感</span><span class="v">五感文字·情感可叠加</span></div>
-    <div class="r"><span class="k">存续</span><span class="v">互联网平台 24h永存</span></div>
-    <div class="btm">← 第二时空：课前预习+课后复盘</div>
-  </div>
+<div class="policy-strip">
+  <div class="ps">近三年企业/政府真实课题案例占比 <b style="color:#f0a500">≥50%</b> ✅ &emsp; 100学生 · 6课题 · 双导师制 · <a href="../制度在线-培养方案2026.html">2026通知 §三(一)2</a></div>
 </div>
 
-<!-- ③ Agent七步赋能 -->
-<div class="sl">▾ Agent 全流程赋能：教师七步循环 ▾</div>
-<div class="steps">
-  <div class="st"><div class="sn">①预</div><div class="sa">预习预告</div><div class="sr">Agent2·Agent-S</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">②备</div><div class="sa">备课案例</div><div class="sr">Agent-S·Agent-I·0</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">③教</div><div class="sa">课中互动</div><div class="sr">Agent-I·Agent3</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">④学</div><div class="sa">课后答疑</div><div class="sr">S1·S2·Agent5</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">⑤练</div><div class="sa">作业训练</div><div class="sr">Agent4·Agent0</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">⑥验</div><div class="sa">成效追踪</div><div class="sr">Agent5·S1·S2</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">⑦改</div><div class="sa">迭代回写</div><div class="sr">Agent5·Agent-B</div></div>
-</div>
-<div style="text-align:center;color:#556;font-size:10px;margin-bottom:14px">同行：1人完成全部 ｜ 黄老师：11-Agent 并行协同，每步有角色、每产有审核、每轮有反馈</div>
-
-<!-- ④ 三层跳转 -->
-<div class="sl">▾ AI+场景仿真：从"听案例"到"经历案例" ▾</div>
-<div class="steps">
-  <div class="st"><div class="sn">认知层</div><div class="sa">① 课堂听讲</div><div class="sr">知道"有这事"</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">情感层</div><div class="sa">② 小说阅读</div><div class="sr">理解"为什么"</div></div>
-  <span class="arrow">→</span>
-  <div class="st"><div class="sn">行动层</div><div class="sa">③ Agent仿真</div><div class="sr">体悟"换作我呢"</div></div>
-</div>
-<div style="text-align:center;color:#556;font-size:10px;margin:4px 0 16px">Agent-I场景脚本·角色扮演·Agent3视觉辅助 → 学生进入角色：你是专家·你给意见·你担后果</div>
-
-<!-- ⑤ 全量案例映射表 -->
-<div class="sl">▾ 全量案例映射表 ▾</div>
-<div class="card" style="text-align:center">
-  <p style="font-size:14px;color:#c8d6e5;margin-bottom:6px">S001-S027 全部27个故事云案例 × 6大教学模块 × 35个知识群</p>
-  <p style="font-size:11px;color:#667;margin-bottom:12px">覆盖状态一目了然：✅ 故事云覆盖 · ⚠️ 部分覆盖 · — 传统教学覆盖 · 总覆盖率 100%</p>
-  <a href="cases-full.html" style="display:inline-block;padding:10px 28px;background:rgba(240,165,0,.1);border:1px solid rgba(240,165,0,.25);border-radius:6px;color:#f0a500;text-decoration:none;font-size:13px;font-weight:600">📖 查看全量案例映射表 →</a>
-</div>
-
-<!-- ⑥ 全闭环证据链 -->
-<div class="sl">▾ 全闭环：七环相扣，每环可追溯 ▾</div>
-<div class="steps" style="font-size:9px">
-  <div class="st"><div class="sn">①真实工程</div><div class="sa">20年·12本笔记本</div></div><span class="arrow">→</span>
-  <div class="st"><div class="sn">②纪实小说</div><div class="sa">龙栖湾400+回</div></div><span class="arrow">→</span>
-  <div class="st"><div class="sn">③素材母库</div><div class="sa">S001-S027</div></div><span class="arrow">→</span>
-  <div class="st"><div class="sn">④NFSC拆解</div><div class="sa">叙框境创四维</div></div><span class="arrow">→</span>
-  <div class="st"><div class="sn">⑤双师课堂</div><div class="sa">100学生·6课题</div></div><span class="arrow">→</span>
-  <div class="st"><div class="sn">⑥成效验证</div><div class="sa">S1/S2/Agent5</div></div><span class="arrow">→</span>
-  <div class="st"><div class="sn">⑦回写闭环</div><div class="sa">产出→素材母库</div></div>
-</div>
-<div style="text-align:center;color:#556;font-size:10px;margin:4px 0 16px">
-  学生毕设·专利·咨询 → 新案例素材 → 龙栖湾新回目 → 素材母库扩充 → 下一轮教学
-</div>
-
-<!-- ⑦ 相关入口 -->
-<div class="sl">▾ 深入探索 ▾</div>
-<div class="jump">
-  <a href="cases-full.html"><div class="ji">📖</div><div class="jn">全量案例映射表</div></a>
-  <a href="pipeline.html"><div class="ji">🔄</div><div class="jn">故事云→NFSC流水线</div></a>
-  <a href="agents.html"><div class="ji">🤖</div><div class="jn">Agent七步赋能</div></a>
-  <a href="../迁移探索.html"><div class="ji">🔗</div><div class="jn">迁移探索</div></a>
-  <a href="../迁移探索-固废硕本.html"><div class="ji">🎓</div><div class="jn">本硕贯通</div></a>
-  <a href="../index.html"><div class="ji">🏠</div><div class="jn">返回主站</div></a>
-</div>
-
-</div>
-
-<div class="footer">
-  <p>📖 故事云驱动 · 产教融合叙事案例体系 <span style="color:#556;font-size:9px">[S001-S027]</span></p>
-  <p>素材源自《龙栖湾》纪实小说 · <a href="https://book.qq.com/book-detail/54859488" target="_blank">QQ阅读</a> · <a href="https://www.17k.com/book/3613430.html" target="_blank">17K文学</a></p>
-  <p data-i18n="common.copyright">© 黄正文（点暇斋）· 全部作品版权登记</p>
+<div class="btm">
+  <a href="../index.html">返回主站</a>
 </div>
 
 <script src="../js/audio-player.js"></script>

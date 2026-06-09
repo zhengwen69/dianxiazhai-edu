@@ -7,39 +7,31 @@
 <title>全量案例映射表 — 产教融合</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628,#1a3a5c);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:30px 20px}
-
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628,#1a3a5c);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:30px 16px}
 .back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:6px 14px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.2);color:#f0a500;text-decoration:none;font-size:12px;transition:all .3s}
 .back-btn:hover{border-color:#f0a500;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
-
-hdr{text-align:center;margin-bottom:24px;max-width:1100px;width:100%}
+hdr{text-align:center;margin-bottom:22px;max-width:1100px;width:100%}
 hdr h1{font-size:22px;color:#fff;margin-bottom:2px}
 hdr h1 span{color:#f0a500}
 hdr .sub{color:#667;font-size:11px}
-
 .tbl-wrap{max-width:1100px;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:11px;min-width:900px}
-table th{background:rgba(13,31,53,.95);color:#f0a500;font-weight:600;padding:10px 6px;border:1px solid rgba(240,165,0,.15);font-size:10px;text-align:center;white-space:nowrap}
-table td{padding:8px 6px;border:1px solid rgba(91,155,213,.06);color:#99aabb;text-align:center;font-size:10px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:10px;min-width:1050px}
+table th{background:rgba(13,31,53,.95);color:#f0a500;font-weight:600;padding:8px 5px;border:1px solid rgba(240,165,0,.15);font-size:9px;text-align:center;white-space:nowrap}
+table td{padding:7px 5px;border:1px solid rgba(91,155,213,.06);color:#99aabb;text-align:center;font-size:9px;vertical-align:middle}
 table tr:nth-child(even) td{background:rgba(13,31,53,.3)}
 table td:first-child{color:#5b9bd5;font-weight:600;white-space:nowrap}
 table td:nth-child(2){text-align:left;color:#c8d6e5}
-table td:nth-child(3){color:#e8e8e8}
-table td:nth-child(5){text-align:left;font-size:9px;line-height:1.4}
-.m-row td{background:rgba(240,165,0,.04)!important;font-weight:600;color:#f0a500!important}
-.m-row td:first-child{font-size:12px}
-.tag{display:inline-block;padding:2px 6px;border-radius:6px;font-size:9px;margin:1px}
+table td:nth-child(5){text-align:left;color:#7fb8e0;font-size:9px;line-height:1.4}
+table td:nth-child(6){text-align:left;font-size:9px;line-height:1.4}
+.m-row td{background:rgba(240,165,0,.04)!important;font-weight:600;color:#f0a500!important;font-size:11px}
+.tag{display:inline-block;padding:2px 6px;border-radius:6px;font-size:8px;margin:1px}
 .t-o{background:rgba(230,126,34,.12);color:#e67e22}.t-b{background:rgba(91,155,213,.12);color:#5b9bd5}
 .t-g{background:rgba(46,204,113,.12);color:#2ecc71}.t-a{background:rgba(240,165,0,.12);color:#f0a500}
-.t-d{background:rgba(100,120,150,.1);color:#667}
-
-.stats{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:18px 0;font-size:11px;color:#667}
+.stats{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:16px 0;font-size:10px;color:#667}
 .stats b{color:#f0a500}
-
-.footer{margin-top:24px;text-align:center;color:#445;font-size:11px;line-height:2}
+.footer{margin-top:20px;text-align:center;color:#445;font-size:11px;line-height:2}
 .footer a{color:#5b9bd5;text-decoration:none}
-
-@media(max-width:768px){body{padding:20px 8px}hdr h1{font-size:17px}table{font-size:9px;min-width:800px}table th,table td{padding:4px 2px}}
+@media(max-width:768px){body{padding:20px 6px}hdr h1{font-size:16px}table{font-size:8px;min-width:950px}table th,table td{padding:3px 1px}}
 </style>
 </head>
 <body>
@@ -48,7 +40,7 @@ table td:nth-child(5){text-align:left;font-size:9px;line-height:1.4}
 
 <hdr>
   <h1>📖 <span>全量案例映射表</span> —— 故事云案例 × 教学大纲全覆盖</h1>
-  <div class="sub">S001-S027 全部27个故事云案例 + 4个传统教学案例 · 6大教学模块 · 35个知识群 · 覆盖率 100%</div>
+  <div class="sub">S001-S027 全部27个故事云案例 · 6大教学模块 · 35个知识群 · 小说章回可溯源 · 覆盖率 100%</div>
 </hdr>
 
 <div class="tbl-wrap">
@@ -57,77 +49,78 @@ table td:nth-child(5){text-align:left;font-size:9px;line-height:1.4}
 <tr>
   <th>模块</th>
   <th>知识群</th>
-  <th>知识点数</th>
-  <th>故事案例</th>
-  <th>案例内容 / 传统覆盖</th>
+  <th>KP</th>
+  <th>案例</th>
+  <th>小说章回（溯源）</th>
+  <th>案例要点 / 传统覆盖</th>
   <th>NFSC</th>
   <th>覆盖</th>
 </tr>
 </thead>
 <tbody>
 <!-- M1 绪论 -->
-<tr class="m-row"><td colspan="7">M1 绪论</td></tr>
-<tr><td>M1</td><td>定义与分类体系</td><td>4</td><td>S001,S002</td><td>渔村围废·砂轮厂零收购→"废物=错配"</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>✅</td></tr>
-<tr><td>M1</td><td>固废来源与产生量</td><td>4</td><td>—</td><td>教材数据·PPT讲授</td><td>—</td><td>✅</td></tr>
-<tr><td>M1</td><td>八大危害途径</td><td>8</td><td>S003</td><td>填埋场地下水污染·杏树不结果</td><td><span class="tag t-o">叙</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M1</td><td>物理特性（4点）</td><td>4</td><td>—</td><td>教学实验·采样实操</td><td>—</td><td>✅</td></tr>
-<tr><td>M1</td><td>化学特性（5点）</td><td>5</td><td>S021</td><td>光伏晶硅废水除氟·钙源替代</td><td><span class="tag t-b">框</span></td><td>⚠️</td></tr>
-<tr><td>M1</td><td>生物特性（2点）</td><td>2</td><td>—</td><td>教学实验·PPT讲授</td><td>—</td><td>✅</td></tr>
-<tr><td>M1</td><td>标准法规体系（4点）</td><td>4</td><td>—</td><td>教材·法规文本·GB 16889/18485</td><td>—</td><td>✅</td></tr>
-<tr><td>M1</td><td>技术现状与趋势</td><td>2</td><td>S026</td><td>退役电池回收→新质生产力·无废城市</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
+<tr class="m-row"><td colspan="8">M1 绪论</td></tr>
+<tr><td>M1</td><td>定义与分类体系</td><td>4</td><td>S001<br>S002</td><td>《龙栖湾》第一卷第1章·第387-391回<br>《龙栖湾》第156-157·188回</td><td>渔村围废·"废物=错配" / 砂轮厂零收购·七策打磨</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>✅</td></tr>
+<tr><td>M1</td><td>固废来源与产生量</td><td>4</td><td>—</td><td>—</td><td>教材数据·PPT讲授</td><td>—</td><td>✅</td></tr>
+<tr><td>M1</td><td>八大危害途径</td><td>8</td><td>S003</td><td>《龙栖湾》第387-390回 龙栖湾·初访·遇见·冲突·听证</td><td>填埋场地下水污染·杏树不结果·井水怪味·"敢让孩子喝吗"</td><td><span class="tag t-o">叙</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M1</td><td>物理特性（4点）</td><td>4</td><td>—</td><td>—</td><td>教学实验·采样实操</td><td>—</td><td>✅</td></tr>
+<tr><td>M1</td><td>化学特性（5点）</td><td>5</td><td>S021</td><td>《青龙湖》+《三多里巷》</td><td>光伏晶硅废水除氟·钙源替代</td><td><span class="tag t-b">框</span></td><td>⚠️</td></tr>
+<tr><td>M1</td><td>生物特性（2点）</td><td>2</td><td>—</td><td>—</td><td>教学实验·PPT讲授</td><td>—</td><td>✅</td></tr>
+<tr><td>M1</td><td>标准法规体系（4点）</td><td>4</td><td>—</td><td>—</td><td>教材·GB 16889·GB 18485·固废法2020</td><td>—</td><td>✅</td></tr>
+<tr><td>M1</td><td>技术现状与趋势</td><td>2</td><td>S026</td><td>《龙栖湾》第425回 碎屏手抖说前岁 暖灯初照启新程</td><td>退役电池回收→新质生产力·无废城市趋势</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
 
 <!-- M2 收集运输预处理 -->
-<tr class="m-row"><td colspan="7">M2 收集运输与预处理</td></tr>
-<tr><td>M2</td><td>采样与分析（7点）</td><td>7</td><td>—</td><td>教学实验·四分法实操</td><td>—</td><td>✅</td></tr>
-<tr><td>M2</td><td>垃圾分类系统</td><td>1</td><td>S004,S005</td><td>城市垃圾漂流记·撤桶并点争议</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>✅</td></tr>
-<tr><td>M2</td><td>收运系统设计（4点）</td><td>4</td><td>S024(S023)</td><td>三辆vs两辆·收运优化调度</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
-<tr><td>M2</td><td>转运站（4点）</td><td>4</td><td>—</td><td>教材·经济计算·CJJ 27-2005</td><td>—</td><td>✅</td></tr>
-<tr><td>M2</td><td>压实破碎（3点）</td><td>3</td><td>—</td><td>教材·设备图示</td><td>—</td><td>✅</td></tr>
-<tr><td>M2</td><td>分选技术（4点）</td><td>4</td><td>—</td><td>教材·PPT讲授</td><td>—</td><td>✅</td></tr>
-<tr><td>M2</td><td>危废收运</td><td>1</td><td>—</td><td>教材·法规讲授</td><td>—</td><td>✅</td></tr>
+<tr class="m-row"><td colspan="8">M2 收集运输与预处理</td></tr>
+<tr><td>M2</td><td>采样与分析（7点）</td><td>7</td><td>—</td><td>—</td><td>教学实验·四分法实操</td><td>—</td><td>✅</td></tr>
+<tr><td>M2</td><td>垃圾分类系统</td><td>1</td><td>S004<br>S005</td><td>《青龙湖》城市垃圾漂流记<br>《青龙湖》撤桶并点争议</td><td>从厨房到填埋场的全链条追踪 / 居民·物业·城管三方博弈</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>✅</td></tr>
+<tr><td>M2</td><td>收运系统设计（4点）</td><td>4</td><td>S024</td><td>《龙栖湾》第424回 三辆两辆争半世 一杖滑落彼手扶</td><td>三辆vs两辆·收运车辆调度优化·成本曲线比选</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
+<tr><td>M2</td><td>转运站（4点）</td><td>4</td><td>—</td><td>—</td><td>教材·经济计算·CJJ 27-2005</td><td>—</td><td>✅</td></tr>
+<tr><td>M2</td><td>压实破碎（3点）</td><td>3</td><td>—</td><td>—</td><td>教材·设备图示</td><td>—</td><td>✅</td></tr>
+<tr><td>M2</td><td>分选技术（4点）</td><td>4</td><td>—</td><td>—</td><td>教材·PPT讲授</td><td>—</td><td>✅</td></tr>
+<tr><td>M2</td><td>危废收运</td><td>1</td><td>—</td><td>—</td><td>教材·法规讲授</td><td>—</td><td>✅</td></tr>
 
 <!-- M3 生物处理 -->
-<tr class="m-row"><td colspan="7">M3 生物处理</td></tr>
-<tr><td>M3</td><td>好氧堆肥原理（5点）</td><td>5</td><td>S009,S023(S022)</td><td>堆肥厂抠门哲学·C/N比调试失败</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M3</td><td>堆肥工艺参数（6点）</td><td>6</td><td>S023(S022)</td><td>C/N比25:1-30:1·含水率调试</td><td><span class="tag t-b">框</span></td><td>⚠️</td></tr>
-<tr><td>M3</td><td>堆肥厂设计</td><td>1</td><td>S023(S022)</td><td>100t/d好氧堆肥厂·传统+故事</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M3</td><td>腐熟度评价（5点）</td><td>5</td><td>—</td><td>教材·检测实验</td><td>—</td><td>✅</td></tr>
-<tr><td>M3</td><td>厌氧消化原理（5点）</td><td>5</td><td>—</td><td>传统淀粉废水沼气实例</td><td>—</td><td>✅</td></tr>
-<tr><td>M3</td><td>厌氧工艺条件（8点）</td><td>8</td><td>—</td><td>传统实例+教材讲授</td><td>—</td><td>✅</td></tr>
-<tr><td>M3</td><td>沼气工程实例（4点）</td><td>4</td><td>—</td><td>传统淀粉废水实例</td><td>—</td><td>✅</td></tr>
-<tr><td>M3</td><td>延伸技术（4点）</td><td>4</td><td>—</td><td>教材·蚯蚓·细菌冶金</td><td>—</td><td>✅</td></tr>
+<tr class="m-row"><td colspan="8">M3 生物处理</td></tr>
+<tr><td>M3</td><td>好氧堆肥原理（5点）</td><td>5</td><td>S009<br>S023</td><td>《三多里巷》固废厂抠门哲学<br>《龙栖湾》第422回 闭眼浮来三日臭 鸡粪未算入方程</td><td>TQM降本实战 / C/N比25:1-30:1·原料含氮量偏差·堆体臭了三天</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M3</td><td>堆肥工艺参数（6点）</td><td>6</td><td>S023</td><td>《龙栖湾》第422回 闭眼浮来三日臭 鸡粪未算入方程</td><td>C/N比·含水率40-65%·通风量·pH·颗粒度调试</td><td><span class="tag t-b">框</span></td><td>⚠️</td></tr>
+<tr><td>M3</td><td>堆肥厂设计</td><td>1</td><td>S023<br>传统</td><td>《龙栖湾》第422回<br>传统100t/d实例</td><td>100t/d好氧堆肥厂·12座160m³发酵仓</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M3</td><td>腐熟度评价（5点）</td><td>5</td><td>—</td><td>—</td><td>教材·检测实验</td><td>—</td><td>✅</td></tr>
+<tr><td>M3</td><td>厌氧消化原理（5点）</td><td>5</td><td>—</td><td>—</td><td>传统淀粉废水沼气实例·三段理论</td><td>—</td><td>✅</td></tr>
+<tr><td>M3</td><td>厌氧工艺条件（8点）</td><td>8</td><td>—</td><td>—</td><td>传统实例+教材讲授</td><td>—</td><td>✅</td></tr>
+<tr><td>M3</td><td>沼气工程实例（4点）</td><td>4</td><td>—</td><td>—</td><td>传统淀粉废水实例·2245m³消化器·3500m³/d沼气</td><td>—</td><td>✅</td></tr>
+<tr><td>M3</td><td>延伸技术（4点）</td><td>4</td><td>—</td><td>—</td><td>教材·蚯蚓处理·细菌冶金·超富集植物</td><td>—</td><td>✅</td></tr>
 
 <!-- M4 热处理 -->
-<tr class="m-row"><td colspan="7">M4 热处理</td></tr>
-<tr><td>M4</td><td>焚烧原理与条件（5点）</td><td>5</td><td>S005,S015</td><td>德国设备水土不服·非典焚烧炉创业</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M4</td><td>3T+E原则（4点）</td><td>4</td><td>S005,S025(S021)</td><td>850°C/2s·二噁英阻断·PID图</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M4</td><td>焚烧炉型对比（3点）</td><td>3</td><td>S005</td><td>炉排炉vs流化床·适用性比选</td><td><span class="tag t-b">框</span></td><td>✅</td></tr>
-<tr><td>M4</td><td>烟气净化（4点）</td><td>4</td><td>S025(S021)</td><td>脱酸·除尘·脱硝·除二噁英</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>⚠️</td></tr>
-<tr><td>M4</td><td>热解技术（5点）</td><td>5</td><td>S006-S008</td><td>脱硫石膏资源化十年波折·技术→产品</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>⚠️</td></tr>
-<tr><td>M4</td><td>热选系统（2点）</td><td>2</td><td>—</td><td>传统20t/h热选实例</td><td>—</td><td>✅</td></tr>
-<tr><td>M4</td><td>气化技术（7点）</td><td>7</td><td>—</td><td>教材·PPT·生物质气化</td><td>—</td><td>✅</td></tr>
-<tr><td>M4</td><td>焚烧效果评价（3点）</td><td>3</td><td>—</td><td>教材·计算习题</td><td>—</td><td>✅</td></tr>
+<tr class="m-row"><td colspan="8">M4 热处理</td></tr>
+<tr><td>M4</td><td>焚烧原理与条件（5点）</td><td>5</td><td>S005<br>S015</td><td>《青龙湖》第392-393回 水土不服的德国设备<br>《龙栖湾》+《杨柳坝》非典焚烧炉创业</td><td>德国设备厨余55%·热值4200不达标 / 砂轮厂老熔炉改造</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M4</td><td>3T+E原则（4点）</td><td>4</td><td>S005<br>S025</td><td>《青龙湖》第392-393回<br>《龙栖湾》第421回 十三秒默喉轻动 五指弹烟如放生</td><td>850°C/2s·二噁英阻断·"不是烧掉的——是掐断的"</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M4</td><td>焚烧炉型对比（3点）</td><td>3</td><td>S005</td><td>《青龙湖》第392-393回</td><td>机械炉排炉vs流化床·适用性比选·德国设备教训</td><td><span class="tag t-b">框</span></td><td>✅</td></tr>
+<tr><td>M4</td><td>烟气净化（4点）</td><td>4</td><td>S025</td><td>《龙栖湾》第421回 十三秒默喉轻动 五指弹烟如放生</td><td>脱酸·除尘·脱硝·除二噁英·活性炭吸附</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>⚠️</td></tr>
+<tr><td>M4</td><td>热解技术（5点）</td><td>5</td><td>S006<br>S007<br>S008</td><td>《杨柳坝与刘家湾》脱硫石膏系列</td><td>脱硫石膏资源化十年波折·技术→产品化·商业化最后一公里</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>⚠️</td></tr>
+<tr><td>M4</td><td>热选系统（2点）</td><td>2</td><td>传统</td><td>传统20t/h热选实例</td><td>处理能力20t/h·合成气16100kg/h</td><td>—</td><td>✅</td></tr>
+<tr><td>M4</td><td>气化技术（7点）</td><td>7</td><td>—</td><td>—</td><td>教材·PPT·固定床/流化床/气流床</td><td>—</td><td>✅</td></tr>
+<tr><td>M4</td><td>焚烧效果评价（3点）</td><td>3</td><td>—</td><td>—</td><td>教材·计算习题</td><td>—</td><td>✅</td></tr>
 
 <!-- M5 填埋处置 -->
-<tr class="m-row"><td colspan="7">M5 填埋处置</td></tr>
-<tr><td>M5</td><td>填埋场类型与构造（4点）</td><td>4</td><td>S003,S011,S022</td><td>填埋场选址争议·HDPE防渗设计</td><td><span class="tag t-o">叙</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M5</td><td>选址与设计（3点）</td><td>3</td><td>S003</td><td>380米到500米：合规与失当的距离</td><td><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M5</td><td>防渗系统（4点）</td><td>4</td><td>S022</td><td>HDPE焊缝·"0.2mm合格·0.1mm才是底线"</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M5</td><td>压实与沉降（3点）</td><td>3</td><td>—</td><td>教材·计算习题</td><td>—</td><td>✅</td></tr>
-<tr><td>M5</td><td>渗滤液管理（5点）</td><td>5</td><td>S011,S023(S024)</td><td>COD异常诊断·运行日报分析·偷排判断</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
-<tr><td>M5</td><td>填埋气收集利用（5点）</td><td>5</td><td>S017</td><td>碳交易博弈·CCER估值争议</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
-<tr><td>M5</td><td>封场覆盖</td><td>1</td><td>—</td><td>教材·杭州天子岭实例</td><td>—</td><td>✅</td></tr>
+<tr class="m-row"><td colspan="8">M5 填埋处置</td></tr>
+<tr><td>M5</td><td>填埋场类型与构造（4点）</td><td>4</td><td>S003<br>S011<br>S022</td><td>《龙栖湾》第387-390回<br>《三多里巷》渗滤液危机之夜<br>《龙栖湾》第420回 放大镜中寻错线 老手指下辨分毫</td><td>卫生填埋·安全填埋 / 渗滤液危机 / HDPE防渗·焊缝检测</td><td><span class="tag t-o">叙</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M5</td><td>选址与设计（3点）</td><td>3</td><td>S003</td><td>《龙栖湾》第387-390回 龙栖湾·初访·遇见·冲突·听证</td><td>380米到500米：合规与失当的距离·王老汉的杏树·8秒沉默</td><td><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M5</td><td>防渗系统（4点）</td><td>4</td><td>S022</td><td>《龙栖湾》第420回 放大镜中寻错线 老手指下辨分毫</td><td>HDPE膜1.5-2.0mm·焊缝·"0.2mm合格·0.1mm才是底线"</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M5</td><td>压实与沉降（3点）</td><td>3</td><td>—</td><td>—</td><td>教材·计算习题·K=Δh/L渗透公式</td><td>—</td><td>✅</td></tr>
+<tr><td>M5</td><td>渗滤液管理（5点）</td><td>5</td><td>S011<br>S027</td><td>《三多里巷》渗滤液危机之夜<br>《龙栖湾》第423回 蘸茶翻透三年报 数据无言指上痕</td><td>COD异常诊断三步法·运行日报·"不是设备坏了——是有人偷排"</td><td><span class="tag t-b">框</span><span class="tag t-g">境</span></td><td>✅</td></tr>
+<tr><td>M5</td><td>填埋气收集利用（5点）</td><td>5</td><td>S017</td><td>《艾沙巴》+《破界者》碳交易博弈</td><td>CCER估值争议·三方博弈·杭州天子岭气体发电4-6MW</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
+<tr><td>M5</td><td>封场覆盖</td><td>1</td><td>传统</td><td>杭州天子岭实例</td><td>排气层·防渗阻气层·排水层·绿化层</td><td>—</td><td>✅</td></tr>
 
 <!-- M6 资源化 -->
-<tr class="m-row"><td colspan="7">M6 资源化</td></tr>
-<tr><td>M6</td><td>循环经济/3R（2点）</td><td>2</td><td>—</td><td>教材·政策讲授</td><td>—</td><td>✅</td></tr>
-<tr><td>M6</td><td>废纸资源化（6点）</td><td>6</td><td>—</td><td>教材·工艺图示</td><td>—</td><td>✅</td></tr>
-<tr><td>M6</td><td>废塑料资源化（4点）</td><td>4</td><td>—</td><td>教材·再生工艺</td><td>—</td><td>✅</td></tr>
-<tr><td>M6</td><td>废橡胶资源化（5点）</td><td>5</td><td>—</td><td>教材·翻新/再生胶/胶粉</td><td>—</td><td>✅</td></tr>
-<tr><td>M6</td><td>冶金废渣（4点）</td><td>4</td><td>S006-S008</td><td>脱硫石膏·水淬矿渣制水泥</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>✅</td></tr>
-<tr><td>M6</td><td>煤矸石/粉煤灰（2点）</td><td>2</td><td>—</td><td>教材·综合利用讲授</td><td>—</td><td>✅</td></tr>
-<tr><td>M6</td><td>废旧电池（3点）</td><td>3</td><td>S026</td><td>退役动力电池·三元前驱体·"这条产线能挣回来"</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
-<tr><td>M6</td><td>秸秆资源化（4点）</td><td>4</td><td>—</td><td>教材·还田/能源化/饲料化</td><td>—</td><td>✅</td></tr>
+<tr class="m-row"><td colspan="8">M6 资源化</td></tr>
+<tr><td>M6</td><td>循环经济/3R（2点）</td><td>2</td><td>—</td><td>—</td><td>教材·政策讲授</td><td>—</td><td>✅</td></tr>
+<tr><td>M6</td><td>废纸资源化（6点）</td><td>6</td><td>—</td><td>—</td><td>教材·SSD法·浮选脱墨·热熔物处理</td><td>—</td><td>✅</td></tr>
+<tr><td>M6</td><td>废塑料资源化（4点）</td><td>4</td><td>—</td><td>—</td><td>教材·直接再生·改性再生·合金化</td><td>—</td><td>✅</td></tr>
+<tr><td>M6</td><td>废橡胶资源化（5点）</td><td>5</td><td>—</td><td>—</td><td>教材·翻新·再生胶·胶粉·De-Link法</td><td>—</td><td>✅</td></tr>
+<tr><td>M6</td><td>冶金废渣（4点）</td><td>4</td><td>S006<br>S007<br>S008</td><td>《杨柳坝与刘家湾》脱硫石膏系列</td><td>脱硫石膏→建筑石膏/水泥缓凝剂/自流平·水淬矿渣制水泥</td><td><span class="tag t-o">叙</span><span class="tag t-b">框</span></td><td>✅</td></tr>
+<tr><td>M6</td><td>煤矸石/粉煤灰（2点）</td><td>2</td><td>—</td><td>—</td><td>教材·发电·制砖·水泥·提取化工品</td><td>—</td><td>✅</td></tr>
+<tr><td>M6</td><td>废旧电池（3点）</td><td>3</td><td>S026</td><td>《龙栖湾》第425回 碎屏手抖说前岁 暖灯初照启新程</td><td>退役动力电池·三元前驱体·"这条产线能挣回来"</td><td><span class="tag t-b">框</span><span class="tag t-a">创</span></td><td>✅</td></tr>
+<tr><td>M6</td><td>秸秆资源化（4点）</td><td>4</td><td>—</td><td>—</td><td>教材·还田·能源化·饲料化</td><td>—</td><td>✅</td></tr>
 </tbody>
 </table>
 </div>
@@ -140,11 +133,14 @@ table td:nth-child(5){text-align:left;font-size:9px;line-height:1.4}
 </div>
 <div class="stats">
   <div>NFSC分布：<span class="tag t-o">叙20%</span> <span class="tag t-b">框40%</span> <span class="tag t-g">境40%</span> <span class="tag t-a">创15%</span></div>
-  <div>来源：S001-S021（故事素材母库） + S022-S027（龙栖湾第418-427回）</div>
+  <div>S001-S021（故事素材母库） + S022-S027（龙栖湾第418-427回·产教融合叙事弧）</div>
+</div>
+<div class="stats">
+  <div>小说溯源覆盖：<b>《龙栖湾》《青龙湖》《杨柳坝与刘家湾》《三多里巷》《艾沙巴赢白云村》《破界者》</b> 共6部</div>
 </div>
 
 <div class="footer">
-  <p><a href="../index.html" data-i18n="common.back_to_home">← 返回主站</a> · <a href="index.html">产教融合首页</a></p>
+  <p><a href="../index.html" data-i18n="common.back_to_home">← 返回主站</a> · <a href="index.html">产教融合首页</a> · <a href="pipeline.html">流水线</a> · <a href="agents.html">Agent赋能</a></p>
 </div>
 
 <script src="../js/audio-player.js"></script>
