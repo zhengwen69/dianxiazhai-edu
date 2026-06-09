@@ -4,122 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🤖</text></svg>">
-<title>智能体与实践 — 产教融合</title>
+<title>Agent七步赋能 — 产教融合</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628,#1a3a5c);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:30px 20px}
-.subnav{max-width:800px;width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:8px}
-.subnav a{color:#667;text-decoration:none;font-size:12px;transition:color .3s}
-.subnav a:hover{color:#f0a500}
-.subnav .title{font-size:16px;color:#3498db;font-weight:700}
-.subnav .pager{display:flex;gap:16px}
-.subnav .pager a{color:#5b9bd5;font-size:12px;text-decoration:none}
-
+.back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:6px 14px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.2);color:#f0a500;text-decoration:none;font-size:12px;transition:all .3s}
+.back-btn:hover{border-color:#f0a500;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
 .cont{max-width:800px;width:100%}
+hdr{text-align:center;margin-bottom:28px}
+hdr h1{font-size:22px;color:#fff;margin-bottom:2px}
+hdr h1 span{color:#f0a500}
+hdr .sub{color:#667;font-size:11px}
 
-.pipe{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:12px;padding:22px 20px;text-align:center;margin-bottom:16px}
-.pipe .row{margin:6px 0}
-.pipe .row span{display:inline-block;padding:5px 14px;background:rgba(240,165,0,.08);border:1px solid rgba(240,165,0,.18);border-radius:6px;font-size:11px;color:#f0a500;margin:3px 4px}
-.pipe .ar{color:#667;font-size:14px;margin:2px 0}
+.steps{display:grid;grid-template-columns:1fr;gap:12px}
+.step{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.12);border-radius:12px;padding:16px 20px;transition:all .3s}
+.step:hover{border-color:rgba(240,165,0,.25)}
+.step .hd{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.step .hd .no{font-size:22px;font-weight:700;color:#f0a500;min-width:36px}
+.step .hd .nm{font-size:15px;color:#e8e8e8;font-weight:600}
+.step .hd .phase{font-size:10px;color:#667;margin-left:auto}
+.step .desc{font-size:11px;color:#889;line-height:1.7;margin-bottom:6px}
+.step .ags{display:flex;gap:6px;flex-wrap:wrap}
+.step .ags .ag{font-size:9px;padding:3px 8px;border-radius:6px}
+.ta{background:rgba(240,165,0,.1);color:#f0a500;border:1px solid rgba(240,165,0,.15)}
+.tb{background:rgba(91,155,213,.1);color:#5b9bd5;border:1px solid rgba(91,155,213,.15)}
+.tg{background:rgba(46,204,113,.1);color:#2ecc71;border:1px solid rgba(46,204,113,.15)}
+.tr{background:rgba(231,76,60,.08);color:#e74c3c;border:1px solid rgba(231,76,60,.12)}
 
-.ag{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:16px}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:20px}
 .ac{background:rgba(13,31,53,.6);border:1px solid rgba(91,155,213,.08);border-radius:8px;padding:12px 8px;text-align:center}
 .ac .cd{font-size:13px;font-weight:700;color:#5b9bd5;margin-bottom:2px}
-.ac .rl{font-size:10px;color:#667;margin-bottom:4px}
+.ac .rl{font-size:10px;color:#667;margin-bottom:3px}
 .ac .tk{font-size:9px;color:#556;line-height:1.5}
-.ac.aud .cd{color:#e74c3c}
-.ac.stu .cd{color:#2ecc71}
-.afoot{text-align:center;color:#556;font-size:11px;margin-bottom:22px}
-.afoot span{color:#f0a500}
+.ac.aud .cd{color:#e74c3c}.ac.stu .cd{color:#2ecc71}
 
-.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
-.pc{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 12px;text-align:center}
-.pc .st{font-size:18px;font-weight:700;color:#f0a500;margin-bottom:4px}
-.pc .sn{font-size:12px;color:#e8e8e8;font-weight:600;margin-bottom:2px}
-.pc .sd{font-size:10px;color:#667;line-height:1.5}
-.parrow{text-align:center;color:#667;font-size:14px;margin:4px 0}
-.phigh{background:rgba(240,165,0,.06);border:1px solid rgba(240,165,0,.18);border-radius:10px;padding:12px 18px;text-align:center;font-size:12px;color:#c8d6e5;margin:12px 0 20px}
-.phigh b{color:#f0a500}
-
-.chain{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:20px}
-.cc{background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.12);border-radius:10px;padding:14px 16px;text-align:center;min-width:100px}
-.cc .ci{font-size:22px;margin-bottom:4px}
-.cc .cn{font-size:12px;color:#e8e8e8;font-weight:600;margin-bottom:2px}
-.cc .cd{font-size:10px;color:#667}
-.car{color:#f0a500;font-size:18px}
-
-.footer{margin-top:8px;text-align:center;color:#445;font-size:11px}
+.footer{margin-top:30px;text-align:center;color:#445;font-size:11px;line-height:2}
 .footer a{color:#5b9bd5;text-decoration:none}
 
-@media(max-width:768px){.proc{grid-template-columns:1fr}.parrow{display:none}.chain{flex-direction:column;gap:6px}.car{transform:rotate(90deg)}body{padding:20px 12px}.subnav{font-size:11px}.ag{grid-template-columns:repeat(2,1fr)}.pipe .row span{font-size:10px;padding:4px 8px}}@media(max-width:480px){.ag{grid-template-columns:1fr}}
+@media(max-width:768px){body{padding:20px 10px}}
 </style>
 </head>
 <body>
 
-<div class="subnav">
-  <a href="index.html">← 产教融合首页</a>
-  <span class="title">🤖 智能体与实践</span>
-  <div class="pager"><a href="innovation.html">← 创新与壁垒</a></div>
-</div>
+<a class="back-btn" href="index.html">← 产教融合</a>
 
 <div class="cont">
+<hdr>
+  <h1>🤖 <span>Agent七步赋能</span> —— 教师全流程智能协同</h1>
+  <div class="sub">同行1人备课 · 这里11-Agent并行协作 · 每步有角色、每产有审核、每轮有反馈</div>
+</hdr>
 
-<div class="pipe">
-  <div class="row"><span>纪实小说素材入口</span></div>
-  <div class="ar">↓</div>
-  <div class="row"><span>Agent-S 案例拆解</span><span>Agent-I 场景设计</span></div>
-  <div class="ar">↓</div>
-  <div class="row"><span>Agent2 大纲日历</span><span>Agent3 PPT讲稿</span><span>Agent4 作业试卷</span><span>Agent-B 品牌建设</span></div>
-  <div class="ar">↓</div>
-  <div class="row"><span>Agent0 质量审核 (A/B/C/D评级)</span></div>
-  <div class="ar">↓</div>
-  <div class="row"><span>S1 学霸追问 (深度)</span><span>S2 普惠反馈 (可及性)</span><span>Agent5 教改分析 (达成度)</span></div>
-  <div class="ar">↓</div>
-  <div class="row"><span>产教融合门户发布</span></div>
+<div class="steps">
+  <div class="step">
+    <div class="hd"><div class="no">①</div><div class="nm">预 —— 预习预告</div><div class="phase">课前</div></div>
+    <div class="desc">Agent2 提取本周教学大纲 → Agent-S 推送对应小说片段 → 学生课前读到故事、带着问题进课堂</div>
+    <div class="ags"><span class="ag ta">Agent2 大纲</span><span class="ag ta">Agent-S 案例</span></div>
+  </div>
+  <div class="step">
+    <div class="hd"><div class="no">②</div><div class="nm">备 —— 备课案例</div><div class="phase">课前</div></div>
+    <div class="desc">Agent-S 五段式拆解（背景→冲突→决策→结局→反思）→ Agent-I 场景脚本 → Agent3 生成PPT/HTML → Agent0 质量审核（A/B/C/D评级）→ S1深度/S2可及性预审</div>
+    <div class="ags"><span class="ag ta">Agent-S</span><span class="ag ta">Agent-I</span><span class="ag tb">Agent3</span><span class="ag tr">Agent0</span><span class="ag tg">S1</span><span class="ag tg">S2</span></div>
+  </div>
+  <div class="step">
+    <div class="hd"><div class="no">③</div><div class="nm">教 —— 课中互动</div><div class="phase">课中</div></div>
+    <div class="desc">Agent-I 角色扮演引导 → 学生进入场景角色 → Agent3 视觉辅助（PPT/HTML演示） → AI场景仿真再现</div>
+    <div class="ags"><span class="ag ta">Agent-I</span><span class="ag tb">Agent3</span></div>
+  </div>
+  <div class="step">
+    <div class="hd"><div class="no">④</div><div class="nm">学 —— 课后答疑</div><div class="phase">课后</div></div>
+    <div class="desc">S2 普惠反馈：检测术语墙、认知负荷 → S1 学霸追问：概念链完整性、分析深度 → Agent5 达成度预警</div>
+    <div class="ags"><span class="ag tg">S2</span><span class="ag tg">S1</span><span class="ag ta">Agent5</span></div>
+  </div>
+  <div class="step">
+    <div class="hd"><div class="no">⑤</div><div class="nm">练 —— 作业训练</div><div class="phase">课后</div></div>
+    <div class="desc">Agent4 出题（难度分层50:30:20）→ Agent0 质量审核 → 所有题目标注素材编号 S001-S027，可回溯原文</div>
+    <div class="ags"><span class="ag ta">Agent4</span><span class="ag tr">Agent0</span></div>
+  </div>
+  <div class="step">
+    <div class="hd"><div class="no">⑥</div><div class="nm">验 —— 成效追踪</div><div class="phase">测评</div></div>
+    <div class="desc">Agent5 达成度分析 → 每个教学目标达标率 → 弱项知识点标注 → S1深度验证 → 反馈到下一轮备课</div>
+    <div class="ags"><span class="ag ta">Agent5</span><span class="ag tg">S1</span></div>
+  </div>
+  <div class="step">
+    <div class="hd"><div class="no">⑦</div><div class="nm">改 —— 学期迭代</div><div class="phase">期末</div></div>
+    <div class="desc">Agent5 教学反思报告 → Agent-B 教学成果申报 → 学生优秀产出回写素材母库 → 素材母库更新 → 龙栖湾新回目</div>
+    <div class="ags"><span class="ag ta">Agent5</span><span class="ag ta">Agent-B</span><span class="ag tg">素材回写</span></div>
+  </div>
 </div>
 
-<div class="ag">
-  <div class="ac"><div class="cd">Agent-S</div><div class="rl">案例拆解</div><div class="tk">小说→五段式教学案例</div></div>
-  <div class="ac"><div class="cd">Agent-I</div><div class="rl">场景设计</div><div class="tk">课堂角色扮演沉浸脚本</div></div>
-  <div class="ac"><div class="cd">Agent2</div><div class="rl">文档生成</div><div class="tk">教学大纲·日历·教案</div></div>
-  <div class="ac"><div class="cd">Agent3</div><div class="rl">PPT讲稿</div><div class="tk">16:9课件·HTML演示页</div></div>
-  <div class="ac"><div class="cd">Agent4</div><div class="rl">作业试卷</div><div class="tk">作业·课设任务书·A/B卷</div></div>
-  <div class="ac"><div class="cd">Agent5</div><div class="rl">教改监控</div><div class="tk">达成度分析·反思报告</div></div>
-  <div class="ac"><div class="cd">Agent-B</div><div class="rl">品牌建设</div><div class="tk">论文·申报·学术品牌</div></div>
-  <div class="ac aud"><div class="cd">Agent0</div><div class="rl">质量审核</div><div class="tk">四维审计·A/B/C/D评级</div></div>
-  <div class="ac stu"><div class="cd">S1</div><div class="rl">学霸追问</div><div class="tk">概念链·深度·迁移检查</div></div>
-  <div class="ac stu"><div class="cd">S2</div><div class="rl">普惠反馈</div><div class="tk">术语墙·认知负荷检测</div></div>
-  <div class="ac"><div class="cd">Agent1</div><div class="rl">归档标准</div><div class="tk">版本管理·索引维护</div></div>
-</div>
-<div class="afoot">传统：<span>1人</span> × 备课数小时 = 散点产出 &emsp; 智能体：<span>11体</span> × 并行协作 = 系统化流水线</div>
-
-<div class="proc">
-  <div class="pc"><div class="st">①</div><div class="sn">任务书</div><div class="sd">企业真实数据输入<br>工程参数作为设计条件</div></div>
-  <div class="pc"><div class="st">②</div><div class="sn">计算</div><div class="sd">参数取值·公式校核<br>行业规范逐条验证</div></div>
-  <div class="pc"><div class="st">③</div><div class="sn">出图</div><div class="sd">按行业标准绘制<br>施工图深度要求</div></div>
-</div>
-<div class="parrow">↓&emsp;&emsp;&emsp;↓&emsp;&emsp;&emsp;↓</div>
-<div class="proc">
-  <div class="pc"><div class="st">④</div><div class="sn">面授</div><div class="sd">行业导师逐图点评<br>学术导师补充讲解</div></div>
-  <div class="pc"><div class="st">⑤</div><div class="sn">修改</div><div class="sd">图纸多轮迭代<br>真实工程深度打磨</div></div>
-  <div class="pc"><div class="st">⑥</div><div class="sn">答辩</div><div class="sd">行业标准验收<br>施工图级成果交付</div></div>
-</div>
-<div class="phigh"><b>双导师制</b>：学术导师 + 行业导师 &emsp;|&emsp; <b>课程标准</b>：按企业施工图标准验收，非课本标准</div>
-
-<div class="chain">
-  <div class="cc"><div class="ci">🔬</div><div class="cn">教研创新</div><div class="cd">三阶叙事教学法<br>NFSC四维模型</div></div>
-  <div class="car">→</div>
-  <div class="cc"><div class="ci">🏗️</div><div class="cn">课程建设</div><div class="cd">产教融合课程<br>故事云案例体系</div></div>
-  <div class="car">→</div>
-  <div class="cc"><div class="ci">📝</div><div class="cn">考核迭代</div><div class="cd">开卷案例分析<br>心得报告·无标答</div></div>
-  <div class="car">→</div>
-  <div class="cc"><div class="ci">🎯</div><div class="cn">育人出口</div><div class="cd">毕设·专利产出<br>技术咨询·社会服务</div></div>
+<div class="ag-grid">
+  <div class="ac"><div class="cd">Agent-S</div><div class="rl">案例拆解</div><div class="tk">小说→五段式<br>教学案例</div></div>
+  <div class="ac"><div class="cd">Agent-I</div><div class="rl">场景设计</div><div class="tk">角色扮演<br>沉浸脚本</div></div>
+  <div class="ac"><div class="cd">Agent2</div><div class="rl">文档生成</div><div class="tk">大纲·日历<br>教案讲稿</div></div>
+  <div class="ac"><div class="cd">Agent3</div><div class="rl">PPT讲稿</div><div class="tk">16:9课件<br>HTML演示页</div></div>
+  <div class="ac"><div class="cd">Agent4</div><div class="rl">作业试卷</div><div class="tk">作业·课设<br>A/B卷</div></div>
+  <div class="ac"><div class="cd">Agent5</div><div class="rl">教改监控</div><div class="tk">达成度分析<br>反思报告</div></div>
+  <div class="ac"><div class="cd">Agent-B</div><div class="rl">品牌建设</div><div class="tk">论文·申报<br>学术品牌</div></div>
+  <div class="ac aud"><div class="cd">Agent0</div><div class="rl">质量审核</div><div class="tk">四维审计<br>A/B/C/D评级</div></div>
+  <div class="ac stu"><div class="cd">S1</div><div class="rl">学霸追问</div><div class="tk">概念链·深度<br>迁移检查</div></div>
+  <div class="ac stu"><div class="cd">S2</div><div class="rl">普惠反馈</div><div class="tk">术语墙·认知<br>负荷检测</div></div>
+  <div class="ac"><div class="cd">Agent1</div><div class="rl">归档标准</div><div class="tk">版本管理<br>索引维护</div></div>
 </div>
 
 </div>
 
 <div class="footer">
-  <p><a href="../index.html" data-i18n="common.back_to_home">← 返回主站</a> · <a href="index.html">产教融合首页</a></p>
+  <p><a href="../index.html" data-i18n="common.back_to_home">← 返回主站</a> · <a href="index.html">产教融合首页</a> · <a href="pipeline.html">流水线</a> · <a href="cases-full.html">全量映射表</a></p>
 </div>
 
 <script src="../js/audio-player.js"></script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🔄</text></svg>">
+<title>故事云→NFSC流水线 — 产教融合</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:linear-gradient(135deg,#0a1628,#1a3a5c);color:#c8d6e5;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:30px 20px}
+.back-btn{position:fixed;top:20px;left:20px;z-index:1000;padding:6px 14px;border-radius:8px;background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.2);color:#f0a500;text-decoration:none;font-size:12px;transition:all .3s}
+.back-btn:hover{border-color:#f0a500;color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.cont{max-width:800px;width:100%}
+hdr{text-align:center;margin-bottom:28px}
+hdr h1{font-size:22px;color:#fff;margin-bottom:2px}
+hdr h1 span{color:#f0a500}
+hdr .sub{color:#667;font-size:11px}
+
+.pipe{text-align:center;margin-bottom:20px}
+.pipe .row{margin:8px 0}
+.pipe .row span{display:inline-block;padding:8px 18px;background:rgba(13,31,53,.85);border:1px solid rgba(240,165,0,.15);border-radius:8px;font-size:13px;color:#f0a500;margin:4px 6px;transition:all .3s}
+.pipe .row span:hover{border-color:#f0a500;transform:scale(1.05)}
+.pipe .row span.story{background:rgba(240,165,0,.08)}
+.pipe .row span.nfsc{background:rgba(91,155,213,.08);border-color:rgba(91,155,213,.2);color:#5b9bd5}
+.pipe .row span.out{background:rgba(46,204,113,.08);border-color:rgba(46,204,113,.2);color:#2ecc71}
+.pipe .ar{color:#667;font-size:18px;margin:2px 0}
+.pipe .ar.gold{color:#f0a500}
+.pipe .loop{display:inline-block;padding:6px 14px;background:rgba(240,165,0,.06);border:1px dashed rgba(240,165,0,.2);border-radius:20px;font-size:11px;color:#f0a500;margin-top:8px}
+
+.nfsc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.nf{background:rgba(13,31,53,.85);border:1px solid rgba(91,155,213,.1);border-radius:10px;padding:18px 14px;text-align:center;transition:all .3s}
+.nf:hover{transform:translateY(-2px)}
+.nf .icon{font-size:28px;margin-bottom:6px}
+.nf .name{font-size:16px;font-weight:700;margin-bottom:4px}
+.nf .pct{font-size:10px;color:#667;margin-bottom:6px}
+.nf .do{font-size:9px;color:#556;line-height:1.6}
+.nf:nth-child(1){border-color:rgba(230,126,34,.2)}.nf:nth-child(1) .name{color:#e67e22}
+.nf:nth-child(2){border-color:rgba(91,155,213,.2)}.nf:nth-child(2) .name{color:#5b9bd5}
+.nf:nth-child(3){border-color:rgba(46,204,113,.2)}.nf:nth-child(3) .name{color:#2ecc71}
+.nf:nth-child(4){border-color:rgba(240,165,0,.2)}.nf:nth-child(4) .name{color:#f0a500}
+
+.agent-sub{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:16px 0}
+.ac{background:rgba(13,31,53,.6);border:1px solid rgba(91,155,213,.08);border-radius:8px;padding:10px 8px;text-align:center}
+.ac .cd{font-size:12px;font-weight:700;color:#5b9bd5}
+.ac .tk{font-size:9px;color:#556;margin-top:2px}
+.ac.aud .cd{color:#e74c3c}.ac.stu .cd{color:#2ecc71}
+
+.footer{margin-top:30px;text-align:center;color:#445;font-size:11px;line-height:2}
+.footer a{color:#5b9bd5;text-decoration:none}
+
+@media(max-width:768px){.nfsc-grid{grid-template-columns:repeat(2,1fr)}body{padding:20px 10px}}
+</style>
+</head>
+<body>
+
+<a class="back-btn" href="index.html">← 产教融合</a>
+
+<div class="cont">
+<hdr>
+  <h1>🔄 <span>故事云 → NFSC</span> 流水线</h1>
+  <div class="sub">真实工程 → 纪实小说 → 素材母库 → NFSC四维拆解 → 课堂场景 → 成效验证 → 回写闭环</div>
+</hdr>
+
+<div class="pipe">
+  <div class="row"><span>① 真实工程<br>20年·12本笔记本</span></div>
+  <div class="ar">↓</div>
+  <div class="row"><span class="story">② 纪实小说<br>龙栖湾400+回·6部连载</span></div>
+  <div class="ar">↓</div>
+  <div class="row"><span class="story">③ 故事素材母库<br>S001-S027·27个案例</span></div>
+  <div class="ar gold">↓</div>
+  <div class="row"><span class="nfsc">④ NFSC四维拆解<br>叙15%·框15%·境40%·创30%</span></div>
+  <div class="ar">↓</div>
+  <div class="row"><span>⑤ 双导师课堂<br>100学生·6课题·花店面授</span></div>
+  <div class="ar gold">↓</div>
+  <div class="row"><span class="nfsc">⑥·⑦ Agent赋能验证<br>S1追问·S2反馈·Agent5分析</span></div>
+  <div class="ar">↓</div>
+  <div class="row"><span class="out">⑦ 育人出口·回写<br>毕设·专利·咨询→素材母库</span></div>
+  <div class="loop">← 回写闭环：新案例 → 龙栖湾新回目 → 素材母库扩充 → 迭代</div>
+</div>
+
+<div class="nfsc-grid">
+  <div class="nf">
+    <div class="icon">📖</div>
+    <div class="name">叙</div>
+    <div class="pct">约15%</div>
+    <div class="do">故事驱动<br>问题提出<br>降低认知门槛</div>
+  </div>
+  <div class="nf">
+    <div class="icon">🔬</div>
+    <div class="name">框</div>
+    <div class="pct">约15%</div>
+    <div class="do">框架提取<br>方法论工具<br>分析维度</div>
+  </div>
+  <div class="nf">
+    <div class="icon">🎭</div>
+    <div class="name">境</div>
+    <div class="pct">约40%</div>
+    <div class="do">场景沉浸<br>角色扮演<br>决策模拟</div>
+  </div>
+  <div class="nf">
+    <div class="icon">✨</div>
+    <div class="name">创</div>
+    <div class="pct">约30%</div>
+    <div class="do">产出导向<br>毕设·论文<br>专利·咨询</div>
+  </div>
+</div>
+
+<div class="agent-sub">
+  <div class="ac"><div class="cd">Agent-S</div><div class="tk">拆案例·五段式</div></div>
+  <div class="ac"><div class="cd">Agent-I</div><div class="tk">场景脚本·角色</div></div>
+  <div class="ac"><div class="cd">Agent2</div><div class="tk">大纲·日历·教案</div></div>
+  <div class="ac"><div class="cd">Agent3</div><div class="tk">PPT·HTML演示</div></div>
+  <div class="ac"><div class="cd">Agent4</div><div class="tk">作业·A/B卷</div></div>
+  <div class="ac"><div class="cd">Agent5</div><div class="tk">达成度·反思</div></div>
+  <div class="ac"><div class="cd">Agent-B</div><div class="tk">品牌·论文</div></div>
+  <div class="ac aud"><div class="cd">Agent0</div><div class="tk">审核·A/B/C/D</div></div>
+  <div class="ac stu"><div class="cd">S1</div><div class="tk">学霸追问</div></div>
+  <div class="ac stu"><div class="cd">S2</div><div class="tk">普惠反馈</div></div>
+  <div class="ac"><div class="cd">Agent1</div><div class="tk">归档·标准化</div></div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p><a href="../index.html" data-i18n="common.back_to_home">← 返回主站</a> · <a href="index.html">产教融合首页</a> · <a href="cases-full.html">全量案例映射表</a></p>
+</div>
+
+<script src="../js/audio-player.js"></script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>
