@@ -180,8 +180,36 @@ tr:hover { background: rgba(255,255,255,0.03); }
 }
 @media (max-width: 768px) {
   .container { flex-direction: column; }
-  .sidebar { width: 100%; height: auto; position: static; }
-  .content { padding: 20px; }
+  .sidebar {
+    width: 100%; height: auto; position: static;
+    display: flex; flex-wrap: wrap; gap: 4px;
+    padding: 12px; border-right: none; border-bottom: 1px solid var(--border);
+  }
+  .sidebar a { font-size: 11px; padding: 5px 8px; }
+  .sidebar .back-link { width: 100%; margin-bottom: 6px; }
+  .content { padding: 16px 12px; max-width: 100%; }
+  h1 { font-size: 18px; }
+  .subtitle { font-size: 13px; }
+  h2 { font-size: 16px; margin-top: 28px; }
+  h3 { font-size: 14px; }
+  p { font-size: 14px; line-height: 1.7; text-indent: 1.5em; }
+  .abstract { padding: 14px; }
+  .abstract p { font-size: 13px; }
+  table { font-size: 11px; display: block; overflow-x: auto; white-space: nowrap; }
+  th, td { padding: 5px 4px; }
+  .figure img { max-width: 100%; }
+  .figure figcaption { font-size: 12px; }
+  .download-btn { font-size: 14px; padding: 10px 18px; }
+  .footer { padding: 20px 10px; }
+}
+@media (max-width: 480px) {
+  .sidebar { padding: 8px; gap: 3px; }
+  .sidebar a { font-size: 10px; padding: 4px 6px; }
+  .content { padding: 12px 8px; }
+  h1 { font-size: 16px; }
+  h2 { font-size: 15px; }
+  p { font-size: 13px; }
+  table { font-size: 10px; }
 }
 </style>
 </head>
